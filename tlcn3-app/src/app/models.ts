@@ -6,7 +6,7 @@ export interface Resume {
     phone: string;
     pictureUrl: string;
     social: Array<Social>;
-    positions: Array<Position>;
+    experience: Array<Experience>;
     educations: Array<Education>;
     projects: Array<Project>;
     skills: Array<Skill>;
@@ -26,7 +26,7 @@ export interface Social {
     url: string;
 }
 
-export interface Position {
+export interface Experience {
     title: string;
     summary?: string;
     startDate: YearAndMonth;
@@ -37,7 +37,7 @@ export interface Position {
 
 export interface Education {
     school: string;
-    field: string;
+    major: string;
     startDate: YearAndMonth;
     endDate?: YearAndMonth;
     current?: boolean;
@@ -46,7 +46,7 @@ export interface Education {
 
 export interface Skill {
     name: string;
-    competence: number;
+    keywork: Array<string>;
 }
 
 export interface Project {
