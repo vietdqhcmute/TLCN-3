@@ -9,59 +9,107 @@
   </div>
 
   <div class="item">
-      <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">Title</span>
-          <span class="border"></span>
-        </label>
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">Title</span>
+      <span class="border"></span>
+    </label>
   </div>
 
   <div class="item">
-      <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">Phone number</span>
-          <span class="border"></span>
-        </label>
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">Phone number</span>
+      <span class="border"></span>
+    </label>
   </div>
 
   <div class="item">
-      <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">Email address</span>
-          <span class="border"></span>
-        </label>
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">Email address</span>
+      <span class="border"></span>
+    </label>
   </div>
 
   <div class="item">
-      <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">Facebook URL</span>
-          <span class="border"></span>
-        </label>
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">Facebook URL</span>
+      <span class="border"></span>
+    </label>
   </div>
 
   <div class="item">
-      <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">Github URL</span>
-          <span class="border"></span>
-        </label>
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">Github URL</span>
+      <span class="border"></span>
+    </label>
   </div>
 
   <div class="item">
-      <label for="inp" class="inp">
-          <input type="text" id="inp" placeholder="&nbsp;">
-          <span class="label">LinkedIn URL</span>
-          <span class="border"></span>
-        </label>
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">LinkedIn URL</span>
+      <span class="border"></span>
+    </label>
   </div>
 
   <div class="item">
-    <input type="button" class="btn btn-outline-danger" value="Preview" (click)='saveContact()'>
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
   </div>
-  <br>
 
   <div class="item">
     <a routerLink='objective' class="btn btn-danger float-right">Next</a>
   </div>
+</div>
+<br>
+
+<div id="Objective">
+  <h3>Objective</h3>
+  <div class="item item1">
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;">
+      <span class="label">Objective</span>
+      <span class="border"></span>
+    </label>
+  </div>
+  <br>
+  <div class="item">
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
+  </div>
+  <br>
+  <a routerLink="/" class="btn btn-default float-left">Previous</a>
+  <a routerLink="/experience" class="btn btn-danger float-right">Next</a>
+</div>
+<br>
+<br>
+<br>
+<div id="Experience">
+  <h3>Experience</h3>
+  <div id="list-experience">
+    <ul>
+      <li *ngFor="let item of experience$">
+        <div class="row">
+          <div class="col-md-10">
+            <a routerLink="details/{{item.id}}">{{item.companyName}}</a>
+            <p>{{item.position}}</p>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-primary preview" value="Add Another Experience">
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
+  </div>
+
+  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
+  <a routerLink="/education" class="btn btn-danger float-right">Next</a>
 </div>
