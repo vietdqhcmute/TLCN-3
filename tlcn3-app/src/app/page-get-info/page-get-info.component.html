@@ -86,6 +86,7 @@
 <br>
 <br>
 <br>
+
 <div id="Experience">
   <h3>Experience</h3>
   <div id="list-experience">
@@ -95,6 +96,38 @@
           <div class="col-md-10">
             <a routerLink="details/{{item.id}}">{{item.companyName}}</a>
             <p>{{item.position}}</p>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-primary preview" value="Add Another Experience">
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
+  </div>
+
+  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
+  <a routerLink="/education" class="btn btn-danger float-right">Next</a>
+</div>
+<br>
+<br>
+<br>
+
+<div id="Education">
+  <h3>Education</h3>
+  <div id="list-experience">
+    <ul>
+      <li *ngFor="let item of education$">
+        <div class="row">
+          <div class="col-md-10">
+            <a routerLink="details/{{item.id}}">{{item.school}}</a>
+            <p>{{item.startDate}}</p>
+            <p>{{item.endDate}}</p>
           </div>
           <div class="col-md-2">
             <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
