@@ -1,24 +1,25 @@
 :host {
-    overflow: scroll;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    .flexbox-container {
-      display: flex-collumn;
-    }
-  
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .flexbox-container {
+    display: flex-collumn;
+  }
+
+  #Contact {
     .item {
-      p {
-        margin-bottom: 0px;
-        margin-top: 10px;
-      }
-  
+      margin-bottom: 20px;
+      margin-top: 20px;
+
       input {
         width: 100%;
       }
-  
+
     }
   }
-  
+
+}
