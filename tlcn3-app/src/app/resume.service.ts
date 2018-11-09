@@ -10,6 +10,8 @@ export class ResumeService {
   // Edit mode if path is /edit --> a lot of things will depend on the path
   //Saves resume in browser
   //Retrive last saved resume stored in browser
+
+
   //Adds a experience to the saved resume and saves it.
   //Update experience.
   //Removes a experience.
@@ -26,4 +28,8 @@ export class ResumeService {
   //Adds an project to the saved resume and saves it.
   //Update project.
   //Removes an project.
+
+  // Update resume personal information.
+  //Parse and save a resume stored in the standardized json resume format (https://github.com/jsonresume/resume-schema/blob/0.0.0/schema.json)
+  //Converts a resume to json resume
 }
