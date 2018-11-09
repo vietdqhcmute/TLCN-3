@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 let resumeSchema = new mongoose.Schema({
-  // _id: mongoose.Schema.Types.ObjectId,
   facebookLogin: {
     idFacebook: {
       type: String
@@ -21,7 +20,7 @@ let resumeSchema = new mongoose.Schema({
       phone: String,
       email: String,
       social: [{
-        type: String,
+        network: String,
         url: String
       }]
     },
@@ -31,14 +30,14 @@ let resumeSchema = new mongoose.Schema({
         month: Number,
         year: Number
       },
-      endDate  : {
+      endDate: {
         month: Number,
         year: Number
       },
       current: Boolean,
       title: String,
       location: String,
-      description  : [String]
+      description: [String]
     }],
     education: [{
       school: String,
@@ -47,11 +46,11 @@ let resumeSchema = new mongoose.Schema({
         month: Number,
         year: Number
       },
-      endDate  : {
+      endDate: {
         month: Number,
         year: Number
       },
-      current  : Boolean,
+      current: Boolean,
     }],
     skill: [String],
     created: {
@@ -61,22 +60,21 @@ let resumeSchema = new mongoose.Schema({
     project: [{
       name: String,
       description: String,
-      imageUrl  : String,
+      imageUrl: String,
       startDate: {
         month: Number,
         year: Number
       },
-      endDate  : {
+      endDate: {
         month: Number,
         year: Number
       },
-      current  : Boolean,
-      web  : String
+      current: Boolean,
+      web: String
     }]
   }],
 
 });
 
-var ResumeModel = mongoose.model("ResumeModel", resumeSchema);
-
-module.exports = ResumeModel;
+var Resume = mongoose.model("Resume", resumeSchema);
+module.exports = Resume;

@@ -21,7 +21,6 @@ router.get('/user/:id', async (req, res) => {
   } catch (err) {
     res.status(404).send(err);
   }
-
 });
 
 router.delete('/delete/user/:id', async (req, res) => {
