@@ -1,3 +1,51 @@
-<p>
-  page-get-info works!
-</p>
+<div class="flexbox-container">
+  <h3>Contact Infomation</h3>
+  <div class="item item1">
+      <p>Name:</p>
+      <input type="text" class="form-control" [(ngModel)]="name">
+  </div>
+
+  <div class="item item3">
+      <p>Address:</p>
+      <input type="text" class="form-control" [(ngModel)]="address">
+  </div>
+
+
+  <div class="item item4">
+      <p>Phone:</p>
+      <input type="text" placeholder="(+84)" class="form-control" [(ngModel)]="phone">
+  </div>
+  
+  <div class="item item5">
+      <p>Email:</p>
+      <input type="text" placeholder="@anything.com" class="form-control" [(ngModel)]="email">
+  </div>
+
+  <div class="item item6">
+    <p>facebook URL:</p>
+    <input type="text" placeholder="https://www.facebook.com" class="form-control" [(ngModel)]="facebookURL">
+  </div>
+
+  <div class="item item7">
+    <p>github URL:</p>
+    <input type="text" placeholder="https://github.com/" class="form-control" [(ngModel)]="githubURL">
+  </div>
+
+  <div class="item item8">
+    <p>linkedIn URL:</p>
+    <input type="text" placeholder="https://linkedIn.com/" class="form-control" [(ngModel)]="linkedinURL">
+  </div>
+
+  <div class="item item9">
+        <p>Your website URL:</p>
+        <input type="text" class="form-control" [(ngModel)]="linkedinURL">
+      </div>
+  <br>
+  <div class="item item9">
+      <input type="button" class="btn btn-outline-danger" value="Preview" (click)='saveContact()'>
+  </div>
+  <br>
+  <div class="item item10">
+      <a routerLink='objective' class="btn btn-danger float-right">Next</a>
+    </div>
+</div>
