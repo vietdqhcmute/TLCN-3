@@ -120,10 +120,7 @@ export function resumeToJsonResume(resume: Resume) {
             }
         }),
         skills: resume.skills.map(s => {
-            return {
-                name: s.name,
-                keywork: s.keywork
-            }
+            return s;
         }),
         projects: resume.projects.map(p => {
             return {
