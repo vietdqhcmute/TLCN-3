@@ -120,7 +120,71 @@
 
 <div id="Education">
   <h3>Education</h3>
-  <div id="list-experience">
+  <div id="list-education">
+    <ul>
+      <li *ngFor="let item of education$">
+        <div class="row">
+          <div class="col-md-10">
+            <a routerLink="details/{{item.id}}">{{item.school}}</a>
+            <p>{{item.startDate}}</p>
+            <p>{{item.endDate}}</p>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-primary preview" value="Add Another Experience">
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
+  </div>
+
+  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
+  <a routerLink="/education" class="btn btn-danger float-right">Next</a>
+</div>
+<br>
+<br>
+<br>
+
+<div id="Project">
+  <h3>Project</h3>
+  <div id="list-Project">
+    <ul>
+      <li *ngFor="let item of project$">
+        <div class="row">
+          <div class="col-md-10">
+            <a routerLink="details/{{item.id}}">{{item.school}}</a>
+            <p>{{item.startDate}}</p>
+            <p>{{item.endDate}}</p>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-primary preview" value="Add Another Experience">
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
+  </div>
+
+  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
+  <a routerLink="/education" class="btn btn-danger float-right">Next</a>
+</div>
+<br>
+<br>
+<br>
+
+<div id="Skill">
+  <h3>Skill</h3>
+  <div id="list-skills">
     <ul>
       <li *ngFor="let item of education$">
         <div class="row">
