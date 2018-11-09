@@ -8,6 +8,8 @@ import { AppProfileComponent } from './app-profile/app-profile.component';
 import { AppAboutComponent } from './app-about/app-about.component';
 import { AppMainComponent } from './app-main/app-main.component';
 import { PageSidebarComponent } from './page-sidebar/page-sidebar.component';
+import { PageGetInfoComponent } from './page-get-info/page-get-info.component';
+import { PageEditorComponent } from './page-editor/page-editor.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PageSidebarComponent } from './page-sidebar/page-sidebar.component';
     AppProfileComponent,
     AppAboutComponent,
     AppMainComponent,
-    PageSidebarComponent
+    PageSidebarComponent,
+    PageGetInfoComponent,
+    PageEditorComponent
   ],
   imports: [
     BrowserModule,
