@@ -122,7 +122,7 @@ export function resumeToJsonResume(resume: Resume) {
         skills: resume.skills.map(s => {
             return {
                 name: s.name,
-                level: s.competence
+                keywork: s.keywork
             }
         }),
         projects: resume.projects.map(p => {
