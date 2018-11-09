@@ -1,3 +1,37 @@
-<p>
-  page-editor works!
-</p>
+<div id="header-preview">
+  <h4>Preview</h4>
+</div>
+<div id="background-editor">
+  <div id="cv-area">
+    <div id="a4-zone">
+      <div id="contact-area" class="text-center">
+        <h2><strong>{{contact.name}}</strong></h2>
+        <p>{{contact.address}}</p>
+        <p>{{contact.phone}}</p>
+        <p>{{contact.email}}</p>
+      </div>
+
+      <div id="objective-area" *ngIf="objective.length>0">
+        <h5><strong>Objective</strong></h5>
+        <p>{{objective}}</p>
+      </div>
+      <!-- <h5 *ngIf="jobs.length>1"><strong>Experience</strong></h5> -->
+      <div id="experience-area" *ngFor="let experienceItem of experiences">
+        <div id="experience-company-location">
+          <p id="companyName"><strong>{{experienceItem.companyName | uppercase}}</strong></p>
+          <p id="location">{{experienceItem.location}}</p>
+        </div>
+        <div id="experience-position-time">
+          <p><strong>{{experienceItem.position}}</strong></p>
+          <p>{{experienceItem.startMonth|date:'MMMM'}}-{{experienceItem.startYear}} - {{experienceItem.endMonth|date:'MMMM'}}-{{experienceItem.endYear}}</p>
+        </div>
+        <div id="experience-description">
+          <ul>
+            <li *ngFor="let item of experienceItem.description">{{item}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

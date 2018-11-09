@@ -2,28 +2,101 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    height: 100vh;
-  
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  font-weight: 300;
+}
+
+//scrollbar customize
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ECEFF1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #37474F;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #546E7A;
+}
+
+//input customize
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  // max-width: 280px; //transform: rotateX(45deg) rotateY(-10deg) rotate(25deg) scale(2)
+
+  .label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 16px;
+    color: #9098A9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all .2s ease
   }
-  
-  //scrollbar customize
-  /* width */
-  ::-webkit-scrollbar {
-    width: 5px;
+
+  .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #0077FF;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all .15s ease
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #ECEFF1;
+
+  input {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid #C8CCD4;
+    background: none;
+    border-radius: 0;
+    color: #223254;
+    transition: all .15s ease;
+
+    &:hover {
+      background: rgba(#ECEFF1, .03);
+    }
+
+    &:not(:placeholder-shown) {
+      +span {
+        color: rgb(30, 77, 179);
+        transform: translateY(-26px) scale(.75);
+      }
+    }
+
+    &:focus {
+      background: none;
+      outline: none;
+
+      +span {
+        color: #0077FF;
+        transform: translateY(-26px) scale(.75);
+      }
+
+      +.border {
+        transform: scaleX(1)
+      }
+    }
   }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #37474F;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #546E7A;
-  }
+
+}
