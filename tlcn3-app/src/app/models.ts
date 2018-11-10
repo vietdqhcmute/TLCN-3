@@ -4,12 +4,12 @@ export interface Resume {
     summary: string;
     email: string;
     phone: string;
-    pictureUrl: string;
+    pictureUrl?: string;
     social: Array<Social>;
     experience: Array<Experience>;
     educations: Array<Education>;
     projects: Array<Project>;
-    skills: Array<Skill>;
+    skills: Array<String>;
 }
 
 export enum SocialType {
@@ -42,11 +42,6 @@ export interface Education {
     endDate?: YearAndMonth;
     current?: boolean;
     degree?: string;
-}
-
-export interface Skill {
-    name: string;
-    keywork: Array<string>;
 }
 
 export interface Project {

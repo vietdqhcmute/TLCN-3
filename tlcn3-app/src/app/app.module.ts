@@ -12,6 +12,7 @@ import { PageSidebarComponent } from './page-sidebar/page-sidebar.component';
 import { PageGetInfoComponent } from './page-get-info/page-get-info.component';
 import { PageEditorComponent } from './page-editor/page-editor.component';
 import { PageTemplateComponent } from './page-template/page-template.component';
+import { PageToolbarComponent } from './page-toolbar/page-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageTemplateComponent } from './page-template/page-template.component';
     PageSidebarComponent,
     PageGetInfoComponent,
     PageEditorComponent,
-    PageTemplateComponent
+    PageTemplateComponent,
+    PageToolbarComponent
   ],
   imports: [
     BrowserModule,
