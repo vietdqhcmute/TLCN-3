@@ -9,8 +9,8 @@ import { ResumeService } from '../resume.service';
 })
 export class PageGetInfoComponent implements OnInit {
   resume: Resume;
-  constructor(private resumeService: ResumeService) { }
 
+  constructor(private resumeService: ResumeService) { }
   ngOnInit() {
     //retrive resume();
   }

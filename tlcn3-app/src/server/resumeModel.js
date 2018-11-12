@@ -12,7 +12,7 @@ let resumeSchema = new mongoose.Schema({
       type: String
     }
   },
-  resume: [{
+  resume: {
     contact: {
       name: String,
       title: String,
@@ -72,8 +72,7 @@ let resumeSchema = new mongoose.Schema({
       current: Boolean,
       web: String
     }]
-  }],
-
+  }
 });
 
 var Resume = mongoose.model("Resume", resumeSchema);
