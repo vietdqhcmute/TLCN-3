@@ -12,13 +12,12 @@ export class AppProfileComponent implements OnInit {
   id: string;
   constructor(private user: UserService, private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
-      this.user$ = params.id;
+      // this.user$ = params.id;
       this.id = params.id;
     });
   }
 
   ngOnInit() {
-    this.user$ = this.route.snapshot.data["profile"]; //Use Resolver
-    console.log(this.user$);
+    this.user$ = this.route.snapshot.data["profile"]; //Use User infomation Resolver to load data before render view
   }
 }

@@ -2,3 +2,6 @@
 <section id="info">
   <p>Your last update: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
 </section>
+
+<a class="btn btn-outline-info" [routerLink]="['/main', user$._id, 'edit']"
+    [queryParams]="{allowEdit: true}" >Update your Resumé</a>
