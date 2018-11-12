@@ -12,4 +12,5 @@ export class ResolverService {
   resolve(route: ActivatedRouteSnapshot) {
     return this.user.getUserByID(route.params.id);
   }
+
 }

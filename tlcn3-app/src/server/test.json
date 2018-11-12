@@ -1,17 +1,15 @@
 {
-  "facebookLogin": {
-    "idFacebook": "9pu12wedjy0123d",
-    "facebookName": "Do Quoc Viet",
-    "avatarURL": ""
-  },
-  "resume": [{
+  "idFacebook": "9pu12wedjy0123d",
+  "facebookName": "Do Quoc Viet",
+  "avatarURL": "",
+  "resume": {
     "contact": {
       "name": "Do Quoc Viet",
       "title": "Student",
       "phone": "(+84) 372 18 2804",
       "email": "vietdqhcmute@gmail.com",
       "summary": "I want to be a Web developer",
-       "social": [{
+      "social": [{
           "network": "FACEBOOK",
           "url": "https://www.facebook.com/ducky.holmes"
         },
@@ -20,7 +18,7 @@
           "url": "https://github.com/vietdqhcmute"
         }
       ]
-     
+
     },
     "experience": [{
       "company_name": "Amanotes",
@@ -66,5 +64,5 @@
       }
     },
     "skill": ["Japanese N4", "IELTS 7.5", "I just bluffing!"]
-  }]
+  }
 }

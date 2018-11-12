@@ -11,7 +11,7 @@ import { ResolverService } from "./resolver.service";
 const routes: Routes = [
   { path: "", redirectTo: "main", pathMatch: "full" },
   { path: "main", component: AppMainComponent },
-  { path: "main/:id/edit", component: AppMainComponent, resolve: {} },
+  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService} },
   { path: "login", component: AppLoginComponent },
   { path: "profile", component: AppProfileComponent },
   {
