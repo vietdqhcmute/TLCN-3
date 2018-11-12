@@ -5,6 +5,9 @@ import { AppLoginComponent } from './app-login/app-login.component';
 import { AppProfileComponent } from './app-profile/app-profile.component';
 import { AppAboutComponent } from './app-about/app-about.component';
 import { AppMainComponent } from './app-main/app-main.component';
+
+import { ResolverService } from "./resolver.service";
+
 const routes: Routes = [
   {
     path: "",
@@ -22,6 +25,13 @@ const routes: Routes = [
   {
     path: "profile",
     component: AppProfileComponent
+  },
+  {
+    path: "profile/:id",
+    component: AppProfileComponent,
+    resolve: {
+      profile: ResolverService
+    }
   },
   {
     path: "about",
