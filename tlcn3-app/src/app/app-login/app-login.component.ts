@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PARAMETERS } from '@angular/core/src/util/decorators';
 
 @Component({
   selector: 'app-app-login',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-login.component.scss']
 })
 export class AppLoginComponent implements OnInit {
-
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }

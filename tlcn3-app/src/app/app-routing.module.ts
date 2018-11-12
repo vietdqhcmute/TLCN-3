@@ -1,32 +1,25 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AppLoginComponent } from './app-login/app-login.component';
-import { AppProfileComponent } from './app-profile/app-profile.component';
-import { AppAboutComponent } from './app-about/app-about.component';
-import { AppMainComponent } from './app-main/app-main.component';
+import { AppLoginComponent } from "./app-login/app-login.component";
+import { AppProfileComponent } from "./app-profile/app-profile.component";
+import { AppAboutComponent } from "./app-about/app-about.component";
+import { AppMainComponent } from "./app-main/app-main.component";
+
+import { ResolverService } from "./resolver.service";
+
 const routes: Routes = [
+  { path: "", redirectTo: "main", pathMatch: "full" },
+  { path: "main", component: AppMainComponent },
+  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService} },
+  { path: "login", component: AppLoginComponent },
+  { path: "profile", component: AppProfileComponent },
   {
-    path: "",
-    redirectTo: "main",
-    pathMatch: "full"
+    path: "profile/:id",
+    component: AppProfileComponent,
+    resolve: { profile: ResolverService }
   },
-  {
-    path:"main",
-    component: AppMainComponent
-  },
-  {
-    path:"login",
-    component: AppLoginComponent
-  },
-  {
-    path: "profile",
-    component: AppProfileComponent
-  },
-  {
-    path: "about",
-    component: AppAboutComponent
-  }
+  { path: "about", component: AppAboutComponent }
 ];
 
 @NgModule({

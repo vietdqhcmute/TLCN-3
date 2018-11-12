@@ -1,18 +1,10 @@
 const mongoose = require("mongoose");
 
 let resumeSchema = new mongoose.Schema({
-  facebookLogin: {
-    idFacebook: {
-      type: String
-    },
-    facebookName: {
-      type: String
-    },
-    avatarURL: {
-      type: String
-    }
-  },
-  resume: [{
+  idFacebook: String,
+  facebookName: String,
+  avatarURL: String,
+  resume: {
     contact: {
       name: String,
       title: String,
@@ -72,8 +64,7 @@ let resumeSchema = new mongoose.Schema({
       current: Boolean,
       web: String
     }]
-  }],
-
+  }
 });
 
 var Resume = mongoose.model("Resume", resumeSchema);
