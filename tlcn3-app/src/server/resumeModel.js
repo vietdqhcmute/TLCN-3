@@ -1,15 +1,9 @@
 const mongoose = require("mongoose");
 
 let resumeSchema = new mongoose.Schema({
-  idFacebook: {
-    type: String
-  },
-  facebookName: {
-    type: String
-  },
-  avatarURL: {
-    type: String
-  },
+  idFacebook: String,
+  facebookName: String,
+  avatarURL: String,
   resume: {
     contact: {
       name: String,
