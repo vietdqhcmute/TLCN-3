@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
+
 import { Resume } from '../models';
 import { ResumeService } from '../resume.service';
+import { Experience } from '../models';
 
 @Component({
   selector: 'app-page-get-info',
@@ -10,9 +13,31 @@ import { ResumeService } from '../resume.service';
 export class PageGetInfoComponent implements OnInit {
   resume: Resume;
 
-  constructor(private resumeService: ResumeService) { }
+  constructor(private dialog: MatDialog, private viewContainerRef: ViewContainerRef, public resumeService: ResumeService) { }
   ngOnInit() {
     //retrive resume();
   }
+  addNewExperience(){
+    const config = new MatDialogConfig();
+    config.width = '75vw';
 
+    const dialogRef = this.dialog.open(ExperienceDialog, config);
+    
+  }
+}
+
+
+//Add new Experience dialog
+@Component({
+
+}) 
+export class ExperienceDialog implements OnInit{
+  public experience: Experience;
+  public years: Array<number>;
+  public months: Array<string>;
+  public editMode: boolean;
+  constructor(public dialogRef: MatDialogRef<ExperienceDialog>, private resumeService: ResumeService) {
+    
+  }
+  ngOnInit(){};
 }

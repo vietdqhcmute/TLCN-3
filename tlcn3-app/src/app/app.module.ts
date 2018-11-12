@@ -14,6 +14,7 @@ import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
 import { PageEditorComponent } from "./page-editor/page-editor.component";
 import { PageTemplateComponent } from "./page-template/page-template.component";
 import { PageToolbarComponent } from "./page-toolbar/page-toolbar.component";
+import 'hammerjs';
 
 import {
   MatSelectModule,
@@ -32,6 +33,8 @@ import {
   MatMenuModule,
   MatSnackBarModule
 } from "@angular/material";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +67,8 @@ import {
     MatCheckboxModule,
     MatChipsModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
