@@ -4,31 +4,42 @@
 <div id="background-editor">
   <div id="cv-area">
     <div id="a4-zone">
-       <div id="contact-area" class="text-center">
-        <h2><strong>{{resume.contact.name}}</strong></h2>
-        <p>{{resume.contact.phone}}</p>
-        <p>{{resume.contact.email}}</p>
+      <div id="contact-area" class="text-center">
+        <h2>
+          <strong>{{ resume.contact.name }}</strong>
+        </h2>
+        <p>{{ resume.contact.phone }}</p>
+        <p>{{ resume.contact.email }}</p>
+      </div>
+      <div id="summary-area" *ngIf="resume.contact.summary && resume.contact.summary.length">
+        <h5><strong>Summary</strong></h5>
+        <strong>{{ resume.contact.summary }}</strong>
+      </div>
+
+      <div id="experience-area" *ngIf="resume.experience && resume.experience.length">
+        <h5><strong>Experience</strong></h5>
+        <div *ngFor="let item of resume.experience">
+          <div id="experience-company-location">
+            <p id="companyName"><strong>{{item.company_name | uppercase}}</strong></p>
+            <p id="location">{{item.location}}</p>
+          </div>
+          <div id="experience-title-time">
+            <p><strong>{{item.title}}</strong></p>
+            <p>{{item.startDate.month}}-{{item.startDate.year}} - {{item.endDate.month}}-{{item.endDate.year}}</p>
+          </div>
+          <div id="experience-description">
+            <ul>
+              <li *ngFor="let desItem of item.description">{{desItem}}</li>
+            </ul>
+          </div>
+        </div>
 
       </div>
 
-       <h5><strong>Experience</strong></h5> 
-     <div id="experience-area" *ngFor="let experienceItem of experiences">
-        <div id="experience-company-location">
-          <p id="companyName"><strong>{{resume.experienceItem.companyName | uppercase}}</strong></p>
-          <p id="location">{{resume.experienceItem.location}}</p>
-        </div>
-        <div id="experience-position-time">
-          <p><strong>{{resume.experienceItem.position}}</strong></p>
-          <p>{{resume.experienceItem.startMonth|date:'MMMM'}}-{{resume.experienceItem.startYear}} -
-            {{resume.experienceItem.endMonth|date:'MMMM'}}-{{resume.experienceItem.endYear}}</p>
-        </div>
-        <div id="experience-description">
-          <ul>
-            <li *ngFor="let item of experienceItem.description">{{item}}</li>
-          </ul>
-        </div> 
-      </div>
     </div>
-    <br>
+    <!--a4-zone -->
+    <br />
   </div>
+  <!--cv-area -->
 </div>
+<!--background-editor -->

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Resume } from "../models";
+import { Resume, Experience } from "../models";
 
 @Component({
   selector: "app-page-editor",
@@ -8,9 +8,14 @@ import { Resume } from "../models";
 })
 export class PageEditorComponent implements OnInit {
   @Input() resume: Resume;
+  experiences: Array<Experience>;
   constructor() {}
 
   ngOnInit() {
-    console.log(this.resume);
+    //Copy resume.experience --> experiences
+    // this.experiences = this.resume.experience.map(e => {
+    //   return e;
+    // });
   }
+
 }
