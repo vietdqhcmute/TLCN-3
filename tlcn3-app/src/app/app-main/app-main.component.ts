@@ -22,7 +22,6 @@ export class AppMainComponent implements OnInit {
       this.resume$=result;
       console.log(this.resume$);
     });
-      // this.user$ = this.route.snapshot.data["profile"]; //Use User infomation Resolver to load data before render view
-      // console.log(this.user$);
+
   }
 }
