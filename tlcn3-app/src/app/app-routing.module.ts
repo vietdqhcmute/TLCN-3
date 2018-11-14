@@ -9,7 +9,7 @@ import { AppMainComponent } from "./app-main/app-main.component";
 import { ResolverService } from "./resolver.service";
 
 const routes: Routes = [
-  { path: "", redirectTo: "main", pathMatch: "full" },
+  { path: "", redirectTo: "profile/:id", pathMatch: "full" },
   { path: "main", component: AppMainComponent },
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService} },
   { path: "login", component: AppLoginComponent },

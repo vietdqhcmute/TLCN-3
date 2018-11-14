@@ -20,7 +20,6 @@ export class AppMainComponent implements OnInit {
   ngOnInit() {
     this.data.currentResume.subscribe(result=>{
       this.resume$=result;
-      console.log(this.resume$);
     });
 
   }
