@@ -8,14 +8,7 @@ import { Resume, Experience } from "../models";
 })
 export class PageEditorComponent implements OnInit {
   @Input() resume: Resume;
-  experiences: Array<Experience>;
   constructor() {}
 
-  ngOnInit() {
-    //Copy resume.experience --> experiences
-    // this.experiences = this.resume.experience.map(e => {
-    //   return e;
-    // });
-  }
-
+  ngOnInit() {}
 }
