@@ -7,18 +7,15 @@
   padding-right: 10px;
 
   .item {
-    margin-bottom: 20px;
-    margin-top: 20px;
-
-    input {
+    mat-form-field {
       width: 100%;
-    }
-  }
+      font-size: 16;
 
-  .preview {
-    input {
-      width: 100%;
+      input {
+        width: 100%;
+      }
     }
+
   }
 
   a {

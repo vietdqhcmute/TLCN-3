@@ -1,43 +1,33 @@
 <section id="Contact">
   <h3>Contact Infomation</h3>
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.name}}" [(ngModel)]="resume$.contact.name">
-      <span class="label">Your name</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Your name" value="{{resume$.contact.name}}" [(ngModel)]="resume$.contact.name">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.title}}" [(ngModel)]="resume$.contact.title">
-      <span class="label">Title</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Title" value="{{resume$.contact.title}}" [(ngModel)]="resume$.contact.title">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;"value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary">
-      <span class="label">Summary</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Summary" value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.phone}}" [(ngModel)]="resume$.contact.phone">
-      <span class="label">Phone number</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Phone number" value="{{resume$.contact.phone}}" [(ngModel)]="resume$.contact.phone">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
-      <span class="label">Email address</span>
-      <span class="border"></span>
-    </label>
+      <mat-form-field>
+          <input matInput placeholder="Email" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
+        </mat-form-field>
   </div>
 
   <div class="item">
