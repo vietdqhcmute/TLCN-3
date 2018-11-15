@@ -1,15 +1,40 @@
-<h2 mat-dialog-title>Experience</h2>
 
-<mat-dialog-content >
+<mat-dialog-content class="mat-experience">
+    <h1 mat-dialog-title>Add another experience</h1>
 
   <mat-form-field>
-    <input matInput  >
+    <input matInput placeholder="Company name">
   </mat-form-field>
 
+  <mat-form-field>
+    <input matInput placeholder="Title/Position">
+  </mat-form-field>
+
+  <mat-checkbox>Current</mat-checkbox>
+
+  <div class="mat-experience-date">
+    <mat-form-field>
+      <input matInput placeholder="Start month">
+    </mat-form-field> 
+    <mat-form-field>
+      <input matInput placeholder="Start year">
+    </mat-form-field>  
+    <mat-form-field>
+      <input matInput placeholder="End month">
+    </mat-form-field> 
+    <mat-form-field>
+      <input matInput placeholder="End year">
+    </mat-form-field>
+  </div>
+
+
+  <mat-form-field>
+    <textarea matInput placeholder="Description"></textarea>
+  </mat-form-field>
 
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button class="mat-raised-button" (click)="close()">Close</button>
-  <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+  <button mat-button mat-dialog-close class="mat-raised-button" (click)="close()">Close</button>
+  <button mat-button class="mat-raised-button mat-primary" (click)="save()">Save</button>
 </mat-dialog-actions>
