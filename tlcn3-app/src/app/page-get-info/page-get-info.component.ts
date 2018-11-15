@@ -11,6 +11,7 @@ import { MatDialog, MatDialogRef, MatDialogConfig } from "@angular/material";
 import { Resume } from "../models";
 import { ResumeService } from "../resume.service";
 import { Experience } from "../models";
+import { DataService } from "../data.service";
 
 @Component({
   selector: "app-page-get-info",
@@ -18,19 +19,14 @@ import { Experience } from "../models";
   styleUrls: ["./page-get-info.component.scss"]
 })
 export class PageGetInfoComponent implements OnInit {
-  @Output() event: EventEmitter<Resume> = new EventEmitter<Resume>();
-  @Input() resume: Resume;
+  resume$: Resume;
 
-  constructor(
-    private dialog: MatDialog,
-    private viewContainerRef: ViewContainerRef,
-    public resumeService: ResumeService
-  ) {}
+  constructor(private dialog: MatDialog, private viewContainerRef: ViewContainerRef, public resumeService: ResumeService, private data: DataService) {}
   ngOnInit() {
-    console.log(this.resume);
-  }
-  send(): void {
-    this.event.emit();
+    // get data from app-main.component by subjectbehavior
+    this.data.currentResume.subscribe(result => {
+      this.resume$ = result; 
+    });
   }
   addNewExperience() {
     const config = new MatDialogConfig();
