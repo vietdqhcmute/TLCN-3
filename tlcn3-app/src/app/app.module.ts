@@ -34,6 +34,7 @@ import {
   MatSnackBarModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DiaExperienceComponent } from './dia-experience/dia-experience.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageGetInfoComponent,
     PageEditorComponent,
     PageTemplateComponent,
-    PageToolbarComponent
+    PageToolbarComponent,
+    DiaExperienceComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DiaExperienceComponent]
 })
 export class AppModule {}
