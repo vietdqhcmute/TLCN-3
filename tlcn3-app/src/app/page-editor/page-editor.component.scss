@@ -18,9 +18,9 @@
         width: 210mm;
         box-shadow: 30px 30px #494747;
         padding: 1cm;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Roboto, Helvetica, sans-serif;
 
-        h2 {
+        h2, h5 {
           margin: 0px;
         }
 
@@ -28,7 +28,9 @@
           margin: 0px;
           height: 18px;
         }
-
+        .section{
+          margin-bottom: 10px;
+        }
         #contact-area {}
 
         #objective-area {}
@@ -44,13 +46,29 @@
             #location {}
           }
 
-          #experience-position-time {
+          #experience-title-time {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
           }
 
           #experience-description {}
+        }
+
+        #project-area {
+          #projectName-date {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+
+        #education-area {
+          #education-date {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
         }
       }
     }

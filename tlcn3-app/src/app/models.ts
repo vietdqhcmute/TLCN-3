@@ -1,3 +1,9 @@
+export interface User{
+    resume: Resume;
+    idFacebook: string;
+    facebookName: string;
+    avatarURL: string;
+}
 export interface Resume {
     name: string;
     title: string;
