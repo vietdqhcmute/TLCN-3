@@ -10,7 +10,7 @@
 
   <div class="item">
     <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
+      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.title}}" [(ngModel)]="resume$.contact.title">
       <span class="label">Title</span>
       <span class="border"></span>
     </label>
@@ -18,7 +18,7 @@
 
   <div class="item">
     <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
+      <input type="text" id="inp" placeholder="&nbsp;"value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary">
       <span class="label">Summary</span>
       <span class="border"></span>
     </label>
@@ -26,7 +26,7 @@
 
   <div class="item">
     <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
+      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.phone}}" [(ngModel)]="resume$.contact.phone">
       <span class="label">Phone number</span>
       <span class="border"></span>
     </label>
@@ -34,7 +34,7 @@
 
   <div class="item">
     <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
+      <input type="text" id="inp" placeholder="&nbsp;" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
       <span class="label">Email address</span>
       <span class="border"></span>
     </label>
