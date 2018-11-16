@@ -66,13 +66,13 @@
 
 <section id="Experience">
   <h3>Experience</h3>
-  <div id="list-experience">
+  <div class="list-experience">
     <ul>
-      <li *ngFor="let item of experience$">
+      <li *ngFor="let item of resume$.experience">
         <div class="row">
           <div class="col-md-10">
-            <a routerLink="details/{{item.id}}">{{item.companyName}}</a>
-            <p>{{item.position}}</p>
+            <a routerLink="details/{{item.id}}">{{item.company_name}}</a>
+            <p>{{item.title}}</p>
           </div>
           <div class="col-md-2">
             <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
