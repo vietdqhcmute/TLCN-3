@@ -151,7 +151,6 @@
   <div class="list-skills">
     <ul>
       <li *ngFor="let item of resume$.skill">
-            <a routerLink="details/{{item.id}}">{{item.index}}</a>
             <p>{{item}}</p>
             <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
       </li>
