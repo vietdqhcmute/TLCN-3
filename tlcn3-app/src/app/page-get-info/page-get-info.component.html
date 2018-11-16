@@ -25,9 +25,9 @@
   </div>
 
   <div class="item">
-      <mat-form-field>
-          <input matInput placeholder="Email" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
-        </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
+    </mat-form-field>
   </div>
 
   <div class="item">
@@ -69,15 +69,11 @@
   <div class="list-experience">
     <ul>
       <li *ngFor="let item of resume$.experience">
-        <div class="row">
-          <div class="col-md-10">
-            <a routerLink="details/{{item.id}}">{{item.company_name}}</a>
-            <p>{{item.title}}</p>
-          </div>
-          <div class="col-md-2">
-            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
-          </div>
+        <div>
+          <a routerLink="details/{{item.id}}">{{item.company_name}}</a>
+          <p>{{item.title}}</p>
         </div>
+        <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
       </li>
     </ul>
   </div>
@@ -97,22 +93,21 @@
 
 <section id="Education">
   <h3>Education</h3>
-  <div id="list-education">
+  <div class="list-education">
     <ul>
-      <li *ngFor="let item of education$">
-        <div class="row">
-          <div class="col-md-10">
-            <a routerLink="details/{{item.id}}">{{item.school}}</a>
-            <p>{{item.startDate}}</p>
-            <p>{{item.endDate}}</p>
-          </div>
-          <div class="col-md-2">
-            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
-          </div>
+      <li *ngFor="let item of resume$.education">
+
+        <div class="school-date">
+          <a routerLink="details/{{item.id}}">{{item.school_name}}</a>
+          <p>{{item.major}}</p>
         </div>
+
+        <p>{{item.startDate.month}}-{{item.startDate.year}}-{{item.endDate.month}}-{{item.endDate.year}}</p>
+        <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
       </li>
     </ul>
   </div>
+
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Experience">
   </div>
@@ -129,19 +124,11 @@
 
 <section id="Project">
   <h3>Project</h3>
-  <div id="list-Project">
+  <div class="list-project">
     <ul>
-      <li *ngFor="let item of project$">
-        <div class="row">
-          <div class="col-md-10">
-            <a routerLink="details/{{item.id}}">{{item.school}}</a>
-            <p>{{item.startDate}}</p>
-            <p>{{item.endDate}}</p>
-          </div>
-          <div class="col-md-2">
+      <li *ngFor="let item of resume$.project">
+            <a routerLink="details/{{item.id}}">{{item.name}}</a>
             <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
-          </div>
-        </div>
       </li>
     </ul>
   </div>
@@ -161,19 +148,12 @@
 
 <section id="Skill">
   <h3>Skill</h3>
-  <div id="list-skills">
+  <div class="list-skills">
     <ul>
-      <li *ngFor="let item of education$">
-        <div class="row">
-          <div class="col-md-10">
-            <a routerLink="details/{{item.id}}">{{item.school}}</a>
-            <p>{{item.startDate}}</p>
-            <p>{{item.endDate}}</p>
-          </div>
-          <div class="col-md-2">
+      <li *ngFor="let item of resume$.skill">
+            <a routerLink="details/{{item.id}}">{{item.index}}</a>
+            <p>{{item}}</p>
             <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
-          </div>
-        </div>
       </li>
     </ul>
   </div>
