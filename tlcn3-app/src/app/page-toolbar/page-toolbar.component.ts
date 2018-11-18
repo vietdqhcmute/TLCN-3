@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Resume } from '../models';
 
 @Component({
   selector: 'app-page-toolbar',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-toolbar.component.scss']
 })
 export class PageToolbarComponent implements OnInit {
+  @Input() resume: Resume;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSave(){
+    
   }
 
 }
