@@ -11,6 +11,7 @@ import { ActivatedRoute } from "@angular/router";
 export class PageToolbarComponent implements OnInit {
   @Input() user$: User;
   id$: string;
+  
   constructor(private user: UserService, route: ActivatedRoute) {
     route.params.subscribe(params => (this.id$ = params.id));
   }

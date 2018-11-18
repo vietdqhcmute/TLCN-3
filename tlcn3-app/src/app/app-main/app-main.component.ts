@@ -11,7 +11,7 @@ import { DataService } from "../data.service";
   styleUrls: ["./app-main.component.scss"]
 })
 export class AppMainComponent implements OnInit {
-  resume$: Resume;
+  resume$: Resume; // resume$ is part of user$, just create new variable in order to make it easy to read
   user$: User;
   constructor(private data: DataService) {
     
