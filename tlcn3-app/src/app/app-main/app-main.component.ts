@@ -11,7 +11,6 @@ import { DataService } from "../data.service";
   styleUrls: ["./app-main.component.scss"]
 })
 export class AppMainComponent implements OnInit {
-  user$: Object;
   resume$: Resume;
   constructor(private data: DataService) {
     
@@ -21,6 +20,6 @@ export class AppMainComponent implements OnInit {
     this.data.currentResume.subscribe(result=>{
       this.resume$=result;
     });
-
+    console.log(this.resume$);
   }
 }

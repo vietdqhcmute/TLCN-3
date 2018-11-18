@@ -27,6 +27,6 @@ export class AppProfileComponent implements OnInit {
     });
   }
   sendData(){ //to send data to main component
-    this.data.sendDataResume(this.user$.resume);
+    this.data.sendDataResume(this.user$);
   }
 }
