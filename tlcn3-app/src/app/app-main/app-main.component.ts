@@ -18,9 +18,9 @@ export class AppMainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data.currentResume.subscribe(result=>{
-      this.resume$=result;
+    this.data.currentUser.subscribe(result=>{
+      this.user$=result;
+      this.resume$=this.user$.resume;
     });
-    console.log(this.resume$);
   }
 }

@@ -9,25 +9,25 @@ import 'rxjs/add/operator/map';  // we need to import this now
 export class DataService {
   constructor() {}
 
-  //resumé
-  private resumeSource = new BehaviorSubject<Resume>({
-    name: "",
-    title: "",
-    summary: "",
-    email: "",
-    phone: "",
-    pictureUrl: "",
-    social: [],
-    experience: [],
-    educations: [],
-    projects: [],
-    skills: []
-  });
-  currentResume = this.resumeSource.asObservable();
+  // //resumé
+  // private resumeSource = new BehaviorSubject<Resume>({
+  //   name: "",
+  //   title: "",
+  //   summary: "",
+  //   email: "",
+  //   phone: "",
+  //   pictureUrl: "",
+  //   social: [],
+  //   experience: [],
+  //   educations: [],
+  //   projects: [],
+  //   skills: []
+  // });
+  // currentResume = this.resumeSource.asObservable();
 
-  sendDataResume(resume) {
-    this.resumeSource.next(resume);
-  }
+  // sendDataResume(resume) {
+  //   this.resumeSource.next(resume);
+  // }
 //user
   private userSource = new BehaviorSubject<User>({
     resume:{
@@ -48,6 +48,7 @@ export class DataService {
     avatarURL: ""
   });
   currentUser = this.userSource.asObservable();
+
   sendDataUser(user) {
     this.userSource.next(user);
   }

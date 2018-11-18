@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import { MatDialog, MatDialogRef, MatDialogConfig } from "@angular/material";
 
-import { Resume } from "../models";
+import { Resume, User } from "../models";
 import { ResumeService } from "../resume.service";
 import { Experience } from "../models";
 import { DataService } from "../data.service";
@@ -21,7 +21,7 @@ import { DiaExperienceComponent } from "../dia-experience/dia-experience.compone
 })
 export class PageGetInfoComponent implements OnInit {
   resume$: Resume;
-
+  user$: User;
   constructor(
     private dialog: MatDialog,
     private viewContainerRef: ViewContainerRef,
@@ -30,8 +30,9 @@ export class PageGetInfoComponent implements OnInit {
   ) {}
   ngOnInit() {
     // get data from app-main.component by subjectbehavior
-    this.data.currentResume.subscribe(result => {
-      this.resume$ = result;
+    this.data.currentUser.subscribe(result => {
+      this.user$ = result;
+      this.resume$=this.user$.resume;
     });
   }
   addNewExperience() {
