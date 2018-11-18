@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { UserService } from "../user.service";
 import { Location } from '@angular/common';
-import { Resume } from "../models";
+import { Resume, User } from "../models";
 import { DataService } from "../data.service";
 
 @Component({
@@ -12,6 +12,7 @@ import { DataService } from "../data.service";
 })
 export class AppMainComponent implements OnInit {
   resume$: Resume;
+  user$: User;
   constructor(private data: DataService) {
     
   }
