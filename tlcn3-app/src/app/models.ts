@@ -1,7 +1,7 @@
 export interface User{
     resume: Resume;
-    idFacebook: string;
-    facebookName: string;
+    googleId: string;
+    googleName: string;
     avatarURL: string;
     _id: string;
 }

@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 let resumeSchema = new mongoose.Schema({
-  idFacebook: String,
-  facebookName: String,
+  googleId: String,
+  googleName: String,
   avatarURL: String,
   resume: {
     contact: {

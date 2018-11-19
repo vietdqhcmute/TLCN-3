@@ -43,8 +43,8 @@ export class DataService {
       project: [],
       skill: []
     }  ,
-    idFacebook: "",
-    facebookName: "",
+    googleId: "",
+    googleName: "",
     avatarURL: "",
     _id: ""
 
