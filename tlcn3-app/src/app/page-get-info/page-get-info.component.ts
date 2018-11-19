@@ -32,7 +32,7 @@ export class PageGetInfoComponent implements OnInit {
     // get data from app-main.component by subjectbehavior
     this.data.currentUser.subscribe(result => {
       this.user$ = result;
-      this.resume$=this.user$.resume;
+      this.resume$ = this.user$.resume;
     });
   }
   addNewExperience() {
@@ -47,9 +47,32 @@ export class PageGetInfoComponent implements OnInit {
     this.dialog.open(DiaExperienceComponent, dialogConfig);
   }
 
-  deleteExperience(experienceID){
-    this.resume$.experience.filter(experience => {
-
+  deleteExperience(experienceID) {
+    this.resume$.experience.forEach(e => {
+      if (e._id === experienceID) {
+        this.resume$.experience.pop();
+      }
     });
+  }
+
+  deleteEducation(educationID) {
+    console.log(this.resume$.education);
+    this.resume$.education.forEach(e => {
+      if (e._id === educationID) {
+        this.resume$.education.pop();
+      }
+    });
+  }
+
+  deleteProject(projectID) {
+    this.resume$.project.forEach(e => {
+      if (e._id === projectID) {
+        this.resume$.project.pop();
+      }
+    });
+  }
+
+  deleteSkill(){
+
   }
 }

@@ -103,7 +103,7 @@
         </div>
 
         <p>{{item.startDate.month}}-{{item.startDate.year}}-{{item.endDate.month}}-{{item.endDate.year}}</p>
-        <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+        <button class="btn btn-danger float-right" (click)='deleteEducation(item._id)'>x</button>
       </li>
     </ul>
   </div>
@@ -128,7 +128,7 @@
     <ul>
       <li *ngFor="let item of resume$.project">
             <a routerLink="details/{{item.id}}">{{item.name}}</a>
-            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+            <button class="btn btn-danger float-right" (click)='deleteProject(item._id)'>x</button>
       </li>
     </ul>
   </div>
@@ -152,7 +152,7 @@
     <ul>
       <li *ngFor="let item of resume$.skill">
             <p>{{item}}</p>
-            <button class="btn btn-danger float-right" (click)='deleteExperience(item.id)'>x</button>
+            <button class="btn btn-danger float-right" (click)='deleteSkill(item.id)'>x</button>
       </li>
     </ul>
   </div>

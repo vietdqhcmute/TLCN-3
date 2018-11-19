@@ -39,13 +39,15 @@ export class DataService {
       pictureUrl: "",
       social: [],
       experience: [],
-      educations: [],
-      projects: [],
-      skills: []
+      education: [],
+      project: [],
+      skill: []
     }  ,
     idFacebook: "",
     facebookName: "",
-    avatarURL: ""
+    avatarURL: "",
+    _id: ""
+
   });
   currentUser = this.userSource.asObservable();
 

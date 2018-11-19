@@ -9,10 +9,6 @@ import {
   Project,
   YearAndMonth
 } from "./models";
-import {
-  jsonResumeToResume,
-  resumeToJsonResume
-} from "./json-resume-converter";
 
 @Injectable({
   providedIn: "root"

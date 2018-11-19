@@ -3,6 +3,7 @@ export interface User{
     idFacebook: string;
     facebookName: string;
     avatarURL: string;
+    _id: string;
 }
 export interface Resume {
     name: string;
@@ -13,9 +14,9 @@ export interface Resume {
     pictureUrl?: string;
     social: Array<Social>;
     experience: Array<Experience>;
-    educations: Array<Education>;
-    projects: Array<Project>;
-    skills: Array<String>;
+    education: Array<Education>;
+    project: Array<Project>;
+    skill: Array<String>;
 }
 
 export enum SocialType {
@@ -30,6 +31,7 @@ export enum SocialType {
 export interface Social {
     type: SocialType;
     url: string;
+    _id: string;
 }
 
 export interface Experience {
@@ -39,6 +41,8 @@ export interface Experience {
     endDate?: YearAndMonth;
     current: boolean;
     company: string;
+    _id: string;
+
 }
 
 export interface Education {
@@ -48,6 +52,8 @@ export interface Education {
     endDate?: YearAndMonth;
     current?: boolean;
     degree?: string;
+    _id: string;
+
 }
 
 export interface Project {
@@ -59,6 +65,8 @@ export interface Project {
     current?: boolean;
     web?: string;
     tags?: Array<Tag>;
+    _id: string;
+
 }
 
 export interface Tag {
