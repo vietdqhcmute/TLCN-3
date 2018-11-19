@@ -59,6 +59,8 @@ router.get('/auth/google',
     scope: ['profile', 'email']
   }));
 
-router.get('/auth/google/callback', passport.authenticate('google'));
+router.get('/auth/google/callback', passport.authenticate('google'), function(req,res){
+  res.send("It's OK!");
+});
 
 module.exports = router;

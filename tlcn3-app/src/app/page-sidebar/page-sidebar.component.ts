@@ -7,7 +7,7 @@ import { Location } from "@angular/common";
   styleUrls: ["./page-sidebar.component.scss"]
 })
 export class PageSidebarComponent implements OnInit {
-  userID: string = "5bf253809ba1a21e80b99337";
+  userID: string = "5bf2687f29e45907342c7512";
   constructor() {}
 
   ngOnInit() {}
