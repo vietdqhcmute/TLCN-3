@@ -152,7 +152,7 @@
     <ul>
       <li *ngFor="let item of resume$.skill">
             <p>{{item}}</p>
-            <button class="btn btn-danger float-right" (click)='deleteSkill(item.id)'>x</button>
+            <button class="btn btn-danger float-right" (click)='deleteSkill(item)'>x</button>
       </li>
     </ul>
   </div>
