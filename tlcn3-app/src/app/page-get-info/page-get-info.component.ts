@@ -46,4 +46,10 @@ export class PageGetInfoComponent implements OnInit {
 
     this.dialog.open(DiaExperienceComponent, dialogConfig);
   }
+
+  deleteExperience(experienceID){
+    this.resume$.experience.filter(experience => {
+
+    });
+  }
 }
