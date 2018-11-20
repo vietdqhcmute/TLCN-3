@@ -39,10 +39,10 @@ router.delete('/delete/user/:id', async (req, res) => {
 
 router.put('/update/user/:id', async (req, res) => {
   try {
-    await Resume.findByIdAndUpdate({
-      _id: req.params.id
-    }, req.body, {
-      new: true
+    await Resume.findByIdAndUpdate({_id: req.params.id}, req.body, {
+      upsert: true,
+      new: true,
+      setDefaultsOnInsert: true
     });
     res.status(200).json({
       message: "Update successfully"

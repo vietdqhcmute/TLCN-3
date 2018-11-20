@@ -18,6 +18,7 @@ import { Experience } from "../models";
 import { DataService } from "../data.service";
 import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
 import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-page-get-info",
@@ -27,10 +28,12 @@ import { connectableObservableDescriptor } from "rxjs/internal/observable/Connec
 export class PageGetInfoComponent implements OnInit {
   resume$: Resume;
   user$: User;
+  newExperience: Experience;
   constructor(
     private dialog: MatDialog,
     private viewContainerRef: ViewContainerRef,
-    private data: DataService
+    private data: DataService,
+    private user: UserService
   ) {}
   ngOnInit() {
     // get data from app-main.component by subjectbehavior
@@ -40,6 +43,12 @@ export class PageGetInfoComponent implements OnInit {
     });
   }
   addNewExperience() {
+    let newExperience: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
+
+    this.resume$.experience.push(newExperience);
+    this.user.updateUserByID(this.user$._id, this.user$);
+  }
+  openDetailExperience() {
     //openDialog
     const dialogConfig = new MatDialogConfig();
 
@@ -51,7 +60,7 @@ export class PageGetInfoComponent implements OnInit {
     const dialogRef = this.dialog.open(DiaExperienceComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      this.resume$.experience.push(result);
     });
   }
 

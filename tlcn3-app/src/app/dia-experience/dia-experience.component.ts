@@ -22,7 +22,6 @@ export class DiaExperienceComponent implements OnInit {
     this.data.endMonth = null;
     this.data.endYear = null;
     this.data.description = "";
-    console.log(this.data);
   }
   save() {
     this.dialogRef.close();

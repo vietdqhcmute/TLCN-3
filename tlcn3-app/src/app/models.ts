@@ -34,7 +34,7 @@ export interface Social {
     _id: string;
 }
 
-export interface Experience {
+export class Experience {
     title: string;
     description?: string;
     startMonth: number;
@@ -44,7 +44,26 @@ export interface Experience {
     current: boolean;
     company_name: string;
     _id: string;
-
+    constructor (
+        company_name: string,
+        title: string,
+        startMonth: number,
+        startYear: number,
+        endMonth: number,
+        endYear: number,
+        current: boolean,
+        description: string
+        ){
+            this.company_name= company_name;
+            this.title =title;
+            this.description =description;
+            this.startMonth = startMonth;
+            this.endMonth = endMonth;
+            this.startYear = startYear;
+            this.endYear = endYear;
+            this.current = current;
+        };
+    
 }
 
 export interface Education {
