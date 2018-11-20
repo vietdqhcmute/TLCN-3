@@ -17,10 +17,10 @@ export class DiaExperienceComponent implements OnInit {
     this.data.company_name= "";
     this.data.title = "";
     this.data.current = false;
-    this.data.startDate.month = null;
-    this.data.startDate.year = null;
-    this.data.endDate.month = null;
-    this.data.endDate.year = null;
+    this.data.startMonth = null;
+    this.data.startYear = null;
+    this.data.endMonth = null;
+    this.data.endYear = null;
     this.data.description = "";
     console.log(this.data);
   }

@@ -37,8 +37,10 @@ export interface Social {
 export interface Experience {
     title: string;
     description?: string;
-    startDate: YearAndMonth;
-    endDate?: YearAndMonth;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     current: boolean;
     company_name: string;
     _id: string;
@@ -48,8 +50,10 @@ export interface Experience {
 export interface Education {
     school: string;
     major: string;
-    startDate: YearAndMonth;
-    endDate?: YearAndMonth;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     current?: boolean;
     degree?: string;
     _id: string;
@@ -60,21 +64,12 @@ export interface Project {
     name: string;
     description: string;
     imageUrl?: string;
-    startDate: YearAndMonth;
-    endDate?: YearAndMonth;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     current?: boolean;
     web?: string;
-    tags?: Array<Tag>;
     _id: string;
 
-}
-
-export interface Tag {
-    name: string;
-    highlighted: boolean;
-}
-
-export interface YearAndMonth {
-    year: number,
-    month: number;
 }

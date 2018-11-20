@@ -14,7 +14,6 @@ import {
 } from "@angular/material";
 
 import { Resume, User } from "../models";
-import { ResumeService } from "../resume.service";
 import { Experience } from "../models";
 import { DataService } from "../data.service";
 import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
@@ -31,7 +30,6 @@ export class PageGetInfoComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private viewContainerRef: ViewContainerRef,
-    public resumeService: ResumeService,
     private data: DataService
   ) {}
   ngOnInit() {
