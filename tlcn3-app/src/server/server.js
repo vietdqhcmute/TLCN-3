@@ -4,11 +4,11 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
-const key = require('./key');
 var cookieSession = require('cookie-session');
 var session = require('express-session');
 var passport = require('passport');
 
+const key = require('./key');
 const Resume = require('./resumeModel');
 const app = express();
 
@@ -74,12 +74,12 @@ passport.use(new GoogleStrategy({
         console.log(user);
         done(null, user);
       } else {
-        //If user haven't exist
+        //If user haven't exist, create new one
         newUser = new Resume();
         newUser.googleId = profile._json.id;
         newUser.googleName = profile._json.displayName;
         newUser.avatarURL = profile._json.image.url;
-        //save user to database
+        //save created user to database
         newUser.save(err => {
           if (err) {
             throw err;
@@ -90,8 +90,6 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
-
 
 //Morgan
 app.use(morgan('dev'));
