@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
+import { Experience } from "../models";
 
 @Component({
   selector: "app-dia-experience",
@@ -7,8 +8,9 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
   styleUrls: ["./dia-experience.component.scss"]
 })
 export class DiaExperienceComponent implements OnInit {
-  constructor(private dialogRef: MatDialogRef<DiaExperienceComponent>) {}
-
+  constructor(private dialogRef: MatDialogRef<DiaExperienceComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Experience) {}
+    
   ngOnInit() {}
   save() {
     this.dialogRef.close();
