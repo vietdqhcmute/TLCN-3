@@ -1,11 +1,11 @@
-export interface User{
+export class User{
     resume: Resume;
     googleId: string;
     googleName: string;
     avatarURL: string;
     _id: string;
 }
-export interface Resume {
+export class Resume {
     name: string;
     title: string;
     summary: string;
@@ -66,7 +66,7 @@ export class Experience {
     
 }
 
-export interface Education {
+export class Education {
     school: string;
     major: string;
     startMonth: number;
@@ -76,10 +76,27 @@ export interface Education {
     current?: boolean;
     degree?: string;
     _id: string;
-
+    constructor(
+        school: string,
+        major: string,
+        startMonth: number,
+        startYear: number,
+        endMonth: number,
+        endYear: number,
+        current: boolean,
+        degree: string){
+            this.school =school;
+            this.major = major;
+            this.startMonth = startMonth;
+            this.endMonth = endMonth;
+            this.startYear = startYear;
+            this.endYear = endYear;
+            this.current = current;
+            this.degree = degree;
+    }
 }
 
-export interface Project {
+export class Project {
     name: string;
     description: string;
     imageUrl?: string;
@@ -91,4 +108,24 @@ export interface Project {
     web?: string;
     _id: string;
 
+    constructor(
+        name: string,
+        description: string,
+        startMonth: number,
+        startYear: number,
+        endMonth: number,
+        endYear: number,
+        current: boolean,
+        imageUrl: string,
+        web: string){
+            this.name =name;
+            this.description = description;
+            this.startMonth = startMonth;
+            this.endMonth = endMonth;
+            this.startYear = startYear;
+            this.endYear = endYear;
+            this.current = current;
+            this.imageUrl = imageUrl;
+            this.web = web;
+    }
 }

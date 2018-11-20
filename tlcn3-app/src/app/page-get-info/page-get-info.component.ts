@@ -13,7 +13,7 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material";
 
-import { Resume, User } from "../models";
+import { Resume, User, Education, Project } from "../models";
 import { Experience } from "../models";
 import { DataService } from "../data.service";
 import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
@@ -42,12 +42,43 @@ export class PageGetInfoComponent implements OnInit {
       this.resume$ = this.user$.resume;
     });
   }
-  addNewExperience() {
-    let newExperience: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
+  //Adding
+  addNewObject(type: string){
+    switch (type){
+      case "Experience":{
+        let newItem: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
 
-    this.resume$.experience.push(newExperience);
+        this.resume$.experience.push(newItem);
+        break;
+      }
+
+      case "Education":{
+        let newItem: Education = new Education(  "School name",  "Major",  1,  2010,  2,  2010,  false,  "degree" );
+
+        this.resume$.education.push(newItem);
+        break;
+      }
+
+      case "Project":{
+        let newItem: Project = new Project(  "Project Name",  "Description", 1,  2010,  2,  2010,  false, "imageURL","webURL" );
+
+        this.resume$.project.push(newItem);
+        break;
+      }
+
+    }
+    //Finally
     this.user.updateUserByID(this.user$._id, this.user$);
   }
+
+  // addNewExperience() {
+  //   let newExperience: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
+
+  //   this.resume$.experience.push(newExperience);
+  //   this.user.updateUserByID(this.user$._id, this.user$);
+  // }
+  
+  //Detail
   openDetailExperience() {
     //openDialog
     const dialogConfig = new MatDialogConfig();
@@ -64,7 +95,7 @@ export class PageGetInfoComponent implements OnInit {
     });
   }
 
-  //Delete
+  //Deleting
   deleteExperience(experienceID) {
     let index = this.resume$.experience.findIndex(
       index => index._id === experienceID
