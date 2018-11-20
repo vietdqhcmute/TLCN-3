@@ -29,7 +29,7 @@ let resumeSchema = new mongoose.Schema({
       current: Boolean,
       title: String,
       location: String,
-      description: [String]
+      description: String
     }],
     education: [{
       school_name: String,

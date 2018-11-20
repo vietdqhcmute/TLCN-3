@@ -36,11 +36,11 @@ export interface Social {
 
 export interface Experience {
     title: string;
-    summary?: string;
+    description?: string;
     startDate: YearAndMonth;
     endDate?: YearAndMonth;
     current: boolean;
-    company: string;
+    company_name: string;
     _id: string;
 
 }

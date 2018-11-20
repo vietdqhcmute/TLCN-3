@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { Experience } from "../models";
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: "app-dia-experience",
@@ -8,10 +9,21 @@ import { Experience } from "../models";
   styleUrls: ["./dia-experience.component.scss"]
 })
 export class DiaExperienceComponent implements OnInit {
-  constructor(private dialogRef: MatDialogRef<DiaExperienceComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Experience) {}
+  constructor(private dialogRef: MatDialogRef<DiaExperienceComponent>, @Inject(MAT_DIALOG_DATA) public data: Experience) {
+  }
     
-  ngOnInit() {}
+  ngOnInit() {
+    this.data._id = uuid();     
+    this.data.company_name= "";
+    this.data.title = "";
+    this.data.current = false;
+    this.data.startDate.month = null;
+    this.data.startDate.year = null;
+    this.data.endDate.month = null;
+    this.data.endDate.year = null;
+    this.data.description = "";
+    console.log(this.data);
+  }
   save() {
     this.dialogRef.close();
   }
