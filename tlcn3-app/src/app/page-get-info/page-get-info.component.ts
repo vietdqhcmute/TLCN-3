@@ -43,35 +43,64 @@ export class PageGetInfoComponent implements OnInit {
     });
   }
   //Adding
-  addNewObject(type: string){
-    switch (type){
-      case "Experience":{
-        let newItem: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
+  addNewObject(type: string) {
+    switch (type) {
+      case "Experience": {
+        let newItem: Experience = new Experience(
+          "Company name",
+          "Title",
+          1,
+          2010,
+          2,
+          2010,
+          false,
+          "Description"
+        );
 
         this.resume$.experience.push(newItem);
         break;
       }
 
-      case "Education":{
-        let newItem: Education = new Education(  "School name",  "Major",  1,  2010,  2,  2010,  false,  "degree" );
+      case "Education": {
+        let newItem: Education = new Education(
+          "School name",
+          "Major",
+          1,
+          2010,
+          2,
+          2010,
+          false,
+          "degree"
+        );
 
         this.resume$.education.push(newItem);
         break;
       }
 
-      case "Project":{
-        let newItem: Project = new Project(  "Project Name",  "Description", 1,  2010,  2,  2010,  false, "imageURL","webURL" );
+      case "Project": {
+        let newItem: Project = new Project(
+          "Project Name",
+          "Description",
+          1,
+          2010,
+          2,
+          2010,
+          false,
+          "imageURL",
+          "webURL"
+        );
 
         this.resume$.project.push(newItem);
         break;
       }
-
     }
     //Finally
-
     this.user.updateUserByID(this.user$._id, this.user$);
   }
-  
+  addNewSkill() {
+    let newSkill: string = "New Skill";
+    this.resume$.skill.push(newSkill);
+  }
   //Detail
   openDetailExperience() {
     //openDialog
@@ -90,9 +119,9 @@ export class PageGetInfoComponent implements OnInit {
   }
 
   //Deleting
-  deleteObjectByID(ID,type:string){
-    switch (type){
-      case "Experience":{
+  deleteObjectByID(ID, type: string) {
+    switch (type) {
+      case "Experience": {
         let index = this.resume$.experience.findIndex(
           index => index._id === ID
         );
@@ -100,24 +129,25 @@ export class PageGetInfoComponent implements OnInit {
         break;
       }
 
-      case "Education":{
-        let index = this.resume$.education.findIndex(
-          index => index._id === ID
-        );
+      case "Education": {
+        let index = this.resume$.education.findIndex(index => index._id === ID);
         this.resume$.education.splice(index, 1);
         break;
       }
 
-      case "Project":{
-        let index = this.resume$.project.findIndex(
-          index => index._id === ID
-        );
+      case "Project": {
+        let index = this.resume$.project.findIndex(index => index._id === ID);
         this.resume$.project.splice(index, 1);
         break;
       }
-
     }
   }
 
-  // 
+  deleteSkill(item) {
+    let index = this.resume$.skill.findIndex(
+      skill => skill.toString() === item
+    );
+    this.resume$.skill.splice(index, 1);
+  }
+  //
 }
