@@ -102,19 +102,22 @@ export class PageGetInfoComponent implements OnInit {
     this.resume$.skill.push(newSkill);
   }
   //Detail
-  openDetailExperience() {
+  openDetailExperience(experienceID) {
+    let index = this.resume$.experience.findIndex(
+      index => index._id === experienceID
+    );
+    console.log(this.resume$.experience[index]);
     //openDialog
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
 
-    dialogConfig.data = {};
+    dialogConfig.data = this.resume$.experience[index];
 
     const dialogRef = this.dialog.open(DiaExperienceComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.resume$.experience.push(result);
+      console.log(`Dialog result: ${result}`);
     });
   }
 

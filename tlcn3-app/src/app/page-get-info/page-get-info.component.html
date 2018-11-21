@@ -3,6 +3,7 @@
   <div class="item">
     <mat-form-field>
       <input matInput placeholder="Your name" value="{{resume$.contact.name}}" [(ngModel)]="resume$.contact.name">
+      <mat-hint align="endYear">e.g Do Quoc Viet</mat-hint>
     </mat-form-field>
   </div>
 
@@ -70,7 +71,7 @@
     <ul>
       <li *ngFor="let item of resume$.experience">
         <div>
-          <a routerLink="">{{item.company_name}}</a>
+          <a [routerLink]="xxx" (click)="openDetailExperience(item._id)">{{item.company_name}}</a>
           <p>{{item.title}}</p>
         </div>
         <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Experience")'>x</button>
