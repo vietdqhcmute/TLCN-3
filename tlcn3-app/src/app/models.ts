@@ -67,7 +67,7 @@ export class Experience {
 }
 
 export class Education {
-    school: string;
+    school_name: string;
     major: string;
     startMonth: number;
     startYear: number;
@@ -85,7 +85,7 @@ export class Education {
         endYear: number,
         current: boolean,
         degree: string){
-            this.school =school;
+            this.school_name =school;
             this.major = major;
             this.startMonth = startMonth;
             this.endMonth = endMonth;
