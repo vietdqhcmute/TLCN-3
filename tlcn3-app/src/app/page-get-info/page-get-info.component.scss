@@ -7,18 +7,15 @@
   padding-right: 10px;
 
   .item {
-    margin-bottom: 20px;
-    margin-top: 20px;
-
-    input {
+    mat-form-field {
       width: 100%;
-    }
-  }
+      font-size: 16;
 
-  .preview {
-    input {
-      width: 100%;
+      input {
+        width: 100%;
+      }
     }
+
   }
 
   a {
@@ -27,8 +24,105 @@
 
   #Contact {}
 
-  #Objective {}
+  #Experience {
+    .list-experience {
+      background: #f1efef;
 
-  #Experience {}
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
 
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          a {
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #00A8FF;
+          }
+        }
+      }
+    }
+  }
+
+  #Education {
+    .list-education {
+      background: #f1efef;
+
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          a {
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #00A8FF;
+          }
+
+          p {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  #Project {
+    .list-project {
+      background: #f1efef;
+
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          a {
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #00A8FF;
+          }
+
+          p {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  #Skill {
+    .list-skills {
+      background: #f1efef;
+
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 10px;
+
+          p {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
 }

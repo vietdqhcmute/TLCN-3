@@ -1,10 +1,11 @@
-export interface User{
+export class User{
     resume: Resume;
-    idFacebook: string;
-    facebookName: string;
+    googleId: string;
+    googleName: string;
     avatarURL: string;
+    _id: string;
 }
-export interface Resume {
+export class Resume {
     name: string;
     title: string;
     summary: string;
@@ -13,9 +14,9 @@ export interface Resume {
     pictureUrl?: string;
     social: Array<Social>;
     experience: Array<Experience>;
-    educations: Array<Education>;
-    projects: Array<Project>;
-    skills: Array<String>;
+    education: Array<Education>;
+    project: Array<Project>;
+    skill: Array<String>;
 }
 
 export enum SocialType {
@@ -30,43 +31,101 @@ export enum SocialType {
 export interface Social {
     type: SocialType;
     url: string;
+    _id: string;
 }
 
-export interface Experience {
+export class Experience {
     title: string;
-    summary?: string;
-    startDate: YearAndMonth;
-    endDate?: YearAndMonth;
+    description?: string;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     current: boolean;
-    company: string;
+    company_name: string;
+    _id: string;
+    constructor (
+        company_name: string,
+        title: string,
+        startMonth: number,
+        startYear: number,
+        endMonth: number,
+        endYear: number,
+        current: boolean,
+        description: string
+        ){
+            this.company_name= company_name;
+            this.title =title;
+            this.description =description;
+            this.startMonth = startMonth;
+            this.endMonth = endMonth;
+            this.startYear = startYear;
+            this.endYear = endYear;
+            this.current = current;
+        };
+    
 }
 
-export interface Education {
-    school: string;
+export class Education {
+    school_name: string;
     major: string;
-    startDate: YearAndMonth;
-    endDate?: YearAndMonth;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     current?: boolean;
     degree?: string;
+    _id: string;
+    constructor(
+        school: string,
+        major: string,
+        startMonth: number,
+        startYear: number,
+        endMonth: number,
+        endYear: number,
+        current: boolean,
+        degree: string){
+            this.school_name =school;
+            this.major = major;
+            this.startMonth = startMonth;
+            this.endMonth = endMonth;
+            this.startYear = startYear;
+            this.endYear = endYear;
+            this.current = current;
+            this.degree = degree;
+    }
 }
 
-export interface Project {
+export class Project {
     name: string;
     description: string;
     imageUrl?: string;
-    startDate: YearAndMonth;
-    endDate?: YearAndMonth;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
     current?: boolean;
     web?: string;
-    tags?: Array<Tag>;
-}
+    _id: string;
 
-export interface Tag {
-    name: string;
-    highlighted: boolean;
-}
-
-export interface YearAndMonth {
-    year: number,
-    month: number;
+    constructor(
+        name: string,
+        description: string,
+        startMonth: number,
+        startYear: number,
+        endMonth: number,
+        endYear: number,
+        current: boolean,
+        imageUrl: string,
+        web: string){
+            this.name =name;
+            this.description = description;
+            this.startMonth = startMonth;
+            this.endMonth = endMonth;
+            this.startYear = startYear;
+            this.endYear = endYear;
+            this.current = current;
+            this.imageUrl = imageUrl;
+            this.web = web;
+    }
 }

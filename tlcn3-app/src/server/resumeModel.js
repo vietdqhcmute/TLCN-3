@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 let resumeSchema = new mongoose.Schema({
-  idFacebook: String,
-  facebookName: String,
+  googleId: String,
+  googleName: String,
   avatarURL: String,
   resume: {
     contact: {
@@ -18,30 +18,22 @@ let resumeSchema = new mongoose.Schema({
     },
     experience: [{
       company_name: String,
-      startDate: {
-        month: Number,
-        year: Number
-      },
-      endDate: {
-        month: Number,
-        year: Number
-      },
+      startMonth: Number,
+      startYear: Number,
+      endMonth: Number,
+      endYear: Number,
       current: Boolean,
       title: String,
       location: String,
-      description: [String]
+      description: String
     }],
     education: [{
       school_name: String,
       major: String,
-      startDate: {
-        month: Number,
-        year: Number
-      },
-      endDate: {
-        month: Number,
-        year: Number
-      },
+      startMonth: Number,
+      startYear: Number,
+      endMonth: Number,
+      endYear: Number,
       current: Boolean,
     }],
     skill: [String],
@@ -53,14 +45,10 @@ let resumeSchema = new mongoose.Schema({
       name: String,
       description: String,
       imageUrl: String,
-      startDate: {
-        month: Number,
-        year: Number
-      },
-      endDate: {
-        month: Number,
-        year: Number
-      },
+      startMonth: Number,
+      startYear: Number,
+      endMonth: Number,
+      endYear: Number,
       current: Boolean,
       web: String
     }]

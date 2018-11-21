@@ -3,15 +3,16 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
-
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var cookieSession = require('cookie-session');
 var session = require('express-session');
 var passport = require('passport');
-var FacebookStategy = require('passport-facebook');
 
+const key = require('./key');
+const Resume = require('./resumeModel');
 const app = express();
 
 var connectionString = 'mongodb://lytutronga6:lytutronga6@tlcn-1-shard-00-00-looeq.mongodb.net:27017,tlcn-1-shard-00-01-looeq.mongodb.net:27017,tlcn-1-shard-00-02-looeq.mongodb.net:27017/test?ssl=true&replicaSet=TLCN-1-shard-0&authSource=admin&retryWrites=true';
-// var connectionString = 'mongodb://lytutronga6:lytutronga6@ds147073.mlab.com:47073/cv-db';
 
 // connection to db
 mongoose.connect(connectionString, {
@@ -36,21 +37,59 @@ app.use(session({
   saveUninitialized: true,
   resave: true
 }))
-//Passport
+//Cookie
+// app.use(
+//   cookieSession({
+//     maxAge: 30 * 24 * 60 * 60 * 1000,
+//     keys: [keys.cookieKey]
+//   })
+// );
 app.use(passport.initialize());
 app.use(passport.session());
 
-var FACEBOOK_APP_ID = '1386959521460047',
-  FACEBOOK_APP_SECRET = '7d7217dfa3df7caa80dacd92c3b798c6';
-var fbOpts = {
-  clientID: FACEBOOK_APP_ID,
-  clientSecret: FACEBOOK_APP_SECRET,
-  callbackURL: 'http://localhost:3000/auth/facebook/callback'
-}
-var fbCallback = function (accessToken, refreshToken, profile, cb) {
-  console.log(accessToken, refreshToken, profile);
-}
-passport.use(new FacebookStategy(fbOpts, fbCallback));
+//Passport
+passport.serializeUser((user, done) => {
+  done(null, user.googleId);
+});
+
+passport.deserializeUser((id, done) => {
+  Resume.findById(id)
+    .then(user => {
+      done(null, user);
+    })
+});
+//Google
+passport.use(new GoogleStrategy({
+    clientID: key.googleClientID,
+    clientSecret: key.googleClientSecret,
+    callbackURL: '/auth/google/callback'
+  },
+  function (accessToken, refreshToken, profile, done) {
+    Resume.findOne({ googleId: profile._json.id }, (err, user) => {
+      if (err) {
+        console.log(err);
+        done(err);
+      } else
+      if (user) {
+        console.log(user);
+        done(null, user);
+      } else {
+        //If user haven't exist, create new one
+        newUser = new Resume();
+        newUser.googleId = profile._json.id;
+        newUser.googleName = profile._json.displayName;
+        newUser.avatarURL = profile._json.image.url;
+        //save created user to database
+        newUser.save(err => {
+          if (err) {
+            throw err;
+          }
+          return done(null, newUser);
+        });
+      }
+    });
+  }
+));
 
 //Morgan
 app.use(morgan('dev'));
@@ -61,6 +100,8 @@ app.use(express.urlencoded({
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+
   next();
 });
 // routes

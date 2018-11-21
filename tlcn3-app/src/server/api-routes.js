@@ -37,12 +37,12 @@ router.delete('/delete/user/:id', async (req, res) => {
   }
 });
 
-router.post('/update/user/:id', async (req, res) => {
+router.put('/update/user/:id', async (req, res) => {
   try {
-    await Resume.findByIdAndUpdate({
-      _id: req.params.id
-    }, req.body, {
-      new: true
+    await Resume.findByIdAndUpdate({_id: req.params.id}, req.body, {
+      upsert: true,
+      new: true,
+      setDefaultsOnInsert: true
     });
     res.status(200).json({
       message: "Update successfully"
@@ -53,16 +53,14 @@ router.post('/update/user/:id', async (req, res) => {
   }
 });
 
-router.get('/auth/facebook/callback', (req, res) => {
-  res.send("This check status on request! That's good!");
+//Google path
+router.get('/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
+  }));
+
+router.get('/auth/google/callback', passport.authenticate('google'), function(req,res){
+  res.send("It's OK!");
 });
-
-router.get('/login/facebook', passport.authenticate('facebook', (err, user, info) => {
-  console.log(err, user, info);
-  if (err) {
-    throw err;
-  }
-
-}));
 
 module.exports = router;

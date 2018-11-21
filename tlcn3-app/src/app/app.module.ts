@@ -14,7 +14,7 @@ import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
 import { PageEditorComponent } from "./page-editor/page-editor.component";
 import { PageTemplateComponent } from "./page-template/page-template.component";
 import { PageToolbarComponent } from "./page-toolbar/page-toolbar.component";
-import 'hammerjs';
+import "hammerjs";
 
 import {
   MatSelectModule,
@@ -31,9 +31,11 @@ import {
   MatCheckboxModule,
   MatChipsModule,
   MatMenuModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatTabsModule
 } from "@angular/material";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DiaExperienceComponent } from "./dia-experience/dia-experience.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageGetInfoComponent,
     PageEditorComponent,
     PageTemplateComponent,
-    PageToolbarComponent
+    PageToolbarComponent,
+    DiaExperienceComponent
   ],
   imports: [
     BrowserModule,
@@ -68,9 +71,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatChipsModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatTabsModule,
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DiaExperienceComponent]
 })
 export class AppModule {}

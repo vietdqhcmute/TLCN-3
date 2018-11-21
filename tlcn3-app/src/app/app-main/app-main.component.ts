@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { UserService } from "../user.service";
 import { Location } from '@angular/common';
-import { Resume } from "../models";
+import { Resume, User } from "../models";
 import { DataService } from "../data.service";
 
 @Component({
@@ -11,16 +11,16 @@ import { DataService } from "../data.service";
   styleUrls: ["./app-main.component.scss"]
 })
 export class AppMainComponent implements OnInit {
-  user$: Object;
-  resume$: Resume;
+  resume$: Resume; // resume$ is part of user$, just create new variable in order to make it easy to read
+  user$: User;
   constructor(private data: DataService) {
     
   }
 
   ngOnInit() {
-    this.data.currentResume.subscribe(result=>{
-      this.resume$=result;
+    this.data.currentUser.subscribe(result=>{
+      this.user$=result;
+      this.resume$=this.user$.resume;
     });
-
   }
 }
