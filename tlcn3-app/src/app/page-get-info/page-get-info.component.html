@@ -91,6 +91,30 @@
 <br>
 <br>
 
+
+<section id="Project">
+  <h3>Project</h3>
+  <div class="list-project">
+    <ul>
+      <li *ngFor="let item of resume$.project">
+            <a routerLink="details/{{item.id}}">{{item.name}}</a>
+            <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
+      </li>
+    </ul>
+  </div>
+  <div class="item">
+    <input type="button" class="btn btn-primary preview" value="Add Another Project" (click)='addNewObject("Project")'>
+  </div>
+  <!-- <div class="item">
+    <input type="button" class="btn btn-outline-danger preview" value="Preview">
+  </div>
+
+  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
+  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
+</section>
+<br>
+<br>
+<br>
 <section id="Education">
   <h3>Education</h3>
   <div class="list-education">
@@ -122,29 +146,6 @@
 <br>
 <br>
 
-<section id="Project">
-  <h3>Project</h3>
-  <div class="list-project">
-    <ul>
-      <li *ngFor="let item of resume$.project">
-            <a routerLink="details/{{item.id}}">{{item.name}}</a>
-            <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
-      </li>
-    </ul>
-  </div>
-  <div class="item">
-    <input type="button" class="btn btn-primary preview" value="Add Another Project" (click)='addNewObject("Project")'>
-  </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
-</section>
-<br>
-<br>
-<br>
 
 <section id="Skill">
   <h3>Skill</h3>

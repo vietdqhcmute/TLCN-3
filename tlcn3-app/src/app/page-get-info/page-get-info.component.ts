@@ -119,31 +119,5 @@ export class PageGetInfoComponent implements OnInit {
     }
   }
 
-  // deleteExperience(experienceID) {
-  //   let index = this.resume$.experience.findIndex(
-  //     index => index._id === experienceID
-  //   );
-  //   this.resume$.experience.splice(index, 1);
-  // }
-
-  // deleteEducation(educationID) {
-  //   let index = this.resume$.experience.findIndex(
-  //     index => index._id === educationID
-  //   );
-  //   this.resume$.education.splice(index, 1);
-  // }
-
-  // deleteProject(projectID) {
-  //   let index = this.resume$.project.findIndex(
-  //     index => index._id === projectID
-  //   );
-  //   this.resume$.project.splice(index, 1);
-  // }
-
-  // deleteSkill(item) {
-  //   let index = this.resume$.skill.findIndex(
-  //     index => index.toString() === item
-  //   );
-  //   this.resume$.skill.splice(index, 1);
-  // }
+  // 
 }
