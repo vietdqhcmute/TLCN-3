@@ -18,4 +18,7 @@ export class DiaExperienceComponent implements OnInit {
   onClose() {
     this.dialogRef.close();
   }
+  onSave(){
+    
+  }
 }

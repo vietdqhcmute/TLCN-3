@@ -56,8 +56,8 @@ export class PageGetInfoComponent implements OnInit {
           false,
           "Description"
         );
-
         this.resume$.experience.push(newItem);
+        this.openDetailExperience(newItem);
         break;
       }
 
@@ -102,17 +102,17 @@ export class PageGetInfoComponent implements OnInit {
     this.resume$.skill.push(newSkill);
   }
   //Detail
-  openDetailExperience(experienceID) {
-    let index = this.resume$.experience.findIndex(
-      index => index._id === experienceID
-    );
-    console.log(this.resume$.experience[index]);
+  openDetailExperience(item:Experience) {
+    // let index = this.resume$.experience.findIndex(
+    //   index => index._id === experienceID
+    // );
+
     //openDialog
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
 
-    dialogConfig.data = this.resume$.experience[index];
+    dialogConfig.data = item;
 
     const dialogRef = this.dialog.open(DiaExperienceComponent, dialogConfig);
 
