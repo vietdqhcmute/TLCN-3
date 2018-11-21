@@ -31,7 +31,12 @@
         .section{
           margin-bottom: 10px;
         }
-        #contact-area {}
+        #contact-area {
+          .resume-title{
+            font-size: 22;
+            font-weight: bold;
+          }
+        }
 
         #objective-area {}
 
