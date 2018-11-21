@@ -73,7 +73,7 @@
           <a routerLink="">{{item.company_name}}</a>
           <p>{{item.title}}</p>
         </div>
-        <button class="btn btn-danger float-right" (click)='deleteExperience(item._id)'>x</button>
+        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Experience")'>x</button>
       </li>
     </ul>
   </div>
@@ -103,7 +103,7 @@
         </div>
 
         <p>{{item.startMonth}}-{{item.startYear}}-{{item.endMonth}}-{{item.endYear}}</p>
-        <button class="btn btn-danger float-right" (click)='deleteEducation(item._id)'>x</button>
+        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Education")'>x</button>
       </li>
     </ul>
   </div>
@@ -128,7 +128,7 @@
     <ul>
       <li *ngFor="let item of resume$.project">
             <a routerLink="details/{{item.id}}">{{item.name}}</a>
-            <button class="btn btn-danger float-right" (click)='deleteProject(item._id)'>x</button>
+            <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
       </li>
     </ul>
   </div>

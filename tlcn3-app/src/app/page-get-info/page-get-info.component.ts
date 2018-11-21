@@ -68,15 +68,9 @@ export class PageGetInfoComponent implements OnInit {
 
     }
     //Finally
+
     this.user.updateUserByID(this.user$._id, this.user$);
   }
-
-  // addNewExperience() {
-  //   let newExperience: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
-
-  //   this.resume$.experience.push(newExperience);
-  //   this.user.updateUserByID(this.user$._id, this.user$);
-  // }
   
   //Detail
   openDetailExperience() {
@@ -96,31 +90,60 @@ export class PageGetInfoComponent implements OnInit {
   }
 
   //Deleting
-  deleteExperience(experienceID) {
-    let index = this.resume$.experience.findIndex(
-      index => index._id === experienceID
-    );
-    this.resume$.experience.splice(index, 1);
+  deleteObjectByID(ID,type:string){
+    switch (type){
+      case "Experience":{
+        let index = this.resume$.experience.findIndex(
+          index => index._id === ID
+        );
+        this.resume$.experience.splice(index, 1);
+        break;
+      }
+
+      case "Education":{
+        let index = this.resume$.education.findIndex(
+          index => index._id === ID
+        );
+        this.resume$.education.splice(index, 1);
+        break;
+      }
+
+      case "Project":{
+        let index = this.resume$.project.findIndex(
+          index => index._id === ID
+        );
+        this.resume$.project.splice(index, 1);
+        break;
+      }
+
+    }
   }
 
-  deleteEducation(educationID) {
-    let index = this.resume$.experience.findIndex(
-      index => index._id === educationID
-    );
-    this.resume$.education.splice(index, 1);
-  }
+  // deleteExperience(experienceID) {
+  //   let index = this.resume$.experience.findIndex(
+  //     index => index._id === experienceID
+  //   );
+  //   this.resume$.experience.splice(index, 1);
+  // }
 
-  deleteProject(projectID) {
-    let index = this.resume$.project.findIndex(
-      index => index._id === projectID
-    );
-    this.resume$.project.splice(index, 1);
-  }
+  // deleteEducation(educationID) {
+  //   let index = this.resume$.experience.findIndex(
+  //     index => index._id === educationID
+  //   );
+  //   this.resume$.education.splice(index, 1);
+  // }
 
-  deleteSkill(item) {
-    let index = this.resume$.skill.findIndex(
-      index => index.toString() === item
-    );
-    this.resume$.skill.splice(index, 1);
-  }
+  // deleteProject(projectID) {
+  //   let index = this.resume$.project.findIndex(
+  //     index => index._id === projectID
+  //   );
+  //   this.resume$.project.splice(index, 1);
+  // }
+
+  // deleteSkill(item) {
+  //   let index = this.resume$.skill.findIndex(
+  //     index => index.toString() === item
+  //   );
+  //   this.resume$.skill.splice(index, 1);
+  // }
 }
