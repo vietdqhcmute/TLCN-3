@@ -71,6 +71,15 @@
         </div>
 
       </div>
+<!-- skill -->
+      <div id="skill-area" *ngIf="resume.skill && resume.skill.length">
+        <h5><strong>Skill</strong></h5>
+
+        <div *ngFor="let item of resume.skill">
+          <p>- {{item}}</p>
+        </div>
+      </div>      
+
     </div>
     <!--a4-zone -->
     <br />
