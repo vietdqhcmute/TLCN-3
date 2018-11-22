@@ -42,7 +42,7 @@
 
       <div id="project-area" class="section" *ngIf="resume.project && resume.project.length">
           <h5><strong>Project</strong></h5>
-          <div *ngFor="let item of resume.project">
+          <div *ngFor="let item of resume.project" class="project-item">
 
             <div id="projectName-date">
               <p><strong>{{item.name}}</strong></p>
@@ -59,7 +59,7 @@
       <div id="education-area" *ngIf="resume.education && resume.education.length">
         <h5><strong>Education</strong></h5>
 
-        <div *ngFor="let item of resume.education">
+        <div *ngFor="let item of resume.education" class="education-item">
           <div id="education-date">
             <p><strong>{{item.school_name}}</strong></p>
             <p>{{item.startMonth}}-{{item.startYear}} - {{item.endMonth}}-{{item.endYear}}</p>

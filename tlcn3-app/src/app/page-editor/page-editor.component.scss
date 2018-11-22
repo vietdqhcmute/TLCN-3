@@ -64,6 +64,9 @@
         }
 
         #project-area {
+          .project-item{
+            margin-bottom: 5px;
+          }
           #projectName-date {
             display: flex;
             flex-direction: row;
@@ -72,6 +75,9 @@
         }
 
         #education-area {
+          .education-item{
+            margin-bottom: 5px;
+          }
           #education-date {
             display: flex;
             flex-direction: row;
