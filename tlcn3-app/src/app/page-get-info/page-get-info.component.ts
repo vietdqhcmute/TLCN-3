@@ -19,6 +19,8 @@ import { DataService } from "../data.service";
 import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
 import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 import { UserService } from "../user.service";
+import { DiaEducationComponent } from "../dia-education/dia-education.component";
+import { DiaProjectComponent } from "../dia-project/dia-project.component";
 
 @Component({
   selector: "app-page-get-info",
@@ -42,6 +44,47 @@ export class PageGetInfoComponent implements OnInit {
       this.resume$ = this.user$.resume;
     });
   }
+  //Detail is called in addNewObject
+  openDetail(item: Object, type: string) {
+    //config Dialog
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    //Binding data
+    dialogConfig.data = item;
+    //Open dialog
+    switch (type) {
+      case "Experience": {
+        const dialogRef = this.dialog.open(
+          DiaExperienceComponent,
+          dialogConfig
+        );
+        //after close dialog
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+        });
+        break;
+      }
+
+      case "Education": {
+        const dialogRef = this.dialog.open(DiaEducationComponent, dialogConfig);
+        //after close dialog
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+        });
+        break;
+      }
+
+      case "Project": {
+        const dialogRef = this.dialog.open(DiaProjectComponent, dialogConfig);
+        //after close dialog
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+        });
+        break;
+      }
+    }
+  }
   //Adding
   addNewObject(type: string) {
     switch (type) {
@@ -57,7 +100,7 @@ export class PageGetInfoComponent implements OnInit {
           "Description"
         );
         this.resume$.experience.push(newItem);
-        this.openDetailExperience(newItem);
+        this.openDetail(newItem, "Experience");
         break;
       }
 
@@ -74,6 +117,7 @@ export class PageGetInfoComponent implements OnInit {
         );
 
         this.resume$.education.push(newItem);
+        this.openDetail(newItem, "Education");
         break;
       }
 
@@ -91,6 +135,7 @@ export class PageGetInfoComponent implements OnInit {
         );
 
         this.resume$.project.push(newItem);
+        this.openDetail(newItem, "Project");
         break;
       }
     }
@@ -100,21 +145,6 @@ export class PageGetInfoComponent implements OnInit {
   addNewSkill() {
     let newSkill: string = "New Skill";
     this.resume$.skill.push(newSkill);
-  }
-  //Detail
-  openDetailExperience(item:Experience) {
-    //openDialog
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.hasBackdrop = true;
-
-    dialogConfig.data = item;
-
-    const dialogRef = this.dialog.open(DiaExperienceComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
   }
 
   //Deleting

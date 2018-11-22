@@ -8,17 +8,15 @@ import { Experience } from "../models";
   styleUrls: ["./dia-experience.component.scss"]
 })
 export class DiaExperienceComponent implements OnInit {
-  constructor(private dialogRef: MatDialogRef<DiaExperienceComponent>, @Inject(MAT_DIALOG_DATA) public data: Experience) {
-  }
-    
-  ngOnInit() {
-    
-  }
+  constructor(
+    private dialogRef: MatDialogRef<DiaExperienceComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Experience
+  ) {}
+
+  ngOnInit() {}
 
   onClose() {
     this.dialogRef.close();
   }
-  onSave(){
-    
-  }
+  onSave() {}
 }

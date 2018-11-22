@@ -71,7 +71,7 @@
     <ul>
       <li *ngFor="let item of resume$.experience">
         <div>
-          <a [routerLink]="xxx" (click)="openDetailExperience(item)">{{item.company_name}}</a>
+          <a [routerLink]="xxx" (click)="openDetail(item,'Experience')">{{item.company_name}}</a>
           <p>{{item.title}}</p>
         </div>
         <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Experience")'>x</button>
@@ -98,7 +98,7 @@
   <div class="list-project">
     <ul>
       <li *ngFor="let item of resume$.project">
-            <a routerLink="details/{{item.id}}">{{item.name}}</a>
+            <a [routerLink]="xxx" (click)="openDetail(item,'Project')">{{item.name}}</a>
             <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
       </li>
     </ul>
@@ -123,7 +123,7 @@
       <li *ngFor="let item of resume$.education">
 
         <div class="school-date">
-          <a routerLink="details/{{item.id}}">{{item.school_name}}</a>
+          <a [routerLink]="xxx" (click)="openDetail(item,'Education')">{{item.school_name}}</a>
           <p>{{item.major}}</p>
         </div>
 
