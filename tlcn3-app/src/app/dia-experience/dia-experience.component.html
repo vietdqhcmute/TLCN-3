@@ -11,7 +11,7 @@
   </mat-form-field>
 
 
-  <mat-checkbox color= "warn">Current</mat-checkbox>
+  <mat-checkbox [(checked)]='data.current' [(ngModel)]="data.current">Current</mat-checkbox>
   
   <div class="mat-experience-date">
     <mat-form-field>

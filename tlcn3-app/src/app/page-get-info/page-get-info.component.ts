@@ -103,10 +103,6 @@ export class PageGetInfoComponent implements OnInit {
   }
   //Detail
   openDetailExperience(item:Experience) {
-    // let index = this.resume$.experience.findIndex(
-    //   index => index._id === experienceID
-    // );
-
     //openDialog
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
@@ -117,7 +113,7 @@ export class PageGetInfoComponent implements OnInit {
     const dialogRef = this.dialog.open(DiaExperienceComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(result);
     });
   }
 
