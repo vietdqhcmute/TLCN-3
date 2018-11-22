@@ -21,7 +21,7 @@
 <!-- experience -->
       <div id="experience-area" *ngIf="resume.experience && resume.experience.length">
         <h5><strong>Experience</strong></h5>
-        <div *ngFor="let item of resume.experience">
+        <div *ngFor="let item of resume.experience" class="experience-item">
 
           <div id="experience-company-location">
             <p id="companyName"><strong>{{item.company_name | uppercase}}</strong></p>

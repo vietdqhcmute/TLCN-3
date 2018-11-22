@@ -41,6 +41,9 @@
         #objective-area {}
 
         #experience-area {
+          .experience-item{
+            margin-bottom: 5px;
+          }
           #experience-company-location {
             display: flex;
             flex-direction: row;
