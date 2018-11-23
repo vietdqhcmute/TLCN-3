@@ -38,6 +38,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DiaExperienceComponent } from "./dia-experience/dia-experience.component";
 import { DiaEducationComponent } from './dia-education/dia-education.component';
 import { DiaProjectComponent } from './dia-project/dia-project.component';
+import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { DiaProjectComponent } from './dia-project/dia-project.component';
     PageToolbarComponent,
     DiaExperienceComponent,
     DiaEducationComponent,
-    DiaProjectComponent
+    DiaProjectComponent,
+    ConvertToMonthPipe
   ],
   imports: [
     BrowserModule,
