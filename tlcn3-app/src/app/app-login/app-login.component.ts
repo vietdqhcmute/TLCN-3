@@ -8,6 +8,7 @@ import { PARAMETERS } from '@angular/core/src/util/decorators';
   styleUrls: ['./app-login.component.scss']
 })
 export class AppLoginComponent implements OnInit {
+  hide=true;
   constructor() {
    }
 
