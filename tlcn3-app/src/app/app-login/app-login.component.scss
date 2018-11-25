@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: 89.5vh;
+  background-image: url('../share/Graphic-Designer.jpg');
+  background-position: right top;
+  background-attachment: fixed;
+
+  .page {
+    padding: 20px;
+    background-color: #ECEFF1;
+    height: 89.5vh;
+    width: 80vh;
+    margin: 0 auto;
+  }
+
+  .sign-in {
+    display: flex;
+    flex-direction: row
+  }
+  .sign-up{
+    display: flex;
+    flex-direction: row
+
+  }
+  .mat-experience {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-experience-date {
+    display: flex;
+    flex-direction: row;
+  }
+
+}

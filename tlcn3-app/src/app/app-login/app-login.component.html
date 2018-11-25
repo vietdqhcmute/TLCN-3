@@ -1,3 +1,55 @@
-<p>
-  app-login works!
-</p>
+<div class="page">
+  <mat-tab-group mat-align-tabs="center">
+    <!-- Sign in -->
+    <mat-tab label="Sign in">
+      <div class="sign-in mat-experience alternate-theme">
+        <h3 style="margin: 0 auto">Welcome back!</h3>
+        <mat-form-field>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+
+        <mat-checkbox>Remember me!</mat-checkbox>
+        <mat-dialog-actions>
+          <button mat-button class="mat-raised-button mat-primary" [mat-dialog-close]="data" cdkFocusInitial>Sign In</button>
+        </mat-dialog-actions>
+      </div>
+
+    </mat-tab>
+
+    <!-- Sign up -->
+    <mat-tab label="Sign up">
+      <div class="sign-up mat-experience alternate-theme">
+        <h3 style="margin: 0 auto">Are you new?</h3>
+        <mat-form-field>
+          <input matInput placeholder="Name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Phone number">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Password">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Enter your password again">
+        </mat-form-field>
+
+        <mat-dialog-actions>
+          <button mat-button class="mat-raised-button mat-primary" [mat-dialog-close]="data" cdkFocusInitial>Sign up</button>
+        </mat-dialog-actions>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>

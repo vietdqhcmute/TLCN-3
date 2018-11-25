@@ -19,6 +19,8 @@ import { DataService } from "../data.service";
 import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
 import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 import { UserService } from "../user.service";
+import { DiaEducationComponent } from "../dia-education/dia-education.component";
+import { DiaProjectComponent } from "../dia-project/dia-project.component";
 
 @Component({
   selector: "app-page-get-info",
@@ -42,85 +44,139 @@ export class PageGetInfoComponent implements OnInit {
       this.resume$ = this.user$.resume;
     });
   }
-  //Adding
-  addNewObject(type: string){
-    switch (type){
-      case "Experience":{
-        let newItem: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
-
-        this.resume$.experience.push(newItem);
+  //Detail is called in addNewObject
+  openDetail(item: Object, type: string) {
+    //config Dialog
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    //Binding data
+    dialogConfig.data = item;
+    //Open dialog
+    switch (type) {
+      case "Experience": {
+        const dialogRef = this.dialog.open(
+          DiaExperienceComponent,
+          dialogConfig
+        );
+        //after close dialog
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+        });
         break;
       }
 
-      case "Education":{
-        let newItem: Education = new Education(  "School name",  "Major",  1,  2010,  2,  2010,  false,  "degree" );
+      case "Education": {
+        const dialogRef = this.dialog.open(DiaEducationComponent, dialogConfig);
+        //after close dialog
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+        });
+        break;
+      }
+
+      case "Project": {
+        const dialogRef = this.dialog.open(DiaProjectComponent, dialogConfig);
+        //after close dialog
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+        });
+        break;
+      }
+    }
+  }
+  //Adding
+  addNewObject(type: string) {
+    switch (type) {
+      case "Experience": {
+        let newItem: Experience = new Experience(
+          "Company name",
+          "Title",
+          1,
+          2010,
+          2,
+          2010,
+          false,
+          "Description"
+        );
+        this.resume$.experience.push(newItem);
+        this.openDetail(newItem, "Experience");
+        break;
+      }
+
+      case "Education": {
+        let newItem: Education = new Education(
+          "School name",
+          "Major",
+          1,
+          2010,
+          2,
+          2010,
+          false,
+          "degree"
+        );
 
         this.resume$.education.push(newItem);
+        this.openDetail(newItem, "Education");
         break;
       }
 
-      case "Project":{
-        let newItem: Project = new Project(  "Project Name",  "Description", 1,  2010,  2,  2010,  false, "imageURL","webURL" );
+      case "Project": {
+        let newItem: Project = new Project(
+          "Project Name",
+          "Description",
+          1,
+          2010,
+          2,
+          2010,
+          false,
+          "imageURL",
+          "webURL"
+        );
 
         this.resume$.project.push(newItem);
+        this.openDetail(newItem, "Project");
         break;
       }
-
     }
     //Finally
     this.user.updateUserByID(this.user$._id, this.user$);
   }
-
-  // addNewExperience() {
-  //   let newExperience: Experience = new Experience(  "Company name",  "Title",  1,  2010,  2,  2010,  false,  "Description" );
-
-  //   this.resume$.experience.push(newExperience);
-  //   this.user.updateUserByID(this.user$._id, this.user$);
-  // }
-  
-  //Detail
-  openDetailExperience() {
-    //openDialog
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.autoFocus = true;
-    dialogConfig.hasBackdrop = true;
-
-    dialogConfig.data = {};
-
-    const dialogRef = this.dialog.open(DiaExperienceComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.resume$.experience.push(result);
-    });
+  addNewSkill() {
+    let newSkill: string = "New Skill";
+    this.resume$.skill.push(newSkill);
   }
 
   //Deleting
-  deleteExperience(experienceID) {
-    let index = this.resume$.experience.findIndex(
-      index => index._id === experienceID
-    );
-    this.resume$.experience.splice(index, 1);
-  }
+  deleteObjectByID(ID, type: string) {
+    switch (type) {
+      case "Experience": {
+        let index = this.resume$.experience.findIndex(
+          index => index._id === ID
+        );
+        this.resume$.experience.splice(index, 1);
+        break;
+      }
 
-  deleteEducation(educationID) {
-    let index = this.resume$.experience.findIndex(
-      index => index._id === educationID
-    );
-    this.resume$.education.splice(index, 1);
-  }
+      case "Education": {
+        let index = this.resume$.education.findIndex(index => index._id === ID);
+        this.resume$.education.splice(index, 1);
+        break;
+      }
 
-  deleteProject(projectID) {
-    let index = this.resume$.project.findIndex(
-      index => index._id === projectID
-    );
-    this.resume$.project.splice(index, 1);
+      case "Project": {
+        let index = this.resume$.project.findIndex(index => index._id === ID);
+        this.resume$.project.splice(index, 1);
+        break;
+      }
+    }
   }
 
   deleteSkill(item) {
     let index = this.resume$.skill.findIndex(
-      index => index.toString() === item
+      skill => skill.toString() === item
     );
     this.resume$.skill.splice(index, 1);
   }
+  //
 }
