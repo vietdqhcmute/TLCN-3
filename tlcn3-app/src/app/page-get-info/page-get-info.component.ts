@@ -85,6 +85,7 @@ export class PageGetInfoComponent implements OnInit {
       }
     }
   }
+  
   //Adding
   addNewObject(type: string) {
     switch (type) {
@@ -145,6 +146,7 @@ export class PageGetInfoComponent implements OnInit {
   addNewSkill() {
     let newSkill: string = "New Skill";
     this.resume$.skill.push(newSkill);
+    this.openDetail(newSkill, "Skill");
   }
 
   //Deleting

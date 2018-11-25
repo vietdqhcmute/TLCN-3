@@ -151,7 +151,10 @@
   <div class="list-skills">
     <ul>
       <li *ngFor="let item of resume$.skill">
-            <a [routerLink]="xxx" >{{item}}</a>
+            <!-- <a [routerLink]="xxx" (click)="openSkillDetail(item)">{{item}}</a> -->
+            <mat-form-field>
+              <input matInput [(ngModel)]="item" placeholder="Skill">
+            </mat-form-field>
             <button class="btn btn-danger float-right" (click)='deleteSkill(item)'>x</button>
       </li>
     </ul>
