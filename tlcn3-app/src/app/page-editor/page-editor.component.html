@@ -30,7 +30,8 @@
 
           <div id="experience-title-time">
             <p><strong>{{item.title}}</strong></p>
-            <p><strong>{{item.startMonth | convertToMonth}}-{{item.startYear}} - {{item.endMonth| convertToMonth}}-{{item.endYear}}</strong></p>
+            <p *ngIf="item.current == false"><strong>{{item.startMonth | convertToMonth}}-{{item.startYear}} - {{item.endMonth| convertToMonth}}-{{item.endYear}}</strong></p>
+            <p *ngIf="item.current == true"><strong>{{item.startMonth | convertToMonth}}-{{item.startYear}} - Current</strong></p>
           </div>
 
           <div id="experience-description">
