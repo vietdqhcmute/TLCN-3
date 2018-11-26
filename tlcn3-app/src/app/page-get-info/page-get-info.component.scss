@@ -37,7 +37,11 @@
   }
 
 
-  #Contact {}
+  #Contact {
+    textarea{
+      height: 60px;
+    }
+  }
 
   #Experience {
     .list-experience {

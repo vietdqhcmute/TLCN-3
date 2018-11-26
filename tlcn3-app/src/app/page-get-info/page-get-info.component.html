@@ -14,7 +14,8 @@
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Summary" value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary">
+        <textarea matInput value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary" placeholder="Summary"></textarea>
+      <!-- <input matInput placeholder="Summary" value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary"> -->
     </mat-form-field>
   </div>
 
