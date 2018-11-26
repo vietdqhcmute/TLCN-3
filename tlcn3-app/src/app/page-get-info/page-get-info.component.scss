@@ -14,6 +14,16 @@
     margin-bottom: 20px;
   }
 
+  .btn-delete {
+    background-image: url("../share/outline-delete_outline-24px.svg") no-repeat;
+  }
+
+  .btn-confirm {
+    background: url("../share/outline_done_white_18dp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .item {
     mat-form-field {
       width: 100%;
@@ -108,10 +118,7 @@
           justify-content: space-between;
           margin-bottom: 10px;
 
-          a {
-            margin-top: 5px;
-            margin-bottom: 5px;
-          }
+
         }
       }
     }

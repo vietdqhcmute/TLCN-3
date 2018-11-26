@@ -97,8 +97,8 @@
   <div class="list-project">
     <ul>
       <li *ngFor="let item of resume$.project">
-            <a [routerLink]="xxx" (click)="openDetail(item,'Project')">{{item.name}}</a>
-            <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
+        <a [routerLink]="xxx" (click)="openDetail(item,'Project')">{{item.name}}</a>
+        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
       </li>
     </ul>
   </div>
@@ -150,12 +150,12 @@
   <h3>Skill</h3>
   <div class="list-skills">
     <ul>
-      <li *ngFor="let item of resume$.skill">
-            <!-- <a [routerLink]="xxx" (click)="openSkillDetail(item)">{{item}}</a> -->
-            <mat-form-field>
-              <input matInput [(ngModel)]="item" placeholder="Skill">
-            </mat-form-field>
-            <button class="btn btn-danger float-right" (click)='deleteSkill(item)'>x</button>
+      <li *ngFor="let item of resume$.skill; let i=index" [attr.data-index]="i">
+        <mat-form-field>
+          <input matInput value="{{input}}" [(ngModel)]="item" placeholder="Skill">
+        </mat-form-field>
+        <button class="btn btn-primary btn-confirm" (click)='confirmSkill(i, item)'></button>
+        <button class="btn btn-danger float-right" (click)='deleteSkill(i)'></button>
       </li>
     </ul>
   </div>
