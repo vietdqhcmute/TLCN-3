@@ -21,10 +21,10 @@
     <input matInput [(ngModel)]="data.startYear" placeholder="Start Year">
   </mat-form-field>  
   <mat-form-field>
-    <input matInput [(ngModel)]="data.endMonth" placeholder="End Month">
+    <input matInput [(ngModel)]="data.endMonth" [disabled]="data.current" placeholder="End Month">
   </mat-form-field> 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.endYear" placeholder="End Year">
+    <input matInput [(ngModel)]="data.endYear" [disabled]="data.current" placeholder="End Year">
   </mat-form-field>
 </div>
 
