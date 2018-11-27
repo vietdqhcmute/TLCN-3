@@ -74,7 +74,7 @@
           <a [routerLink]="xxx" (click)="openDetail(item,'Experience')">{{item.company_name}}</a>
           <p>{{item.title}}</p>
         </div>
-        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Experience")'>x</button>
+        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Experience")'><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>
@@ -99,7 +99,7 @@
     <ul>
       <li *ngFor="let item of resume$.project">
         <a [routerLink]="xxx" (click)="openDetail(item,'Project')">{{item.name}}</a>
-        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'>x</button>
+        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>
@@ -127,7 +127,7 @@
           <p>{{item.major}}</p>
         </div>
 
-        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Education")'>x</button>
+        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Education")'><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>
@@ -151,12 +151,14 @@
   <h3>Skill</h3>
   <div class="list-skills">
     <ul>
-      <li *ngFor="let item of resume$.skill; let i=index" [attr.data-index]="i">
+      <li *ngFor="let item of resume$.skill; let i=index" [attr.data-index]="i" class="list-item">
         <mat-form-field>
           <input matInput value="{{input}}" [(ngModel)]="item" placeholder="Skill">
         </mat-form-field>
-        <button class="btn btn-primary btn-confirm" (click)='confirmSkill(i, item)'></button>
-        <button class="btn btn-danger float-right" (click)='deleteSkill(i)'></button>
+        <div class="list-item-button">
+          <button class="btn btn-primary" (click)='confirmSkill(i, item)'><i class="fa fa-check"></i></button>
+          <button class="btn btn-danger" (click)='deleteSkill(i)'><i class="fa fa-trash"></i></button>
+        </div>
       </li>
     </ul>
   </div>

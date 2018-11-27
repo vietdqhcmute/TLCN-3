@@ -13,17 +13,16 @@
     color: #00A8FF;
     margin-bottom: 20px;
   }
-
-  .btn-delete {
-    background-image: url("../share/outline-delete_outline-24px.svg") no-repeat;
+  .list-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
-
-  .btn-confirm {
-    background: url("../share/outline_done_white_18dp.png");
-    background-position: center;
-    background-repeat: no-repeat;
+  .list-item-button{
+    button{
+      height: 100%;
+    }
   }
-
   .item {
     mat-form-field {
       width: 100%;
