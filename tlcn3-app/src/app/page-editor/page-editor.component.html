@@ -5,7 +5,7 @@
   <div id="cv-area">
     <div id="a4-zone">
 <!-- contact -->
-      <div id="contact-area" class="text-center">
+      <div id="contact-area" class="text-center contact-item">
         <h2>
           <strong>{{ resume.contact.name }}</strong>
         </h2>
@@ -16,7 +16,7 @@
 <!-- summary -->
       <div id="summary-area" *ngIf="resume.contact.summary && resume.contact.summary.length">
         <h5><strong>Summary</strong></h5>
-        <strong>{{ resume.contact.summary }}</strong>
+        <strong class="summary-item">{{ resume.contact.summary }}</strong>
       </div>
 <!-- experience -->
       <div id="experience-area" *ngIf="resume.experience && resume.experience.length">
