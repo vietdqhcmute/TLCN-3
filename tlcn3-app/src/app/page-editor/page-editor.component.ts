@@ -11,4 +11,8 @@ export class PageEditorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  findContact(){
+
+  }
+  
 }
