@@ -16,7 +16,9 @@
 <!-- summary -->
       <div id="summary-area" *ngIf="resume.contact.summary && resume.contact.summary.length" (click)="sendData('Summary')">
         <h5><strong>Summary</strong></h5>
-        <strong class="summary-item">{{ resume.contact.summary }}</strong>
+        <div class="summary-item">
+          <p>{{ resume.contact.summary }}</p>
+        </div>
       </div>
 <!-- experience -->
       <div id="experience-area" *ngIf="resume.experience && resume.experience.length" (click)="sendData('Experience')">

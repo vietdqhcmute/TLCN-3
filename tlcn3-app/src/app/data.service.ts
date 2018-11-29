@@ -55,7 +55,7 @@ export class DataService {
     this.userSource.next(user);
   }
 
-  private elementIDSource = new Subject<string>();
+  private elementIDSource = new Subject<string>(); //as Observable
   currentElementID = this.elementIDSource.asObservable();
   sendDataElementID(elementID){
     this.elementIDSource.next(elementID);
