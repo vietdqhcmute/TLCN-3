@@ -2,9 +2,12 @@ import {
   Component,
   OnInit,
   ViewContainerRef,
+  Inject,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  SimpleChanges,
+  SimpleChange
 } from "@angular/core";
 import {
   MatDialog,
@@ -32,7 +35,9 @@ export class PageGetInfoComponent implements OnInit {
   user$: User;
   skill: Array<String>; // here to test
   newExperience: Experience;
+  elementID$: string;
   constructor(
+    @Inject(Window) private window: Window,
     private dialog: MatDialog,
     private viewContainerRef: ViewContainerRef,
     private data: DataService,
@@ -45,7 +50,11 @@ export class PageGetInfoComponent implements OnInit {
       this.resume$ = this.user$.resume;
       this.skill = this.user$.resume.skill;
     });
+    this.data.currentElementID.subscribe(id=>{
+      this.findElement(id);
+    });
   }
+  
   //Detail is called in addNewObject
   openDetail(item: Object, type: string) {
     //config Dialog
@@ -183,5 +192,9 @@ export class PageGetInfoComponent implements OnInit {
   //
   confirmSkill(index, item) {
     this.resume$.skill[index] = item;
+  }
+
+  findElement(elementID:string){
+    this.window.document.getElementById(elementID).scrollIntoView();
   }
 }

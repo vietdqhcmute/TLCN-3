@@ -81,7 +81,7 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
     MatTabsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: Window, useValue: window}],
   bootstrap: [AppComponent],
   entryComponents: [DiaExperienceComponent, DiaEducationComponent, DiaProjectComponent]
 })

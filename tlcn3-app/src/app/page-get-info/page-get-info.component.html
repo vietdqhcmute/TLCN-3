@@ -12,7 +12,7 @@
     </mat-form-field>
   </div>
 
-  <div class="item">
+  <div class="item" id="Summary">
     <mat-form-field>
         <textarea matInput value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary" placeholder="Summary"></textarea>
       <!-- <input matInput placeholder="Summary" value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary"> -->
@@ -54,14 +54,6 @@
       <span class="border"></span>
     </label>
   </div>
-
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <div class="item">
-    <a routerLink='experience' class="btn btn-danger float-right">Next</a>
-  </div> -->
 </section>
 <br>
 
@@ -81,12 +73,6 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Experience" (click)='addNewObject("Experience")'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
 <br>
 <br>
@@ -106,16 +92,11 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Project" (click)='addNewObject("Project")'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
 <br>
 <br>
 <br>
+
 <section id="Education">
   <h3>Education</h3>
   <div class="list-education">
@@ -135,12 +116,6 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Educational" (click)='addNewObject("Education")'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
 <br>
 <br>
@@ -165,10 +140,4 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Skill" (click)='addNewSkill()'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>

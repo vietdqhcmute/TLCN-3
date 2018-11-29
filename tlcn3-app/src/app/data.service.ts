@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Subject } from "rxjs";
 import { Resume, SocialType, User } from "./models";
 import 'rxjs/add/operator/map';  // we need to import this now
 
@@ -53,5 +53,11 @@ export class DataService {
 
   sendDataUser(user) {
     this.userSource.next(user);
+  }
+
+  private elementIDSource = new Subject<string>();
+  currentElementID = this.elementIDSource.asObservable();
+  sendDataElementID(elementID){
+    this.elementIDSource.next(elementID);
   }
 }

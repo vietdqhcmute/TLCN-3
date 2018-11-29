@@ -5,7 +5,7 @@
   <div id="cv-area">
     <div id="a4-zone">
 <!-- contact -->
-      <div id="contact-area" class="text-center" (click)="findContact()">
+      <div id="contact-area" class="text-center" (click)="sendData('Contact')">
         <h2>
           <strong>{{ resume.contact.name }}</strong>
         </h2>
@@ -14,12 +14,12 @@
         <p>{{ resume.contact.email }}</p>
       </div>
 <!-- summary -->
-      <div id="summary-area" *ngIf="resume.contact.summary && resume.contact.summary.length">
+      <div id="summary-area" *ngIf="resume.contact.summary && resume.contact.summary.length" (click)="sendData('Summary')">
         <h5><strong>Summary</strong></h5>
         <strong class="summary-item">{{ resume.contact.summary }}</strong>
       </div>
 <!-- experience -->
-      <div id="experience-area" *ngIf="resume.experience && resume.experience.length">
+      <div id="experience-area" *ngIf="resume.experience && resume.experience.length" (click)="sendData('Experience')">
         <h5><strong>Experience</strong></h5>
         <div *ngFor="let item of resume.experience" class="experience-item">
 
@@ -41,7 +41,7 @@
         </div>
       </div>
 <!-- project -->
-      <div id="project-area" class="section" *ngIf="resume.project && resume.project.length">
+      <div id="project-area" class="section" *ngIf="resume.project && resume.project.length" (click)="sendData('Project')">
           <h5><strong>Project</strong></h5>
           <div *ngFor="let item of resume.project" class="project-item">
 
@@ -57,7 +57,7 @@
 
         </div>
 <!-- education -->
-      <div id="education-area" *ngIf="resume.education && resume.education.length">
+      <div id="education-area" *ngIf="resume.education && resume.education.length" (click)="sendData('Education')">
         <h5><strong>Education</strong></h5>
 
         <div *ngFor="let item of resume.education" class="education-item">
@@ -74,7 +74,7 @@
 
       </div>
 <!-- skill -->
-      <div id="skill-area" *ngIf="resume.skill && resume.skill.length">
+      <div id="skill-area" *ngIf="resume.skill && resume.skill.length" (click)="sendData('Skill')">
         <h5><strong>Skill</strong></h5>
 
         <div *ngFor="let item of resume.skill">

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Resume, Experience } from "../models";
+import { DataService } from "../data.service";
 
 @Component({
   selector: "app-page-editor",
@@ -8,11 +9,16 @@ import { Resume, Experience } from "../models";
 })
 export class PageEditorComponent implements OnInit {
   @Input() resume: Resume;
-  constructor() {}
+  constructor(private data: DataService) {}
+  elementID$: String;
+  ngOnInit() {
+    this.data.currentElementID.subscribe(result=>{
+      this.elementID$=result;
+    })
+  }
 
-  ngOnInit() {}
-  findContact(){
-
+  sendData(elementID){
+    this.data.sendDataElementID(elementID);
   }
   
 }
