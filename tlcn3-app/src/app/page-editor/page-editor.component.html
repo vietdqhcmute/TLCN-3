@@ -79,7 +79,7 @@
       <div id="skill-area" *ngIf="resume.skill && resume.skill.length" (click)="sendData('Skill')">
         <h5><strong>Skill</strong></h5>
 
-        <div *ngFor="let item of resume.skill">
+        <div *ngFor="let item of resume.skill" class="skill-item">
           <p>{{item}}</p>
         </div>
       </div>      

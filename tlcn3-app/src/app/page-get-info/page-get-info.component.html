@@ -128,7 +128,7 @@
     <ul>
       <li *ngFor="let item of resume$.skill; let i=index" [attr.data-index]="i" class="list-item">
         <mat-form-field>
-          <input matInput value="{{input}}" [(ngModel)]="item" placeholder="Skill">
+          <input matInput value="{{input}}" [(ngModel)]="item" placeholder="Skill {{i+1}}">
         </mat-form-field>
         <div class="list-item-button">
           <button class="btn btn-primary" (click)='confirmSkill(i, item)'><i class="fa fa-check"></i></button>
@@ -141,3 +141,6 @@
     <input type="button" class="btn btn-primary preview" value="Add Another Skill" (click)='addNewSkill()'>
   </div>
 </section>
+<br>
+<br>
+<br>
