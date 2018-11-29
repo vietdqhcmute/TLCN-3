@@ -52,7 +52,7 @@ export class PageGetInfoComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
-    //Binding data
+    //Binding data with Observable so when it change, don't need to commit to change
     dialogConfig.data = item;
     //Open dialog
     switch (type) {
@@ -87,7 +87,7 @@ export class PageGetInfoComponent implements OnInit {
       }
     }
   }
-  
+
   //Adding
   addNewObject(type: string) {
     switch (type) {
@@ -102,6 +102,7 @@ export class PageGetInfoComponent implements OnInit {
           false,
           "Description"
         );
+        //Add new standard object to array, then openDetail dialog immediately
         this.resume$.experience.push(newItem);
         this.openDetail(newItem, "Experience");
         break;
@@ -118,7 +119,7 @@ export class PageGetInfoComponent implements OnInit {
           false,
           "degree"
         );
-
+        //Add new standard object to array, then openDetail dialog immediately
         this.resume$.education.push(newItem);
         this.openDetail(newItem, "Education");
         break;
@@ -136,22 +137,19 @@ export class PageGetInfoComponent implements OnInit {
           "imageURL",
           "webURL"
         );
-
+        //Add new standard object to array, then openDetail dialog immediately
         this.resume$.project.push(newItem);
         this.openDetail(newItem, "Project");
         break;
       }
     }
-    //Finally
+    //Finally update after add new
     this.user.updateUserByID(this.user$._id, this.user$);
   }
+  
   addNewSkill() {
-    let newSkill: String = "New Skill";
+    let newSkill: String = "New Skill"; //standart skill
     this.resume$.skill.push(newSkill);
-    this.openDetail(newSkill, "Skill");
-  }
-  confirmSkill(index, item){
-    this.resume$.skill[index]=item;
   }
 
   //Deleting
@@ -183,4 +181,7 @@ export class PageGetInfoComponent implements OnInit {
     this.resume$.skill.splice(index, 1);
   }
   //
+  confirmSkill(index, item) {
+    this.resume$.skill[index] = item;
+  }
 }
