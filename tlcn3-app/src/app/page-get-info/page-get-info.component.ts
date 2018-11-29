@@ -30,6 +30,7 @@ import { DiaProjectComponent } from "../dia-project/dia-project.component";
 export class PageGetInfoComponent implements OnInit {
   resume$: Resume;
   user$: User;
+  skill: Array<String>; // here to test
   newExperience: Experience;
   constructor(
     private dialog: MatDialog,
@@ -42,6 +43,7 @@ export class PageGetInfoComponent implements OnInit {
     this.data.currentUser.subscribe(result => {
       this.user$ = result;
       this.resume$ = this.user$.resume;
+      this.skill = this.user$.resume.skill;
     });
   }
   //Detail is called in addNewObject
@@ -85,6 +87,7 @@ export class PageGetInfoComponent implements OnInit {
       }
     }
   }
+  
   //Adding
   addNewObject(type: string) {
     switch (type) {
@@ -143,8 +146,12 @@ export class PageGetInfoComponent implements OnInit {
     this.user.updateUserByID(this.user$._id, this.user$);
   }
   addNewSkill() {
-    let newSkill: string = "New Skill";
+    let newSkill: String = "New Skill";
     this.resume$.skill.push(newSkill);
+    this.openDetail(newSkill, "Skill");
+  }
+  confirmSkill(index, item){
+    this.resume$.skill[index]=item;
   }
 
   //Deleting
@@ -172,10 +179,7 @@ export class PageGetInfoComponent implements OnInit {
     }
   }
 
-  deleteSkill(item) {
-    let index = this.resume$.skill.findIndex(
-      skill => skill.toString() === item
-    );
+  deleteSkill(index) {
     this.resume$.skill.splice(index, 1);
   }
   //

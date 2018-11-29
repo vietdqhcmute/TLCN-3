@@ -2,7 +2,7 @@
   overflow: scroll;
   overflow-x: hidden;
 
-  .line-breaker{
+  .line-breaker {
     display: block;
     white-space: pre-line;
   }
@@ -25,7 +25,8 @@
         padding: 1cm;
         font-family: Roboto, Helvetica, sans-serif;
 
-        h2, h5 {
+        h2,
+        h5 {
           margin: 0px;
         }
 
@@ -33,22 +34,42 @@
           margin: 0px;
           // height: 18px;
         }
-        .section{
+
+        .section {
           margin-bottom: 10px;
         }
+
         #contact-area {
-          .resume-title{
+          &:hover {
+            outline: 3px solid #37474F;
+            outline-width: 100%;
+          }
+
+          .resume-title {
             font-size: 22;
             font-weight: bold;
           }
         }
 
-        #objective-area {}
+        #summary-area {
+          .summary-item {
+            &:hover {
+              outline: 3px solid #37474F;
+              outline-width: 100%;
+            }
+          }
+        }
 
         #experience-area {
-          .experience-item{
+          .experience-item {
             margin-bottom: 5px;
+
+            &:hover {
+              outline: 3px solid #37474F;
+              outline-width: 100%;
+            }
           }
+
           #experience-company-location {
             display: flex;
             flex-direction: row;
@@ -71,9 +92,15 @@
         }
 
         #project-area {
-          .project-item{
+          .project-item {
             margin-bottom: 5px;
+
+            &:hover {
+              outline: 3px solid #37474F;
+              outline-width: 100%;
+            }
           }
+
           #projectName-date {
             display: flex;
             flex-direction: row;
@@ -82,13 +109,26 @@
         }
 
         #education-area {
-          .education-item{
+          .education-item {
             margin-bottom: 5px;
+
+            &:hover {
+              outline: 3px solid #37474F;
+              outline-width: 100%;
+            }
           }
+
           #education-date {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+          }
+        }
+
+        #skill-area {
+          &:hover {
+            outline: 3px solid #37474F;
+            outline-width: 100%;
           }
         }
       }

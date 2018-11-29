@@ -55,7 +55,7 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
     DiaExperienceComponent,
     DiaEducationComponent,
     DiaProjectComponent,
-    ConvertToMonthPipe
+    ConvertToMonthPipe,
   ],
   imports: [
     BrowserModule,
