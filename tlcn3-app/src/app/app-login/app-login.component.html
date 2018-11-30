@@ -34,16 +34,16 @@
           <mat-form-field>
             <input id="su_userName" matInput name="su_userName" required placeholder="Name" [(ngModel)]="su_name" minlength="4"
              #su_userName="ngModel">
-            <mat-error  *ngIf="su_userName.invalid && (su_userName.dirty || su_userName.touched)">
 
+            <mat-error  *ngIf="su_userName.invalid && (su_userName.dirty || su_userName.touched)">
               <div *ngIf="su_userName.errors.required">
                 Name is required.
               </div>
               <div  *ngIf="su_userName.errors.minlength">
                 Name must be at least 4 characters long.
               </div>
-
             </mat-error>
+            
           </mat-form-field>
 
           <mat-form-field>
