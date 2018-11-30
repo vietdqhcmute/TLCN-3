@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
-import { Resume, SocialType, User } from "./models";
+import { Resume, User } from "./models";
 import 'rxjs/add/operator/map';  // we need to import this now
 
 @Injectable({
@@ -8,26 +8,6 @@ import 'rxjs/add/operator/map';  // we need to import this now
 })
 export class DataService {
   constructor() {}
-
-  // //resumé
-  // private resumeSource = new BehaviorSubject<Resume>({
-  //   name: "",
-  //   title: "",
-  //   summary: "",
-  //   email: "",
-  //   phone: "",
-  //   pictureUrl: "",
-  //   social: [],
-  //   experience: [],
-  //   educations: [],
-  //   projects: [],
-  //   skills: []
-  // });
-  // currentResume = this.resumeSource.asObservable();
-
-  // sendDataResume(resume) {
-  //   this.resumeSource.next(resume);
-  // }
 //user
   private userSource = new BehaviorSubject<User>({
     resume:{
@@ -37,12 +17,16 @@ export class DataService {
       email: "",
       phone: "",
       pictureUrl: "",
-      social: [],
+      githubURL: "",
+      linkedinURL: "",
+      webpageURL: "", 
       experience: [],
       education: [],
       project: [],
       skill: []
     }  ,
+    userName:"",
+    password:"",
     googleId: "",
     googleName: "",
     avatarURL: "",

@@ -4,6 +4,8 @@ let resumeSchema = new mongoose.Schema({
   googleId: String,
   googleName: String,
   avatarURL: String,
+  userName: String,
+  password: String,
   resume: {
     contact: {
       name: String,
@@ -11,10 +13,9 @@ let resumeSchema = new mongoose.Schema({
       summary: String,
       phone: String,
       email: String,
-      social: [{
-        network: String,
-        url: String
-      }]
+      githubURL: String,
+      linkedinURL: String,
+      webpageURL: String, 
     },
     experience: [{
       company_name: String,
