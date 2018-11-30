@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -24,10 +25,11 @@ export class AppLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  validateEmail(){
-    if (this.emailPattern.test(this.su_email)){
-      return true;
-    }
-    return false;
+  onSignIn(form: NgForm){
+    console.log(form.value);
+  }
+
+  onSignUp(form: NgForm){
+    console.log(form.value);
   }
 }
