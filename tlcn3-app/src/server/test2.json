@@ -7,17 +7,9 @@
                 "phone": "(+84) 372 18 2804",
                 "email": "vietdqhcmute@gmail.com",
                 "summary": "Thinking “out of the box” to provide software-based solutions. Work hard, play hard, live like today is my last day.",
-                "social": [
-                    {
-                        "_id": "5bf3ac143c041324e02a5dc0",
-                        "network": "FACEBOOK",
-                        "url": "https://www.facebook.com/ducky.holmes"
-                    },
-                    {
-                        "_id": "5bf3ac143c041324e02a5dbf",
-                        "url": "https://github.com/vietdqhcmute"
-                    }
-                ]
+                "githubURL": "",
+                "linkedinURL": "",
+                "webpageURL": ""
             },
             "skill": [
                 "IELTS 7.5, Toeic 815",
@@ -27,7 +19,7 @@
             ],
             "experience": [
                 {
-                    "_id": "5bf56b0c725ae947f4ffad79",
+                    "_id": "5c00a5c289bd662574966958",
                     "company_name": "Amanotes",
                     "startMonth": 6,
                     "startYear": 2018,
@@ -53,7 +45,7 @@
             ],
             "project": [
                 {
-                    "_id": "5bf3ac143c041324e02a5dc3",
+                    "_id": "5c00a5c289bd66257496695a",
                     "name": "Angular CV Generator",
                     "description": "A pre-final project that help new-bie write and download a simple Resume which we are developing.\nProject is made with MEAN Stack (MongoDB, ExpressJS, Angular, NodeJS)",
                     "imageUrl": "",
@@ -63,9 +55,11 @@
                     "endYear": 2018
                 }
             ],
-            "created": "2018-11-20T06:39:16.639Z"
+            "created": "2018-11-30T02:51:46.338Z"
         },
-        "_id": "5bf3ac143c041324e02a5dbe",
+        "_id": "5c00a5c289bd662574966957",
+        "userName": "Do Quoc Viet",
+        "password": "1111",
         "googleId": "9pu12wedjy0123d",
         "googleName": "Do Quoc Viet",
         "avatarURL": "",
@@ -79,18 +73,9 @@
                 "phone": "(+84) 964 12 3143",
                 "email": "nguyenthevinh1997@gmail.com",
                 "summary": "I want to be a Japanese Translator",
-                "social": [
-                    {
-                        "_id": "5bf102ad63ed1c1764973633",
-                        "network": "FACEBOOK",
-                        "url": "https://www.facebook.com/vinh.nguyen"
-                    },
-                    {
-                        "_id": "5bf102ad63ed1c1764973632",
-                        "network": "GITHUB",
-                        "url": "https://github.com/nguyenthevinh1997"
-                    }
-                ]
+                "githubURL": "",
+                "linkedinURL": "",
+                "webpageURL": ""
             },
             "skill": [
                 "Japanese N4",
@@ -99,7 +84,7 @@
             ],
             "experience": [
                 {
-                    "_id": "5bf102ad63ed1c1764973634",
+                    "_id": "5c00a71d89bd66257496695c",
                     "startMonth": 6,
                     "startYear": 2018,
                     "endMonth": 8,
@@ -113,7 +98,7 @@
             ],
             "education": [
                 {
-                    "_id": "5bf102ad63ed1c1764973635",
+                    "_id": "5c00a71d89bd66257496695d",
                     "startMonth": 6,
                     "startYear": 2018,
                     "endMonth": 8,
@@ -125,7 +110,7 @@
             ],
             "project": [
                 {
-                    "_id": "5bf102ad63ed1c1764973636",
+                    "_id": "5c00a71d89bd66257496695e",
                     "startMonth": 6,
                     "startYear": 2018,
                     "endMonth": 8,
@@ -135,9 +120,11 @@
                     "imageUrl": ""
                 }
             ],
-            "created": "2018-11-18T06:11:57.490Z"
+            "created": "2018-11-30T02:57:33.617Z"
         },
-        "_id": "5bf102ad63ed1c1764973631",
+        "_id": "5c00a71d89bd66257496695b",
+        "userName": "Nguyễn Thế Vinh",
+        "password": "1111",
         "googleId": "7128028350667965",
         "googleName": "Nguyễn Thế Vinh",
         "avatarURL": "",

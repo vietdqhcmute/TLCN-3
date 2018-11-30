@@ -7,8 +7,8 @@
         <div class="sign-in mat-experience alternate-theme">
           <h3 style="margin: 0 auto">Welcome back!</h3>
           <mat-form-field>
-            <input matInput id="email" name="email" required pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/" placeholder="Email"
-              [(ngModel)]="su_email">
+            <input matInput id="email" name="email" required pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/"
+              placeholder="Email" [(ngModel)]="su_email">
             <!-- <mat-error *ngIf="!validateEmail() && su_email" >Email is invalid</mat-error> -->
             <!-- <mat-error *ngIf="name.errors.required && name.touched">Email is <strong>required</strong></mat-error> -->
           </mat-form-field>
@@ -32,8 +32,18 @@
         <div class="sign-up mat-experience alternate-theme">
           <h3 style="margin: 0 auto">Are you new?</h3>
           <mat-form-field>
-            <input  matInput name="su_name" required placeholder="Name" [(ngModel)]="su_name">
-            <!-- <mat-error *ngIf="signUpName.errors.required"> Name is required</mat-error> -->
+            <input id="su_userName" matInput name="su_userName" required placeholder="Name" [(ngModel)]="su_name" minlength="4"
+             #su_userName="ngModel">
+            <mat-error  *ngIf="su_userName.invalid && (su_userName.dirty || su_userName.touched)">
+
+              <div *ngIf="su_userName.errors.required">
+                Name is required.
+              </div>
+              <div  *ngIf="su_userName.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field>
