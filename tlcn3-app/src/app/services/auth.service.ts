@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Http, Headers } from "@angular/http";
 
-import { Resume, User, AuthUser } from "../models";
+import { Resume, User, AuthUser, AuthLogin } from "../models";
 @Injectable({
   providedIn: "root"
 })
@@ -39,8 +39,16 @@ export class AuthService {
       password: password,
       fullname: "",
       phone: phoneNumber
-       };
-    this.http.post(this.domainName + "signup", newUser).subscribe(response=>{
+    };
+    return this.http.post(this.domainName + "signup", newUser);
+  }
+
+  login(email: string, password: string) {
+    const loginData: AuthLogin = {
+      email: email,
+      password: password
+    };
+    this.http.post(this.domainName + "login", loginData).subscribe(response => {
       console.log(response);
     });
   }

@@ -16,6 +16,7 @@ let resumeSchema = new mongoose.Schema({
     githubURL: String,
     linkedinURL: String,
     webpageURL: String,
+    
     experience: [{
       company_name: String,
       startMonth: Number,

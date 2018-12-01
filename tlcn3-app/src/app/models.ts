@@ -9,6 +9,10 @@ export class AuthUser{
     fullname: string;
     phone: string;
 }
+export interface AuthLogin{
+    email: string;
+    password: string;
+}
 export class User{
     resume: Resume;
     googleId?: string;

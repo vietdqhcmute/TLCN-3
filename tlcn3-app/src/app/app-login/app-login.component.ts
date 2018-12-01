@@ -11,7 +11,9 @@ import { AuthService } from '../services/auth.service';
 export class AppLoginComponent implements OnInit {
   hide=true;
   emailPattern = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
-  // /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  si_email:string;
+  si_password:string;
+
   su_name: string;
   su_phone: string;
   su_email: string;
@@ -25,13 +27,17 @@ export class AppLoginComponent implements OnInit {
   }
 
   onSignIn(form: NgForm){
-    console.log(form.value);
+    if (form.invalid){
+      return;
+    }
+    this.authService.login(this.si_email, this.si_password);
   }
 
   onSignUp(form: NgForm){
     if (form.invalid){
       return;
     }
-    this.authService.createUser(this.su_name, this.su_phone, this.su_email,this.su_password);
+    this.authService.createUser(this.su_name, this.su_phone, this.su_email,this.su_password).subscribe(response=>{
+    });
   }
 }
