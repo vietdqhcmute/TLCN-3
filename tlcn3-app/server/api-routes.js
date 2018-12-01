@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Resume = require('./resumeModel');
 const passport = require('passport');
-
+const bcrypt = require('bcrypt');
 router.post('/add/user', async (req, res) => {
   const resume = new Resume(req.body);
   await resume.save();
@@ -11,12 +11,14 @@ router.post('/add/user', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try {
-    console.log("Try it");
-    const resume = new Resume(req.body);
-    await resume.save();
-    res.status(201).json({
+    bcrypt.hash(req.body.password, 10).then(hash => {
+      req.body.password = hash;
+      resume = new Resume(req.body);
+      resume.save();
+    }).then(res.status(201).json({
       message: 'User created',
-    });
+      body: req.body
+    }));
 
   } catch (err) {
     res.status(500).json({

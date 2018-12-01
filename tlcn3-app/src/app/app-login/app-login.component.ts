@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PARAMETERS } from '@angular/core/src/util/decorators';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
