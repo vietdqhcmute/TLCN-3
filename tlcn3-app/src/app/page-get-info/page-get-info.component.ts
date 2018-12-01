@@ -36,6 +36,7 @@ export class PageGetInfoComponent implements OnInit {
   skill: Array<String>; // here to test
   newExperience: Experience;
   elementID$: string;
+
   constructor(
     @Inject(Window) private window: Window,
     private dialog: MatDialog,
