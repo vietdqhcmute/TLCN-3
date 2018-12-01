@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Resume = require('./resumeModel');
 const passport = require('passport');
+const checkAuth = require('./check-auth');
 
 router.post('/add/user', async (req, res) => {
   const resume = new Resume(req.body);
@@ -13,7 +14,7 @@ router.get('/user/all', async (req, res) => {
   const resume = await Resume.find();
   res.send(resume);
 });
-router.get('/user/:id', async (req, res) => {
+router.get('/user/:id',checkAuth, async (req, res) => {
   try {
     const resume = await Resume.findById(req.params.id);
     res.status(200).json(resume);
@@ -37,7 +38,7 @@ router.delete('/delete/user/:id', async (req, res) => {
   }
 });
 
-router.put('/update/user/:id', async (req, res) => {
+router.put('/update/user/:id',checkAuth, async (req, res) => {
   try {
     await Resume.findByIdAndUpdate({
       _id: req.params.id
