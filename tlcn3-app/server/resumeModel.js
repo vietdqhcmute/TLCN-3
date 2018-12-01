@@ -12,7 +12,7 @@ let resumeSchema = new mongoose.Schema({
       title: String,
       summary: String,
       phone: String,
-      email: String,
+      email: {type: String, require: true, unique:true},
       githubURL: String,
       linkedinURL: String,
       webpageURL: String, 
