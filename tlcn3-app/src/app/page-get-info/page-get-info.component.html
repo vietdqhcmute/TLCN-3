@@ -1,58 +1,51 @@
-<section id="Contact">
+<!-- <section id="Contact">
   <h3>Contact Infomation</h3>
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Your name" value="{{resume$.contact.name}}" [(ngModel)]="resume$.contact.name">
+      <input matInput placeholder="Your name" value="{{user$.fullName}}" [(ngModel)]="user$.fullName">
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Title" value="{{resume$.contact.title}}" [(ngModel)]="resume$.contact.title">
+      <input matInput placeholder="Title" value="{{resume$.title}}" [(ngModel)]="resume$.contact.title">
     </mat-form-field>
   </div>
 
   <div class="item" id="Summary">
     <mat-form-field>
-        <textarea matInput value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary" placeholder="Summary"></textarea>
-      <!-- <input matInput placeholder="Summary" value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary"> -->
+        <textarea matInput value="{{resume$.summary}}" [(ngModel)]="resume$.contact.summary" placeholder="Summary"></textarea>
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Phone number" value="{{resume$.contact.phone}}" [(ngModel)]="resume$.contact.phone">
+      <input matInput placeholder="Phone number" value="{{user$.phone}}" [(ngModel)]="user$.phone">
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Email" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
+      <input matInput placeholder="Email" value="{{user$.email}}" [(ngModel)]="user$.email">
     </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
-      <span class="label">Facebook URL</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Github URL" value="{{resume$.githubURL}}" [(ngModel)]="resume$.githubURL">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
-      <span class="label">Github URL</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="LinkedIn URL" value="{{resume$.linkedinURL}}" [(ngModel)]="resume$.linkedinURL">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
-      <span class="label">LinkedIn URL</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Personal Webpage" value="{{resume$.webpageURL}}" [(ngModel)]="resume$.webpageURL">
+    </mat-form-field>
   </div>
 </section>
 <br>
@@ -143,4 +136,4 @@
 </section>
 <br>
 <br>
-<br>
+<br> -->

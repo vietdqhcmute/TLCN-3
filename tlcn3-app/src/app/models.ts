@@ -2,25 +2,28 @@ export class AuthUser{
     resume: Resume;
     googleId?: string;
     googleName?: string;
-    userName: string;
-    password: string;
     avatarURL?: string;
+    userName: string;
+    email: string;
+    password: string;
+    fullname: string;
+    phone: string;
 }
 export class User{
     resume: Resume;
     googleId?: string;
     googleName?: string;
-    userName: string;
-    password: string;
     avatarURL?: string;
+    userName: string;
+    email: string;
+    password: string;
+    fullname: string;
+    phone: string;
     _id: string;
 }
 export class Resume {
-    name: string;
     title: string;
     summary: string;
-    email: string;
-    phone: string;
     pictureUrl?: string;
     githubURL?: string;
     linkedinURL?: string;

@@ -11,11 +11,8 @@ export class DataService {
 //user
   private userSource = new BehaviorSubject<User>({
     resume:{
-      name: "",
       title: "",
       summary: "",
-      email: "",
-      phone: "",
       pictureUrl: "",
       githubURL: "",
       linkedinURL: "",
@@ -24,12 +21,15 @@ export class DataService {
       education: [],
       project: [],
       skill: []
-    }  ,
-    userName:"",
-    password:"",
+    },
     googleId: "",
     googleName: "",
     avatarURL: "",
+    userName:"",
+    email:"",
+    password:"",
+    fullname:"",
+    phone:"",
     _id: ""
 
   });

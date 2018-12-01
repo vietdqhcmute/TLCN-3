@@ -53,6 +53,7 @@ export class PageGetInfoComponent implements OnInit {
     this.data.currentElementID.subscribe(id=>{
       this.findElement(id);
     });
+    
   }
   
   //Detail is called in addNewObject

@@ -7,17 +7,17 @@
 <!-- contact -->
       <div id="contact-area" class="text-center" (click)="sendData('Contact')">
         <h2>
-          <strong>{{ resume.contact.name }}</strong>
+          <strong>{{ user.fullName }}</strong>
         </h2>
-        <h5 class="resume-title">{{resume.contact.title}}</h5>
-        <p>{{ resume.contact.phone }}</p>
-        <p>{{ resume.contact.email }}</p>
+        <h5 class="resume-title">{{resume.title}}</h5>
+        <p>{{ user.phone }}</p>
+        <p>{{ user.email }}</p>
       </div>
 <!-- summary -->
-      <div id="summary-area" *ngIf="resume.contact.summary && resume.contact.summary.length" (click)="sendData('Summary')">
+      <div id="summary-area" *ngIf="resume.summary && resume.summary.length" (click)="sendData('Summary')">
         <h5><strong>Summary</strong></h5>
         <div class="summary-item">
-          <p>{{ resume.contact.summary }}</p>
+          <p>{{ resume.summary }}</p>
         </div>
       </div>
 <!-- experience -->

@@ -23,7 +23,7 @@ mongoose.connect(connectionString, {
 
 // importing routes
 const indexRoutes = require('./api-routes');
-
+const authRoutes = require('./auth');
 // settings
 app.set('port', process.env.PORT || 3000);
 
@@ -106,6 +106,7 @@ app.use(function (req, res, next) {
 });
 // routes
 app.use('/', indexRoutes);
+app.use('/',authRoutes);
 
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);

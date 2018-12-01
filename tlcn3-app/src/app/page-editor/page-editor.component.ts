@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Resume, Experience } from "../models";
+import { Resume, Experience, User } from "../models";
 import { DataService } from "../services/data.service";
 
 @Component({
@@ -9,6 +9,8 @@ import { DataService } from "../services/data.service";
 })
 export class PageEditorComponent implements OnInit {
   @Input() resume: Resume;
+  @Input() user: User;
+  
   constructor(private data: DataService) {}
   elementID$: String;
   ngOnInit() {

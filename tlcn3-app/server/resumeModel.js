@@ -5,18 +5,17 @@ let resumeSchema = new mongoose.Schema({
   googleName: String,
   avatarURL: String,
   userName: String,
+  email: {type: String,require: true,unique: true},
   password: String,
+  fullName: String,
+  phone: String,
+
   resume: {
-    contact: {
-      name: String,
-      title: String,
-      summary: String,
-      phone: String,
-      email: {type: String, require: true, unique:true},
-      githubURL: String,
-      linkedinURL: String,
-      webpageURL: String, 
-    },
+    title: String,
+    summary: String,
+    githubURL: String,
+    linkedinURL: String,
+    webpageURL: String,
     experience: [{
       company_name: String,
       startMonth: Number,

@@ -1,7 +1,7 @@
 <app-page-toolbar [user$]="user$"></app-page-toolbar>
 <div class="flex-body">
   <app-page-get-info></app-page-get-info>
-  <app-page-editor [resume]="resume$">
+  <app-page-editor [resume]="resume$" [user]="user$">
     <div id="cv-area"></div>
   </app-page-editor>
   <app-page-template></app-page-template>

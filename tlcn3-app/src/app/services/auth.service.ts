@@ -18,11 +18,8 @@ export class AuthService {
     password: string
   ) {
     const newResume: Resume = {
-      name: "",
       title: "",
       summary: "",
-      email: email,
-      phone: phoneNumber,
       pictureUrl: "",
       githubURL: "",
       linkedinURL: "",
@@ -36,9 +33,12 @@ export class AuthService {
       resume: newResume,
       googleId: "",
       googleName: "",
+      avatarURL: "",
       userName: userName,
+      email: email,
       password: password,
-      avatarURL: ""
+      fullname: "",
+      phone: phoneNumber
        };
     this.http.post(this.domainName + "signup", newUser).subscribe(response=>{
       console.log(response);
