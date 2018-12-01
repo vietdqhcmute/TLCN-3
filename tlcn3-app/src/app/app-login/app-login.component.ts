@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class AppLoginComponent implements OnInit {
   su_password: string;
   su_confirm: string;
   error:string;
-  constructor() {
+  constructor(public authService: AuthService) {
    }
 
   ngOnInit() {
@@ -30,6 +31,9 @@ export class AppLoginComponent implements OnInit {
   }
 
   onSignUp(form: NgForm){
-    console.log(form.value);
+    if (form.invalid){
+      return;
+    }
+    this.authService.createUser(this.su_name, this.su_phone, this.su_email,this.su_password);
   }
 }

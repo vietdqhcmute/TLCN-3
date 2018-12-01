@@ -9,6 +9,22 @@ router.post('/add/user', async (req, res) => {
   res.redirect('/user/all');
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    console.log("Try it");
+    const resume = new Resume(req.body);
+    await resume.save();
+    res.status(201).json({
+      message: 'User created',
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      message: err
+    })
+  }
+});
+
 router.get('/user/all', async (req, res) => {
   const resume = await Resume.find();
   res.send(resume);
@@ -39,7 +55,9 @@ router.delete('/delete/user/:id', async (req, res) => {
 
 router.put('/update/user/:id', async (req, res) => {
   try {
-    await Resume.findByIdAndUpdate({_id: req.params.id}, req.body, {
+    await Resume.findByIdAndUpdate({
+      _id: req.params.id
+    }, req.body, {
       upsert: true,
       new: true,
       setDefaultsOnInsert: true
@@ -59,7 +77,7 @@ router.get('/auth/google',
     scope: ['profile', 'email']
   }));
 
-router.get('/auth/google/callback', passport.authenticate('google'), function(req,res){
+router.get('/auth/google/callback', passport.authenticate('google'), function (req, res) {
   res.send("It's OK!");
 });
 

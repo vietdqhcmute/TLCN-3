@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { UserService } from "../user.service";
+import { UserService } from "../services/user.service";
 import { Location } from '@angular/common';
 import { Resume, User } from "../models";
-import { DataService } from "../data.service";
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: "app-app-main",

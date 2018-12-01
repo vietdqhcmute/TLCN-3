@@ -18,10 +18,10 @@ import {
 
 import { Resume, User, Education, Project } from "../models";
 import { Experience } from "../models";
-import { DataService } from "../data.service";
+import { DataService } from "../services/data.service";
 import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
 import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
-import { UserService } from "../user.service";
+import { UserService } from "../services/user.service";
 import { DiaEducationComponent } from "../dia-education/dia-education.component";
 import { DiaProjectComponent } from "../dia-project/dia-project.component";
 

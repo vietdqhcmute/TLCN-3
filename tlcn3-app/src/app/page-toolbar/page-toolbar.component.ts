@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { User } from "../models";
-import { UserService } from "../user.service";
+import { UserService } from "../services/user.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

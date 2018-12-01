@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Resume, Experience } from "../models";
-import { DataService } from "../data.service";
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: "app-page-editor",

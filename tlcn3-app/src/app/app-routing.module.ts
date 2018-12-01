@@ -6,7 +6,7 @@ import { AppProfileComponent } from "./app-profile/app-profile.component";
 import { AppAboutComponent } from "./app-about/app-about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 
-import { ResolverService } from "./resolver.service";
+import { ResolverService } from "./services/resolver.service";
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },

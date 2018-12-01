@@ -1,3 +1,11 @@
+export class AuthUser{
+    resume: Resume;
+    googleId?: string;
+    googleName?: string;
+    userName: string;
+    password: string;
+    avatarURL?: string;
+}
 export class User{
     resume: Resume;
     googleId?: string;
