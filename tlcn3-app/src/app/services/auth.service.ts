@@ -8,8 +8,13 @@ import { Resume, User, AuthUser, AuthLogin } from "../models";
 })
 export class AuthService {
   domainName = "http://localhost:3000/";
+  private token: string;
 
   constructor(private http: HttpClient) {}
+
+  getToken(){
+    return this.token;
+  }
 
   createUser(
     userName: string,
@@ -48,8 +53,11 @@ export class AuthService {
       email: email,
       password: password
     };
-    this.http.post(this.domainName + "login", loginData).subscribe(response => {
-      console.log(response);
-    });
+    this.http
+      .post<{ token: string }>(this.domainName + "login", loginData)
+      .subscribe(response => {
+        const token = response.token;
+        this.token = token;
+      });
   }
 }

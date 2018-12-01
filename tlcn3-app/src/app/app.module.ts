@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -39,6 +39,7 @@ import { DiaExperienceComponent } from "./dia-experience/dia-experience.componen
 import { DiaEducationComponent } from './dia-education/dia-education.component';
 import { DiaProjectComponent } from './dia-project/dia-project.component';
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
+import { AuthInterceptor } from "./auth-interceptor";
 
 @NgModule({
   declarations: [
@@ -81,7 +82,7 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
     MatTabsModule,
     BrowserAnimationsModule
   ],
-  providers: [{provide: Window, useValue: window}],
+  providers: [{provide: Window, useValue: window},{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent],
   entryComponents: [DiaExperienceComponent, DiaEducationComponent, DiaProjectComponent]
 })
