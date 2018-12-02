@@ -65,8 +65,8 @@
           </mat-form-field>
 
           <mat-dialog-actions>
-            <button mat-button *ngIf="isLoading_logIn" type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Sign up</button>
-            <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isLoading_logIn"></mat-spinner>
+            <button mat-button *ngIf="!isLoading_signUp" type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Sign up</button>
+            <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isLoading_signUp"></mat-spinner>
           </mat-dialog-actions>
         </div>
       </form>

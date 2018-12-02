@@ -38,7 +38,7 @@ router.delete('/delete/user/:id', async (req, res) => {
   }
 });
 
-router.put('/update/user/:id',checkAuth, async (req, res) => {
+router.put('/update/user/:id', async (req, res) => {
   try {
     await Resume.findByIdAndUpdate({
       _id: req.params.id
