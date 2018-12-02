@@ -1,42 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { AuthService } from "../services/auth.service";
 
 @Component({
-  selector: 'app-app-login',
-  templateUrl: './app-login.component.html',
-  styleUrls: ['./app-login.component.scss']
+  selector: "app-app-login",
+  templateUrl: "./app-login.component.html",
+  styleUrls: ["./app-login.component.scss"]
 })
 export class AppLoginComponent implements OnInit {
-  hide=true;
-  si_email:string;
-  si_password:string;
+  hide = true;
+  si_email: string;
+  si_password: string;
 
   su_name: string;
   su_phone: string;
   su_email: string;
   su_password: string;
   su_confirm: string;
-  error:string;
-  constructor(public authService: AuthService) {
-   }
+  error: string;
+  isLoading=false;
 
-  ngOnInit() {
-  }
+  constructor(public authService: AuthService) {}
 
-  onSignIn(form: NgForm){
-    if (form.invalid){
+  ngOnInit() {}
+
+  onSignIn(form: NgForm) {
+    if (form.invalid) {
       return;
     }
     this.authService.login(this.si_email, this.si_password);
   }
 
-  onSignUp(form: NgForm){
-    if (form.invalid){
+  onSignUp(form: NgForm) {
+    if (form.invalid) {
       return;
     }
-    this.authService.createUser(this.su_name, this.su_phone, this.su_email,this.su_password).subscribe(response=>{
-    });
+    this.authService
+      .createUser(this.su_name, this.su_phone, this.su_email, this.su_password)
+      .subscribe(response => {});
   }
 }

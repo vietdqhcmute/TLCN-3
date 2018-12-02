@@ -4,6 +4,7 @@ import { Http, Headers } from "@angular/http";
 
 import { Resume, User, AuthUser, AuthLogin } from "../models";
 import { Subject } from "rxjs";
+import { Router } from "@angular/router";
 @Injectable({
   providedIn: "root"
 })
@@ -12,13 +13,16 @@ export class AuthService {
   private token: string;
   public loginId = new Subject<string>();
   private authStatusListener = new Subject<boolean>();
-
-  constructor(private http: HttpClient) {}
+  private isAuthenticated = false;
+  constructor(private http: HttpClient, private router: Router) {}
 
   getToken(){
     return this.token;
   }
 
+  getIsAuth(){
+    return this.isAuthenticated;
+  }
   getAuthStatusListener(){
     return this.authStatusListener.asObservable();
   }
@@ -65,8 +69,12 @@ export class AuthService {
       .subscribe(response => {
         const token = response.token;
         this.token = token;
-        this.authStatusListener.next(true);
-        this.loginId.next(response.id);
+        if (token){
+          this.isAuthenticated=true;
+          this.authStatusListener.next(true);
+          this.loginId.next(response.id);
+          this.router.navigate(['/profile/',response.id]);
+        }
       });
   }
 

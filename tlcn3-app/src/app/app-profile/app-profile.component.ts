@@ -3,6 +3,7 @@ import { UserService } from "../services/user.service";
 import { ActivatedRoute } from "@angular/router";
 import { DataService } from '../services/data.service';
 import { Resume, User } from "../models";
+import { AuthService } from "../services/auth.service";
 @Component({
   selector: "app-app-profile",
   templateUrl: "./app-profile.component.html",
@@ -14,7 +15,7 @@ export class AppProfileComponent implements OnInit {
   userByResume$: User;
   id: string;
 
-  constructor(private route: ActivatedRoute, private data: DataService) {
+  constructor(private route: ActivatedRoute, private data: DataService, private auth: AuthService) {
     this.route.params.subscribe(params => {
       this.id = params.id;
     });
