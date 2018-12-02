@@ -28,4 +28,8 @@ export class PageSidebarComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
   }
+
+  onLogOut(){
+    this.authService.logOut();
+  }
 }

@@ -69,4 +69,10 @@ export class AuthService {
         this.loginId.next(response.id);
       });
   }
+
+  logOut(){
+    this.token=null;
+    this.authStatusListener.next(false);
+    this.loginId.next(null);
+  }
 }

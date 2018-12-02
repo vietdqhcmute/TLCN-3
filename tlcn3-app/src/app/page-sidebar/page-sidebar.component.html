@@ -10,9 +10,9 @@
         <a routerLink="/login" class="float-right">Sign in</a>
       </li>
       <li *ngIf="userIsAuthenticated">
-        <a routerLink="/login" class="float-right">Log out</a>
+        <a routerLink="/login" class="float-right" (click)="onLogOut()">Log out</a>
       </li>
-    <li >
+    <li *ngIf="userIsAuthenticated">
       <a routerLink="/profile/{{userID}}" class="float-right">Profile</a>
     </li>
   </ul>
