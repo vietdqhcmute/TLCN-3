@@ -11,11 +11,16 @@ export class AuthService {
   domainName = "http://localhost:3000/";
   private token: string;
   public loginId = new Subject<string>();
+  private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient) {}
 
   getToken(){
     return this.token;
+  }
+
+  getAuthStatusListener(){
+    return this.authStatusListener.asObservable();
   }
 
   createUser(
@@ -60,6 +65,7 @@ export class AuthService {
       .subscribe(response => {
         const token = response.token;
         this.token = token;
+        this.authStatusListener.next(true);
         this.loginId.next(response.id);
       });
   }

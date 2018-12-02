@@ -6,17 +6,13 @@
     <li>
       <a routerLink="/about" class="float-right">About us</a>
     </li>
-    <div>
-      <li>
+      <li *ngIf="!userIsAuthenticated">
         <a routerLink="/login" class="float-right">Sign in</a>
       </li>
-    </div>
-    <div *ngIf="1===2">
-      <li>
-        <a routerLink="/login" class="float-right">Sign in</a>
+      <li *ngIf="userIsAuthenticated">
+        <a routerLink="/login" class="float-right">Log out</a>
       </li>
-    </div>
-    <li>
+    <li >
       <a routerLink="/profile/{{userID}}" class="float-right">Profile</a>
     </li>
   </ul>
