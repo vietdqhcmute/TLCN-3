@@ -19,7 +19,8 @@
 
           <mat-checkbox>Remember me!</mat-checkbox>
           <mat-dialog-actions>
-            <button mat-button type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Sign In</button>
+            <button mat-button *ngIf="!isLoading_logIn" type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Sign In</button>
+            <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isLoading_logIn"></mat-spinner>
           </mat-dialog-actions>
         </div>
       </form>
@@ -64,7 +65,8 @@
           </mat-form-field>
 
           <mat-dialog-actions>
-            <button mat-button type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Sign up</button>
+            <button mat-button *ngIf="isLoading_logIn" type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Sign up</button>
+            <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isLoading_logIn"></mat-spinner>
           </mat-dialog-actions>
         </div>
       </form>

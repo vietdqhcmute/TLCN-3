@@ -18,8 +18,8 @@ export class AppLoginComponent implements OnInit {
   su_password: string;
   su_confirm: string;
   error: string;
-  isLoading=false;
-
+  isLoading_logIn=false;
+  isLoading_signUp = false;
   constructor(public authService: AuthService) {}
 
   ngOnInit() {}
@@ -29,6 +29,7 @@ export class AppLoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.si_email, this.si_password);
+    this.isLoading_logIn=true;
   }
 
   onSignUp(form: NgForm) {
@@ -38,5 +39,6 @@ export class AppLoginComponent implements OnInit {
     this.authService
       .createUser(this.su_name, this.su_phone, this.su_email, this.su_password)
       .subscribe(response => {});
+    this.isLoading_signUp=true;
   }
 }

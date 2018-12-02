@@ -32,7 +32,8 @@ import {
   MatChipsModule,
   MatMenuModule,
   MatSnackBarModule,
-  MatTabsModule
+  MatTabsModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DiaExperienceComponent } from "./dia-experience/dia-experience.component";
@@ -80,6 +81,7 @@ import { AuthInterceptor } from "./auth-interceptor";
     MatMenuModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule
   ],
   providers: [{provide: Window, useValue: window},{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
