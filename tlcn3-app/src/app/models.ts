@@ -1,38 +1,43 @@
+export class AuthUser{
+    resume: Resume;
+    googleId?: string;
+    googleName?: string;
+    avatarURL?: string;
+    userName: string;
+    email: string;
+    password: string;
+    fullname: string;
+    phone: string;
+}
+export interface AuthLogin{
+    email: string;
+    password: string;
+}
 export class User{
     resume: Resume;
-    googleId: string;
-    googleName: string;
-    avatarURL: string;
+    googleId?: string;
+    googleName?: string;
+    avatarURL?: string;
+    userName: string;
+    email: string;
+    password: string;
+    fullname: string;
+    phone: string;
     _id: string;
 }
 export class Resume {
-    name: string;
     title: string;
     summary: string;
-    email: string;
-    phone: string;
     pictureUrl?: string;
-    social: Array<Social>;
+    githubURL?: string;
+    linkedinURL?: string;
+    webpageURL?: string; 
     experience: Array<Experience>;
     education: Array<Education>;
     project: Array<Project>;
     skill: Array<String>;
 }
 
-export enum SocialType {
-    LINKEDIN = "LINKEDIN",
-    GITHUB = "GITHUB",
-    TWITTER = "TWITTER",
-    FACEBOOK = "FACEBOOK",
-    INSTAGRAM = "INSTAGRAM",
-    UNKNOWN = "UNKNOWN"
-}
-
-export interface Social {
-    type: SocialType;
-    url: string;
-    _id: string;
-}
 
 export class Experience {
     title: string;

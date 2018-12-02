@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -32,13 +32,15 @@ import {
   MatChipsModule,
   MatMenuModule,
   MatSnackBarModule,
-  MatTabsModule
+  MatTabsModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DiaExperienceComponent } from "./dia-experience/dia-experience.component";
 import { DiaEducationComponent } from './dia-education/dia-education.component';
 import { DiaProjectComponent } from './dia-project/dia-project.component';
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
+import { AuthInterceptor } from "./auth-interceptor";
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatSelectModule,
     MatSlideToggleModule,
@@ -78,9 +81,10 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
     MatMenuModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: Window, useValue: window},{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent],
   entryComponents: [DiaExperienceComponent, DiaEducationComponent, DiaProjectComponent]
 })

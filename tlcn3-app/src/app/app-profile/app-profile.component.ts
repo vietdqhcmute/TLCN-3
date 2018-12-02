@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../user.service";
-import { ActivatedRoute } from "@angular/router";
-import { DataService } from '../data.service';
+import { UserService } from "../services/user.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { DataService } from "../services/data.service";
 import { Resume, User } from "../models";
+import { AuthService } from "../services/auth.service";
 @Component({
   selector: "app-app-profile",
   templateUrl: "./app-profile.component.html",
@@ -13,21 +14,31 @@ export class AppProfileComponent implements OnInit {
   resume$: Resume;
   userByResume$: User;
   id: string;
-
-  constructor(private route: ActivatedRoute, private data: DataService) {
+  isAuthenticated = false;
+  constructor(
+    private route: ActivatedRoute,
+    private data: DataService,
+    private auth: AuthService,
+    private router: Router
+  ) {
     this.route.params.subscribe(params => {
       this.id = params.id;
     });
   }
 
   ngOnInit() {
-    this.user$ = this.route.snapshot.data["profile"]; //Use User infomation Resolver to load data before render view
-    //This line is to pass data to main component
-    this.data.currentUser.subscribe(result =>{
-      this.userByResume$ = result;
-    });
+    if (!this.auth.getIsAuth()) {
+      this.router.navigate(['/login']);
+    }else{
+      this.user$ = this.route.snapshot.data["profile"]; //Use User infomation Resolver to load data before render view
+      //This line is to pass data to main component
+      this.data.currentUser.subscribe(result => {
+        this.userByResume$ = result;
+      });
+    }
   }
-  sendData(){ //to send data to main component
+  sendData() {
+    //to send data to main component
     this.data.sendDataUser(this.user$);
   }
 }

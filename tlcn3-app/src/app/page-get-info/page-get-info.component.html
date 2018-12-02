@@ -2,67 +2,51 @@
   <h3>Contact Infomation</h3>
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Your name" value="{{resume$.contact.name}}" [(ngModel)]="resume$.contact.name">
-      <mat-hint align="endYear">e.g Do Quoc Viet</mat-hint>
+      <input matInput placeholder="Your name" value="{{user$.fullName}}" [(ngModel)]="user$.fullName">
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Title" value="{{resume$.contact.title}}" [(ngModel)]="resume$.contact.title">
+      <input matInput placeholder="Title" value="{{resume$.title}}" [(ngModel)]="resume$.title">
+    </mat-form-field>
+  </div>
+
+  <div class="item" id="Summary">
+    <mat-form-field>
+        <textarea matInput value="{{resume$.summary}}" [(ngModel)]="resume$.summary" placeholder="Summary"></textarea>
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-        <textarea matInput value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary" placeholder="Summary"></textarea>
-      <!-- <input matInput placeholder="Summary" value="{{resume$.contact.summary}}" [(ngModel)]="resume$.contact.summary"> -->
+      <input matInput placeholder="Phone number" value="{{user$.phone}}" [(ngModel)]="user$.phone">
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Phone number" value="{{resume$.contact.phone}}" [(ngModel)]="resume$.contact.phone">
+      <input matInput placeholder="Email" value="{{user$.email}}" [(ngModel)]="user$.email">
     </mat-form-field>
   </div>
 
   <div class="item">
     <mat-form-field>
-      <input matInput placeholder="Email" value="{{resume$.contact.email}}" [(ngModel)]="resume$.contact.email">
+      <input matInput placeholder="Github URL" value="{{resume$.githubURL}}" [(ngModel)]="resume$.githubURL">
     </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
-      <span class="label">Facebook URL</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="LinkedIn URL" value="{{resume$.linkedinURL}}" [(ngModel)]="resume$.linkedinURL">
+    </mat-form-field>
   </div>
 
   <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
-      <span class="label">Github URL</span>
-      <span class="border"></span>
-    </label>
+    <mat-form-field>
+      <input matInput placeholder="Personal Webpage" value="{{resume$.webpageURL}}" [(ngModel)]="resume$.webpageURL">
+    </mat-form-field>
   </div>
-
-  <div class="item">
-    <label for="inp" class="inp">
-      <input type="text" id="inp" placeholder="&nbsp;">
-      <span class="label">LinkedIn URL</span>
-      <span class="border"></span>
-    </label>
-  </div>
-
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <div class="item">
-    <a routerLink='experience' class="btn btn-danger float-right">Next</a>
-  </div> -->
 </section>
 <br>
 
@@ -82,12 +66,6 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Experience" (click)='addNewObject("Experience")'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
 <br>
 <br>
@@ -107,16 +85,11 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Project" (click)='addNewObject("Project")'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
 <br>
 <br>
 <br>
+
 <section id="Education">
   <h3>Education</h3>
   <div class="list-education">
@@ -136,12 +109,6 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Educational" (click)='addNewObject("Education")'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
 <br>
 <br>
@@ -154,7 +121,7 @@
     <ul>
       <li *ngFor="let item of resume$.skill; let i=index" [attr.data-index]="i" class="list-item">
         <mat-form-field>
-          <input matInput value="{{input}}" [(ngModel)]="item" placeholder="Skill">
+          <input matInput value="{{input}}" [(ngModel)]="item" placeholder="Skill {{i+1}}">
         </mat-form-field>
         <div class="list-item-button">
           <button class="btn btn-primary" (click)='confirmSkill(i, item)'><i class="fa fa-check"></i></button>
@@ -166,10 +133,7 @@
   <div class="item">
     <input type="button" class="btn btn-primary preview" value="Add Another Skill" (click)='addNewSkill()'>
   </div>
-  <!-- <div class="item">
-    <input type="button" class="btn btn-outline-danger preview" value="Preview">
-  </div>
-
-  <a routerLink="/objective" class="btn btn-debug float-left">Previous</a>
-  <a routerLink="/education" class="btn btn-danger float-right">Next</a> -->
 </section>
+<br>
+<br>
+<br>
