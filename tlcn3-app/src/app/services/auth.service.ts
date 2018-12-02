@@ -3,12 +3,14 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Http, Headers } from "@angular/http";
 
 import { Resume, User, AuthUser, AuthLogin } from "../models";
+import { Subject } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
   domainName = "http://localhost:3000/";
   private token: string;
+  public loginId = new Subject<string>();
 
   constructor(private http: HttpClient) {}
 
@@ -54,10 +56,11 @@ export class AuthService {
       password: password
     };
     this.http
-      .post<{ token: string }>(this.domainName + "login", loginData)
+      .post<{ token: string, id:string }>(this.domainName + "login", loginData)
       .subscribe(response => {
         const token = response.token;
         this.token = token;
+        this.loginId.next(response.id);
       });
   }
 }

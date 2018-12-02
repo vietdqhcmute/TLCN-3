@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: "app-page-sidebar",
@@ -7,8 +8,13 @@ import { Location } from "@angular/common";
   styleUrls: ["./page-sidebar.component.scss"]
 })
 export class PageSidebarComponent implements OnInit {
-  userID: string = "5c024e3540718a3298915b36";
-  constructor() {}
+  userID: string ;
 
-  ngOnInit() {}
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.loginId.subscribe(id=>{
+      this.userID = id;
+    })
+  }
 }

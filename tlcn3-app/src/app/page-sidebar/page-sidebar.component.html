@@ -6,11 +6,18 @@
     <li>
       <a routerLink="/about" class="float-right">About us</a>
     </li>
-    <li>
-      <a routerLink="/login" class="float-right">Sign in</a>
-    </li>
-    <li>
-        <a routerLink="/profile/{{userID}}" class="float-right">Profile</a>
+    <div>
+      <li>
+        <a routerLink="/login" class="float-right">Sign in</a>
       </li>
+    </div>
+    <div *ngIf="1===2">
+      <li>
+        <a routerLink="/login" class="float-right">Sign in</a>
+      </li>
+    </div>
+    <li>
+      <a routerLink="/profile/{{userID}}" class="float-right">Profile</a>
+    </li>
   </ul>
 </nav>

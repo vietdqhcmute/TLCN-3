@@ -47,7 +47,8 @@ router.post("/login", (req, res, next) => {
     //If right password, create Jason Web Token
     const token = jwt.sign({  email: fetchedUser.email,  userId: fetchedUser._id}, 'secret_that_should_be_longer', {  expiresIn: "1h"});
     res.status(200).json({
-      token:token
+      token:token,
+      id: fetchedUser._id
     });
 
   }).catch(err => {
