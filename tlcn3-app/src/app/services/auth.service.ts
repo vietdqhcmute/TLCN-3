@@ -78,6 +78,7 @@ export class AuthService {
           this.isAuthenticated=true;
           this.authStatusListener.next(true);
           this.loginId.next(response.id);
+          this.router.navigate(['profile']);
         }
       });
   }
