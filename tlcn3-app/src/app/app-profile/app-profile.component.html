@@ -5,5 +5,5 @@
   <p>Your last update: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
 </section>
 
-<a class="btn btn-outline-info" [routerLink]="['/main', user$._id, 'edit']"
-    [queryParams]="{allowEdit: true}" (click)='sendData()'>Update your Résume</a>
+<a class="btn btn-outline-info" [routerLink]="['/main']"
+   >Update your Résume</a>

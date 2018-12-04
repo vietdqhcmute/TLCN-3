@@ -27,7 +27,6 @@ export class AppProfileComponent implements OnInit {
     this.data.currentUser.subscribe(result=>{
       this.user$=result;
       this.resume$= this.user$.resume;
-      console.log(this.user$);
     })
   }
 
