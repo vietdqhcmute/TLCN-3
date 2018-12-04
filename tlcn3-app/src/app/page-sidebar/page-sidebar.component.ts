@@ -16,9 +16,9 @@ export class PageSidebarComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.loginId.subscribe(id => {
-      this.userID = id;
-    });
+    // this.authService.loginId.subscribe(id => {
+    //   this.userID = id;
+    // });
     this.authListenerSubs = this.authService
       .getAuthStatusListener()
       .subscribe(isAuthenticated=>{
