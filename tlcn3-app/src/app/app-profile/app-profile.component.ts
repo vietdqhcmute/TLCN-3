@@ -16,18 +16,21 @@ export class AppProfileComponent implements OnInit {
   isAuthenticated = false;
   constructor(
     private route: ActivatedRoute,
-    private data: DataService,
-    private auth: AuthService,
+    private dataService: DataService,
+    private authService: AuthService,
     private router: Router
-  ) {
-    
-  }
+  ) {}
 
   ngOnInit() {
-    this.data.currentUser.subscribe(result=>{
-      this.user$=result;
-      this.resume$= this.user$.resume;
-    })
-  }
+    this.isAuthenticated = this.authService.getIsAuth();
+    if (this.isAuthenticated) {
+      this.dataService.currentUser.subscribe(result => {
+        this.user$ = result;
+        this.resume$ = this.user$.resume;
+      });
+    }else{
+      this.router.navigate(['login']);
+    }
 
+  }
 }

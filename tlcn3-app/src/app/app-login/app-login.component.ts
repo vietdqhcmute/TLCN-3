@@ -30,7 +30,7 @@ export class AppLoginComponent implements OnInit {
     public authService: AuthService,
     private userService: UserService,
     private dataService: DataService,
-    router: Router
+    private router: Router
   ) {}
 
   ngOnInit() {}
