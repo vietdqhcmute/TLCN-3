@@ -3,17 +3,20 @@
     <li>
       <a id="logo" [routerLink]="['/']" class="float-left"><strong>CV-Angular</strong></a>
     </li>
+
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/login" class="float-right">Sign in</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <a routerLink="/login" class="float-right" (click)="onLogOut()">Log out</a>
+    </li>
+
     <li>
       <a routerLink="/about" class="float-right">About us</a>
     </li>
-      <li *ngIf="!userIsAuthenticated">
-        <a routerLink="/login" class="float-right">Sign in</a>
-      </li>
-      <li *ngIf="userIsAuthenticated">
-        <a routerLink="/login" class="float-right" (click)="onLogOut()">Log out</a>
-      </li>
+
     <li *ngIf="userIsAuthenticated">
-      <a routerLink="/profile/{{userID}}" class="float-right">Profile</a>
+      <a routerLink="/profile" class="float-right">Profile</a>
     </li>
   </ul>
 </nav>
