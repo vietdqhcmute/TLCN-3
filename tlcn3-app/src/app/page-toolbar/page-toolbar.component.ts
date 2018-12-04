@@ -16,7 +16,9 @@ export class PageToolbarComponent implements OnInit {
     route.params.subscribe(params => (this.id$ = params.id));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   onSave() {
     this.user
