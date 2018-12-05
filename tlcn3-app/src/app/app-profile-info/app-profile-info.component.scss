@@ -30,18 +30,25 @@
       .cover-image {
         height: 40vh;
       }
-
-      .avatar {
-
-        margin-left: 50px;
-        margin-top: -50px;
-
-        img {
-          height: 120px;
-          width: 120px;
-          border-radius: 50%;
+      .cover-info{
+        display: flex;
+        flex-flow: row;
+        .avatar {
+          flex:5;
+          margin-left: 50px;
+          margin-top: -50px;
+  
+          img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+          }
+        }
+        .cover-user-info{
+          flex:5;
         }
       }
+
     }
    
   }
