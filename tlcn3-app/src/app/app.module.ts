@@ -41,6 +41,7 @@ import { DiaEducationComponent } from './dia-education/dia-education.component';
 import { DiaProjectComponent } from './dia-project/dia-project.component';
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { AuthInterceptor } from "./auth-interceptor";
+import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AuthInterceptor } from "./auth-interceptor";
     DiaEducationComponent,
     DiaProjectComponent,
     ConvertToMonthPipe,
+    AppProfileInfoComponent,
   ],
   imports: [
     BrowserModule,
