@@ -1,4 +1,38 @@
-:host{
-    .header-profile{
+:host {
+
+  .header-profile {}
+
+  input[type='file'] {
+    visibility: hidden;
+  }
+
+  #info-area {
+    display: flex;
+    flex-direction: column;
+
+    .cover {
+      margin-left: 50;
+      margin-top: 50;
+      width: 40;
+      height: 70;
+      padding: 30px;
+
+      .cover-image {
+        height: 40vh;
+      }
+
+      .avatar {
+
+        margin-left: 50px;
+        margin-top: -50px;
+
+        img {
+          height: 120px;
+          width: 120px;
+          border-radius: 50%;
+        }
+      }
     }
+  }
+
 }
