@@ -1,32 +1,5 @@
 <div *ngIf="isAuthenticated">
-
-  <div id="info-area">
-    <div class="header-profile">
-      <h1>Welcome back! {{user$.userName}}</h1>
-    </div>
-
-    <div class="cover">
-      <div class="cover-image">
-        <img class="cover-image" src="../../assets/The-Industrialist.png" alt="cover">
-      </div>
-
-      <div class="avatar">
-        <img src="../../assets/Tho-7-mau.jpg" alt="avatar">
-        <h6><strong>{{user$.userName}}</strong></h6>
-        <p><strong>{{user$.resume.title}}</strong></p>
-      </div>
-      <div class="cover-info"></div>
-    </div>
-
-    <!-- <div id="btn-upImage">
-          <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
-          <input type="file" #filePicker>
-        </div> -->
-
-    <section id="info">
-      <p>Your last update: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
-    </section>
-
-    <a class="btn btn-outline-info" [routerLink]="['/main',user$._id,'edit']">Update your Résume</a>
+  <div class="flex-profile">
+    <app-app-profile-info [user$]="user$"></app-app-profile-info>
   </div>
 </div>
