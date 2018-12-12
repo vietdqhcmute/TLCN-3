@@ -8,9 +8,20 @@ import { User } from '../models';
 })
 export class AppProfileInfoComponent implements OnInit {
   @Input() user$: User;
+  imagePreview: string;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  onImagePicked(event: Event){
+    const file = (event.target as HTMLInputElement).files[0];
+    const reader = new FileReader();
+    reader.onload = ()=>{
+      this.imagePreview = reader.result.toString();
+    };
+    reader.readAsDataURL(file);
+    console.log(this.imagePreview);
+  }
 }

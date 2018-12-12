@@ -49,10 +49,21 @@
           margin-top: -50px;
 
           img {
+            max-height:auto;
+            max-width: 100%;
+
+          }
+
+          .image-container {
             height: 120px;
             width: 120px;
+            //background-size: initial;
+            overflow: hidden;
             border-radius: 50%;
+
           }
+
+
         }
 
         .cover-user-info {
