@@ -23,4 +23,10 @@ export class UserService {
     return this.http.put(this.domainName+'update/user/'+userID, user,{headers: headers});
   }
 
+  updateAvatar(image: File){
+    const postImage = new FormData();
+    postImage.append("image", image);
+    return this.http.post(this.domainName +'add/picture', postImage).subscribe(responseData=>{
+    });
+  }
 }

@@ -3,6 +3,33 @@ const router = express.Router();
 const Resume = require('./resumeModel');
 const passport = require('passport');
 const checkAuth = require('./check-auth');
+const multer = require('multer');
+
+const MIME_TYPE_MAP = {
+  'image/png': 'png',
+  'image/jpeg': 'jpg',
+  'image/jpg': 'jpg'
+}
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb)=>{
+    const isValid = MIME_TYPE_MAP[file.mimetype];
+    let error = new Error("Invalid mime type");
+    if (isValid){
+      error = null;
+    }
+    cb(null,"server/images");
+  },
+  filename: (req, file, cb)=>{
+    const name = file.originalname.toLowerCase().split(' ').join('-');
+    const ext = MIME_TYPE_MAP[file.mimetype];
+    cb(null, name +'-'+ Date.now() + '.' + ext);
+  }
+
+});
+router.post('/add/picture', multer({storage: storage}).single("image") ,async (req, res) => {
+
+});
 
 router.post('/add/user', async (req, res) => {
   const resume = new Resume(req.body);

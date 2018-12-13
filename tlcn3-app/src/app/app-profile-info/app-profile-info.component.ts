@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../models';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-app-profile-info',
@@ -10,7 +11,7 @@ export class AppProfileInfoComponent implements OnInit {
   @Input() user$: User;
   imagePreview: string;
   
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -23,5 +24,8 @@ export class AppProfileInfoComponent implements OnInit {
     };
     reader.readAsDataURL(file);
     console.log(this.imagePreview);
+  }
+  onSaveAvatar(){
+    // this.userService.updateAvatar();
   }
 }
