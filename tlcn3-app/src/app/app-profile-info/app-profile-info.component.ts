@@ -23,6 +23,7 @@ export class AppProfileInfoComponent implements OnInit {
       this.imagePreview = reader.result.toString();
     };
     reader.readAsDataURL(file);
+    this.userService.updateAvatar(file);
     console.log(this.imagePreview);
   }
   onSaveAvatar(){
