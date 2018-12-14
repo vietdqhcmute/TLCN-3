@@ -28,7 +28,11 @@ const storage = multer.diskStorage({
 
 });
 router.post('/add/picture', multer({storage: storage}).single("image") ,async (req, res) => {
-
+  const url = req.protocol+ '://' + req.get("host");
+  let imagePath = url + "/images/" + req.file.filename; 
+  res.status(200).json({
+    avatarUrl: imagePath
+  })
 });
 
 router.post('/add/user', async (req, res) => {

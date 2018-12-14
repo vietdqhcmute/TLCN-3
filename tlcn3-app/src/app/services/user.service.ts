@@ -3,14 +3,21 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
 
 import { Resume, User } from '../models';
+import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
   domainName="http://localhost:3000/";
+  private avatarURL= new Subject<string>();
 
   constructor(private http: HttpClient) { }
+
+  getAvatarUrl(){
+    return this.avatarURL.asObservable();
+  }
+
   getUsers(){
     return this.http.get(this.domainName +'user/all');
   }
@@ -26,7 +33,9 @@ export class UserService {
   updateAvatar(image: File){
     const postImage = new FormData();
     postImage.append("image", image);
-    return this.http.post(this.domainName +'add/picture', postImage).subscribe(responseData=>{
+    return this.http.post<{avatarUrl: string}>(this.domainName +'add/picture', postImage).subscribe(response=>{
+      this.avatarURL.next(response.avatarUrl);
+      console.log(response);
     });
   }
 }

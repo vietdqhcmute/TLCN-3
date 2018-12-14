@@ -13,7 +13,6 @@
         <div class="image-container">
             <img *ngIf="!imagePreview" src="../../assets/Tho-7-mau.jpg" alt="avatar" (click)="filePicker.click()">
             <img [src]="imagePreview" *ngIf="imagePreview !== '' && imagePreview" alt="avatar" (click)="filePicker.click()">
-            <button (click)='onSaveAvatar'>ok</button>
             <input type="file" #filePicker (change)="onImagePicked($event)">
         </div>
         <h6><strong>{{user$.userName}}</strong></h6>

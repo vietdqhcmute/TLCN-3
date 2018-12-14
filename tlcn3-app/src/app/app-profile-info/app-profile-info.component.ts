@@ -10,7 +10,6 @@ import { UserService } from '../services/user.service';
 export class AppProfileInfoComponent implements OnInit {
   @Input() user$: User;
   imagePreview: string;
-  
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -23,10 +22,17 @@ export class AppProfileInfoComponent implements OnInit {
       this.imagePreview = reader.result.toString();
     };
     reader.readAsDataURL(file);
-    this.userService.updateAvatar(file);
-    console.log(this.imagePreview);
+
+    this.onSaveAvatar(file);
   }
-  onSaveAvatar(){
-    // this.userService.updateAvatar();
+  onSaveAvatar(file:File){
+    this.userService.updateAvatar(file);
+    this.userService.getAvatarUrl().subscribe(avatarUrl$ =>{
+      this.user$.avatarURL=avatarUrl$;
+    })
+    console.log(this.user$);
+    this.userService.updateUserByID(this.user$._id,this.user$);
+    // this.userService.updateUserByID(this.user$._id,this.user$);
+
   }
 }
