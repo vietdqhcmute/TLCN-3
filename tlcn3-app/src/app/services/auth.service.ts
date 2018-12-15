@@ -54,7 +54,7 @@ export class AuthService {
       resume: newResume,
       googleId: "",
       googleName: "",
-      avatarURL: "",
+      avatarURL: "http://localhost:3000/images/tho-7-mau.jpg",
       userName: userName,
       email: email,
       password: password,
