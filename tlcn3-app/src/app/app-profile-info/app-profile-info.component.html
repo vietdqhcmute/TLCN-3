@@ -11,7 +11,8 @@
     <div class="cover-info">
       <div class="avatar">
         <div class="image-container">
-            <img *ngIf="!imagePreview" src="../../assets/Tho-7-mau.jpg" alt="avatar" (click)="filePicker.click()">
+            <img *ngIf="!imagePreview" [src]="user$.avatarURL" alt="avatar" (click)="filePicker.click()">
+            <!-- <img *ngIf="!imagePreview" src="../../assets/Tho-7-mau.jpg" alt="avatar" (click)="filePicker.click()"> -->
             <img [src]="imagePreview" *ngIf="imagePreview !== '' && imagePreview" alt="avatar" (click)="filePicker.click()">
             <input type="file" #filePicker (change)="onImagePicked($event)">
         </div>

@@ -29,9 +29,8 @@ export class AppProfileInfoComponent implements OnInit {
     this.userService.updateAvatar(file);
     this.userService.getAvatarUrl().subscribe(avatarUrl$ =>{
       this.user$.avatarURL=avatarUrl$;
+      this.userService.updateUserByID(this.user$._id,this.user$);
     })
-    console.log(this.user$);
-    this.userService.updateUserByID(this.user$._id,this.user$);
     // this.userService.updateUserByID(this.user$._id,this.user$);
 
   }
