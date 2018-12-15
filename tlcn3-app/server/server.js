@@ -31,6 +31,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+app.use("/images",express.static(path.join("../server/images")));
 // middlewares
 app.use(session({
   secret: "secret",

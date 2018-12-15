@@ -1,0 +1,78 @@
+:host {
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+
+  .header-profile {
+    margin: 0 auto;
+  }
+
+  input[type='file'] {
+    visibility: hidden;
+  }
+
+  #info-area {
+    display: flex;
+    flex-direction: column;
+    width: 150vh;
+    margin-left: 70px;
+
+    .cover {
+      -moz-box-shadow: 0 0 3px #37474F;
+      -webkit-box-shadow: 0 0 3px #37474F;
+      box-shadow: 0 0 3px #37474F;
+      margin-left: 50;
+      margin-top: 50;
+      width: 132.5vh;
+      padding-top: 2px;
+      padding-left: 2px;
+      padding-right: 2px;
+      padding-bottom: 30px;
+
+      button {
+        width: max-content;
+        margin-left: 50px;
+      }
+
+      .cover-image {
+        height: 40vh;
+      }
+
+      .cover-info {
+        display: flex;
+        flex-flow: row;
+
+        .avatar {
+          flex: 5;
+          margin-left: 50px;
+          margin-top: -50px;
+
+          img {
+            max-height:100%;
+            // transform:translate(-50%, -50%);
+
+          }
+
+          .image-container {
+            height: 120px;
+            width: 120px;
+            background-size: 100% 100%;
+            overflow: hidden;
+            border-radius: 50%;
+
+          }
+
+
+        }
+
+        .cover-user-info {
+          flex: 5;
+        }
+      }
+
+    }
+
+  }
+
+}

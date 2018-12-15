@@ -79,9 +79,10 @@
           </mat-form-field>
 
           <mat-form-field>
-            <input id="su_userPassword" matInput name="su_userPassword" placeholder="Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,15}$"
-              required [(ngModel)]="su_password" [type]="hide ? 'password' : 'text'" minlength="6" #su_userPassword="ngModel">
-
+            <input id="su_userPassword" matInput name="su_userPassword" placeholder="Password" required 
+   
+              required [(ngModel)]="su_password" [type]="hide ? 'password' : 'text'"  #su_userPassword="ngModel">
+              <!-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,15}$"  minlength="6"-->
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
             <mat-error *ngIf="su_userPassword.invalid && (su_userPassword.dirty || su_userPassword.touched)">

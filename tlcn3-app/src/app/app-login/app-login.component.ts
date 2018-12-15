@@ -13,8 +13,8 @@ import { DataService } from "../services/data.service";
 })
 export class AppLoginComponent implements OnInit {
   hide = true;
-  si_email: string;
-  si_password: string;
+  si_email: string = "vietdqhcmute@gmail.com";
+  si_password: string = "123";
 
   su_name: string;
   su_phone: string;
@@ -33,7 +33,8 @@ export class AppLoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 
   onSignIn(form: NgForm) {
