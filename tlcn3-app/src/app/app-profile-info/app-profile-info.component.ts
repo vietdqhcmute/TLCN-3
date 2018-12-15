@@ -23,13 +23,15 @@ export class AppProfileInfoComponent implements OnInit {
     };
     reader.readAsDataURL(file);
 
-    this.onSaveAvatar(file);
+    this.saveAvatar(file);
   }
-  onSaveAvatar(file:File){
-    this.userService.updateAvatar(file);
+  saveAvatar(image:File){
+    this.userService.updateAvatar(image);
     this.userService.getAvatarUrl().subscribe(avatarUrl$ =>{
       this.user$.avatarURL=avatarUrl$;
-      this.userService.updateUserByID(this.user$._id,this.user$);
+      this.userService.updateUserByID(this.user$._id,this.user$).subscribe(response=>{
+        
+      });
     })
     // this.userService.updateUserByID(this.user$._id,this.user$);
 
