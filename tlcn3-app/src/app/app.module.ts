@@ -42,6 +42,7 @@ import { DiaProjectComponent } from './dia-project/dia-project.component';
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { AuthInterceptor } from "./auth-interceptor";
 import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.component';
+import { DiaConfirmComponent } from './dia-confirm/dia-confirm.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.com
     DiaProjectComponent,
     ConvertToMonthPipe,
     AppProfileInfoComponent,
+    DiaConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +90,6 @@ import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.com
   ],
   providers: [{provide: Window, useValue: window},{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent],
-  entryComponents: [DiaExperienceComponent, DiaEducationComponent, DiaProjectComponent]
+  entryComponents: [DiaExperienceComponent, DiaEducationComponent, DiaProjectComponent, DiaConfirmComponent]
 })
 export class AppModule {}

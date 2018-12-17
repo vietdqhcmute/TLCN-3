@@ -59,7 +59,7 @@
           <a [routerLink]="xxx" (click)="openDetail(item,'Experience')">{{item.company_name}}</a>
           <p>{{item.title}}</p>
         </div>
-        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Experience")'><i class="fa fa-trash"></i></button>
+        <button class="btn btn-danger float-right" (click)='onDeleteObject(item._id,"Experience")'><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>

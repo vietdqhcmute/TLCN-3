@@ -24,6 +24,7 @@ import { connectableObservableDescriptor } from "rxjs/internal/observable/Connec
 import { UserService } from "../services/user.service";
 import { DiaEducationComponent } from "../dia-education/dia-education.component";
 import { DiaProjectComponent } from "../dia-project/dia-project.component";
+import { DiaConfirmComponent } from "../dia-confirm/dia-confirm.component";
 
 @Component({
   selector: "app-page-get-info",
@@ -51,12 +52,11 @@ export class PageGetInfoComponent implements OnInit {
       this.resume$ = this.user$.resume;
       this.skill = this.user$.resume.skill;
     });
-    this.data.currentElementID.subscribe(id=>{
+    this.data.currentElementID.subscribe(id => {
       this.findElement(id);
     });
-    
   }
-  
+
   //Detail is called in addNewObject
   openDetail(item: Object, type: string) {
     //config Dialog
@@ -157,7 +157,7 @@ export class PageGetInfoComponent implements OnInit {
     //Finally update after add new
     this.user.updateUserByID(this.user$._id, this.user$);
   }
-  
+
   addNewSkill() {
     let newSkill: String = "New Skill"; //standart skill
     this.resume$.skill.push(newSkill);
@@ -188,6 +188,25 @@ export class PageGetInfoComponent implements OnInit {
     }
   }
 
+  onDeleteObject(ID, type: string) {
+    //config Dialog
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.data = false;
+
+    const dialogRef = this.dialog.open(DiaConfirmComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        this.deleteObjectByID(ID, type);
+      }else{
+        console.log("Just close dialog");
+      }
+    });
+  }
+
   deleteSkill(index) {
     this.resume$.skill.splice(index, 1);
   }
@@ -196,7 +215,7 @@ export class PageGetInfoComponent implements OnInit {
     this.resume$.skill[index] = item;
   }
 
-  findElement(elementID:string){
+  findElement(elementID: string) {
     this.window.document.getElementById(elementID).scrollIntoView();
   }
 }
