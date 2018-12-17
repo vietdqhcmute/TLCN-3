@@ -20,8 +20,10 @@
         <p><strong>{{user$.resume.title}}</strong></p>
       </div>
       <div class="cover-user-info">
-        <p>{{user$.email}}</p>
-        <p>{{user$.phone}}</p>
+        <div class="one-line"><i class="material-icons md-24">email</i><p><strong>  {{user$.email}}</strong></p></div>
+        <div class="one-line"><i class="material-icons md-24">local_phone</i><p><strong>  {{user$.phone}}</strong></p></div>
+        <div *ngIf="user$.resume.githubURL" class="one-line"><span><img src="../../assets/github-icon.png" alt="github-icon" style="width:25px"></span><p><strong>{{user$.resume.githubURL}}</strong></p></div>
+        <div *ngIf="user$.resume.linkedinURL" class="one-line"><span><img src="../../assets/linkedin-icon.png" alt="linkedin-icon" style="width:25px"></span><p><strong>{{user$.resume.linkedinURL}}</strong></p></div>
       </div>
     </div>
 
