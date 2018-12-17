@@ -78,7 +78,7 @@
     <ul>
       <li *ngFor="let item of resume$.project">
         <a [routerLink]="xxx" (click)="openDetail(item,'Project')">{{item.name}}</a>
-        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Project")'><i class="fa fa-trash"></i></button>
+        <button class="btn btn-danger float-right" (click)='onDeleteObject(item._id,"Project")'><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>
@@ -101,7 +101,7 @@
           <p>{{item.major}}</p>
         </div>
 
-        <button class="btn btn-danger float-right" (click)='deleteObjectByID(item._id,"Education")'><i class="fa fa-trash"></i></button>
+        <button class="btn btn-danger float-right" (click)='onDeleteObject(item._id,"Education")'><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>
@@ -125,7 +125,7 @@
         </mat-form-field>
         <div class="list-item-button">
           <button class="btn btn-primary" (click)='confirmSkill(i, item)'><i class="fa fa-check"></i></button>
-          <button class="btn btn-danger" (click)='deleteSkill(i)'><i class="fa fa-trash"></i></button>
+          <button class="btn btn-danger" (click)='onDeleteSkill(i)'><i class="fa fa-trash"></i></button>
         </div>
       </li>
     </ul>

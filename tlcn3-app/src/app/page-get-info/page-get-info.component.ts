@@ -214,7 +214,23 @@ export class PageGetInfoComponent implements OnInit {
   confirmSkill(index, item) {
     this.resume$.skill[index] = item;
   }
+  onDeleteSkill(index){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.data = false;
 
+    const dialogRef = this.dialog.open(DiaConfirmComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        this.deleteSkill(index);
+      }else{
+        console.log("Just close dialog");
+      }
+    });
+  }
   findElement(elementID: string) {
     this.window.document.getElementById(elementID).scrollIntoView();
   }
