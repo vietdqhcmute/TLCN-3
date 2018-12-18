@@ -10,6 +10,7 @@
       flex-direction: row-reverse;
       justify-content: flex-start;
       align-items: center;
+
       button {
         margin: 8px;
         margin-right: 20px;
@@ -17,6 +18,11 @@
         height: 70%;
         font-size: 10;
         border-radius: 60px;
+      }
+
+      mat-spinner {
+        margin: 8px;
+        margin-right: 20px;
       }
     }
   }

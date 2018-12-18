@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
 import { UserService } from "../services/user.service";
@@ -52,12 +52,16 @@ export class AppLoginComponent implements OnInit {
   }
 
   onSignUp(form: NgForm) {
+    this.isLoading_signUp = true;
+
     if (form.invalid) {
       return;
     }
     this.authService
       .createUser(this.su_name, this.su_phone, this.su_email, this.su_password)
-      .subscribe(response => {});
-    this.isLoading_signUp = true;
+      .subscribe(response => {
+        this.isLoading_signUp = false;
+      });
   }
+
 }
