@@ -11,18 +11,20 @@ import { ActivatedRoute } from "@angular/router";
 export class PageToolbarComponent implements OnInit {
   @Input() user$: User;
   id$: string;
-  
+  isLoading_update: boolean = false;
+
   constructor(private user: UserService, route: ActivatedRoute) {
     route.params.subscribe(params => (this.id$ = params.id));
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   onSave() {
+    this.isLoading_update = true;
     this.user
       .updateUserByID(this.id$, this.user$)
-      .subscribe(response => console.log(response), err => console.log(err));
+      .subscribe(response => {
+        this.isLoading_update= false;
+      }, err => console.log(err));
   }
 }
