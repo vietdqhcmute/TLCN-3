@@ -3,21 +3,135 @@
   font-family: Roboto, Helvetica, sans-serif;
   overflow: hidden;
   padding: 1cm;
-  #design-template{
+
+  #design-template {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    #highlight{
+
+    #highlight {
       height: 100%;
       width: 100%;
       flex: 3;
-      background:rgb(224, 61, 49);
+      background: rgb(212, 58, 47);
+      color: #FAFAFA;
+      padding: 10px;
+      padding-top: 1.5cm;
+
+      .title {
+        margin: 0 auto;
+        border-bottom: 1px solid #FAFAFA;
+        margin-bottom: 10px;
+      }
+
+      #contact {
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 60px;
+
+        #contact-info {
+          h6 {
+            margin-bottom: 0px;
+          }
+
+          p {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+          }
+
+          margin-left: 10px;
+        }
+      }
+
+      #skill {
+        margin-right: 10px;
+        margin-left: 10px;
+
+        #contact-info {
+          h6 {
+            margin-bottom: 0px;
+          }
+
+          p {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+          }
+
+          margin-left: 10px;
+        }
+
+        #skill-item {
+          font-size: 0.8rem;
+
+          ul {
+            margin-bottom: 0px;
+
+            li {
+              margin-bottom: 5px;
+            }
+          }
+
+        }
+      }
     }
-    #main{
+
+    #main {
       height: 100%;
       width: 100%;
       flex: 7;
+      padding-left: 10px;
+
+      #name {
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 2px;
+        }
+      }
+
+      #resume-title {}
+
+      #summary-area {}
+
+      #experience-area {
+        #experience-content {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 100%;
+
+          #company {
+            flex: 4.5;
+            width: 100%;
+            height: 100%;
+
+            p {
+              margin-bottom: 0px;
+              font-size: 0.8rem;
+            }
+          }
+
+          #detail {
+            flex: 5.5;
+            width: 100%;
+            height: 100%;
+            justify-content: flex-start;
+            p {
+              margin-bottom: 0px;
+              font-size: 0.8rem;
+            }
+            #experience-description {
+              display: block;
+
+              .line-breaker {
+                p {
+                  white-space: pre-line;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 

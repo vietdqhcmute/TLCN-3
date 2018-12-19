@@ -66,6 +66,11 @@
 
     #experience-description {
       display: block;
+      .line-breaker{
+        p{
+          white-space: pre-line;
+        }
+      }
     }
   }
 
