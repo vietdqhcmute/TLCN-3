@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Resume, User } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-page-a4-design',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-a4-design.component.scss']
 })
 export class PageA4DesignComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() resume: Resume;
+  @Input() user: User;
+  
+  constructor(private data: DataService) {}
+  elementID$: String;
   ngOnInit() {
+    console.log(this.resume);
+    this.data.currentElementID.subscribe(result=>{
+      this.elementID$=result;
+    })
   }
 
+  sendData(elementID){
+    this.data.sendDataElementID(elementID);
+  }
 }
