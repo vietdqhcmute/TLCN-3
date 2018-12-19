@@ -17,121 +17,19 @@
     padding: 60px 70px;
 
     #cv-area {
-      #a4-zone {
+      height: 297mm;
+      width: 210mm;
+      app-page-a4-default {
+        height: 100%;
+        width: 100%;
+        display: block;
         background: #FFFFFF;
-        height: 297mm;
-        width: 210mm;
-        box-shadow: 30px 30px #494747;
-        padding: 1cm;
-        font-family: Roboto, Helvetica, sans-serif;
-        overflow: hidden;
-        h2,
-        h5 {
-          margin: 0px;
-        }
-
-        p {
-          margin: 0px;
-          // height: 18px;
-        }
-
-        .section {
-          margin-bottom: 10px;
-        }
-
-        #contact-area {
-          &:hover {
-            outline: 3px solid #37474F;
-            outline-width: 100%;
-          }
-
-          .resume-title {
-            font-size: 22;
-            font-weight: bold;
-          }
-        }
-
-        #summary-area {
-          .summary-item {
-            &:hover {
-              outline: 3px solid #37474F;
-              outline-width: 100%;
-            }
-          }
-        }
-
-        #experience-area {
-          .experience-item {
-            margin-bottom: 5px;
-
-            &:hover {
-              outline: 3px solid #37474F;
-              outline-width: 100%;
-            }
-          }
-
-          #experience-company-location {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-            // #companyName {}
-
-            // #location {}
-          }
-
-          #experience-title-time {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-          }
-
-          #experience-description {
-            display: block;
-          }
-        }
-
-        #project-area {
-          .project-item {
-            margin-bottom: 5px;
-
-            &:hover {
-              outline: 3px solid #37474F;
-              outline-width: 100%;
-            }
-          }
-
-          #projectName-date {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-          }
-        }
-
-        #education-area {
-          .education-item {
-            margin-bottom: 5px;
-
-            &:hover {
-              outline: 3px solid #37474F;
-              outline-width: 100%;
-            }
-          }
-
-          #education-date {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-          }
-        }
-
-        #skill-area {
-            &:hover {
-              outline: 3px solid #37474F;
-              outline-width: 100%;
-            }
-
-        }
+      }
+      app-page-a4-design {
+        height: 100%;
+        width: 100%;
+        display: block;
+        background: #FFFFFF;
       }
     }
   }

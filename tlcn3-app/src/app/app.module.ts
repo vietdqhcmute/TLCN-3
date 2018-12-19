@@ -43,6 +43,8 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { AuthInterceptor } from "./auth-interceptor";
 import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.component';
 import { DiaConfirmComponent } from './dia-confirm/dia-confirm.component';
+import { PageA4DefaultComponent } from './page-a4-default/page-a4-default.component';
+import { PageA4DesignComponent } from './page-a4-design/page-a4-design.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { DiaConfirmComponent } from './dia-confirm/dia-confirm.component';
     ConvertToMonthPipe,
     AppProfileInfoComponent,
     DiaConfirmComponent,
+    PageA4DefaultComponent,
+    PageA4DesignComponent,
   ],
   imports: [
     BrowserModule,

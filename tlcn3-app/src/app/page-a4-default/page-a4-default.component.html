@@ -1,0 +1,80 @@
+
+<!-- contact -->
+<div id="contact-area" class="text-center" (click)="sendData('Contact')">
+  <h2>
+    <strong>{{ user.fullName }}</strong>
+  </h2>
+  <h5 class="resume-title">{{resume.title}}</h5>
+  <p>{{ user.phone }}</p>
+  <p>{{ user.email }}</p>
+</div>
+<!-- summary -->
+<div id="summary-area" *ngIf="resume.summary && resume.summary.length" (click)="sendData('Summary')">
+  <h5><strong>Summary</strong></h5>
+  <div class="summary-item">
+    <p>{{ resume.summary }}</p>
+  </div>
+</div>
+<!-- experience -->
+<div id="experience-area" *ngIf="resume.experience && resume.experience.length" (click)="sendData('Experience')">
+  <h5><strong>Experience</strong></h5>
+  <div *ngFor="let item of resume.experience" class="experience-item">
+
+    <div id="experience-company-location">
+      <p id="companyName"><strong>{{item.company_name | uppercase}}</strong></p>
+      <p id="location"><strong>{{item.location}}</strong></p>
+    </div>
+
+    <div id="experience-title-time">
+      <p><strong>{{item.title}}</strong></p>
+      <p *ngIf="item.current === false"><strong>{{item.startMonth | convertToMonth}}-{{item.startYear}} - {{item.endMonth| convertToMonth}}-{{item.endYear}}</strong></p>
+      <p *ngIf="item.current === true"><strong>{{item.startMonth | convertToMonth}}-{{item.startYear}} - Current</strong></p>
+    </div>
+
+    <div id="experience-description">
+      <div class="line-breaker"><p>{{item.description}}</p></div>
+    </div>
+
+  </div>
+</div>
+<!-- project -->
+<div id="project-area" class="section" *ngIf="resume.project && resume.project.length" (click)="sendData('Project')">
+    <h5><strong>Project</strong></h5>
+    <div *ngFor="let item of resume.project" class="project-item">
+
+      <div id="projectName-date">
+        <p><strong>{{item.name}}</strong></p>
+        <p><strong>{{item.startMonth| convertToMonth}}-{{item.startYear}} - {{item.endMonth | convertToMonth}}-{{item.endYear}}</strong></p>
+      </div>
+
+      <div id="description">
+        <p>{{item.description}}</p>
+      </div>
+    </div>
+
+  </div>
+<!-- education -->
+<div id="education-area" *ngIf="resume.education && resume.education.length" (click)="sendData('Education')">
+  <h5><strong>Education</strong></h5>
+
+  <div *ngFor="let item of resume.education" class="education-item">
+    <div id="education-date">
+      <p><strong>{{item.school_name}}</strong></p>
+      <p *ngIf="item.current === false"><strong>{{item.startMonth| convertToMonth}}-{{item.startYear}} - {{item.endMonth | convertToMonth}}-{{item.endYear}}</strong></p>
+      <p *ngIf="item.current === true"><strong>{{item.startMonth| convertToMonth}}-{{item.startYear}} - Current</strong></p>
+    </div>
+
+    <div id="major">
+      <p>{{item.major}}</p>
+    </div>
+  </div>
+
+</div>
+<!-- skill -->
+<div id="skill-area" *ngIf="resume.skill && resume.skill.length" (click)="sendData('Skill')">
+  <h5><strong>Skill</strong></h5>
+
+  <div *ngFor="let item of resume.skill" class="skill-item">
+    <p>{{item}}</p>
+  </div>
+</div>
