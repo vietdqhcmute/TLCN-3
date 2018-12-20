@@ -51,10 +51,10 @@
       <div id="experience-content" *ngFor="let item of resume.experience">
         <div id="company">
           <p id="companyName"><strong>{{item.company_name | uppercase}}</strong></p>
-          <p id="location"><strong>{{item.location}}</strong></p>
-          <p><strong>{{item.startMonth | convertToMonth}}-{{item.startYear}}</strong></p>
-          <p *ngIf="item.current === false"><strong>{{item.endMonth| convertToMonth}}-{{item.endYear}}</strong></p>
-          <p *ngIf="item.current === true"><strong>Current</strong></p>
+          <p id="location">{{item.location}}</p>
+          <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
+          <p *ngIf="item.current === false">{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
+          <p *ngIf="item.current === true">Current</p>
         </div>
         <div id="detail">
             <p><strong>{{item.title}}</strong></p>

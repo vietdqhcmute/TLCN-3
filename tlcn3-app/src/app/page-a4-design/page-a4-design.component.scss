@@ -91,7 +91,16 @@
 
       #resume-title {}
 
-      #summary-area {}
+      #summary-area {
+        h5{
+          margin-bottom: 0px;
+        }
+        .summary-item{
+          p{
+
+          }
+        }
+      }
 
       #experience-area {
         #experience-content {
@@ -104,8 +113,11 @@
             flex: 4.5;
             width: 100%;
             height: 100%;
-
+            display: flex;
+            flex-direction: column;
+            padding-right: 10px;
             p {
+              margin-left: auto;
               margin-bottom: 0px;
               font-size: 0.8rem;
             }
@@ -116,6 +128,7 @@
             width: 100%;
             height: 100%;
             justify-content: flex-start;
+            padding-left: 10px;
             p {
               margin-bottom: 0px;
               font-size: 0.8rem;
