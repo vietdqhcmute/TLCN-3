@@ -26,6 +26,10 @@
       }
 
       #contact {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
         margin-right: 10px;
         margin-left: 10px;
         margin-bottom: 60px;
@@ -45,6 +49,10 @@
       }
 
       #skill {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
         margin-right: 10px;
         margin-left: 10px;
 
@@ -83,26 +91,42 @@
       padding-left: 10px;
 
       #name {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
         h1 {
           font-size: 3rem;
           margin-bottom: 2px;
         }
       }
 
-      #resume-title {}
+      #resume-title {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
+      }
 
       #summary-area {
-        h5{
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
+        h5 {
           margin-bottom: 0px;
         }
-        .summary-item{
-          p{
 
-          }
+        .summary-item {
+          p {}
         }
       }
 
       #experience-area {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
         #experience-content {
           display: flex;
           flex-direction: row;
@@ -116,6 +140,7 @@
             display: flex;
             flex-direction: column;
             padding-right: 10px;
+
             p {
               margin-left: auto;
               margin-bottom: 0px;
@@ -129,10 +154,12 @@
             height: 100%;
             justify-content: flex-start;
             padding-left: 10px;
+
             p {
               margin-bottom: 0px;
               font-size: 0.8rem;
             }
+
             #experience-description {
               display: block;
 
@@ -144,6 +171,104 @@
             }
           }
         }
+      }
+
+      #project-area {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
+        #project-content {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 100%;
+
+          #project-info {
+            flex: 4.5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-right: 10px;
+
+            p {
+              margin-left: auto;
+              margin-bottom: 0px;
+              font-size: 0.8rem;
+            }
+          }
+
+          #project-description {
+            flex: 5.5;
+            width: 100%;
+            height: 100%;
+            justify-content: flex-start;
+            padding-left: 10px;
+            display: block;
+
+            p {
+              margin-bottom: 0px;
+              font-size: 0.8rem;
+            }
+
+            .line-breaker {
+              p {
+                white-space: pre-line;
+              }
+            }
+          }
+        }
+
+      }
+
+      #education-area {
+        &:hover {
+          outline: 3px solid #37474F;
+          outline-width: 100%;
+        }
+        #education-content {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 100%;
+
+          #education-info {
+            flex: 4.5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-right: 10px;
+
+            p {
+              margin-left: auto;
+              margin-bottom: 0px;
+              font-size: 0.8rem;
+            }
+          }
+
+          #major {
+            flex: 5.5;
+            width: 100%;
+            height: 100%;
+            justify-content: flex-start;
+            padding-left: 10px;
+            display: block;
+
+            p {
+              margin-bottom: 0px;
+              font-size: 0.8rem;
+            }
+
+            .line-breaker {
+              p {
+                white-space: pre-line;
+              }
+            }
+          }
+        }
+
       }
     }
   }

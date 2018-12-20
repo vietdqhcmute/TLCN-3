@@ -5,7 +5,7 @@
       <div class="title">
         <h6>Contact Infomation</h6>
       </div>
-      <div id="contact-info">
+      <div id="contact-info" (click)="sendData('Contact')">
         <h6><strong>Email</strong></h6>
         <p>{{user.email}}</p>
         <h6><strong>Phone</strong></h6>
@@ -19,11 +19,11 @@
       </div>
     </div>
 
-    <div id="skill">
+    <div id="skill" *ngIf="resume.skill && resume.skill.length" (click)="sendData('Skill')">
       <div class="title">
         <h6>Skill</h6>
       </div>
-      <div *ngFor="let item of resume.skill" id="skill-item">
+      <div *ngFor="let item of resume.skill" id="skill-item" >
         <ul>
           <li>{{item}}</li>
         </ul>
@@ -34,10 +34,10 @@
 
   <!-- --------------------------main-------------------------------- -->
   <div id="main">
-    <div id="name">
+    <div id="name" (click)="sendData('Contact')" >
       <h1>{{ user.fullName }}</h1>
     </div>
-    <p id="resume-title"><strong><em>{{resume.title}}</em></strong></p>
+    <p id="resume-title" (click)="sendData('Contact')"><strong><em>{{resume.title}}</em></strong></p>
     <!-- summary -->
     <div id="summary-area" *ngIf="resume.summary && resume.summary.length" (click)="sendData('Summary')">
       <h5><strong>Summary</strong></h5>
@@ -57,13 +57,45 @@
           <p *ngIf="item.current === true">Current</p>
         </div>
         <div id="detail">
-            <p><strong>{{item.title}}</strong></p>
-            <div id="experience-description">
-                <div class="line-breaker"><p>{{item.description}}</p></div>
-              </div>
+          <p><strong>{{item.title}}</strong></p>
+          <div id="experience-description">
+            <div class="line-breaker">
+              <p>{{item.description}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- --------------------------main-------------------------------- -->
+    <!-- ---------project--------- -->
 
+    <div id="project-area" *ngIf="resume.project && resume.project.length" (click)="sendData('Project')">
+      <h5><strong>Project</strong></h5>
+      <div id="project-content" *ngFor="let item of resume.project">
+        <div id="project-info">
+          <p><strong>{{item.name}}</strong></p>
+          <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
+          <p>{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
+        </div>
+        <div id="project-description">
+          <div class="line-breaker">
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --education-- -->
+    <div id="education-area" *ngIf="resume.education && resume.education.length" (click)="sendData('Education')">
+      <h5><strong>Education</strong></h5>
+      <div id="education-content" *ngFor="let item of resume.education" >
+        <div id="education-info">
+          <p><strong>{{item.school_name}}</strong></p>
+          <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
+          <p *ngIf="item.current === false">{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
+          <p *ngIf="item.current === true">Current</p>
+        </div>
+        <div id="major">
+          <p>{{item.major}}</p>
+        </div>
+      </div>
+    </div>
   </div>
