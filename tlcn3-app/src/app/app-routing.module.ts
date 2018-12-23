@@ -7,13 +7,14 @@ import { AppAboutComponent } from "./app-about/app-about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 
 import { ResolverService } from "./services/resolver.service";
+import { AuthGuard } from "./services/auth.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "main", component: AppMainComponent },
-  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService} },
+  { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
+  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "login", component: AppLoginComponent },
-  { path: "profile", component: AppProfileComponent },
+  { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
   // {
   //   path: "profile/:id",
   //   component: AppProfileComponent,
@@ -24,6 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule {}
