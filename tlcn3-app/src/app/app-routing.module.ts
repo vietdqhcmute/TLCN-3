@@ -10,7 +10,7 @@ import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "", redirectTo: "profile", pathMatch: "full" },
   { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "login", component: AppLoginComponent },
