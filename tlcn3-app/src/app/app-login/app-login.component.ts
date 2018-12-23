@@ -12,7 +12,7 @@ import { DataService } from "../services/data.service";
   styleUrls: ["./app-login.component.scss"]
 })
 export class AppLoginComponent implements OnInit {
-  hide = true;
+  hide = true; //Using at hidden password
   si_email: string = "vietdqhcmute@gmail.com";
   si_password: string = "123";
 
@@ -21,7 +21,7 @@ export class AppLoginComponent implements OnInit {
   su_email: string;
   su_password: string;
   su_confirm: string;
-  error: string;
+
   isLoading_logIn = false;
   isLoading_signUp = false;
 
@@ -58,10 +58,7 @@ export class AppLoginComponent implements OnInit {
       return;
     }
     this.authService
-      .createUser(this.su_name, this.su_phone, this.su_email, this.su_password)
-      .subscribe(response => {
-        this.isLoading_signUp = false;
-      });
+      .createUser(this.su_name, this.su_phone, this.su_email, this.su_password);
   }
 
 }

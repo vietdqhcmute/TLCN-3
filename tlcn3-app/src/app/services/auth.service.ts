@@ -17,18 +17,18 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getToken(){
+  getToken() {
     return this.token;
   }
 
-  getLoginID(){
+  getLoginID() {
     return this.loginId.asObservable();
   }
 
-  getIsAuth(){
+  getIsAuth() {
     return this.isAuthenticated;
   }
-  getAuthStatusListener(){
+  getAuthStatusListener() {
     return this.authStatusListener.asObservable();
   }
 
@@ -61,7 +61,14 @@ export class AuthService {
       fullname: "",
       phone: phoneNumber
     };
-    return this.http.post(this.domainName + "signup", newUser);
+    this.http.post(this.domainName + "signup", newUser).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   login(email: string, password: string) {
@@ -70,21 +77,23 @@ export class AuthService {
       password: password
     };
     this.http
-      .post<{ token: string, id:string }>(this.domainName + "login", loginData)
+      .post<{ token: string; id: string }>(this.domainName + "login", loginData)
       .subscribe(response => {
         const token = response.token;
         this.token = token;
-        if (token){
-          this.isAuthenticated=true;
+        if (token) {
+          this.isAuthenticated = true;
           this.authStatusListener.next(true);
           this.loginId.next(response.id);
-          this.router.navigate(['profile']);
+          this.router.navigate(["profile"]);
         }
+      }, error=>{
+        console.log(error);
       });
   }
 
-  logOut(){
-    this.token=null;
+  logOut() {
+    this.token = null;
     this.authStatusListener.next(false);
     this.loginId.next(null);
   }
