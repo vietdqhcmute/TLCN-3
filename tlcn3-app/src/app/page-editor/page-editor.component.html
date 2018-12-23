@@ -3,8 +3,8 @@
 </div>
 <div id="background-editor">
   <div id="cv-area">
-    <!-- <app-page-a4-default [resume]="resume" [user]="user"></app-page-a4-default> -->
-    <app-page-a4-design [resume]="resume" [user]="user"></app-page-a4-design>
+    <app-page-a4-default *ngIf="template == 'default'" [resume]="resume" [user]="user"></app-page-a4-default>
+    <app-page-a4-design *ngIf="template == 'design'" [resume]="resume" [user]="user"></app-page-a4-design>
     <br />
   </div>
   <!--cv-area -->

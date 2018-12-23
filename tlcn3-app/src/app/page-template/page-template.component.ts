@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-page-template',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageTemplateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private useService: UserService) { }
 
   ngOnInit() {
+  }
+
+  onChangeTemplate(chooseTemp:string){
+    return this.useService.changeTemplate(chooseTemp);
   }
 
 }

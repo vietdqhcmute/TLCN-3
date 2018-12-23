@@ -11,6 +11,7 @@ export class UserService {
 
   domainName="http://localhost:3000/";
   private avatarURL= new Subject<string>();
+  private template = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,9 @@ export class UserService {
     return this.http.get(this.domainName+'user/'+userID);
   }
 
+  getTemplate(){
+    return this.template.asObservable();
+  }
   updateUserByID(userID, user: User){
     const headers = new HttpHeaders({'Content-type':'application/json'});
     return this.http.put(this.domainName+'update/user/'+userID, user,{headers: headers});
@@ -37,5 +41,9 @@ export class UserService {
       this.avatarURL.next(response.avatarUrl);
       console.log(response);
     });
+  }
+
+  changeTemplate(chooseTemp:string){
+    this.template.next(chooseTemp);
   }
 }

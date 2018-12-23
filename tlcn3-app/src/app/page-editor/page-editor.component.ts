@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Resume, Experience, User } from "../models";
 import { DataService } from "../services/data.service";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: "app-page-editor",
@@ -10,17 +11,13 @@ import { DataService } from "../services/data.service";
 export class PageEditorComponent implements OnInit {
   @Input() resume: Resume;
   @Input() user: User;
-  
-  constructor(private data: DataService) {}
-  elementID$: String;
-  ngOnInit() {
-    this.data.currentElementID.subscribe(result=>{
-      this.elementID$=result;
-    })
-  }
 
-  sendData(elementID){
-    this.data.sendDataElementID(elementID);
+  template: String = "default";
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.userService.getTemplate().subscribe(template$ => {
+      this.template = template$;
+    });
   }
-  
 }
