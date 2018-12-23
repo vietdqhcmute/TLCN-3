@@ -1,9 +1,5 @@
-<div class="header-profile">
-    <h1>Wellcome back! {{user$.userName}}</h1>
+<div *ngIf="isAuthenticated">
+  <div class="flex-profile">
+    <app-app-profile-info [user$]="user$"></app-app-profile-info>
+  </div>
 </div>
-<section id="info">
-  <p>Your last update: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
-</section>
-
-<a class="btn btn-outline-info" [routerLink]="['/main', user$._id, 'edit']"
-    [queryParams]="{allowEdit: true}" (click)='sendData()'>Update your Résume</a>

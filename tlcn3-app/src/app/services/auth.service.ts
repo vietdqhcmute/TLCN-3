@@ -11,13 +11,18 @@ import { Router } from "@angular/router";
 export class AuthService {
   domainName = "http://localhost:3000/";
   private token: string;
-  public loginId = new Subject<string>();
+  private loginId = new Subject<string>();
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
+
   constructor(private http: HttpClient, private router: Router) {}
 
   getToken(){
     return this.token;
+  }
+
+  getLoginID(){
+    return this.loginId.asObservable();
   }
 
   getIsAuth(){
@@ -49,7 +54,7 @@ export class AuthService {
       resume: newResume,
       googleId: "",
       googleName: "",
-      avatarURL: "",
+      avatarURL: "http://localhost:3000/images/tho-7-mau.jpg",
       userName: userName,
       email: email,
       password: password,
@@ -73,7 +78,7 @@ export class AuthService {
           this.isAuthenticated=true;
           this.authStatusListener.next(true);
           this.loginId.next(response.id);
-          this.router.navigate(['/profile/',response.id]);
+          this.router.navigate(['profile']);
         }
       });
   }

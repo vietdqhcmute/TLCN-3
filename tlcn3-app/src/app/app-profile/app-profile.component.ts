@@ -13,32 +13,24 @@ export class AppProfileComponent implements OnInit {
   user$: User;
   resume$: Resume;
   userByResume$: User;
-  id: string;
   isAuthenticated = false;
   constructor(
     private route: ActivatedRoute,
-    private data: DataService,
-    private auth: AuthService,
+    private dataService: DataService,
+    private authService: AuthService,
     private router: Router
-  ) {
-    this.route.params.subscribe(params => {
-      this.id = params.id;
-    });
-  }
+  ) {}
 
   ngOnInit() {
-    if (!this.auth.getIsAuth()) {
-      this.router.navigate(['/login']);
-    }else{
-      this.user$ = this.route.snapshot.data["profile"]; //Use User infomation Resolver to load data before render view
-      //This line is to pass data to main component
-      this.data.currentUser.subscribe(result => {
-        this.userByResume$ = result;
+    this.isAuthenticated = this.authService.getIsAuth();
+    if (this.isAuthenticated) {
+      this.dataService.currentUser.subscribe(result => {
+        this.user$ = result;
+        this.resume$ = this.user$.resume;
       });
+    }else{
+      this.router.navigate(['login']);
     }
-  }
-  sendData() {
-    //to send data to main component
-    this.data.sendDataUser(this.user$);
+
   }
 }

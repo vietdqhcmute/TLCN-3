@@ -1,0 +1,14 @@
+:host(){
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    h1{
+        margin-bottom: 0px;
+    }
+
+    .mat-experience {
+        display: flex;
+        flex-direction: column;
+      }
+    
+}

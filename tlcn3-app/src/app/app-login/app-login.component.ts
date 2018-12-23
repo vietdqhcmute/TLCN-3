@@ -1,6 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
+import { UserService } from "../services/user.service";
+import { User } from "../models";
+import { Router } from "@angular/router";
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: "app-app-login",
@@ -9,8 +13,8 @@ import { AuthService } from "../services/auth.service";
 })
 export class AppLoginComponent implements OnInit {
   hide = true;
-  si_email: string;
-  si_password: string;
+  si_email: string = "vietdqhcmute@gmail.com";
+  si_password: string = "123";
 
   su_name: string;
   su_phone: string;
@@ -18,27 +22,46 @@ export class AppLoginComponent implements OnInit {
   su_password: string;
   su_confirm: string;
   error: string;
-  isLoading_logIn=false;
+  isLoading_logIn = false;
   isLoading_signUp = false;
-  constructor(public authService: AuthService) {}
 
-  ngOnInit() {}
+  user$: User;
+  constructor(
+    public authService: AuthService,
+    private userService: UserService,
+    private dataService: DataService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+  }
+
 
   onSignIn(form: NgForm) {
     if (form.invalid) {
       return;
     }
     this.authService.login(this.si_email, this.si_password);
-    this.isLoading_logIn=true;
+    this.authService.getLoginID().subscribe(id => {
+      this.userService.getUserByID(id).subscribe(user=>{
+        this.user$= <User> user;
+        this.dataService.sendDataUser(this.user$);
+      })
+    });
+    this.isLoading_logIn = true;
   }
 
   onSignUp(form: NgForm) {
+    this.isLoading_signUp = true;
+
     if (form.invalid) {
       return;
     }
     this.authService
       .createUser(this.su_name, this.su_phone, this.su_email, this.su_password)
-      .subscribe(response => {});
-    this.isLoading_signUp=true;
+      .subscribe(response => {
+        this.isLoading_signUp = false;
+      });
   }
+
 }

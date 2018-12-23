@@ -1,0 +1,38 @@
+<div id="info-area">
+  <div class="header-profile">
+    <h1>Welcome back! {{user$.userName}}</h1>
+  </div>
+
+  <div class="cover">
+    <div class="cover-image">
+      <img class="cover-image" src="../../assets/The-Industrialist.png" alt="cover">
+    </div>
+
+    <div class="cover-info">
+      <div class="avatar">
+        <div class="image-container">
+            <img *ngIf="!imagePreview" [src]="user$.avatarURL" alt="avatar" (click)="filePicker.click()">
+            <!-- <img *ngIf="!imagePreview" src="../../assets/Tho-7-mau.jpg" alt="avatar" (click)="filePicker.click()"> -->
+            <img [src]="imagePreview" *ngIf="imagePreview !== '' && imagePreview" alt="avatar" (click)="filePicker.click()">
+            <input type="file" #filePicker (change)="onImagePicked($event)">
+        </div>
+        <h6><strong>{{user$.userName}}</strong></h6>
+        <p><strong>{{user$.resume.title}}</strong></p>
+      </div>
+      <div class="cover-user-info">
+        <div class="one-line"><i class="material-icons md-24">email</i><p><strong>  {{user$.email}}</strong></p></div>
+        <div class="one-line"><i class="material-icons md-24">local_phone</i><p><strong>  {{user$.phone}}</strong></p></div>
+        <div *ngIf="user$.resume.githubURL" class="one-line"><span><img src="../../assets/github-icon.png" alt="github-icon" style="width:25px"></span><p><strong>{{user$.resume.githubURL}}</strong></p></div>
+        <div *ngIf="user$.resume.linkedinURL" class="one-line"><span><img src="../../assets/linkedin-icon.png" alt="linkedin-icon" style="width:25px"></span><p><strong>{{user$.resume.linkedinURL}}</strong></p></div>
+      </div>
+    </div>
+
+    <button id="btn-update-info" class="btn btn-info" [routerLink]="['/main',user$._id,'edit']">Update your Résume</button>
+
+  </div>
+
+  <section id="info">
+    <p>Your last update: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
+  </section>
+
+</div>
