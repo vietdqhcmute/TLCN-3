@@ -33,22 +33,23 @@ export class AppLoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   onSignIn(form: NgForm) {
+    this.isLoading_logIn = true;
     if (form.invalid) {
       return;
     }
     this.authService.login(this.si_email, this.si_password);
     this.authService.getLoginID().subscribe(id => {
-      this.userService.getUserByID(id).subscribe(user=>{
-        this.user$= <User> user;
+      this.userService.getUserByID(id).subscribe(user => {
+        this.user$ = <User>user;
         this.dataService.sendDataUser(this.user$);
-      })
+      });
     });
-    this.isLoading_logIn = true;
+    this.authService.getLoadingSignIn().subscribe(status => {
+      this.isLoading_logIn = status;
+    });
   }
 
   onSignUp(form: NgForm) {
@@ -57,8 +58,14 @@ export class AppLoginComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.authService
-      .createUser(this.su_name, this.su_phone, this.su_email, this.su_password);
+    this.authService.createUser(
+      this.su_name,
+      this.su_phone,
+      this.su_email,
+      this.su_password
+    );
+    this.authService.getLoadingSignUp().subscribe(status=>{
+      this.isLoading_signUp = status;
+    })
   }
-
 }

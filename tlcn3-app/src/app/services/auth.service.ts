@@ -15,7 +15,11 @@ export class AuthService {
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
 
+  private isLoadingSignIn = new Subject<boolean>();
+  private isLoadingSignUp = new Subject<boolean>();
+
   constructor(private http: HttpClient, private router: Router) {}
+
 
   getToken() {
     return this.token;
@@ -32,6 +36,12 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
+  getLoadingSignIn(){
+    return this.isLoadingSignIn.asObservable();
+  }
+  getLoadingSignUp(){
+    return this.isLoadingSignUp.asObservable();
+  }
   createUser(
     userName: string,
     phoneNumber: string,
@@ -63,10 +73,11 @@ export class AuthService {
     };
     this.http.post(this.domainName + "signup", newUser).subscribe(
       response => {
-        console.log(response);
+        this.login(newUser.email,newUser.password);
+        this.isLoadingSignUp.next(true);
       },
       error => {
-        console.log(error);
+        this.isLoadingSignUp.next(false);
       }
     );
   }
@@ -86,9 +97,10 @@ export class AuthService {
           this.authStatusListener.next(true);
           this.loginId.next(response.id);
           this.router.navigate(["profile"]);
+          this.isLoadingSignIn.next(true);
         }
       }, error=>{
-        console.log(error);
+        this.isLoadingSignIn.next(false);
       });
   }
 
