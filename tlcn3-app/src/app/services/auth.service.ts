@@ -42,46 +42,7 @@ export class AuthService {
   getLoadingSignUp(){
     return this.isLoadingSignUp.asObservable();
   }
-  createUser(
-    userName: string,
-    phoneNumber: string,
-    email: string,
-    password: string
-  ) {
-    const newResume: Resume = {
-      title: "",
-      summary: "",
-      pictureUrl: "",
-      githubURL: "",
-      linkedinURL: "",
-      webpageURL: "",
-      experience: [],
-      education: [],
-      project: [],
-      skill: []
-    };
-    const newUser: AuthUser = {
-      resume: newResume,
-      googleId: "",
-      googleName: "",
-      avatarURL: "http://localhost:3000/images/tho-7-mau.jpg",
-      userName: userName,
-      email: email,
-      password: password,
-      fullname: userName,
-      phone: phoneNumber
-    };
-    this.http.post(this.domainName + "signup", newUser).subscribe(
-      response => {
-        this.login(newUser.email,newUser.password);
-        this.isLoadingSignUp.next(true);
-      },
-      error => {
-        this.isLoadingSignUp.next(false);
-      }
-    );
-  }
-
+//----------------------------------------------------------------------------------
   login(email: string, password: string) {
     const loginData: AuthLogin = {
       email: email,
@@ -104,6 +65,41 @@ export class AuthService {
       });
   }
 
+  createUser(userName: string, phoneNumber: string, email: string, password: string) {
+    const newResume: Resume = {
+      title: "",
+      summary: "",
+      pictureUrl: "",
+      githubURL: "",
+      linkedinURL: "",
+      webpageURL: "",
+      experience: [],
+      education: [],
+      project: [],
+      skill: []
+    };
+    const newUser: AuthUser = {
+      resume: newResume,
+      googleId: "",
+      googleName: "",
+      avatarURL: "http://localhost:3000/images/tho-7-mau.jpg",
+      fullName: userName,
+      userName: userName,
+      email: email,
+      password: password,
+      phone: phoneNumber
+    };
+    this.http.post(this.domainName + "signup", newUser).subscribe(
+      response => {
+        this.login(email, password);
+      },
+      error => {
+        this.isLoadingSignUp.next(false);
+      }
+    );
+  }
+
+ 
   logOut() {
     this.token = null;
     this.authStatusListener.next(false);

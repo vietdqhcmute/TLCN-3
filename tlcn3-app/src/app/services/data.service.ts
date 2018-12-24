@@ -28,7 +28,7 @@ export class DataService {
     userName:"",
     email:"",
     password:"",
-    fullname:"",
+    fullName:"",
     phone:"",
     _id: ""
 
