@@ -67,5 +67,11 @@ export class AppLoginComponent implements OnInit {
     this.authService.getLoadingSignUp().subscribe(status=>{
       this.isLoading_signUp = status;
     })
+    this.authService.getSignUpSuccess().subscribe(signUpSuccess=>{
+      if (signUpSuccess){
+        this.isLoading_signUp = false;
+        //Show thong bao success ra man hinh
+      }
+    })
   }
 }

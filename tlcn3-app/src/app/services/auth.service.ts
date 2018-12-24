@@ -17,6 +17,7 @@ export class AuthService {
 
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
+  private isSignUpSuccess = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -42,6 +43,9 @@ export class AuthService {
   getLoadingSignUp(){
     return this.isLoadingSignUp.asObservable();
   }
+  getSignUpSuccess(){
+    return this.isSignUpSuccess.asObservable();
+  }
 //----------------------------------------------------------------------------------
   login(email: string, password: string) {
     const loginData: AuthLogin = {
@@ -65,7 +69,7 @@ export class AuthService {
       });
   }
 
-  createUser(userName: string, phoneNumber: string, email: string, password: string) {
+   createUser(userName: string, phoneNumber: string, email: string, password: string) {
     const newResume: Resume = {
       title: "",
       summary: "",
@@ -91,10 +95,12 @@ export class AuthService {
     };
     this.http.post(this.domainName + "signup", newUser).subscribe(
       response => {
-        this.login(email, password);
+        this.isLoadingSignUp.next(true);
+        this.isSignUpSuccess.next(true);
       },
       error => {
         this.isLoadingSignUp.next(false);
+        this.isSignUpSuccess.next(false);
       }
     );
   }

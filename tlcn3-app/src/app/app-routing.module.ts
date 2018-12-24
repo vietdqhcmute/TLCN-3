@@ -15,11 +15,11 @@ const routes: Routes = [
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "login", component: AppLoginComponent },
   { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
-  // {
-  //   path: "profile/:id",
-  //   component: AppProfileComponent,
-  //   resolve: { profile: ResolverService }
-  // },
+  {
+    path: "profile/:id",
+    component: AppProfileComponent,
+    resolve: { profile: ResolverService }
+  },
   { path: "about", component: AppAboutComponent }
 ];
 
