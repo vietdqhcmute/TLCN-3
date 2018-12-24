@@ -108,5 +108,7 @@ export class AuthService {
     this.token = null;
     this.authStatusListener.next(false);
     this.loginId.next(null);
+    this.isLoadingSignIn.next(false);
+    this.isLoadingSignUp.next(false);
   }
 }
