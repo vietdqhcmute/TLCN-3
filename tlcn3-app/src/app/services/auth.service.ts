@@ -68,7 +68,7 @@ export class AuthService {
       userName: userName,
       email: email,
       password: password,
-      fullname: "",
+      fullname: userName,
       phone: phoneNumber
     };
     this.http.post(this.domainName + "signup", newUser).subscribe(
