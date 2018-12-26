@@ -5,6 +5,7 @@ import { Http, Headers } from "@angular/http";
 import { Resume, User, AuthUser, AuthLogin } from "../models";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
+import { UserService } from "./user.service";
 @Injectable({
   providedIn: "root"
 })
@@ -19,13 +20,12 @@ export class AuthService {
   private isLoadingSignUp = new Subject<boolean>();
   private isSignUpSuccess = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) {}
 
 
   getToken() {
     return this.token;
   }
-
   getLoginID() {
     return this.loginId.asObservable();
   }
@@ -36,7 +36,6 @@ export class AuthService {
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
   }
-
   getLoadingSignIn(){
     return this.isLoadingSignIn.asObservable();
   }

@@ -27,6 +27,8 @@ const storage = multer.diskStorage({
   }
 
 });
+
+//API add picture to server and return imagePath
 router.post('/add/picture', multer({storage: storage}).single("image") ,async (req, res) => {
   const url = req.protocol+ '://' + req.get("host");
   let imagePath = url + "/images/" + req.file.filename; 
@@ -35,16 +37,20 @@ router.post('/add/picture', multer({storage: storage}).single("image") ,async (r
   })
 });
 
+//API create user
 router.post('/add/user', async (req, res) => {
   const resume = new Resume(req.body);
   await resume.save();
   res.redirect('/user/all');
 });
 
+//API get all users
 router.get('/user/all', async (req, res) => {
   const resume = await Resume.find();
   res.send(resume);
 });
+
+//API get user by ID
 router.get('/user/:id', checkAuth, async (req, res) => {
   try {
     const resume = await Resume.findById(req.params.id);
@@ -55,6 +61,7 @@ router.get('/user/:id', checkAuth, async (req, res) => {
   }
 });
 
+//API delete user by ID
 router.delete('/delete/user/:id', async (req, res) => {
   try {
     await Resume.remove({
@@ -69,6 +76,7 @@ router.delete('/delete/user/:id', async (req, res) => {
   }
 });
 
+//API update user by ID
 router.put('/update/user/:id', async (req, res) => {
   try {
     await Resume.findByIdAndUpdate({

@@ -5,6 +5,8 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+
+//API sign up
 router.post('/signup', async (req, res) => {
   //Hash the password of user first when get a request, after hashing, save it on database
   hash = bcrypt.hashSync(req.body.password, 10);
@@ -24,6 +26,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+//API login
 router.post("/login", (req, res, next) => {
   let fetchedUser; //to store user after findOne and use all then() block beneath
   Resume.findOne({
@@ -34,9 +37,9 @@ router.post("/login", (req, res, next) => {
         message: "Auth failed"
       });
     }
-    fetchedUser=user;
+    fetchedUser = user;
     //this promise will return the result (TRUE or FALSE) of comparing request.password and user.password on DB
-    return bcrypt.compare(req.body.password, user.password);    //Have to return here because I have code have to run afer this (Promise)
+    return bcrypt.compare(req.body.password, user.password); //Have to return here because I have code have to run afer this (Promise)
   }).then(result => {
     //result would be TRUE or FALSE of comparing hashed request.password  and user.password already hashing
     if (!result) {
@@ -45,9 +48,14 @@ router.post("/login", (req, res, next) => {
       });
     }
     //If right password, create Jason Web Token
-    const token = jwt.sign({  email: fetchedUser.email,  userId: fetchedUser._id}, 'secret_that_should_be_longer', {  expiresIn: "1h"});
+    const token = jwt.sign({
+      email: fetchedUser.email,
+      userId: fetchedUser._id
+    }, 'secret_that_should_be_longer', {
+      expiresIn: "1h"
+    });
     res.status(200).json({
-      token:token,
+      token: token,
       id: fetchedUser._id
     });
 

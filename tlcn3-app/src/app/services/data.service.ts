@@ -41,6 +41,7 @@ export class DataService {
 
   private elementIDSource = new Subject<string>(); //as Observable
   currentElementID = this.elementIDSource.asObservable();
+  
   sendDataElementID(elementID){
     this.elementIDSource.next(elementID);
   }
