@@ -121,7 +121,9 @@
           margin-bottom: 0px;
         }
 
-        .summary-item {}
+        .summary-item {
+          text-align: justify;
+        }
       }
 
       #experience-area {
@@ -165,7 +167,7 @@
 
             #experience-description {
               display: block;
-
+              text-align: justify;
               .line-breaker {
                 p {
                   white-space: pre-line;
@@ -210,7 +212,7 @@
             justify-content: flex-start;
             padding-left: 10px;
             display: block;
-
+            text-align: justify;
             p {
               margin-bottom: 0px;
               font-size: 0.8rem;
