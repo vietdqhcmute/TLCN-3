@@ -3,6 +3,7 @@
   font-family: Roboto, Helvetica, sans-serif;
   overflow: hidden;
   padding: 1cm;
+
   h2,
   h5 {
     margin: 0px;
@@ -31,6 +32,8 @@
 
   #summary-area {
     .summary-item {
+      text-align: justify;
+
       &:hover {
         outline: 3px solid #37474F;
         outline-width: 100%;
@@ -41,7 +44,9 @@
   #experience-area {
     .experience-item {
       margin-bottom: 5px;
-
+      #experience-description{
+        text-align: justify;
+      }
       &:hover {
         outline: 3px solid #37474F;
         outline-width: 100%;
@@ -64,10 +69,12 @@
       justify-content: space-between;
     }
 
-    #experience-description {
+    .experience-description {
+      text-align: justify;
       display: block;
-      .line-breaker{
-        p{
+
+      .line-breaker {
+        p {
           white-space: pre-line;
         }
       }
@@ -88,6 +95,9 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    #description{
+      text-align: justify;
     }
   }
 
