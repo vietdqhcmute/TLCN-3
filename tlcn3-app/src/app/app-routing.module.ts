@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "login", component: AppLoginComponent },
   { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
-  { path: "firstpage", component: FirstPageComponent}
+  { path: "firstpage", component: FirstPageComponent},
   // {
   //   path: "profile/:id",
   //   component: AppProfileComponent,
