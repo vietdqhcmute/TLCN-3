@@ -11,9 +11,9 @@ import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "firstpage", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
-  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },  { path: "firstpage", component: FirstPageComponent},
+  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
   { path: "login", component: AppLoginComponent },
   { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
