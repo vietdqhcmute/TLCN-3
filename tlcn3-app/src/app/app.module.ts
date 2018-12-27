@@ -46,6 +46,7 @@ import { DiaConfirmComponent } from './dia-confirm/dia-confirm.component';
 import { PageA4DefaultComponent } from './page-a4-default/page-a4-default.component';
 import { PageA4DesignComponent } from './page-a4-design/page-a4-design.component';
 import { PageA4DesignBlueComponent } from './page-a4-design-blue/page-a4-design-blue.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { PageA4DesignBlueComponent } from './page-a4-design-blue/page-a4-design-
     PageA4DefaultComponent,
     PageA4DesignComponent,
     PageA4DesignBlueComponent,
+    FirstPageComponent,
   ],
   imports: [
     BrowserModule,
