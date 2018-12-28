@@ -18,10 +18,11 @@ export class PageAdminComponent implements OnInit {
   getAllUsers() {
     this.userService.getUsers().subscribe(userArray => {
       this.users = userArray;
-      console.log(userArray);
     });
   }
   deleteUserByID(userID) {
-    console.log("delete "+userID);
+    this.userService.deleteUserByID(userID).subscribe(response=>{
+      this.getAllUsers();
+    })
   }
 }

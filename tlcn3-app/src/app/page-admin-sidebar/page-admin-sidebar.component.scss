@@ -13,15 +13,18 @@
             margin: 0;
     
             li {
-    
+                &:hover {
+                    background: #151b1f;
+                }
                 a {
                     color: #fff;
                     padding: 20px;
-                    display: block;
+                    display: flex;
+                    text-decoration: none;
                 }
-    
-                .activated {
-                    background-color: #00a8ff;
+                i{
+                    margin-right: 12px;
+                    margin-left: 5px;
                 }
             }
         }

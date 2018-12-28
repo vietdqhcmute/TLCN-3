@@ -15,7 +15,7 @@ export class AuthService {
   private loginId = new Subject<string>();
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
-
+  private isAdmin = false;
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
   private isSignUpSuccess = new Subject<boolean>();
@@ -29,7 +29,9 @@ export class AuthService {
   getLoginID() {
     return this.loginId.asObservable();
   }
-
+  getIsAdmin(){
+    return this.isAdmin;
+  }
   getIsAuth() {
     return this.isAuthenticated;
   }
@@ -57,11 +59,22 @@ export class AuthService {
         const token = response.token;
         this.token = token;
         if (token) {
-          this.isAuthenticated = true;
-          this.authStatusListener.next(true);
-          this.loginId.next(response.id);
-          this.router.navigate(["profile"]);
-          this.isLoadingSignIn.next(true);
+          if(email == 'vietdqhcmute@gmail.com'){
+            //Admin login
+            this.isAuthenticated = true;
+            this.isAdmin = true;
+            this.authStatusListener.next(true);
+            this.loginId.next(response.id);
+            this.router.navigate(["admin"]);
+            this.isLoadingSignIn.next(true);
+          }else{
+            //user login
+            this.isAuthenticated = true;
+            this.authStatusListener.next(true);
+            this.loginId.next(response.id);
+            this.router.navigate(["profile"]);
+            this.isLoadingSignIn.next(true);
+          }    
         }
       }, error=>{
         this.isLoadingSignIn.next(false);

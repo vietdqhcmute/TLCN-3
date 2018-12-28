@@ -16,6 +16,7 @@
         <th scope="col">No</th>
         <th scope="col">User name</th>
         <th scope="col">Email</th>
+        <th scope="col">Phone</th>
         <th scope="col">Join</th>
         <th scope="col">Delete</th>
       </tr>
@@ -25,6 +26,7 @@
         <th scope="row">{{i+1}}</th>
         <td>{{item.userName}}</td>
         <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
         <td>{{item.resume.created | date: 'dd/MM/yyyy'}}</td>
         <button class="btn btn-danger" (click)="deleteUserByID(item._id)"><i class="fa fa-trash"></i></button>
       </tr>

@@ -10,6 +10,7 @@ import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
 import { PageAdminComponent } from "./page-admin/page-admin.component";
+import { AdminGuard } from "./services/admin.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "admin", pathMatch: "full" },
@@ -23,13 +24,13 @@ const routes: Routes = [
   //   component: AppProfileComponent,
   //   resolve: { profile: ResolverService }
   // },
-  { path: "admin", component: PageAdminComponent},
+  { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard]},
   { path: "about", component: AppAboutComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard, AdminGuard]
 })
 export class AppRoutingModule {}

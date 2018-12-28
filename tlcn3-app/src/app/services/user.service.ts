@@ -34,6 +34,9 @@ export class UserService {
     return this.http.put(this.domainName+'update/user/'+userID, user,{headers: headers});
   }
 
+  deleteUserByID(userID:string){
+    return this.http.delete(this.domainName+'delete/user/'+userID);
+  }
   updateAvatar(image: File){
     const postImage = new FormData();
     postImage.append("image", image);
