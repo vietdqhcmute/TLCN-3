@@ -29,7 +29,7 @@
         <td>{{item.email}}</td>
         <td>{{item.phone}}</td>
         <td>{{item.resume.created | date: 'dd/MM/yyyy'}}</td>
-        <button class="btn btn-danger" (click)="deleteUserByID(item._id)"><i class="fa fa-trash"></i></button>
+        <button *ngIf="item.email !== 'admin@admin.com'" class="btn btn-danger" (click)="deleteUserByID(item._id)"><i class="fa fa-trash"></i></button>
       </tr>
     </tbody>
   </table>
