@@ -1,0 +1,25 @@
+:host() {
+  display: flex;
+  flex-direction: row;
+  // grid-template-columns: 70px auto;
+  height: 100%;
+  width: 100%;
+
+  #admin-sidebar {
+    width: 100%;
+    flex: 1.5;
+  }
+
+  #admin-content {
+    flex: 8.5;
+    margin: 30px 30px 30px 30px;
+    table{
+      tbody{
+        button{
+          margin-top: 5px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

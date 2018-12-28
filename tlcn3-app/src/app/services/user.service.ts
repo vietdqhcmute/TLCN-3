@@ -20,7 +20,7 @@ export class UserService {
   }
 
   getUsers(){
-    return this.http.get(this.domainName +'user/all');
+    return this.http.get<any>(this.domainName +'user/all');
   }
   getUserByID(userID){
     return this.http.get(this.domainName+'user/'+userID);

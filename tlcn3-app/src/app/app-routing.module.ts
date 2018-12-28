@@ -9,9 +9,10 @@ import { AppMainComponent } from "./app-main/app-main.component";
 import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
+import { PageAdminComponent } from "./page-admin/page-admin.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "", redirectTo: "admin", pathMatch: "full" },
   { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   //   component: AppProfileComponent,
   //   resolve: { profile: ResolverService }
   // },
+  { path: "admin", component: PageAdminComponent},
   { path: "about", component: AppAboutComponent }
 ];
 

@@ -50,6 +50,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
 import { PageA4DesignBlue01Component } from './page-a4-design-blue01/page-a4-design-blue01.component';
 import { PageA4DesignRed01Component } from './page-a4-design-red01/page-a4-design-red01.component';
 import { PageAdminComponent } from './page-admin/page-admin.component';
+import { PageAdminSidebarComponent } from './page-admin-sidebar/page-admin-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { PageAdminComponent } from './page-admin/page-admin.component';
     PageA4DesignBlue01Component,
     PageA4DesignRed01Component,
     PageAdminComponent,
+    PageAdminSidebarComponent,
   ],
   imports: [
     BrowserModule,
