@@ -21,7 +21,8 @@
         <th scope="col">Delete</th>
       </tr>
     </thead>
-    <tbody>
+    <mat-spinner *ngIf="isGettingUser" mode="indeterminate" [diameter]="60" style="margin: 0 auto"></mat-spinner>
+    <tbody *ngIf="!isGettingUser">
       <tr *ngFor="let item of users; let i=index" [attr.data-index]="i">
         <th scope="row">{{i+1}}</th>
         <td>{{item.userName}}</td>

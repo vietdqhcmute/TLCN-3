@@ -10,13 +10,15 @@ import { User } from "../models";
 export class PageAdminComponent implements OnInit {
   constructor(private userService: UserService) {}
   private users = Array<User>();
-
+  private isGettingUser:boolean=true;
   ngOnInit() {
+    this.isGettingUser=true;
     this.getAllUsers();
   }
 
   getAllUsers() {
     this.userService.getUsers().subscribe(userArray => {
+      this.isGettingUser =false;
       this.users = userArray;
     });
   }
