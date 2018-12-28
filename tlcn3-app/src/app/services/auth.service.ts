@@ -59,7 +59,7 @@ export class AuthService {
         const token = response.token;
         this.token = token;
         if (token) {
-          if(email == 'vietdqhcmute@gmail.com'){
+          if(email == 'admin@admin.com'){
             //Admin login
             this.isAuthenticated = true;
             this.isAdmin = true;
