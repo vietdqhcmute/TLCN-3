@@ -12,7 +12,7 @@ export class PageEditorComponent implements OnInit {
   @Input() resume: Resume;
   @Input() user: User;
 
-  template: String = "default";
+  template: String = "design-blue-01";
   constructor(private userService: UserService) {}
 
   ngOnInit() {
