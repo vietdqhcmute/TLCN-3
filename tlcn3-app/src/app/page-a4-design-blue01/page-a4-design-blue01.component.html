@@ -1,101 +1,120 @@
 <div id="design-template">
   <!-- --------------------------highlight-------------------------------- -->
   <div id="highlight">
+    <div id="name" (click)="sendData('Contact')">
+      <h1>{{ user.fullName }}</h1>
+      <p id="resume-title" (click)="sendData('Contact')"><strong><em>{{resume.title}}</em></strong></p>
+    </div>
+
     <div id="contact">
-      <div class="title">
-        <h6>Contact Infomation</h6>
-      </div>
       <div id="contact-info" (click)="sendData('Contact')">
-        <h6><strong>Email</strong></h6>
-        <p>{{user.email}}</p>
-        <h6><strong>Phone</strong></h6>
-        <p>{{ user.phone }}</p>
-        <h6 *ngIf="resume.linkedinURL"><strong>LinkedIn</strong></h6>
-        <p>{{ resume.linkedinURL }}</p>
-        <h6 *ngIf="resume.githubURL"><strong>Github</strong></h6>
-        <p>{{ resume.githubURL }}</p>
-        <h6 *ngIf="resume.webpageURL"><strong>Website</strong></h6>
-        <p>{{ resume.webpageURL }}</p>
+        <h6>
+          <strong>Email</strong>
+        </h6>
+        <h6>
+          <strong>Phone</strong>
+        </h6>
+        <h6 *ngIf="resume.linkedinURL">
+          <strong>LinkedIn</strong>
+        </h6>
+        <h6 *ngIf="resume.githubURL">
+          <strong>Github</strong>
+        </h6>
+        <h6 *ngIf="resume.webpageURL">
+          <strong>Website</strong>
+        </h6>
       </div>
     </div>
 
-    <div id="skill" *ngIf="resume.skill && resume.skill.length" (click)="sendData('Skill')">
-      <div class="title">
-        <h6>Skill</h6>
-      </div>
-      <div *ngFor="let item of resume.skill" id="skill-item" >
-        <ul>
-          <li>{{item}}</li>
-        </ul>
-      </div>
+    <div id="detail-contact">
+        <div id="contact-info" (click)="sendData('Contact')">
+          <p>{{user.email}}</p>
+          <p>{{ user.phone }}</p>
+          <p>{{ resume.linkedinURL }}</p>
+          <p>{{ resume.githubURL }}</p>
+          <p>{{ resume.webpageURL }}</p>
+        </div>
     </div>
+
   </div>
   <!-- --------------------------highlight-------------------------------- -->
 
   <!-- --------------------------main-------------------------------- -->
   <div id="main">
-    <div id="name" (click)="sendData('Contact')" >
-      <h1>{{ user.fullName }}</h1>
-    </div>
-    <p id="resume-title" (click)="sendData('Contact')"><strong><em>{{resume.title}}</em></strong></p>
-    <!-- summary -->
-    <div id="summary-area" *ngIf="resume.summary && resume.summary.length" (click)="sendData('Summary')">
-      <h5><strong>Summary</strong></h5>
-      <div class="summary-item">
-        <p>{{ resume.summary }}</p>
-      </div>
-    </div>
-    <!-- --experience-- -->
-    <div id="experience-area" *ngIf="resume.experience && resume.experience.length" (click)="sendData('Experience')">
-      <h5><strong>Experience</strong></h5>
-      <div id="experience-content" *ngFor="let item of resume.experience">
-        <div id="company">
-          <p id="companyName"><strong>{{item.company_name | uppercase}}</strong></p>
-          <p id="location">{{item.location}}</p>
-          <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
-          <p *ngIf="item.current === false">{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
-          <p *ngIf="item.current === true">Current</p>
+      <!-- summary -->
+      <div id="summary-area" *ngIf="resume.summary && resume.summary.length" (click)="sendData('Summary')">
+        <h5><strong>Summary</strong></h5>
+        <div class="summary-item">
+          <p>{{ resume.summary }}</p>
         </div>
-        <div id="detail">
-          <p><strong>{{item.title}}</strong></p>
-          <div id="experience-description">
-            <div class="line-breaker">
-              <p>{{item.description}}</p>
+      </div>    
+
+      <div id="hr"></div>
+      <!-- --experience-- -->
+      <div id="experience-area" *ngIf="resume.experience && resume.experience.length" (click)="sendData('Experience')">
+        <h5><strong>Experience</strong></h5>
+        <div id="experience-content" *ngFor="let item of resume.experience">
+          <div id="company">
+            <p id="companyName"><strong>{{item.company_name | uppercase}}</strong></p>
+            <p id="location">{{item.location}}</p>
+            <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
+            <p *ngIf="item.current === false">{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
+            <p *ngIf="item.current === true">Current</p>
+          </div>
+          <div id="detail">
+            <p><strong>{{item.title}}</strong></p>
+            <div id="experience-description">
+              <div class="line-breaker">
+                <p>{{item.description}}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- ---------project--------- -->
 
-    <div id="project-area" *ngIf="resume.project && resume.project.length" (click)="sendData('Project')">
-      <h5><strong>Project</strong></h5>
-      <div id="project-content" *ngFor="let item of resume.project">
-        <div id="project-info">
-          <p><strong>{{item.name}}</strong></p>
-          <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
-          <p>{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
-        </div>
-        <div id="project-description">
-          <div class="line-breaker">
-            <p>{{item.description}}</p>
+      <div id="hr"></div>
+      <!-- -project-- -->
+      <div id="project-area" *ngIf="resume.project && resume.project.length" (click)="sendData('Project')">
+          <h5><strong>Project</strong></h5>
+          <div id="project-content" *ngFor="let item of resume.project">
+            <div id="project-info">
+              <p><strong>{{item.name}}</strong></p>
+              <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
+              <p>{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
+            </div>
+            <div id="project-description">
+              <div class="line-breaker">
+                <p>{{item.description}}</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- --education-- -->
-    <div id="education-area" *ngIf="resume.education && resume.education.length" (click)="sendData('Education')">
-      <h5><strong>Education</strong></h5>
-      <div id="education-content" *ngFor="let item of resume.education" >
-        <div id="education-info">
-          <p><strong>{{item.school_name}}</strong></p>
-          <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
-          <p *ngIf="item.current === false">{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
-          <p *ngIf="item.current === true">Current</p>
+      <div id="hr"></div>
+      <!-- --education-- -->
+      <div id="education-area" *ngIf="resume.education && resume.education.length" (click)="sendData('Education')">
+          <h5><strong>Education</strong></h5>
+          <div id="education-content" *ngFor="let item of resume.education" >
+            <div id="education-info">
+              <p><strong>{{item.school_name}}</strong></p>
+              <p>{{item.startMonth | convertToMonth}}-{{item.startYear}}</p>
+              <p *ngIf="item.current === false">{{item.endMonth| convertToMonth}}-{{item.endYear}}</p>
+              <p *ngIf="item.current === true">Current</p>
+            </div>
+            <div id="major">
+              <p>{{item.major}}</p>
+            </div>
+          </div>
         </div>
-        <div id="major">
-          <p>{{item.major}}</p>
-        </div>
-      </div>
+
+        <div id="hr"></div>
+        <!-- --education-- -->
+        <div id="skill" *ngIf="resume.skill && resume.skill.length" (click)="sendData('Skill')">
+            <div class="title">
+              <h6><strong>Skills</strong></h6>
+            </div>
+            <div *ngFor="let item of resume.skill" id="skill-item" >
+                <p>{{item}}</p>
+            </div>
+          </div>
     </div>
-  </div>
+</div>
