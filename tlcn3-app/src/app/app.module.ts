@@ -52,10 +52,10 @@ import { FirstPageComponent } from './first-page/first-page.component';
 import { PageA4DesignBlue01Component } from './page-a4-design-blue01/page-a4-design-blue01.component';
 import { PageA4DesignRed01Component } from './page-a4-design-red01/page-a4-design-red01.component';
 import { PageAdminComponent } from './page-admin/page-admin.component';
-import { PageAdminSidebarComponent } from './page-admin-sidebar/page-admin-sidebar.component';
-import { PageAdminUserManagerComponent } from './page-admin-user-manager/page-admin-user-manager.component';
-import { PageAdminDashboardComponent } from './page-admin-dashboard/page-admin-dashboard.component';
-import { PageAdminNotificationComponent } from './page-admin-notification/page-admin-notification.component';
+import { PageAdminSidebarComponent } from './page-admin/page-admin-sidebar/page-admin-sidebar.component';
+import { PageAdminUserManagerComponent } from './page-admin/page-admin-user-manager/page-admin-user-manager.component';
+import { PageAdminDashboardComponent } from './page-admin/page-admin-dashboard/page-admin-dashboard.component';
+import { PageAdminNotificationComponent } from './page-admin/page-admin-notification/page-admin-notification.component';
 
 @NgModule({
   declarations: [

@@ -4,18 +4,18 @@
       <a id="logo" class="float-left"><strong>CVsensei</strong></a>
     </li>
 
-    <li *ngIf="!userIsAuthenticated">
+    <li routerLinkActive="active" *ngIf="!userIsAuthenticated">
       <a routerLink="/login" class="float-right">Sign in</a>
     </li>
-    <li *ngIf="userIsAuthenticated">
+    <li routerLinkActive="active" *ngIf="userIsAuthenticated">
       <a routerLink="/login" class="float-right" (click)="onLogOut()">Log out</a>
     </li>
 
-    <li>
+    <li routerLinkActive="active">
       <a routerLink="/about" class="float-right">About us</a>
     </li>
 
-    <li *ngIf="userIsAuthenticated">
+    <li routerLinkActive="active" *ngIf="userIsAuthenticated">
       <a routerLink="/profile" class="float-right">Profile</a>
     </li>
   </ul>
