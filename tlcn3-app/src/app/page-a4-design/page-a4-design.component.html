@@ -10,11 +10,11 @@
         <p>{{user.email}}</p>
         <h6><strong>Phone</strong></h6>
         <p>{{ user.phone }}</p>
-        <h6><strong>LinkedIn</strong></h6>
+        <h6 *ngIf="resume.linkedinURL"><strong>LinkedIn</strong></h6>
         <p>{{ resume.linkedinURL }}</p>
-        <h6><strong>Github</strong></h6>
+        <h6 *ngIf="resume.githubURL"><strong>Github</strong></h6>
         <p>{{ resume.githubURL }}</p>
-        <h6><strong>Website</strong></h6>
+        <h6 *ngIf="resume.webpageURL"><strong>Website</strong></h6>
         <p>{{ resume.webpageURL }}</p>
       </div>
     </div>

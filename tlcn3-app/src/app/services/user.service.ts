@@ -20,7 +20,7 @@ export class UserService {
   }
 
   getUsers(){
-    return this.http.get(this.domainName +'user/all');
+    return this.http.get<any>(this.domainName +'user/all');
   }
   getUserByID(userID){
     return this.http.get(this.domainName+'user/'+userID);
@@ -34,12 +34,14 @@ export class UserService {
     return this.http.put(this.domainName+'update/user/'+userID, user,{headers: headers});
   }
 
+  deleteUserByID(userID:string){
+    return this.http.delete(this.domainName+'delete/user/'+userID);
+  }
   updateAvatar(image: File){
     const postImage = new FormData();
     postImage.append("image", image);
     return this.http.post<{avatarUrl: string}>(this.domainName +'add/picture', postImage).subscribe(response=>{
       this.avatarURL.next(response.avatarUrl);
-      console.log(response);
     });
   }
 

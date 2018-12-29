@@ -40,11 +40,19 @@ import { DiaExperienceComponent } from "./dia-experience/dia-experience.componen
 import { DiaEducationComponent } from './dia-education/dia-education.component';
 import { DiaProjectComponent } from './dia-project/dia-project.component';
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
+import { EmailFiterPipe } from "./share/filter-by-email.pipe";
+
 import { AuthInterceptor } from "./auth-interceptor";
 import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.component';
 import { DiaConfirmComponent } from './dia-confirm/dia-confirm.component';
 import { PageA4DefaultComponent } from './page-a4-default/page-a4-default.component';
 import { PageA4DesignComponent } from './page-a4-design/page-a4-design.component';
+import { PageA4DesignBlueComponent } from './page-a4-design-blue/page-a4-design-blue.component';
+import { FirstPageComponent } from './first-page/first-page.component';
+import { PageA4DesignBlue01Component } from './page-a4-design-blue01/page-a4-design-blue01.component';
+import { PageA4DesignRed01Component } from './page-a4-design-red01/page-a4-design-red01.component';
+import { PageAdminComponent } from './page-admin/page-admin.component';
+import { PageAdminSidebarComponent } from './page-admin-sidebar/page-admin-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -62,10 +70,17 @@ import { PageA4DesignComponent } from './page-a4-design/page-a4-design.component
     DiaEducationComponent,
     DiaProjectComponent,
     ConvertToMonthPipe,
+    EmailFiterPipe,
     AppProfileInfoComponent,
     DiaConfirmComponent,
     PageA4DefaultComponent,
     PageA4DesignComponent,
+    PageA4DesignBlueComponent,
+    FirstPageComponent,
+    PageA4DesignBlue01Component,
+    PageA4DesignRed01Component,
+    PageAdminComponent,
+    PageAdminSidebarComponent,
   ],
   imports: [
     BrowserModule,

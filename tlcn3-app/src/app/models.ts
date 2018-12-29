@@ -6,7 +6,7 @@ export class AuthUser{
     userName: string;
     email: string;
     password: string;
-    fullname: string;
+    fullName: string;
     phone: string;
 }
 export interface AuthLogin{
@@ -21,7 +21,7 @@ export class User{
     userName: string;
     email: string;
     password: string;
-    fullname: string;
+    fullName: string;
     phone: string;
     _id: string;
 }

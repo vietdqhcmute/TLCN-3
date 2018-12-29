@@ -60,7 +60,12 @@
             background-size: 100% 100%;
             overflow: hidden;
             border-radius: 50%;
-
+            img{
+              &:hover {
+                -webkit-filter: brightness(50%);
+    
+            }
+            }
           }
 
 
@@ -68,7 +73,7 @@
 
         .cover-user-info {
           flex: 5;
-
+          margin-top: 20px;
           p {
             margin-bottom: 10px;
           }

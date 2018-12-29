@@ -12,16 +12,16 @@ import { DataService } from "../services/data.service";
   styleUrls: ["./app-login.component.scss"]
 })
 export class AppLoginComponent implements OnInit {
-  hide = true;
-  si_email: string = "vietdqhcmute@gmail.com";
-  si_password: string = "123";
+  hide = true; //Using at hidden password
+  si_email: string = "admin@admin.com";
+  si_password: string = "1";
 
   su_name: string;
   su_phone: string;
   su_email: string;
   su_password: string;
   su_confirm: string;
-  error: string;
+
   isLoading_logIn = false;
   isLoading_signUp = false;
 
@@ -33,22 +33,23 @@ export class AppLoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   onSignIn(form: NgForm) {
+    this.isLoading_logIn = true;
     if (form.invalid) {
       return;
     }
     this.authService.login(this.si_email, this.si_password);
     this.authService.getLoginID().subscribe(id => {
-      this.userService.getUserByID(id).subscribe(user=>{
-        this.user$= <User> user;
+      this.userService.getUserByID(id).subscribe(user => {
+        this.user$ = <User>user;
         this.dataService.sendDataUser(this.user$);
-      })
+      });
     });
-    this.isLoading_logIn = true;
+    this.authService.getLoadingSignIn().subscribe(status => {
+      this.isLoading_logIn = status;
+    });
   }
 
   onSignUp(form: NgForm) {
@@ -57,11 +58,20 @@ export class AppLoginComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.authService
-      .createUser(this.su_name, this.su_phone, this.su_email, this.su_password)
-      .subscribe(response => {
+    this.authService.createUser(
+      this.su_name,
+      this.su_phone,
+      this.su_email,
+      this.su_password
+    );
+    this.authService.getLoadingSignUp().subscribe(status=>{
+      this.isLoading_signUp = status;
+    })
+    this.authService.getSignUpSuccess().subscribe(signUpSuccess=>{
+      if (signUpSuccess){
         this.isLoading_signUp = false;
-      });
+        //Show thong bao success ra man hinh
+      }
+    })
   }
-
 }
