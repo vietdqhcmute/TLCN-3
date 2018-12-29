@@ -80,6 +80,7 @@ export class AppLoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    //avoid log out error message
     this.authSubcription.unsubscribe();
   }
 }
