@@ -1,17 +1,19 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, OnDestroy } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
 import { UserService } from "../services/user.service";
 import { User } from "../models";
 import { Router } from "@angular/router";
 import { DataService } from "../services/data.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-app-login",
   templateUrl: "./app-login.component.html",
   styleUrls: ["./app-login.component.scss"]
 })
-export class AppLoginComponent implements OnInit {
+export class AppLoginComponent implements OnInit, OnDestroy {
+
   hide = true; //Using at hidden password
   si_email: string = "admin@admin.com";
   si_password: string = "1";
@@ -25,6 +27,7 @@ export class AppLoginComponent implements OnInit {
   isLoading_logIn = false;
   isLoading_signUp = false;
 
+  authSubcription: Subscription;
   user$: User;
   constructor(
     public authService: AuthService,
@@ -41,7 +44,8 @@ export class AppLoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.si_email, this.si_password);
-    this.authService.getLoginID().subscribe(id => {
+
+    this.authSubcription = this.authService.getLoginID().subscribe(id => {
       this.userService.getUserByID(id).subscribe(user => {
         this.user$ = <User>user;
         this.dataService.sendDataUser(this.user$);
@@ -73,5 +77,9 @@ export class AppLoginComponent implements OnInit {
         //Show thong bao success ra man hinh
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.authSubcription.unsubscribe();
   }
 }
