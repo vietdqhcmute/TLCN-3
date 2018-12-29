@@ -8,18 +8,17 @@
   #admin-sidebar {
     width: 100%;
     flex: 2;
+
+    app-page-admin-sidebar {}
   }
 
   #admin-content {
+    width: 100%;
     flex: 8;
-    margin: 30px 30px 30px 30px;
-    table{
-      tbody{
-        button{
-          margin-top: 5px;
-          margin-left: 10px;
-        }
-      }
-    }
+    height: 89.7vh;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    app-page-admin-user-manager {}
   }
 }

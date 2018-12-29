@@ -8,24 +8,10 @@ import { User } from "../models";
   styleUrls: ["./page-admin.component.scss"]
 })
 export class PageAdminComponent implements OnInit {
-  constructor(private userService: UserService) {}
-  private users = Array<User>();
-  private isGettingUser:boolean=true;
-  searchText:string ="";
+  constructor() {}
+
   ngOnInit() {
-    this.isGettingUser=true;
-    this.getAllUsers();
+
   }
 
-  getAllUsers() {
-    this.userService.getUsers().subscribe(userArray => {
-      this.isGettingUser =false;
-      this.users = userArray;
-    });
-  }
-  deleteUserByID(userID) {
-    this.userService.deleteUserByID(userID).subscribe(response=>{
-      this.getAllUsers();
-    })
-  }
 }
