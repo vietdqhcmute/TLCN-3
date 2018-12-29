@@ -11,6 +11,7 @@ export class PageAdminComponent implements OnInit {
   constructor(private userService: UserService) {}
   private users = Array<User>();
   private isGettingUser:boolean=true;
+  searchText:string ="";
   ngOnInit() {
     this.isGettingUser=true;
     this.getAllUsers();

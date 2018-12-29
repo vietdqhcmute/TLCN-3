@@ -4,11 +4,12 @@
 <div id="admin-content">
   <h2>All of member</h2>
   <label for="basic-url">Searching with Email</label>
+  <p>{{searchText}}</p>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon3">Email:</span>
     </div>
-    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    <input [(ngModel)]="searchText" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
   </div>
   <table class="table table-striped table-hover">
     <thead class="thead-dark">
@@ -23,7 +24,7 @@
     </thead>
     <mat-spinner *ngIf="isGettingUser" mode="indeterminate" [diameter]="60" style="margin: 0 auto"></mat-spinner>
     <tbody *ngIf="!isGettingUser">
-      <tr *ngFor="let item of users; let i=index" [attr.data-index]="i">
+      <tr *ngFor="let item of users | emailFilter:searchText:'email';let i=index " [attr.data-index]="i">
         <th scope="row">{{i+1}}</th>
         <td>{{item.userName}}</td>
         <td>{{item.email}}</td>

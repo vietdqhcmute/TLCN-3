@@ -40,6 +40,8 @@ import { DiaExperienceComponent } from "./dia-experience/dia-experience.componen
 import { DiaEducationComponent } from './dia-education/dia-education.component';
 import { DiaProjectComponent } from './dia-project/dia-project.component';
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
+import { EmailFiterPipe } from "./share/filter-by-email.pipe";
+
 import { AuthInterceptor } from "./auth-interceptor";
 import { AppProfileInfoComponent } from './app-profile-info/app-profile-info.component';
 import { DiaConfirmComponent } from './dia-confirm/dia-confirm.component';
@@ -68,6 +70,7 @@ import { PageAdminSidebarComponent } from './page-admin-sidebar/page-admin-sideb
     DiaEducationComponent,
     DiaProjectComponent,
     ConvertToMonthPipe,
+    EmailFiterPipe,
     AppProfileInfoComponent,
     DiaConfirmComponent,
     PageA4DefaultComponent,

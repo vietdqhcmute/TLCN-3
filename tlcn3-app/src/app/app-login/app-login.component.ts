@@ -13,8 +13,8 @@ import { DataService } from "../services/data.service";
 })
 export class AppLoginComponent implements OnInit {
   hide = true; //Using at hidden password
-  si_email: string = "vietdqhcmute@gmail.com";
-  si_password: string = "123";
+  si_email: string = "admin@admin.com";
+  si_password: string = "1";
 
   su_name: string;
   su_phone: string;
