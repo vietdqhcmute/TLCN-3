@@ -21,7 +21,7 @@ router.post('/signup', async (req, res) => {
   } catch (err) {
     //catch error of dupplicating email
     res.status(500).json({
-      message: err
+      message: "Email is being used try another one"
     })
   }
 });
