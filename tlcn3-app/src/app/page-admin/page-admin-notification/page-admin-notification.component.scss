@@ -5,7 +5,12 @@
 
   #add-newfeed {
     button {
+      display: flex;
       margin-bottom: 10px;
+
+      i {
+        margin-left: 5px;
+      }
     }
   }
 
@@ -14,6 +19,7 @@
       button {
         margin-top: 5px;
         margin-left: 20px;
+
       }
     }
   }

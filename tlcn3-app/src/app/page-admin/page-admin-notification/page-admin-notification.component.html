@@ -4,7 +4,10 @@
     <label for="usr">Add newfeed:</label>
     <input type="text" class="form-control" id="usr" [(ngModel)]="newfeedMess">
   </div>
-  <button *ngIf="newfeedMess !=='' || newfeedMess.length>0" class="btn btn-success" (click)="createNewFeed()">Add new</button>
+  <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isCreating" style="display: block"></mat-spinner>
+  <div *ngIf="!isCreating">
+    <button *ngIf="newfeedMess !=='' || newfeedMess.length>0" class="btn btn-success" (click)="createNewFeed()">Add new<i class="material-icons">add</i></button>
+  </div>
 </div>
 
 <table class="table table-striped table-hover">

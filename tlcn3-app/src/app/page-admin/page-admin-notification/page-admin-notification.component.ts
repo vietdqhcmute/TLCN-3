@@ -11,6 +11,7 @@ export class PageAdminNotificationComponent implements OnInit {
   private newfeeds = Array<NewFeed>();
   private newfeedMess: string = "";
   private adminID = "5c26248e7012d622dca369ab";
+  private isCreating =false;
   constructor(private newFeedService: NewfeedService) {}
 
   ngOnInit() {
@@ -18,11 +19,14 @@ export class PageAdminNotificationComponent implements OnInit {
   }
 
   createNewFeed() {
+    this.isCreating =true;
     this.newFeedService.createNewFeed(this.adminID, this.newfeedMess).subscribe(
       response => {
+        this.isCreating=false;
         this.getAllNewFeed();
       },
       error => {
+        this.isCreating=false;
         console.log(error);
       }
     );
