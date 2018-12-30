@@ -9,8 +9,9 @@ import { Subject, Observable } from "rxjs";
 })
 export class NewfeedService {
   domainName = "http://localhost:3000/";
-  constructor(private http: HttpClient) {}
 
+  constructor(private http: HttpClient) {}
+  
   createNewFeed(userID: string, message: string): void {
     const newfeed: NewFeed = {
       userID: userID,

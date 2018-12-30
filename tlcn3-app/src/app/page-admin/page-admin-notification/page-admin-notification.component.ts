@@ -9,9 +9,16 @@ import { NewFeed } from 'src/app/models';
 })
 export class PageAdminNotificationComponent implements OnInit {
   private newfeeds = Array<NewFeed>();
+  private newfeedMess: string="";
+  private adminID ="5c26248e7012d622dca369ab";
   constructor(private newFeedService: NewfeedService) { }
 
   ngOnInit() {
+    this.getAllNewFeed();
+  }
+
+  createNewFeed(){
+    this.newFeedService.createNewFeed(this.adminID,this.newfeedMess);
     this.getAllNewFeed();
   }
 
