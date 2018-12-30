@@ -12,22 +12,14 @@ export class NewfeedService {
 
   constructor(private http: HttpClient) {}
   
-  createNewFeed(userID: string, message: string): void {
+  createNewFeed(userID: string, message: string) {
     const newfeed: NewFeed = {
       userID: userID,
       message: message,
       created: new Date()
     };
-    this.http
-      .post(this.domainName + "add/newfeed/" + userID, newfeed)
-      .subscribe(
-        response => {
-          console.log(response);
-        },
-        error => {
-          console.log(error);
-        }
-      );
+    return this.http
+      .post(this.domainName + "add/newfeed/" + userID, newfeed);
   }
 
   getNewFeeds() {
