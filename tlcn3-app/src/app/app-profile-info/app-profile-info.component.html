@@ -32,7 +32,8 @@
   </div>
 
   <section id="info">
-    <p>You have joined us at: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
+    <p style="margin-bottom: 3px">You have joined us since: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
   </section>
 
+  <app-app-profile-info-newfeed></app-app-profile-info-newfeed>
 </div>

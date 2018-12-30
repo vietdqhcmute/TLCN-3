@@ -57,6 +57,7 @@ import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-mana
 import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/page-admin-dashboard.component";
 import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
+import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { ErrorInterceptor } from "./error-interceptor";
     PageAdminSidebarComponent,
     PageAdminUserManagerComponent,
     PageAdminDashboardComponent,
-    PageAdminNotificationComponent
+    PageAdminNotificationComponent,
+    AppProfileInfoNewfeedComponent
   ],
   imports: [
     BrowserModule,
