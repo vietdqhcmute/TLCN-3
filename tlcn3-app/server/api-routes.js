@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('./resumeModel');
-const passport = require('passport');
 const checkAuth = require('./check-auth');
 const multer = require('multer');
+
+const Resume = require('./resumeModel');
 
 const MIME_TYPE_MAP = {
   'image/png': 'png',
@@ -70,7 +70,7 @@ router.delete('/delete/user/:id', async (req, res) => {
       _id: req.params.id
     });
     res.status(200).json({
-      message: "Delete successfully"
+      message: "Delete user successfully!"
     });
 
   } catch (err) {

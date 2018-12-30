@@ -134,3 +134,9 @@ export class Project {
             this.web = web;
     }
 }
+
+export class NewFeed{
+    userID: string;
+    message: string;
+    created: Date;
+}
