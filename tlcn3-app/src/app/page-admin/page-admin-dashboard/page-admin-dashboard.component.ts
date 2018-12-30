@@ -13,42 +13,28 @@ export class PageAdminDashboardComponent implements OnInit {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
-    var ctx = document.getElementById("myChart");
     this.chart = new Chart(this.canvas.nativeElement.getContext('2d'), {
-      type: "line",
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [
-          {
-            data: [12, 19, 3, 5, 2, 3],
-            borderColor: "#3cba9f",
-            fill: false
-          },
-          {
-            data: [3, 2, 5, 3, 19, 12],
-            borderColor: "#ffcc00",
-            fill: false
-          }
-        ]
-      },
+      type: 'doughnut',
       options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [
-            {
-              display: true
-            }
-          ],
-          yAxes: [
-            {
-              display: true
-            }
-          ]
-        }
-      }
+        responsive: true,
+        title: {
+          display: true,
+          text: 'Doughnut Chart'
+        },legend: {
+					position: 'top',
+				},animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+      },
+      data: {
+				datasets: [{
+					data: [45,10,5,25,15].reverse(),
+					backgroundColor: ["#B71C1C","#FF6F00","#FFD740","#558B2F","#0277BD"],
+					label: 'Dataset 1'
+				}],
+				labels: ['Default template','Red side','Blue side','Red top','Blue top']
+			}
     });
-    console.log("this chart is" +this.chart);
   }
 }
