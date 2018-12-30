@@ -9,7 +9,7 @@ export class AppProfileInfoNewfeedComponent implements OnInit {
   userName:string="Admin";
   title:string="Adminstrator at CVsensei";
   @Input() message:string;
-  @Input() created:Date;
+  @Input() created:string;
 
   constructor() { }
 
