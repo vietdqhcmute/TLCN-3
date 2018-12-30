@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-app-profile-info-newfeed',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-profile-info-newfeed.component.scss']
 })
 export class AppProfileInfoNewfeedComponent implements OnInit {
+  userName:string="Admin";
+  title:string="Adminstrator at CVsensei";
+  @Input() message:string;
+  @Input() created:Date;
 
   constructor() { }
 

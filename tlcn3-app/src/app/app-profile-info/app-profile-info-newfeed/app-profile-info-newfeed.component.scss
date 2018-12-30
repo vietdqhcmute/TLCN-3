@@ -4,6 +4,36 @@
   -webkit-box-shadow: 0 0 3px #37474F;
   box-shadow: 0 0 3px #37474F;
   margin-top: 2px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   padding: 10px 20px 10px 20px;
+  display: flex;
+  flex-direction: column;
+
+  #user-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .avatar {
+      height: 10vh;
+      width: 10vh;
+
+      img {
+        max-height: 10vh;
+        max-width: 10vh;
+        border-radius: 50%;
+      }
+    }
+
+    #name-title {
+      display: flex;
+      flex-direction: column;
+      margin-left: 12px;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  #message {}
 }

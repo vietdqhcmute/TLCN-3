@@ -35,5 +35,8 @@
     <p style="margin-bottom: 3px">You have joined us since: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
   </section>
 
-  <app-app-profile-info-newfeed></app-app-profile-info-newfeed>
+  <div *ngFor="let item of newfeedsAdmin">
+      <app-app-profile-info-newfeed [message]="item.message" [created]="item.created"></app-app-profile-info-newfeed>
+  </div>
+
 </div>
