@@ -5,14 +5,16 @@
     <tr>
       <th scope="col">No</th>
       <th scope="col">Message</th>
+      <th scope="col">Date created</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <button class="btn btn-danger" (click)="deleteUserByID(item._id)"><i
+    <tr *ngFor="let item of newfeeds; let i=index" [attr.data-index]="i">
+      <td scope="row">{{i+1}}</td>
+      <td>{{item.message}}</td>
+      <td>{{item.created | date: 'dd/MM/yyyy'}}</td>
+      <button class="btn btn-danger" (click)="deleteNewFeedByID(item._id)"><i
         class="fa fa-trash"></i></button>    </tr>
   </tbody>
 </table>
