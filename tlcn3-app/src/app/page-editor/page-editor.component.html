@@ -27,10 +27,10 @@
 <div id="background-editor">
   <div id="cv-area" class="print-only">
     <app-page-a4-default *ngIf="template == 'default'" [resume]="resume" [user]="user"></app-page-a4-default>
-    <app-page-a4-design *ngIf="template == 'design'" [resume]="resume" [user]="user"></app-page-a4-design>
-    <app-page-a4-design-blue *ngIf="template == 'design-blue'" [resume]="resume" [user]="user"></app-page-a4-design-blue>
-    <app-page-a4-design-blue01 *ngIf="template == 'design-blue-01'" [resume]="resume" [user]="user"></app-page-a4-design-blue01>
-    <app-page-a4-design-red01 *ngIf="template == 'design-red-01'" [resume]="resume" [user]="user"></app-page-a4-design-red01>
+    <app-page-a4-design *ngIf="template == 'red-side'" [resume]="resume" [user]="user"></app-page-a4-design>
+    <app-page-a4-design-blue *ngIf="template == 'blue-side'" [resume]="resume" [user]="user"></app-page-a4-design-blue>
+    <app-page-a4-design-blue01 *ngIf="template == 'blue-top'" [resume]="resume" [user]="user"></app-page-a4-design-blue01>
+    <app-page-a4-design-red01 *ngIf="template == 'red-top'" [resume]="resume" [user]="user"></app-page-a4-design-red01>
     <br />
   </div>
   <!--cv-area -->
