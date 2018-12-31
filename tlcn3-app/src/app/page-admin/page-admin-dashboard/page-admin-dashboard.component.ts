@@ -11,11 +11,14 @@ export class PageAdminDashboardComponent implements OnInit {
 
   title = "Dash board";
   chart: any = [];
+  isLoading =false;
 
   constructor(private templateService: TemplateService) {}
 
   ngOnInit() {
+    this.isLoading=true;
     this.templateService.getRatioTemplateTrending().subscribe(responseRatio => {
+      this.isLoading=false;
       this.createChart(
         responseRatio.defaultRate,
         responseRatio.redSideRate,
