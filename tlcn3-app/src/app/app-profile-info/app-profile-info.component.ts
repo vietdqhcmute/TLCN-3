@@ -18,7 +18,6 @@ export class AppProfileInfoComponent implements OnInit {
   ngOnInit() {
     this.newfeedService.getNewFeeds().subscribe(responseArray=>{
       this.newfeedsAdmin=responseArray;
-      console.log(responseArray);
     });
   }
 

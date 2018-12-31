@@ -15,7 +15,6 @@ export class PageA4DesignBlue01Component implements OnInit {
   constructor(private data: DataService) {}
   elementID$: String;
   ngOnInit() {
-    console.log(this.resume);
     this.data.currentElementID.subscribe(result=>{
       this.elementID$=result;
     })

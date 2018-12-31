@@ -140,3 +140,9 @@ export class NewFeed{
     message: string;
     created: Date;
 }
+
+export class Statistic{
+    userID: string;
+    template: string;
+    created: Date;
+}
