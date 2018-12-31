@@ -38,7 +38,7 @@ export class PageAdminDashboardComponent implements OnInit {
         responsive: true,
         title: {
           display: true,
-          text: "Doughnut Chart"
+          text: "Template trending"
         },
         legend: {
           position: "top"
