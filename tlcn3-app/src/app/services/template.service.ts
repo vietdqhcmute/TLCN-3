@@ -31,4 +31,7 @@ export class TemplateService {
       statistic
     );
   }
+  getRatioTemplateTrending(){
+    return this.http.get<any>(this.domainName+"count/template/all");
+  }
 }
