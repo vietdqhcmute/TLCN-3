@@ -3,7 +3,8 @@ import { Resume, Experience, User } from "../models";
 import { DataService } from "../services/data.service";
 import { UserService } from "../services/user.service";
 import { TemplateService } from "../services/template.service";
-
+import * as html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 @Component({
   selector: "app-page-editor",
   templateUrl: "./page-editor.component.html",
@@ -19,6 +20,15 @@ export class PageEditorComponent implements OnInit {
   ngOnInit() {
     this.templateService.getTemplate().subscribe(template$ => {
       this.template = template$;
+    });
+  }
+
+  downloadPDF(){
+    html2canvas(document.getElementById('cv-area')).then(function(canvas) {
+    var img = canvas.toDataURL("image/png");
+    var doc = new jsPDF();
+    doc.addImage(img,'JPEG',5,20);
+    doc.save('testCanvas.pdf');
     });
   }
 }
