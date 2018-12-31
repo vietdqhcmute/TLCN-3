@@ -1,29 +1,6 @@
 <div id="header-preview">
   <h4>Preview</h4>
 </div>
-<script>
-  var pfHeaderImgUrl = '';
-  var pfHeaderTagline = '';
-  var pfdisableClickToDel = 0;
-  var pfHideImages = 0;
-  var pfImageDisplayStyle = 'right';
-  var pfDisablePDF = 0;
-  var pfDisableEmail = 1;
-  var pfDisablePrint = 1;
-  var pfCustomCSS = '';
-  var pfBtVersion = '2';
-  (function () {
-    var js, pf;
-    pf = document.createElement('script');
-    pf.type = 'text/javascript';
-    pf.src = '//cdn.printfriendly.com/printfriendly.js';
-    document.getElementsByID('cv-area')[0].appendChild(pf)
-  })();
-
-</script><a href="https://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="print-only"
-  onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;"
-    src="//cdn.printfriendly.com/buttons/printfriendly-pdf-email-button-md.png" alt="Print Friendly and PDF" /></a>
-
 <div id="background-editor">
   <div id="cv-area" class="print-only">
     <app-page-a4-default *ngIf="template == 'default'" [resume]="resume" [user]="user"></app-page-a4-default>
