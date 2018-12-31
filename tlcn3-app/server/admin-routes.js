@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const checkAuth = require('./check-auth');
 
-const Resume = require('./resumeModel');
 const NewFeed = require('./newFeedModel');
 
 //API post newFeed
