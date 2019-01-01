@@ -1,6 +1,5 @@
 <nav>
   <div class="one-line">
-
     <button *ngIf="!isDownloading" class="btn btn-danger  float-right" (click)="onDownload()">Download as PDF</button>
     <mat-spinner *ngIf="isDownloading" mode="indeterminate" [diameter]="30"></mat-spinner>
 

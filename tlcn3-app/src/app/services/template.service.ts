@@ -2,6 +2,8 @@ import { Injectable } from "@angular/core";
 import { Subject } from "rxjs/internal/Subject";
 import { HttpClient } from "@angular/common/http";
 import { Statistic } from "../models";
+import * as html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 @Injectable({
   providedIn: "root"
@@ -33,5 +35,14 @@ export class TemplateService {
   }
   getRatioTemplateTrending(){
     return this.http.get<any>(this.domainName+"count/template/all");
+  }
+
+  downloadPDF(elementID){
+    html2canvas(document.getElementById(elementID)).then(function(canvas) {
+    var img = canvas.toDataURL("image/png");
+    var doc = new jsPDF('p','mm','a4');
+    doc.addImage(img,'JPEG',0, 0, 210, 297);
+    doc.save('My Resume.pdf');
+    });
   }
 }

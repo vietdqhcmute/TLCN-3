@@ -2,6 +2,9 @@
   overflow: scroll;
   overflow-x: hidden;
 
+  button[type='file'] {
+    visibility: hidden;
+  }
   .line-breaker {
     display: block;
     white-space: pre-line;
@@ -15,7 +18,9 @@
   #background-editor {
     background: #5d7480;
     padding: 60px 70px;
-
+    // button{
+    //   visibility: hidden;
+    // }
     #cv-area {
       height: 297mm;
       width: 210mm;

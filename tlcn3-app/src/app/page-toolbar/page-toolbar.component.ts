@@ -47,9 +47,14 @@ export class PageToolbarComponent implements OnInit {
       .postTemplateStatistic(this.id$, this.template)
       .subscribe(response => {
         this.isDownloading=false;
+        this.downloadPDF('cv-area');
       },error=>{
         this.isDownloading = false;
         console.log(error);
       });
+  }
+
+  downloadPDF(elementID){
+    this.templateService.downloadPDF(elementID);
   }
 }

@@ -15,8 +15,11 @@ import { Subscription } from "rxjs";
 export class AppLoginComponent implements OnInit, OnDestroy {
 
   hide = true; //Using at hidden password
-  si_email: string = "admin@admin.com";
-  si_password: string = "1";
+  // si_email: string = "admin@admin.com";
+  // si_password: string = "1";
+
+  si_email: string = "vietdqhcmute@gmail.com";
+  si_password: string = "123";
 
   su_name: string;
   su_phone: string;
