@@ -5,7 +5,7 @@
     <mat-tab label="Sign in">
       <form (submit)="onSignIn(signInForm)" #signInForm="ngForm">
         <div class="sign-in mat-experience alternate-theme">
-          <h3 style="margin: 0 auto">Welcome back!</h3>
+          <h3 style="margin: 0 auto">Sign in</h3>
           <mat-form-field>
             <input matInput id="email" name="email" required placeholder="Email" [(ngModel)]="si_email">
 
@@ -17,7 +17,7 @@
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </mat-form-field>
 
-          <mat-checkbox>Remember me!</mat-checkbox>
+          <!-- <mat-checkbox>Remember me!</mat-checkbox> -->
           <mat-dialog-actions>
             <button mat-button *ngIf="!isLoading_logIn" type="submit" class="mat-raised-button mat-primary"
               cdkFocusInitial>Sign In</button>

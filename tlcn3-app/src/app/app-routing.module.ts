@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
   { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
-    {path:'', component: PageAdminUserManagerComponent},
+    {path:'',redirectTo:"usermanager", pathMatch:"full"},
+    {path:'usermanager', component:PageAdminUserManagerComponent},
     {path:'dashboard',component:PageAdminDashboardComponent},
     {path:'notification', component:PageAdminNotificationComponent}
   ]}
