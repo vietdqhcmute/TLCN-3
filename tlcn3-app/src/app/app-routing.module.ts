@@ -16,7 +16,7 @@ import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/p
 import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "admin", pathMatch: "full" },
+  { path: "", redirectTo: "firstpage", pathMatch: "full" },
   { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
