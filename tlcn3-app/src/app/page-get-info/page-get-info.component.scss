@@ -5,6 +5,7 @@
   height: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #fff;
 
   a {
     margin-top: 10px;
@@ -52,12 +53,16 @@
         padding-left: 0px;
 
         li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           margin-bottom: 10px;
           background: #ECEFF1;
           padding-left: 20px;
+
           p {
             margin-bottom: 0;
           }
@@ -74,12 +79,16 @@
         padding-left: 0px;
 
         li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           margin-bottom: 10px;
           background: #ECEFF1;
           padding-left: 20px;
+
           p {
             margin-bottom: 0;
           }
@@ -95,12 +104,16 @@
         padding-left: 0px;
 
         li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           margin-bottom: 10px;
           background: #ECEFF1;
           padding-left: 20px;
+
           a {
             margin-bottom: 10px;
           }
@@ -117,6 +130,9 @@
         padding-left: 0px;
 
         li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
