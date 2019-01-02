@@ -58,6 +58,7 @@ import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/p
 import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
+import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-info-dreamjob/app-profile-info-dreamjob.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-i
     PageAdminUserManagerComponent,
     PageAdminDashboardComponent,
     PageAdminNotificationComponent,
-    AppProfileInfoNewfeedComponent
+    AppProfileInfoNewfeedComponent,
+    AppProfileInfoDreamjobComponent
   ],
   imports: [
     BrowserModule,

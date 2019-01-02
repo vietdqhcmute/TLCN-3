@@ -3,7 +3,9 @@
   overflow-x: hidden;
   width: 100%;
   height: 100%;
-
+  display: flex;
+  flex-direction: row;
+  
   .header-profile {
     margin: 0 auto;
   }
@@ -86,4 +88,14 @@
 
   }
 
+  #contact-us{
+    width: 55vh;
+    height: 63vh;
+    margin-left: 147vh;
+    margin-top: 5px;
+    position: absolute;
+    -moz-box-shadow: 0 0 3px #37474F;
+    -webkit-box-shadow: 0 0 3px #37474F;
+    box-shadow: 0 0 3px #37474F;
+  }
 }
