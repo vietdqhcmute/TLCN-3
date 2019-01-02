@@ -31,6 +31,8 @@
   }
 
   #summary-area {
+    margin-bottom: 20px;
+
     .summary-item {
       text-align: justify;
 
@@ -42,11 +44,15 @@
   }
 
   #experience-area {
+    margin-bottom: 20px;
+
     .experience-item {
       margin-bottom: 5px;
-      #experience-description{
+      margin-top: 5px;
+      #experience-description {
         text-align: justify;
       }
+
       &:hover {
         outline: 3px solid #37474F;
         outline-width: 100%;
@@ -82,8 +88,11 @@
   }
 
   #project-area {
+    margin-bottom: 20px;
+
     .project-item {
       margin-bottom: 5px;
+      margin-top: 5px;
 
       &:hover {
         outline: 3px solid #37474F;
@@ -96,14 +105,18 @@
       flex-direction: row;
       justify-content: space-between;
     }
-    #description{
+
+    #description {
       text-align: justify;
     }
   }
 
   #education-area {
+    margin-bottom: 20px;
+
     .education-item {
       margin-bottom: 5px;
+      margin-top: 5px;
 
       &:hover {
         outline: 3px solid #37474F;
@@ -119,11 +132,16 @@
   }
 
   #skill-area {
+    margin-bottom: 20px;
+
     &:hover {
       outline: 3px solid #37474F;
       outline-width: 100%;
     }
-    .skill-item{
+
+    .skill-item {
+      margin-top: 5px;
+
       text-align: justify;
     }
   }
