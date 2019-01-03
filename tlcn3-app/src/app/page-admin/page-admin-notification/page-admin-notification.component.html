@@ -2,7 +2,7 @@
 <div id="add-newfeed">
   <div class="form-group">
     <label for="usr">Add newfeed:</label>
-    <input type="text" class="form-control" id="usr" [(ngModel)]="newfeedMess">
+    <textarea type="text" class="form-control" id="usr" [(ngModel)]="newfeedMess"></textarea>
   </div>
   <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isCreating" style="display: block"></mat-spinner>
   <div *ngIf="!isCreating">
