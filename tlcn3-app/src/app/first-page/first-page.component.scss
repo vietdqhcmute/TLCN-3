@@ -1,6 +1,11 @@
 :host() {
+
   button{
     margin: 30px 0px 0px 50px;
+  }
+  #background{
+    background-image: url('../../assets/neon_abstract_3.jpg');
+    background-attachment: fixed;
   }
   #thumbnail-container {
     width: 100%;
@@ -43,7 +48,8 @@
 
     a {
       margin: 0 auto;
-      color: black;
+      color: white;
+      font-size: 20px;
     }
 
   }

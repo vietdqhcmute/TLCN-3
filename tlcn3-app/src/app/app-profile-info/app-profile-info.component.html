@@ -32,7 +32,15 @@
   </div>
 
   <section id="info">
-    <p>You have joined us at: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
+    <p style="margin-bottom: 3px">You have joined us since: {{user$.resume.created | date: 'dd/MM/yyyy' }}</p>
   </section>
 
+  <div *ngFor="let item of newfeedsAdmin">
+      <app-app-profile-info-newfeed [message]="item.message" [created]="item.created"></app-app-profile-info-newfeed>
+  </div>
+
+</div>
+
+<div id="contact-us">
+  <app-app-profile-info-dreamjob></app-app-profile-info-dreamjob>
 </div>

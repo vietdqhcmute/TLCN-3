@@ -1,0 +1,5 @@
+<h3>Chart of Template trending</h3>
+<mat-spinner *ngIf="isLoading" mode="indeterminate" [diameter]="60" style="margin: 0 auto"></mat-spinner>
+<div>
+  <canvas #canvas id="canvas">{{ chart }}</canvas>
+</div>

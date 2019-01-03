@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
+
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var cookieSession = require('cookie-session');
 var session = require('express-session');
@@ -24,6 +25,8 @@ mongoose.connect(connectionString, {
 // importing routes
 const indexRoutes = require('./api-routes');
 const authRoutes = require('./auth');
+const adminRoutes = require('./admin-routes');
+const statisticRoutes = require('./statistic-routes');
 // settings
 app.set('port', process.env.PORT || 3000);
 
@@ -108,6 +111,8 @@ app.use(function (req, res, next) {
 // routes
 app.use('/', indexRoutes);
 app.use('/',authRoutes);
+app.use('/',adminRoutes);
+app.use('/',statisticRoutes);
 
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);

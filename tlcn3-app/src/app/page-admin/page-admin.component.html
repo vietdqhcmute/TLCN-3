@@ -2,36 +2,8 @@
   <app-page-admin-sidebar></app-page-admin-sidebar>
 </div>
 <div id="admin-content">
-  <h2>All of member</h2>
-  <label for="basic-url">Searching with Email</label>
-  <p>{{searchText}}</p>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon3">Email:</span>
-    </div>
-    <input [(ngModel)]="searchText" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-  </div>
-  <table class="table table-striped table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">No</th>
-        <th scope="col">User name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Join</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <mat-spinner *ngIf="isGettingUser" mode="indeterminate" [diameter]="60" style="margin: 0 auto"></mat-spinner>
-    <tbody *ngIf="!isGettingUser">
-      <tr *ngFor="let item of users | emailFilter:searchText:'email';let i=index " [attr.data-index]="i">
-        <th scope="row">{{i+1}}</th>
-        <td>{{item.userName}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.phone}}</td>
-        <td>{{item.resume.created | date: 'dd/MM/yyyy'}}</td>
-        <button *ngIf="item.email !== 'admin@admin.com'" class="btn btn-danger" (click)="deleteUserByID(item._id)"><i class="fa fa-trash"></i></button>
-      </tr>
-    </tbody>
-  </table>
+  <router-outlet></router-outlet>
+  <!-- <app-page-admin-user-manager></app-page-admin-user-manager> -->
+  <!-- <app-page-admin-dashboard></app-page-admin-dashboard> -->
+  <!-- <app-page-admin-notification></app-page-admin-notification> -->
 </div>

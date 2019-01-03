@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../models';
+import { User, NewFeed } from '../models';
 import { UserService } from '../services/user.service';
+import { NewfeedService } from '../services/newfeed.service';
 
 @Component({
   selector: 'app-app-profile-info',
@@ -10,9 +11,14 @@ import { UserService } from '../services/user.service';
 export class AppProfileInfoComponent implements OnInit {
   @Input() user$: User;
   imagePreview: string;
-  constructor(private userService: UserService) { }
+  newfeedsAdmin= Array<NewFeed>();
+
+  constructor(private userService: UserService, private newfeedService: NewfeedService) { }
 
   ngOnInit() {
+    this.newfeedService.getNewFeeds().subscribe(responseArray=>{
+      this.newfeedsAdmin=responseArray;
+    });
   }
 
   onImagePicked(event: Event){

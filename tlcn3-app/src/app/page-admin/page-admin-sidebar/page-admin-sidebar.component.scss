@@ -1,0 +1,38 @@
+:host() {
+  display: block;
+  // grid-template-columns: 70px auto;
+  height: 100%;
+  width: 100%;
+
+  nav {
+    background: #263238;
+    height: 100%;
+    width: 100%;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        &:hover {
+          background: #151b1f;
+        }
+
+        a {
+          color: #fff;
+          padding: 20px;
+          display: flex;
+          text-decoration: none;
+
+        }
+
+        i {
+          margin-right: 12px;
+          margin-left: 5px;
+        }
+      }
+    }
+
+  }
+}

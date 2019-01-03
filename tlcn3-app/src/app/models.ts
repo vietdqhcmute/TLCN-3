@@ -134,3 +134,15 @@ export class Project {
             this.web = web;
     }
 }
+
+export class NewFeed{
+    userID: string;
+    message: string;
+    created: Date;
+}
+
+export class Statistic{
+    userID: string;
+    template: string;
+    created: Date;
+}

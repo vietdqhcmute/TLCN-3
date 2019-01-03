@@ -6,6 +6,6 @@ module.exports = function (req, res, next) {
         jwt.verify(token,"secret_that_should_be_longer");
         next();
     }catch(err){
-        res.status(401).json({message: "Auth failed!"});
+        res.status(401).json({message: "You are not authenticated!"});
     }
 }

@@ -1,0 +1,26 @@
+:host() {
+  display: block;
+  padding: 30px 30px 30px 30px;
+  height: 100%;
+
+  #add-newfeed {
+    button {
+      display: flex;
+      margin-bottom: 10px;
+
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  table {
+    tbody {
+      button {
+        margin-top: 5px;
+        margin-left: 20px;
+
+      }
+    }
+  }
+}

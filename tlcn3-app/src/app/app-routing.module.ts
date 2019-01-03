@@ -11,21 +11,25 @@ import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
 import { PageAdminComponent } from "./page-admin/page-admin.component";
 import { AdminGuard } from "./services/admin.guard";
+import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
+import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/page-admin-dashboard.component";
+import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "admin", pathMatch: "full" },
+  { path: "", redirectTo: "firstpage", pathMatch: "full" },
   { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
   { path: "login", component: AppLoginComponent },
   { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
-  // {
-  //   path: "profile/:id",
-  //   component: AppProfileComponent,
-  //   resolve: { profile: ResolverService }
-  // },
-  { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard]},
-  { path: "about", component: AppAboutComponent }
+  { path: "about", component: AppAboutComponent },
+  { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
+    {path:'',redirectTo:"usermanager", pathMatch:"full"},
+    {path:'usermanager', component:PageAdminUserManagerComponent},
+    {path:'dashboard',component:PageAdminDashboardComponent},
+    {path:'notification', component:PageAdminNotificationComponent}
+  ]}
+
 ];
 
 @NgModule({

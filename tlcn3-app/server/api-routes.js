@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('./resumeModel');
-const passport = require('passport');
 const checkAuth = require('./check-auth');
 const multer = require('multer');
+
+const Resume = require('./resumeModel');
 
 const MIME_TYPE_MAP = {
   'image/png': 'png',
@@ -12,26 +12,28 @@ const MIME_TYPE_MAP = {
 }
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb)=>{
+  destination: (req, file, cb) => {
     const isValid = MIME_TYPE_MAP[file.mimetype];
     let error = new Error("Invalid mime type");
-    if (isValid){
+    if (isValid) {
       error = null;
     }
-    cb(null,"images");
+    cb(null, "images");
   },
-  filename: (req, file, cb)=>{
+  filename: (req, file, cb) => {
     const name = file.originalname.toLowerCase().split(' ').join('-');
     const ext = MIME_TYPE_MAP[file.mimetype];
-    cb(null, name +'-'+ Date.now() + '.' + ext);
+    cb(null, name + '-' + Date.now() + '.' + ext);
   }
 
 });
 
 //API add picture to server and return imagePath
-router.post('/add/picture', multer({storage: storage}).single("image") ,async (req, res) => {
-  const url = req.protocol+ '://' + req.get("host");
-  let imagePath = url + "/images/" + req.file.filename; 
+router.post('/add/picture', multer({
+  storage: storage
+}).single("image"), async (req, res) => {
+  const url = req.protocol + '://' + req.get("host");
+  let imagePath = url + "/images/" + req.file.filename;
   res.status(200).json({
     avatarUrl: imagePath
   })
@@ -68,7 +70,7 @@ router.delete('/delete/user/:id', async (req, res) => {
       _id: req.params.id
     });
     res.status(200).json({
-      message: "Delete successfully"
+      message: "Delete user successfully!"
     });
 
   } catch (err) {
@@ -91,7 +93,9 @@ router.put('/update/user/:id', async (req, res) => {
     });
 
   } catch (err) {
-    res.status(404).send(err);
+    res.status(500).json({
+      message: "Update failed!"
+    });
   }
 });
 
