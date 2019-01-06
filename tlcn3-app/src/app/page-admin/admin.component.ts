@@ -4,10 +4,10 @@ import { User } from "../models";
 
 @Component({
   selector: "app-page-admin",
-  templateUrl: "./page-admin.component.html",
-  styleUrls: ["./page-admin.component.scss"]
+  templateUrl: "./admin.component.html",
+  styleUrls: ["./admin.component.scss"]
 })
-export class PageAdminComponent implements OnInit {
+export class AdminComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {

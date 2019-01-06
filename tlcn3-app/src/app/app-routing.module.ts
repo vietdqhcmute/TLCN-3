@@ -9,7 +9,7 @@ import { AppMainComponent } from "./app-main/app-main.component";
 import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
-import { PageAdminComponent } from "./page-admin/page-admin.component";
+import { AdminComponent } from "./page-admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
 import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
 import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/page-admin-dashboard.component";
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
-  { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
+  { path: "admin", component: AdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
     {path:'',redirectTo:"usermanager", pathMatch:"full"},
     {path:'usermanager', component:PageAdminUserManagerComponent},
     {path:'dashboard',component:PageAdminDashboardComponent},
