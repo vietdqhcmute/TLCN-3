@@ -5,10 +5,10 @@ import { NewfeedService } from '../services/newfeed.service';
 
 @Component({
   selector: 'app-app-profile-info',
-  templateUrl: './app-profile-info.component.html',
-  styleUrls: ['./app-profile-info.component.scss']
+  templateUrl: './profile-info.component.html',
+  styleUrls: ['./profile-info.component.scss']
 })
-export class AppProfileInfoComponent implements OnInit {
+export class ProfileInfoComponent implements OnInit {
   @Input() user$: User;
   imagePreview: string;
   newfeedsAdmin= Array<NewFeed>();

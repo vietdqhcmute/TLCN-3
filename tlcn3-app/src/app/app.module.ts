@@ -46,7 +46,7 @@ import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { EmailFiterPipe } from "./share/filter-by-email.pipe";
 
 import { AuthInterceptor } from "./auth-interceptor";
-import { AppProfileInfoComponent } from "./app-profile-info/app-profile-info.component";
+import { ProfileInfoComponent } from "./app-profile-info/profile-info.component";
 
 import { PageA4DefaultComponent } from "./template-custom/page-a4-default/page-a4-default.component";
 import { PageA4DesignComponent } from "./template-custom/page-a4-design/page-a4-design.component";
@@ -81,7 +81,7 @@ import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-
     DiaProjectComponent,
     ConvertToMonthPipe,
     EmailFiterPipe,
-    AppProfileInfoComponent,
+    ProfileInfoComponent,
     DiaConfirmComponent,
     PageA4DefaultComponent,
     PageA4DesignComponent,
