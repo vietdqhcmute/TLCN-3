@@ -10,7 +10,7 @@ import { ProfilePageComponent } from "./profile-page/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
-import { GetInfoComponent } from "./get-info/get-info.component";
+import { GetInfoComponent } from "./edit-resume/get-info/get-info.component";
 import { A4PreviewComponent } from "./a4-preview/a4-preview.component";
 import { PageTemplateComponent } from "./page-template/page-template.component";
 import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
