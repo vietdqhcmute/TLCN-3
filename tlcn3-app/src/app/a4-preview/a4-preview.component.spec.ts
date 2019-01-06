@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageEditorComponent } from './page-editor.component';
+import { A4PreviewComponent } from './a4-preview.component';
 
-describe('PageEditorComponent', () => {
-  let component: PageEditorComponent;
-  let fixture: ComponentFixture<PageEditorComponent>;
+describe('A4PreviewComponent', () => {
+  let component: A4PreviewComponent;
+  let fixture: ComponentFixture<A4PreviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageEditorComponent ]
+      declarations: [ A4PreviewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageEditorComponent);
+    fixture = TestBed.createComponent(A4PreviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

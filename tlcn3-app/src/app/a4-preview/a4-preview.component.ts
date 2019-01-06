@@ -7,10 +7,10 @@ import * as html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 @Component({
   selector: "app-page-editor",
-  templateUrl: "./page-editor.component.html",
-  styleUrls: ["./page-editor.component.scss"]
+  templateUrl: "./a4-preview.component.html",
+  styleUrls: ["./a4-preview.component.scss"]
 })
-export class PageEditorComponent implements OnInit {
+export class A4PreviewComponent implements OnInit {
   @Input() resume: Resume;
   @Input() user: User;
 

@@ -11,7 +11,7 @@ import { AppAboutComponent } from "./about/about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
 import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
-import { PageEditorComponent } from "./page-editor/page-editor.component";
+import { A4PreviewComponent } from "./a4-preview/a4-preview.component";
 import { PageTemplateComponent } from "./page-template/page-template.component";
 import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
 import "hammerjs";
@@ -73,7 +73,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     AppMainComponent,
     PageSidebarComponent,
     PageGetInfoComponent,
-    PageEditorComponent,
+    A4PreviewComponent,
     PageTemplateComponent,
     EditorToolbarComponent,
     DiaExperienceComponent,
