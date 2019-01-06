@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { AppProfileComponent } from "./app-profile/app-profile.component";
+import { ProfilePageComponent } from "./profile-page/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
@@ -68,7 +68,7 @@ import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-
   declarations: [
     AppComponent,
     LoginComponent,
-    AppProfileComponent,
+    ProfilePageComponent,
     AppAboutComponent,
     AppMainComponent,
     PageSidebarComponent,

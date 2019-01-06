@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { LoginComponent } from "./login/login.component";
-import { AppProfileComponent } from "./app-profile/app-profile.component";
+import { ProfilePageComponent } from "./profile-page/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
   { path: "login", component: LoginComponent },
-  { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
+  { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
   { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
     {path:'',redirectTo:"usermanager", pathMatch:"full"},

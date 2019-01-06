@@ -6,10 +6,10 @@ import { Resume, User } from "../models";
 import { AuthService } from "../services/auth.service";
 @Component({
   selector: "app-app-profile",
-  templateUrl: "./app-profile.component.html",
-  styleUrls: ["./app-profile.component.scss"]
+  templateUrl: "./profile-page.component.html",
+  styleUrls: ["./profile-page.component.scss"]
 })
-export class AppProfileComponent implements OnInit {
+export class ProfilePageComponent implements OnInit {
   user$: User;
   resume$: Resume;
   userByResume$: User;
