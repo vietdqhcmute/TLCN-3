@@ -3,10 +3,10 @@ import { Chart } from "chart.js";
 import { TemplateService } from "src/app/services/template.service";
 @Component({
   selector: "app-page-admin-dashboard",
-  templateUrl: "./page-admin-dashboard.component.html",
-  styleUrls: ["./page-admin-dashboard.component.scss"]
+  templateUrl: "./admin-dashboard.component.html",
+  styleUrls: ["./admin-dashboard.component.scss"]
 })
-export class PageAdminDashboardComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit {
   @ViewChild("canvas") canvas: ElementRef;
 
   title = "Dash board";
