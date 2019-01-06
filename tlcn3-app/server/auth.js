@@ -34,7 +34,7 @@ router.post("/login", (req, res, next) => {
   }).then(user => {
     if (!user) {
       return res.status(401).json({
-        message: "Auth failed"
+        message: "Email fault!"
       });
     }
     fetchedUser = user;
