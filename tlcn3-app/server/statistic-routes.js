@@ -57,7 +57,7 @@ router.get('/count/template/all', async(req,res)=>{
 });
 
 var percentage = function(element, total) {
-    var percent = Math.round( (element/total)*100);
+    let percent = Math.round( (element/total)*100);
     return percent;
 }
 module.exports = router;

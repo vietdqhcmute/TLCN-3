@@ -16,5 +16,5 @@ let newFeedSchema = new mongoose.Schema({
 
 });
 
-var NewFeed = mongoose.model("Notify", newFeedSchema);
+const NewFeed = mongoose.model("Notify", newFeedSchema);
 module.exports = NewFeed;

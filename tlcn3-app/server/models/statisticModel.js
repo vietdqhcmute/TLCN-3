@@ -15,5 +15,5 @@ let statisticSchema = new mongoose.Schema({
       },
 });
 
-var Statistic = mongoose.model("Statistic", statisticSchema);
+const Statistic = mongoose.model("Statistic", statisticSchema);
 module.exports = Statistic;
