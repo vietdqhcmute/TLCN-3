@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppProfileInfoNewfeedComponent } from './app-profile-info-newfeed.component';
+import { ProfileInfoNewfeedComponent } from './profile-info-newfeed.component';
 
-describe('AppProfileInfoNewfeedComponent', () => {
-  let component: AppProfileInfoNewfeedComponent;
-  let fixture: ComponentFixture<AppProfileInfoNewfeedComponent>;
+describe('ProfileInfoNewfeedComponent', () => {
+  let component: ProfileInfoNewfeedComponent;
+  let fixture: ComponentFixture<ProfileInfoNewfeedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppProfileInfoNewfeedComponent ]
+      declarations: [ ProfileInfoNewfeedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppProfileInfoNewfeedComponent);
+    fixture = TestBed.createComponent(ProfileInfoNewfeedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

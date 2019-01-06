@@ -61,7 +61,7 @@ import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
-import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
+import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-newfeed/profile-info-newfeed.component';
 import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 
 @NgModule({
@@ -94,7 +94,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     AdminUserManagerComponent,
     AdminDashboardComponent,
     AdminNotificationComponent,
-    AppProfileInfoNewfeedComponent,
+    ProfileInfoNewfeedComponent,
     ProfileInfoDreamjobComponent
   ],
   imports: [
