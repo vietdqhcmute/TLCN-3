@@ -4,10 +4,10 @@ import { NewFeed } from "src/app/models";
 
 @Component({
   selector: "app-page-admin-notification",
-  templateUrl: "./page-admin-notification.component.html",
-  styleUrls: ["./page-admin-notification.component.scss"]
+  templateUrl: "./admin-notification.component.html",
+  styleUrls: ["./admin-notification.component.scss"]
 })
-export class PageAdminNotificationComponent implements OnInit {
+export class AdminNotificationComponent implements OnInit {
   private newfeeds = Array<NewFeed>();
   private newfeedMess: string = "";
   private adminID = "5c26248e7012d622dca369ab";

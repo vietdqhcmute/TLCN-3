@@ -59,7 +59,7 @@ import { AdminComponent } from "./page-admin/admin.component";
 import { PageAdminSidebarComponent } from "./page-admin/page-admin-sidebar/page-admin-sidebar.component";
 import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
-import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
+import { AdminNotificationComponent } from "./page-admin/page-admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
 import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-info-dreamjob/app-profile-info-dreamjob.component';
@@ -93,7 +93,7 @@ import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-
     PageAdminSidebarComponent,
     PageAdminUserManagerComponent,
     AdminDashboardComponent,
-    PageAdminNotificationComponent,
+    AdminNotificationComponent,
     AppProfileInfoNewfeedComponent,
     AppProfileInfoDreamjobComponent
   ],
