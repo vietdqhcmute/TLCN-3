@@ -7,11 +7,11 @@ import { DataService } from "../services/data.service";
 import { AuthService } from "../services/auth.service";
 
 @Component({
-  selector: "app-app-main",
-  templateUrl: "./app-main.component.html",
-  styleUrls: ["./app-main.component.scss"]
+  selector: "app-edit-resume",
+  templateUrl: "./edit-resume.component.html",
+  styleUrls: ["./edit-resume.component.scss"]
 })
-export class AppMainComponent implements OnInit {
+export class EditResumeComponent implements OnInit {
   resume$: Resume; // resume$ is part of user$, just create new variable in order to make it easy to read
   user$: User;
   isAuthenticated:boolean= false;

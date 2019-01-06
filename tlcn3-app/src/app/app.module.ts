@@ -8,7 +8,7 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { ProfilePageComponent } from "./profile-page/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
-import { AppMainComponent } from "./app-main/app-main.component";
+import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
 import { GetInfoComponent } from "./get-info/get-info.component";
 import { A4PreviewComponent } from "./a4-preview/a4-preview.component";
@@ -70,7 +70,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     LoginComponent,
     ProfilePageComponent,
     AppAboutComponent,
-    AppMainComponent,
+    EditResumeComponent,
     PageSidebarComponent,
     GetInfoComponent,
     A4PreviewComponent,

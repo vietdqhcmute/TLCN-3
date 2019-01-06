@@ -1,5 +1,5 @@
 <div *ngIf="isAuthenticated">
-  <app-page-toolbar [user$]="user$"></app-page-toolbar>
+  <app-editor-toolbar [user$]="user$"></app-editor-toolbar>
   <div class="flex-body">
     <app-get-info></app-get-info>
     <app-page-a4-preview [resume]="resume$" [user]="user$">

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { ProfilePageComponent } from "./profile-page/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
-import { AppMainComponent } from "./app-main/app-main.component";
+import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 
 import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
@@ -17,8 +17,8 @@ import { AdminNotificationComponent } from "./page-admin/admin-notification/admi
 
 const routes: Routes = [
   { path: "", redirectTo: "firstpage", pathMatch: "full" },
-  { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
-  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
+  { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
+  { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },

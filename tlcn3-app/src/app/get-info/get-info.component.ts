@@ -46,7 +46,7 @@ export class GetInfoComponent implements OnInit {
     private user: UserService
   ) {}
   ngOnInit() {
-    // get data from app-main.component by subjectbehavior
+    // get data from edit-resume.component by subjectbehavior
     this.data.currentUser.subscribe(result => {
       this.user$ = result;
       this.resume$ = this.user$.resume;
