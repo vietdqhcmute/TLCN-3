@@ -62,7 +62,7 @@ import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dash
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
-import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-info-dreamjob/app-profile-info-dreamjob.component';
+import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +95,7 @@ import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-
     AdminDashboardComponent,
     AdminNotificationComponent,
     AppProfileInfoNewfeedComponent,
-    AppProfileInfoDreamjobComponent
+    ProfileInfoDreamjobComponent
   ],
   imports: [
     BrowserModule,
