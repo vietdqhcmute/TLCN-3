@@ -1,0 +1,146 @@
+:host {
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+
+  a {
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #00A8FF;
+    margin-bottom: 20px;
+  }
+
+  .list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .list-item-button {
+    button {
+      height: 100%;
+    }
+  }
+
+  .item {
+    mat-form-field {
+      width: 100%;
+      font-size: 16;
+
+      input {
+        width: 100%;
+      }
+    }
+
+  }
+
+
+  #Contact {
+    textarea {
+      height: 40px;
+    }
+  }
+
+  #Experience {
+    .list-experience {
+      ul {
+        list-style-type: none;
+        padding-left: 0px;
+
+        li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          background: #ECEFF1;
+          padding-left: 20px;
+
+          p {
+            margin-bottom: 0;
+          }
+
+        }
+      }
+    }
+  }
+
+  #Education {
+    .list-education {
+      ul {
+        list-style-type: none;
+        padding-left: 0px;
+
+        li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          background: #ECEFF1;
+          padding-left: 20px;
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #Project {
+    .list-project {
+      ul {
+        list-style-type: none;
+        padding-left: 0px;
+
+        li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          background: #ECEFF1;
+          padding-left: 20px;
+
+          a {
+            margin-bottom: 10px;
+          }
+
+        }
+      }
+    }
+  }
+
+  #Skill {
+    .list-skills {
+      ul {
+        list-style-type: none;
+        padding-left: 0px;
+
+        li {
+          -moz-box-shadow: 0 0 3px #37474F;
+          -webkit-box-shadow: 0 0 3px #37474F;
+          box-shadow: 0 0 3px #37474F;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          background: #ECEFF1;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}

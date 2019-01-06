@@ -16,22 +16,22 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material";
 
-import { Resume, User, Education, Project } from "../models";
-import { Experience } from "../models";
-import { DataService } from "../services/data.service";
-import { DiaExperienceComponent } from "../dialog/dia-experience/dia-experience.component";
+import { Resume, User, Education, Project } from "../../models";
+import { Experience } from "../../models";
+import { DataService } from "../../services/data.service";
+import { DiaExperienceComponent } from "../../dialog/dia-experience/dia-experience.component";
 import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
-import { UserService } from "../services/user.service";
-import { DiaEducationComponent } from "../dialog/dia-education/dia-education.component";
-import { DiaProjectComponent } from "../dialog/dia-project/dia-project.component";
-import { DiaConfirmComponent } from "../dialog/dia-confirm/dia-confirm.component";
+import { UserService } from "../../services/user.service";
+import { DiaEducationComponent } from "../../dialog/dia-education/dia-education.component";
+import { DiaProjectComponent } from "../../dialog/dia-project/dia-project.component";
+import { DiaConfirmComponent } from "../../dialog/dia-confirm/dia-confirm.component";
 
 @Component({
-  selector: "app-page-get-info",
-  templateUrl: "./page-get-info.component.html",
-  styleUrls: ["./page-get-info.component.scss"]
+  selector: "app-get-info",
+  templateUrl: "./get-info.component.html",
+  styleUrls: ["./get-info.component.scss"]
 })
-export class PageGetInfoComponent implements OnInit {
+export class GetInfoComponent implements OnInit {
   resume$: Resume;
   user$: User;
   skill: Array<String>; // here to test
@@ -46,7 +46,7 @@ export class PageGetInfoComponent implements OnInit {
     private user: UserService
   ) {}
   ngOnInit() {
-    // get data from app-main.component by subjectbehavior
+    // get data from edit-resume.component by subjectbehavior
     this.data.currentUser.subscribe(result => {
       this.user$ = result;
       this.resume$ = this.user$.resume;

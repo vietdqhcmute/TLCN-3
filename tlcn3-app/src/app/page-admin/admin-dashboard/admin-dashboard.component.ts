@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { Chart } from "chart.js";
 import { TemplateService } from "src/app/services/template.service";
 @Component({
-  selector: "app-page-admin-dashboard",
+  selector: "app-admin-dashboard",
   templateUrl: "./admin-dashboard.component.html",
   styleUrls: ["./admin-dashboard.component.scss"]
 })

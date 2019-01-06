@@ -5,7 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { TemplateService } from "../services/template.service";
 
 @Component({
-  selector: "app-page-toolbar",
+  selector: "app-editor-toolbar",
   templateUrl: "./editor-toolbar.component.html",
   styleUrls: ["./editor-toolbar.component.scss"]
 })

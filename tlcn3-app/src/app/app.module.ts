@@ -6,13 +6,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { ProfilePageComponent } from "./profile-page/profile-page.component";
+import { ProfilePageComponent } from "./app-profile/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
-import { AppMainComponent } from "./app-main/app-main.component";
-import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
-import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
-import { A4PreviewComponent } from "./a4-preview/a4-preview.component";
-import { PageTemplateComponent } from "./page-template/page-template.component";
+import { EditResumeComponent } from "./edit-resume/edit-resume.component";
+import { TopbarComponent } from "./topbar/topbar.component";
+import { GetInfoComponent } from "./edit-resume/get-info/get-info.component";
+import { A4PreviewComponent } from "./edit-resume/a4-preview/a4-preview.component";
+import { TemplateSelectionComponent } from "./edit-resume/template-selection/template-selection.component";
 import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
 import "hammerjs";
 
@@ -70,11 +70,11 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     LoginComponent,
     ProfilePageComponent,
     AppAboutComponent,
-    AppMainComponent,
-    PageSidebarComponent,
-    PageGetInfoComponent,
+    EditResumeComponent,
+    TopbarComponent,
+    GetInfoComponent,
     A4PreviewComponent,
-    PageTemplateComponent,
+    TemplateSelectionComponent,
     EditorToolbarComponent,
     DiaExperienceComponent,
     DiaEducationComponent,

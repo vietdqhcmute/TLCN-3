@@ -9,7 +9,7 @@
     width: 100%;
     flex: 2;
 
-    app-page-admin-sidebar {}
+    app-admin-sidebar {}
   }
 
   #admin-content {
@@ -19,6 +19,6 @@
     overflow: scroll;
     overflow-x: hidden;
 
-    app-page-admin-user-manager {}
+    app-admin-user-manager {}
   }
 }

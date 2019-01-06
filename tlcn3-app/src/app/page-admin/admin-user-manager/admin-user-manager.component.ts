@@ -3,7 +3,7 @@ import { UserService } from '../../services/user.service';
 import { User } from '../../models';
 
 @Component({
-  selector: 'app-page-admin-user-manager',
+  selector: 'app-admin-user-manager',
   templateUrl: './admin-user-manager.component.html',
   styleUrls: ['./admin-user-manager.component.scss']
 })

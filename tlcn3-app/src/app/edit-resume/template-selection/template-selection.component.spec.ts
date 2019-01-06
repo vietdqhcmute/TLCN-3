@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppMainComponent } from './app-main.component';
+import { TemplateSelectionComponent } from './template-selection.component';
 
-describe('AppMainComponent', () => {
-  let component: AppMainComponent;
-  let fixture: ComponentFixture<AppMainComponent>;
+describe('TemplateSelectionComponent', () => {
+  let component: TemplateSelectionComponent;
+  let fixture: ComponentFixture<TemplateSelectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppMainComponent ]
+      declarations: [ TemplateSelectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppMainComponent);
+    fixture = TestBed.createComponent(TemplateSelectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

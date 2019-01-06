@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageGetInfoComponent } from './page-get-info.component';
+import { EditResumeComponent } from './edit-resume.component';
 
-describe('PageGetInfoComponent', () => {
-  let component: PageGetInfoComponent;
-  let fixture: ComponentFixture<PageGetInfoComponent>;
+describe('EditResumeComponent', () => {
+  let component: EditResumeComponent;
+  let fixture: ComponentFixture<EditResumeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageGetInfoComponent ]
+      declarations: [ EditResumeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageGetInfoComponent);
+    fixture = TestBed.createComponent(EditResumeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
