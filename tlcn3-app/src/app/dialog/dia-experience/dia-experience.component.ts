@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
-import { Experience } from "../models";
+import { Experience } from "../../models";
 
 @Component({
   selector: "app-dia-experience",

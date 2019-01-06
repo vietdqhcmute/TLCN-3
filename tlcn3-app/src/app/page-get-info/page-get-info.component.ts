@@ -19,12 +19,12 @@ import {
 import { Resume, User, Education, Project } from "../models";
 import { Experience } from "../models";
 import { DataService } from "../services/data.service";
-import { DiaExperienceComponent } from "../dia-experience/dia-experience.component";
+import { DiaExperienceComponent } from "../dialog/dia-experience/dia-experience.component";
 import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 import { UserService } from "../services/user.service";
-import { DiaEducationComponent } from "../dia-education/dia-education.component";
-import { DiaProjectComponent } from "../dia-project/dia-project.component";
-import { DiaConfirmComponent } from "../dia-confirm/dia-confirm.component";
+import { DiaEducationComponent } from "../dialog/dia-education/dia-education.component";
+import { DiaProjectComponent } from "../dialog/dia-project/dia-project.component";
+import { DiaConfirmComponent } from "../dialog/dia-confirm/dia-confirm.component";
 
 @Component({
   selector: "app-page-get-info",

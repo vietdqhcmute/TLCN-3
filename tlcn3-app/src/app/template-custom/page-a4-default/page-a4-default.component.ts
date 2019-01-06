@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Resume, User } from '../models';
-import { DataService } from '../services/data.service';
+import { Resume, User } from '../../models';
+import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-page-a4-design-red01',
-  templateUrl: './page-a4-design-red01.component.html',
-  styleUrls: ['./page-a4-design-red01.component.scss']
+  selector: 'app-page-a4-default',
+  templateUrl: './page-a4-default.component.html',
+  styleUrls: ['./page-a4-default.component.scss']
 })
-export class PageA4DesignRed01Component implements OnInit {
+export class PageA4DefaultComponent implements OnInit {
   @Input() resume: Resume;
   @Input() user: User;
   
@@ -22,5 +22,4 @@ export class PageA4DesignRed01Component implements OnInit {
   sendData(elementID){
     this.data.sendDataElementID(elementID);
   }
-
 }

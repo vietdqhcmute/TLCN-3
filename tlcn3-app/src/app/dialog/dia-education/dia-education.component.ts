@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { Education } from "../models";
+import { Education } from "../../models";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User, Resume } from '../models';
-import { DataService } from '../services/data.service';
+import { User, Resume } from '../../models';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-page-a4-design-blue01',

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
-import { Project } from "../models";
+import { Project } from "../../models";
 
 @Component({
   selector: "app-dia-project",

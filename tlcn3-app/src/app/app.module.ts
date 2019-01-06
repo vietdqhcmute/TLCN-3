@@ -36,21 +36,25 @@ import {
   MatProgressSpinnerModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { DiaExperienceComponent } from "./dia-experience/dia-experience.component";
-import { DiaEducationComponent } from "./dia-education/dia-education.component";
-import { DiaProjectComponent } from "./dia-project/dia-project.component";
+
+import { DiaExperienceComponent } from "./dialog/dia-experience/dia-experience.component";
+import { DiaEducationComponent } from "./dialog/dia-education/dia-education.component";
+import { DiaProjectComponent } from "./dialog/dia-project/dia-project.component";
+import { DiaConfirmComponent } from "./dialog/dia-confirm/dia-confirm.component";
+
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { EmailFiterPipe } from "./share/filter-by-email.pipe";
 
 import { AuthInterceptor } from "./auth-interceptor";
 import { AppProfileInfoComponent } from "./app-profile-info/app-profile-info.component";
-import { DiaConfirmComponent } from "./dia-confirm/dia-confirm.component";
-import { PageA4DefaultComponent } from "./page-a4-default/page-a4-default.component";
-import { PageA4DesignComponent } from "./page-a4-design/page-a4-design.component";
-import { PageA4DesignBlueComponent } from "./page-a4-design-blue/page-a4-design-blue.component";
+
+import { PageA4DefaultComponent } from "./template-custom/page-a4-default/page-a4-default.component";
+import { PageA4DesignComponent } from "./template-custom/page-a4-design/page-a4-design.component";
+import { PageA4DesignBlueComponent } from "./template-custom/page-a4-design-blue/page-a4-design-blue.component";
+import { PageA4DesignBlue01Component } from "./template-custom/page-a4-design-blue01/page-a4-design-blue01.component";
+import { PageA4DesignRed01Component } from "./template-custom/page-a4-design-red01/page-a4-design-red01.component";
+
 import { FirstPageComponent } from "./first-page/first-page.component";
-import { PageA4DesignBlue01Component } from "./page-a4-design-blue01/page-a4-design-blue01.component";
-import { PageA4DesignRed01Component } from "./page-a4-design-red01/page-a4-design-red01.component";
 import { PageAdminComponent } from "./page-admin/page-admin.component";
 import { PageAdminSidebarComponent } from "./page-admin/page-admin-sidebar/page-admin-sidebar.component";
 import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
