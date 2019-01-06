@@ -11,8 +11,8 @@ import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
 import { GetInfoComponent } from "./edit-resume/get-info/get-info.component";
-import { A4PreviewComponent } from "./a4-preview/a4-preview.component";
-import { PageTemplateComponent } from "./page-template/page-template.component";
+import { A4PreviewComponent } from "./edit-resume/a4-preview/a4-preview.component";
+import { TemplateSelectionComponent } from "./edit-resume/template-selection/template-selection.component";
 import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
 import "hammerjs";
 
@@ -74,7 +74,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     PageSidebarComponent,
     GetInfoComponent,
     A4PreviewComponent,
-    PageTemplateComponent,
+    TemplateSelectionComponent,
     EditorToolbarComponent,
     DiaExperienceComponent,
     DiaEducationComponent,
