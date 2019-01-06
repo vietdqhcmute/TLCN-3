@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageToolbarComponent } from './page-toolbar.component';
+import { EditorToolbarComponent } from './editor-toolbar.component';
 
-describe('PageToolbarComponent', () => {
-  let component: PageToolbarComponent;
-  let fixture: ComponentFixture<PageToolbarComponent>;
+describe('EditorToolbarComponent', () => {
+  let component: EditorToolbarComponent;
+  let fixture: ComponentFixture<EditorToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageToolbarComponent ]
+      declarations: [ EditorToolbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageToolbarComponent);
+    fixture = TestBed.createComponent(EditorToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

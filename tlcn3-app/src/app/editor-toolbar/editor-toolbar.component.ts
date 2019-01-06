@@ -6,10 +6,10 @@ import { TemplateService } from "../services/template.service";
 
 @Component({
   selector: "app-page-toolbar",
-  templateUrl: "./page-toolbar.component.html",
-  styleUrls: ["./page-toolbar.component.scss"]
+  templateUrl: "./editor-toolbar.component.html",
+  styleUrls: ["./editor-toolbar.component.scss"]
 })
-export class PageToolbarComponent implements OnInit {
+export class EditorToolbarComponent implements OnInit {
   @Input() user$: User;
   id$: string;
   isLoading_update: boolean = false;

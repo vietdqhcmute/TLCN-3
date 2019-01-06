@@ -13,7 +13,7 @@ import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
 import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
 import { PageEditorComponent } from "./page-editor/page-editor.component";
 import { PageTemplateComponent } from "./page-template/page-template.component";
-import { PageToolbarComponent } from "./page-toolbar/page-toolbar.component";
+import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
 import "hammerjs";
 
 import {
@@ -75,7 +75,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     PageGetInfoComponent,
     PageEditorComponent,
     PageTemplateComponent,
-    PageToolbarComponent,
+    EditorToolbarComponent,
     DiaExperienceComponent,
     DiaEducationComponent,
     DiaProjectComponent,
