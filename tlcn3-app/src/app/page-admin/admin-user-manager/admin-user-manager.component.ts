@@ -4,10 +4,10 @@ import { User } from '../../models';
 
 @Component({
   selector: 'app-page-admin-user-manager',
-  templateUrl: './page-admin-user-manager.component.html',
-  styleUrls: ['./page-admin-user-manager.component.scss']
+  templateUrl: './admin-user-manager.component.html',
+  styleUrls: ['./admin-user-manager.component.scss']
 })
-export class PageAdminUserManagerComponent implements OnInit {
+export class AdminUserManagerComponent implements OnInit {
   constructor(private userService: UserService) {}
   private users = Array<User>();
   private isGettingUser:boolean=true;

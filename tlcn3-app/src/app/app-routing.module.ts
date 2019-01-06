@@ -11,7 +11,7 @@ import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
 import { AdminComponent } from "./page-admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
-import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
+import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: "about", component: AppAboutComponent },
   { path: "admin", component: AdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
     {path:'',redirectTo:"usermanager", pathMatch:"full"},
-    {path:'usermanager', component:PageAdminUserManagerComponent},
+    {path:'usermanager', component:AdminUserManagerComponent},
     {path:'dashboard',component:AdminDashboardComponent},
     {path:'notification', component:AdminNotificationComponent}
   ]}
