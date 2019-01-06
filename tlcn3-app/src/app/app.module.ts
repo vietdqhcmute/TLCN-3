@@ -56,10 +56,10 @@ import { PageA4DesignRed01Component } from "./template-custom/page-a4-design-red
 
 import { FirstPageComponent } from "./first-page/first-page.component";
 import { AdminComponent } from "./page-admin/admin.component";
-import { PageAdminSidebarComponent } from "./page-admin/page-admin-sidebar/page-admin-sidebar.component";
+import { AdminSidebarComponent } from "./page-admin/admin-sidebar/admin-sidebar.component";
 import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
-import { AdminNotificationComponent } from "./page-admin/page-admin-notification/admin-notification.component";
+import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
 import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-info-dreamjob/app-profile-info-dreamjob.component';
@@ -90,7 +90,7 @@ import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-
     PageA4DesignBlue01Component,
     PageA4DesignRed01Component,
     AdminComponent,
-    PageAdminSidebarComponent,
+    AdminSidebarComponent,
     PageAdminUserManagerComponent,
     AdminDashboardComponent,
     AdminNotificationComponent,

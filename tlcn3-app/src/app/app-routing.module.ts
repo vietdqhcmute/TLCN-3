@@ -13,7 +13,7 @@ import { AdminComponent } from "./page-admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
 import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
-import { AdminNotificationComponent } from "./page-admin/page-admin-notification/admin-notification.component";
+import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "firstpage", pathMatch: "full" },
