@@ -27,11 +27,11 @@ import { DiaProjectComponent } from "../dialog/dia-project/dia-project.component
 import { DiaConfirmComponent } from "../dialog/dia-confirm/dia-confirm.component";
 
 @Component({
-  selector: "app-page-get-info",
-  templateUrl: "./page-get-info.component.html",
-  styleUrls: ["./page-get-info.component.scss"]
+  selector: "app-get-info",
+  templateUrl: "./get-info.component.html",
+  styleUrls: ["./get-info.component.scss"]
 })
-export class PageGetInfoComponent implements OnInit {
+export class GetInfoComponent implements OnInit {
   resume$: Resume;
   user$: User;
   skill: Array<String>; // here to test

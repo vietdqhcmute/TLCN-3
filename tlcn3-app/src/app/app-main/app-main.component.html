@@ -1,10 +1,10 @@
 <div *ngIf="isAuthenticated">
   <app-page-toolbar [user$]="user$"></app-page-toolbar>
   <div class="flex-body">
-    <app-page-get-info></app-page-get-info>
-    <app-page-editor [resume]="resume$" [user]="user$">
+    <app-get-info></app-get-info>
+    <app-page-a4-preview [resume]="resume$" [user]="user$">
       <div id="cv-area"></div>
-    </app-page-editor>
+    </app-page-a4-preview>
     <app-page-template></app-page-template>
   </div>
 </div>

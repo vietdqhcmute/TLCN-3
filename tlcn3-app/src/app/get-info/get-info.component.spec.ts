@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageGetInfoComponent } from './page-get-info.component';
+import { GetInfoComponent } from './get-info.component';
 
-describe('PageGetInfoComponent', () => {
-  let component: PageGetInfoComponent;
-  let fixture: ComponentFixture<PageGetInfoComponent>;
+describe('GetInfoComponent', () => {
+  let component: GetInfoComponent;
+  let fixture: ComponentFixture<GetInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageGetInfoComponent ]
+      declarations: [ GetInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageGetInfoComponent);
+    fixture = TestBed.createComponent(GetInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

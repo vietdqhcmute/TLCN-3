@@ -3,7 +3,7 @@ import { NewfeedService } from "src/app/services/newfeed.service";
 import { NewFeed } from "src/app/models";
 
 @Component({
-  selector: "app-page-admin-notification",
+  selector: "app-admin-notification",
   templateUrl: "./admin-notification.component.html",
   styleUrls: ["./admin-notification.component.scss"]
 })

@@ -10,7 +10,7 @@ import { ProfilePageComponent } from "./profile-page/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
-import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
+import { GetInfoComponent } from "./get-info/get-info.component";
 import { A4PreviewComponent } from "./a4-preview/a4-preview.component";
 import { PageTemplateComponent } from "./page-template/page-template.component";
 import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
@@ -72,7 +72,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     AppAboutComponent,
     AppMainComponent,
     PageSidebarComponent,
-    PageGetInfoComponent,
+    GetInfoComponent,
     A4PreviewComponent,
     PageTemplateComponent,
     EditorToolbarComponent,

@@ -6,7 +6,7 @@ import { TemplateService } from "../services/template.service";
 import * as html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 @Component({
-  selector: "app-page-editor",
+  selector: "app-page-a4-preview",
   templateUrl: "./a4-preview.component.html",
   styleUrls: ["./a4-preview.component.scss"]
 })

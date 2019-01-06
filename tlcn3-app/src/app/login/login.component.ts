@@ -8,7 +8,7 @@ import { DataService } from "../services/data.service";
 import { Subscription } from "rxjs";
 
 @Component({
-  selector: "app-app-login",
+  selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
