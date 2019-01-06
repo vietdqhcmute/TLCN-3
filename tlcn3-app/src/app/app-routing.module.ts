@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AppLoginComponent } from "./app-login/app-login.component";
+import { LoginComponent } from "./login/login.component";
 import { AppProfileComponent } from "./app-profile/app-profile.component";
-import { AppAboutComponent } from "./app-about/app-about.component";
+import { AppAboutComponent } from "./about/about.component";
 import { AppMainComponent } from "./app-main/app-main.component";
 
 import { ResolverService } from "./services/resolver.service";
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
-  { path: "login", component: AppLoginComponent },
+  { path: "login", component: LoginComponent },
   { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
   { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard], children:[

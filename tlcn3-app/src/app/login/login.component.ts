@@ -9,10 +9,10 @@ import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-app-login",
-  templateUrl: "./app-login.component.html",
-  styleUrls: ["./app-login.component.scss"]
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"]
 })
-export class AppLoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy {
 
   hide = true; //Using at hidden password
   // si_email: string = "admin@admin.com";
