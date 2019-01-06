@@ -5,10 +5,10 @@ import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-page-sidebar",
-  templateUrl: "./page-sidebar.component.html",
-  styleUrls: ["./page-sidebar.component.scss"]
+  templateUrl: "./topbar.component.html",
+  styleUrls: ["./topbar.component.scss"]
 })
-export class PageSidebarComponent implements OnInit, OnDestroy {
+export class TopbarComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
   userID: string;
   private authListenerSubs: Subscription;

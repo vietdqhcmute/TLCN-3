@@ -6,10 +6,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { ProfilePageComponent } from "./profile-page/profile-page.component";
+import { ProfilePageComponent } from "./app-profile/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
-import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
+import { TopbarComponent } from "./topbar/topbar.component";
 import { GetInfoComponent } from "./edit-resume/get-info/get-info.component";
 import { A4PreviewComponent } from "./edit-resume/a4-preview/a4-preview.component";
 import { TemplateSelectionComponent } from "./edit-resume/template-selection/template-selection.component";
@@ -71,7 +71,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     ProfilePageComponent,
     AppAboutComponent,
     EditResumeComponent,
-    PageSidebarComponent,
+    TopbarComponent,
     GetInfoComponent,
     A4PreviewComponent,
     TemplateSelectionComponent,
