@@ -1,10 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Resume, Experience, User } from "../../models";
-import { DataService } from "../../services/data.service";
-import { UserService } from "../../services/user.service";
+import { Resume, User } from "../../models";
 import { TemplateService } from "../../services/template.service";
-import * as html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+
 @Component({
   selector: "app-page-a4-preview",
   templateUrl: "./a4-preview.component.html",

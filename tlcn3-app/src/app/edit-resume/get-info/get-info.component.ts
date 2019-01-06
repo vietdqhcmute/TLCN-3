@@ -2,25 +2,16 @@ import {
   Component,
   OnInit,
   ViewContainerRef,
-  Inject,
-  Input,
-  Output,
-  EventEmitter,
-  SimpleChanges,
-  SimpleChange
+  Inject
 } from "@angular/core";
 import {
   MatDialog,
-  MatDialogRef,
-  MatDialogConfig,
-  MAT_DIALOG_DATA
-} from "@angular/material";
+  MatDialogConfig} from "@angular/material";
 
 import { Resume, User, Education, Project } from "../../models";
 import { Experience } from "../../models";
 import { DataService } from "../../services/data.service";
 import { DiaExperienceComponent } from "../../dialog/dia-experience/dia-experience.component";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 import { UserService } from "../../services/user.service";
 import { DiaEducationComponent } from "../../dialog/dia-education/dia-education.component";
 import { DiaProjectComponent } from "../../dialog/dia-project/dia-project.component";
@@ -35,9 +26,6 @@ export class GetInfoComponent implements OnInit {
   resume$: Resume;
   user$: User;
   skill: Array<String>; // here to test
-  newExperience: Experience;
-  elementID$: string;
-
   constructor(
     @Inject(Window) private window: Window,
     private dialog: MatDialog,

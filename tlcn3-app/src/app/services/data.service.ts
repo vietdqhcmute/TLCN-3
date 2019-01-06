@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
-import { Resume, User } from "../models";
+import { User } from "../models";
 import 'rxjs/add/operator/map';  // we need to import this now
 
 @Injectable({

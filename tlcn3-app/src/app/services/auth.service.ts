@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Http, Headers } from "@angular/http";
+import { HttpClient} from "@angular/common/http";
 
-import { Resume, User, AuthUser, AuthLogin } from "../models";
+import { Resume, AuthUser, AuthLogin } from "../models";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
 import { UserService } from "./user.service";

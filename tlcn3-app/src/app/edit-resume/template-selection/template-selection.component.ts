@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { UserService } from '../../services/user.service';
 import { TemplateService } from '../../services/template.service';
 
 @Component({
