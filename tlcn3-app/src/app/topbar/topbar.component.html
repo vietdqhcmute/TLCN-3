@@ -16,7 +16,7 @@
     </li>
 
     <li routerLinkActive="active" *ngIf="userIsAuthenticated">
-      <a routerLink="/profile" class="float-right">Profile</a>
+      <a style="margin:13.5px 20px 5px 20px " routerLink="/profile" class="float-right"><img style="margin-right: 5px;" [src]="user$.avatarURL" alt="">{{user$.fullName}}</a>
     </li>
   </ul>
 </nav>

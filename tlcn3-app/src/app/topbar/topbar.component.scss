@@ -9,13 +9,20 @@ nav {
     margin: 0;
 
     li {
-      a {
-        color: #fff;
-        padding: 20px;
-        display: block;
-        text-decoration: none;
-
+      img {
+        max-width: 40px;
+        border-radius: 50%;
       }
+
+    }
+
+    a {
+      color: #fff;
+      margin: 20px;
+      display: block;
+      text-decoration: none;
+
     }
   }
 }
+

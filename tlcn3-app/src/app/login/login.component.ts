@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
 import { User } from "../models";
@@ -10,7 +10,7 @@ import { Subscription } from "rxjs";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   hide = true; //Use for hidden password
   // si_email: string = "admin@admin.com";
   // si_password: string = "1";
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   user$: User;
   constructor(
     public authService: AuthService,
-    private dataService: DataService,
+    private dataService: DataService
   ) {}
 
   ngOnInit() {}
@@ -43,10 +43,12 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(this.si_email, this.si_password);
-    this.authService.getUserByID().subscribe(responseUser => {
-      this.user$ = responseUser;
-      this.dataService.sendDataUser(responseUser);
-    });
+    this.authSubcription = this.authService
+      .getUserByID()
+      .subscribe(responseUser => {
+        this.user$ = responseUser;
+        this.dataService.sendDataUser(responseUser);
+      });
     this.authService.getLoadingSignIn().subscribe(status => {
       this.isLoading_logIn = status;
     });
@@ -70,12 +72,17 @@ export class LoginComponent implements OnInit {
       this.isLoading_signUp = status;
       if (status) {
         this.authService.login(this.su_email, this.su_password);
-        this.authService.getUserByID().subscribe(responseUser => {
-          this.user$ = responseUser;
-          this.dataService.sendDataUser(responseUser);
-        });
+        this.authSubcription = this.authService.getUserByID()
+          .subscribe(responseUser => {
+            this.user$ = responseUser;
+            this.dataService.sendDataUser(responseUser);
+          });
         this.isLoading_signUp = false;
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.authSubcription.unsubscribe();
   }
 }
