@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, OnDestroy } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
 import { UserService } from "../services/user.service";
@@ -12,9 +12,8 @@ import { Subscription } from "rxjs";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit, OnDestroy {
-
-  hide = true; //Using at hidden password
+export class LoginComponent implements OnInit {
+  hide = true; //Use for hidden password
   // si_email: string = "admin@admin.com";
   // si_password: string = "1";
 
@@ -41,24 +40,38 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
+  // onSignIn(form: NgForm) {
+  //   this.isLoading_logIn = true;
+  //   if (form.invalid) {
+  //     return;
+  //   }
+  //   this.authService.login(this.si_email, this.si_password);
+
+  //   this.authSubcription = this.authService.getLoginID().subscribe(id => {
+  //     this.userService.getUserByID(id).subscribe(user => {
+  //       this.user$ = <User>user;
+  //       this.dataService.sendDataUser(this.user$);
+  //     });
+  //   });
+  //   this.authService.getLoadingSignIn().subscribe(status => {
+  //     this.isLoading_logIn = status;
+  //   });
+  // }
   onSignIn(form: NgForm) {
     this.isLoading_logIn = true;
     if (form.invalid) {
       return;
     }
-    this.authService.login(this.si_email, this.si_password);
 
-    this.authSubcription = this.authService.getLoginID().subscribe(id => {
-      this.userService.getUserByID(id).subscribe(user => {
-        this.user$ = <User>user;
-        this.dataService.sendDataUser(this.user$);
-      });
+    this.authService.login(this.si_email, this.si_password);
+    this.authService.getUserByID().subscribe(responseUser => {
+      this.user$ = responseUser;
+      this.dataService.sendDataUser(responseUser);
     });
     this.authService.getLoadingSignIn().subscribe(status => {
       this.isLoading_logIn = status;
     });
   }
-
   onSignUp(form: NgForm) {
     this.isLoading_signUp = true;
 
@@ -71,19 +84,14 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.su_email,
       this.su_password
     );
-    this.authService.getLoadingSignUp().subscribe(status=>{
+    this.authService.getLoadingSignUp().subscribe(status => {
       this.isLoading_signUp = status;
-    })
-    this.authService.getSignUpSuccess().subscribe(signUpSuccess=>{
-      if (signUpSuccess){
+    });
+    this.authService.getSignUpSuccess().subscribe(signUpSuccess => {
+      if (signUpSuccess) {
         this.isLoading_signUp = false;
         //Show thong bao success ra man hinh
       }
-    })
-  }
-
-  ngOnDestroy(): void {
-    //avoid log out error message
-    this.authSubcription.unsubscribe();
+    });
   }
 }
