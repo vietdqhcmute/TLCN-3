@@ -33,30 +33,12 @@ export class LoginComponent implements OnInit {
   user$: User;
   constructor(
     public authService: AuthService,
-    private userService: UserService,
     private dataService: DataService,
     private router: Router
   ) {}
 
   ngOnInit() {}
 
-  // onSignIn(form: NgForm) {
-  //   this.isLoading_logIn = true;
-  //   if (form.invalid) {
-  //     return;
-  //   }
-  //   this.authService.login(this.si_email, this.si_password);
-
-  //   this.authSubcription = this.authService.getLoginID().subscribe(id => {
-  //     this.userService.getUserByID(id).subscribe(user => {
-  //       this.user$ = <User>user;
-  //       this.dataService.sendDataUser(this.user$);
-  //     });
-  //   });
-  //   this.authService.getLoadingSignIn().subscribe(status => {
-  //     this.isLoading_logIn = status;
-  //   });
-  // }
   onSignIn(form: NgForm) {
     this.isLoading_logIn = true;
     if (form.invalid) {
@@ -86,6 +68,13 @@ export class LoginComponent implements OnInit {
     );
     this.authService.getLoadingSignUp().subscribe(status => {
       this.isLoading_signUp = status;
+      if (status) {
+        this.authService.login(this.su_email, this.su_password);
+        this.authService.getUserByID().subscribe(responseUser => {
+          this.user$ = responseUser;
+          this.dataService.sendDataUser(responseUser);
+        });
+      }
     });
     this.authService.getSignUpSuccess().subscribe(signUpSuccess => {
       if (signUpSuccess) {
