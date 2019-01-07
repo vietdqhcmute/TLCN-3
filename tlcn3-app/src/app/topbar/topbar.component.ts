@@ -29,7 +29,6 @@ export class TopbarComponent implements OnInit, OnDestroy {
       .getUserByID()
       .subscribe(responseUser => {
         this.user$ = responseUser;
-        console.log(responseUser);
       });
   }
   ngOnDestroy() {
