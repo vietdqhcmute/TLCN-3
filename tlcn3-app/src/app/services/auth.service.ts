@@ -17,7 +17,6 @@ export class AuthService {
   private isAdmin = false;
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
-  private isSignUpSuccess = new Subject<boolean>();
   private user$ = new Subject<User>();
 
   constructor(
@@ -44,9 +43,7 @@ export class AuthService {
   getLoadingSignUp() {
     return this.isLoadingSignUp.asObservable();
   }
-  getSignUpSuccess() {
-    return this.isSignUpSuccess.asObservable();
-  }
+
   getUserByID() {
     return this.user$.asObservable();
   }
@@ -121,11 +118,9 @@ export class AuthService {
     this.http.post(this.domainName + "signup", newUser).subscribe(
       response => {
         this.isLoadingSignUp.next(true);
-        this.isSignUpSuccess.next(true);
       },
       error => {
         this.isLoadingSignUp.next(false);
-        this.isSignUpSuccess.next(false);
       }
     );
   }

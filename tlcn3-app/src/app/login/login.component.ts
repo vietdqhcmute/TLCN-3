@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../services/auth.service";
-import { UserService } from "../services/user.service";
 import { User } from "../models";
-import { Router } from "@angular/router";
 import { DataService } from "../services/data.service";
 import { Subscription } from "rxjs";
 
@@ -34,7 +32,6 @@ export class LoginComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private dataService: DataService,
-    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -54,8 +51,9 @@ export class LoginComponent implements OnInit {
       this.isLoading_logIn = status;
     });
   }
+
   onSignUp(form: NgForm) {
-    this.isLoading_signUp = true;
+    this.isLoading_signUp = true; // this variable is for spinner
 
     if (form.invalid) {
       return;
@@ -66,7 +64,9 @@ export class LoginComponent implements OnInit {
       this.su_email,
       this.su_password
     );
+
     this.authService.getLoadingSignUp().subscribe(status => {
+      //after sign up success, login
       this.isLoading_signUp = status;
       if (status) {
         this.authService.login(this.su_email, this.su_password);
@@ -74,12 +74,7 @@ export class LoginComponent implements OnInit {
           this.user$ = responseUser;
           this.dataService.sendDataUser(responseUser);
         });
-      }
-    });
-    this.authService.getSignUpSuccess().subscribe(signUpSuccess => {
-      if (signUpSuccess) {
         this.isLoading_signUp = false;
-        //Show thong bao success ra man hinh
       }
     });
   }
