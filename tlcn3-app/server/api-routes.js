@@ -3,7 +3,7 @@ const router = express.Router();
 const checkAuth = require('./check-auth');
 const multer = require('multer');
 
-const Resume = require('./resumeModel');
+const Resume = require('./models/resumeModel');
 
 const MIME_TYPE_MAP = {
   'image/png': 'png',

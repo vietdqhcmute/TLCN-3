@@ -5,15 +5,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { AppLoginComponent } from "./app-login/app-login.component";
-import { AppProfileComponent } from "./app-profile/app-profile.component";
-import { AppAboutComponent } from "./app-about/app-about.component";
-import { AppMainComponent } from "./app-main/app-main.component";
-import { PageSidebarComponent } from "./page-sidebar/page-sidebar.component";
-import { PageGetInfoComponent } from "./page-get-info/page-get-info.component";
-import { PageEditorComponent } from "./page-editor/page-editor.component";
-import { PageTemplateComponent } from "./page-template/page-template.component";
-import { PageToolbarComponent } from "./page-toolbar/page-toolbar.component";
+import { LoginComponent } from "./login/login.component";
+import { ProfilePageComponent } from "./app-profile/profile-page.component";
+import { AppAboutComponent } from "./about/about.component";
+import { EditResumeComponent } from "./edit-resume/edit-resume.component";
+import { TopbarComponent } from "./topbar/topbar.component";
+import { GetInfoComponent } from "./edit-resume/get-info/get-info.component";
+import { A4PreviewComponent } from "./edit-resume/a4-preview/a4-preview.component";
+import { TemplateSelectionComponent } from "./edit-resume/template-selection/template-selection.component";
+import { EditorToolbarComponent } from "./editor-toolbar/editor-toolbar.component";
 import "hammerjs";
 
 import {
@@ -36,48 +36,52 @@ import {
   MatProgressSpinnerModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { DiaExperienceComponent } from "./dia-experience/dia-experience.component";
-import { DiaEducationComponent } from "./dia-education/dia-education.component";
-import { DiaProjectComponent } from "./dia-project/dia-project.component";
+
+import { DiaExperienceComponent } from "./dialog/dia-experience/dia-experience.component";
+import { DiaEducationComponent } from "./dialog/dia-education/dia-education.component";
+import { DiaProjectComponent } from "./dialog/dia-project/dia-project.component";
+import { DiaConfirmComponent } from "./dialog/dia-confirm/dia-confirm.component";
+
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { EmailFiterPipe } from "./share/filter-by-email.pipe";
 
 import { AuthInterceptor } from "./auth-interceptor";
-import { AppProfileInfoComponent } from "./app-profile-info/app-profile-info.component";
-import { DiaConfirmComponent } from "./dia-confirm/dia-confirm.component";
-import { PageA4DefaultComponent } from "./page-a4-default/page-a4-default.component";
-import { PageA4DesignComponent } from "./page-a4-design/page-a4-design.component";
-import { PageA4DesignBlueComponent } from "./page-a4-design-blue/page-a4-design-blue.component";
+import { ProfileInfoComponent } from "./app-profile-info/profile-info.component";
+
+import { PageA4DefaultComponent } from "./template-custom/page-a4-default/page-a4-default.component";
+import { PageA4DesignComponent } from "./template-custom/page-a4-design/page-a4-design.component";
+import { PageA4DesignBlueComponent } from "./template-custom/page-a4-design-blue/page-a4-design-blue.component";
+import { PageA4DesignBlue01Component } from "./template-custom/page-a4-design-blue01/page-a4-design-blue01.component";
+import { PageA4DesignRed01Component } from "./template-custom/page-a4-design-red01/page-a4-design-red01.component";
+
 import { FirstPageComponent } from "./first-page/first-page.component";
-import { PageA4DesignBlue01Component } from "./page-a4-design-blue01/page-a4-design-blue01.component";
-import { PageA4DesignRed01Component } from "./page-a4-design-red01/page-a4-design-red01.component";
-import { PageAdminComponent } from "./page-admin/page-admin.component";
-import { PageAdminSidebarComponent } from "./page-admin/page-admin-sidebar/page-admin-sidebar.component";
-import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
-import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/page-admin-dashboard.component";
-import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
+import { AdminComponent } from "./page-admin/admin.component";
+import { AdminSidebarComponent } from "./page-admin/admin-sidebar/admin-sidebar.component";
+import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
+import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
+import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
-import { AppProfileInfoNewfeedComponent } from './app-profile-info/app-profile-info-newfeed/app-profile-info-newfeed.component';
-import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-info-dreamjob/app-profile-info-dreamjob.component';
+import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-newfeed/profile-info-newfeed.component';
+import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLoginComponent,
-    AppProfileComponent,
+    LoginComponent,
+    ProfilePageComponent,
     AppAboutComponent,
-    AppMainComponent,
-    PageSidebarComponent,
-    PageGetInfoComponent,
-    PageEditorComponent,
-    PageTemplateComponent,
-    PageToolbarComponent,
+    EditResumeComponent,
+    TopbarComponent,
+    GetInfoComponent,
+    A4PreviewComponent,
+    TemplateSelectionComponent,
+    EditorToolbarComponent,
     DiaExperienceComponent,
     DiaEducationComponent,
     DiaProjectComponent,
     ConvertToMonthPipe,
     EmailFiterPipe,
-    AppProfileInfoComponent,
+    ProfileInfoComponent,
     DiaConfirmComponent,
     PageA4DefaultComponent,
     PageA4DesignComponent,
@@ -85,13 +89,13 @@ import { AppProfileInfoDreamjobComponent } from './app-profile-info/app-profile-
     FirstPageComponent,
     PageA4DesignBlue01Component,
     PageA4DesignRed01Component,
-    PageAdminComponent,
-    PageAdminSidebarComponent,
-    PageAdminUserManagerComponent,
-    PageAdminDashboardComponent,
-    PageAdminNotificationComponent,
-    AppProfileInfoNewfeedComponent,
-    AppProfileInfoDreamjobComponent
+    AdminComponent,
+    AdminSidebarComponent,
+    AdminUserManagerComponent,
+    AdminDashboardComponent,
+    AdminNotificationComponent,
+    ProfileInfoNewfeedComponent,
+    ProfileInfoDreamjobComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const checkAuth = require('./check-auth');
 
-const Statistic = require('./statisticModel');
+const Statistic = require('./models/statisticModel');
 
 //API post template count
 router.post('/add/template/:id', async(req,res)=>{
@@ -57,7 +57,7 @@ router.get('/count/template/all', async(req,res)=>{
 });
 
 var percentage = function(element, total) {
-    var percent = Math.round( (element/total)*100);
+    let percent = Math.round( (element/total)*100);
     return percent;
 }
 module.exports = router;

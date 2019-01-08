@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const checkAuth = require('./check-auth');
 
-const NewFeed = require('./newFeedModel');
+const NewFeed = require('./models/newFeedModel');
 
 //API post newFeed
-router.post('/add/newfeed/:id', async (req, res) => {
+router.post('/add/newfeed/:id', checkAuth, async (req, res) => {
   try {
     const newFeed = new NewFeed({
       userID: req.params.id,
@@ -19,7 +19,7 @@ router.post('/add/newfeed/:id', async (req, res) => {
 });
 
 //API get alll new feed
-router.get('/newfeed/all', async(req, res)=>{
+router.get('/newfeed/all', checkAuth, async(req, res)=>{
     try{
         const newFeed = await NewFeed.find();
         res.send(newFeed);
@@ -29,7 +29,7 @@ router.get('/newfeed/all', async(req, res)=>{
 });
 
 //API delete new feed by its ID
-router.delete('/delete/newfeed/:id', async(req, res)=>{
+router.delete('/delete/newfeed/:id', checkAuth, async(req, res)=>{
   try{
     await NewFeed.remove({
       _id: req.params.id

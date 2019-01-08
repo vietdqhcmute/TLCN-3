@@ -1,33 +1,33 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AppLoginComponent } from "./app-login/app-login.component";
-import { AppProfileComponent } from "./app-profile/app-profile.component";
-import { AppAboutComponent } from "./app-about/app-about.component";
-import { AppMainComponent } from "./app-main/app-main.component";
+import { LoginComponent } from "./login/login.component";
+import { ProfilePageComponent } from "./app-profile/profile-page.component";
+import { AppAboutComponent } from "./about/about.component";
+import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 
 import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
 import { FirstPageComponent } from "./first-page/first-page.component";
-import { PageAdminComponent } from "./page-admin/page-admin.component";
+import { AdminComponent } from "./page-admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
-import { PageAdminUserManagerComponent } from "./page-admin/page-admin-user-manager/page-admin-user-manager.component";
-import { PageAdminDashboardComponent } from "./page-admin/page-admin-dashboard/page-admin-dashboard.component";
-import { PageAdminNotificationComponent } from "./page-admin/page-admin-notification/page-admin-notification.component";
+import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
+import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
+import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "firstpage", pathMatch: "full" },
-  { path: "main", component: AppMainComponent, canActivate:[AuthGuard] },
-  { path: "main/:id/edit", component: AppMainComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
+  { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
+  { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
-  { path: "login", component: AppLoginComponent },
-  { path: "profile", component: AppProfileComponent, canActivate:[AuthGuard] },
+  { path: "login", component: LoginComponent },
+  { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
-  { path: "admin", component: PageAdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
+  { path: "admin", component: AdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
     {path:'',redirectTo:"usermanager", pathMatch:"full"},
-    {path:'usermanager', component:PageAdminUserManagerComponent},
-    {path:'dashboard',component:PageAdminDashboardComponent},
-    {path:'notification', component:PageAdminNotificationComponent}
+    {path:'usermanager', component:AdminUserManagerComponent},
+    {path:'dashboard',component:AdminDashboardComponent},
+    {path:'notification', component:AdminNotificationComponent}
   ]}
 
 ];

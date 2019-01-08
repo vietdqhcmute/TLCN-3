@@ -10,7 +10,7 @@ var session = require('express-session');
 var passport = require('passport');
 
 const key = require('./key');
-const Resume = require('./resumeModel');
+const Resume = require('./models/resumeModel');
 const app = express();
 
 var connectionString = 'mongodb://lytutronga6:lytutronga6@tlcn-1-shard-00-00-looeq.mongodb.net:27017,tlcn-1-shard-00-01-looeq.mongodb.net:27017,tlcn-1-shard-00-02-looeq.mongodb.net:27017/test?ssl=true&replicaSet=TLCN-1-shard-0&authSource=admin&retryWrites=true';

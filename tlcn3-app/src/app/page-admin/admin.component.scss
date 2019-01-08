@@ -1,0 +1,24 @@
+:host() {
+  display: flex;
+  flex-direction: row;
+  // grid-template-columns: 70px auto;
+  height: 100%;
+  width: 100%;
+
+  #admin-sidebar {
+    width: 100%;
+    flex: 2;
+
+    app-admin-sidebar {}
+  }
+
+  #admin-content {
+    width: 100%;
+    flex: 8;
+    height: 89.7vh;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    app-admin-user-manager {}
+  }
+}

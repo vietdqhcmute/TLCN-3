@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('./resumeModel');
+const Resume = require('./models/resumeModel');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -34,7 +34,7 @@ router.post("/login", (req, res, next) => {
   }).then(user => {
     if (!user) {
       return res.status(401).json({
-        message: "Auth failed"
+        message: "Email fault!"
       });
     }
     fetchedUser = user;
