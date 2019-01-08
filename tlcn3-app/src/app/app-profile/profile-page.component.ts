@@ -23,13 +23,17 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit() {
     this.isAuthenticated = this.authService.getIsAuth();
     if (this.isAuthenticated) {
+      // this.authService.getUserAfterLogin().subscribe(responseUser => {
+      //   console.log("responseUser: " + responseUser);
+      //   this.user$ = responseUser;
+      //   this.resume$ = this.user$.resume;
+      // });
       this.dataService.currentUser.subscribe(result => {
         this.user$ = result;
         this.resume$ = this.user$.resume;
       });
-    }else{
-      this.router.navigate(['login']);
+    } else {
+      this.router.navigate(["login"]);
     }
-
   }
 }

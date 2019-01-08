@@ -43,13 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     this.authService.login(this.si_email, this.si_password);
-    this.authSubcription = this.authService
-      .getUserAfterLogin()
-      .subscribe(responseUser => {
-        this.user$ = responseUser;
-        this.dataService.sendDataUser(responseUser);
-      });
-    this.authService.getLoadingSignIn().subscribe(status => {
+    this.authSubcription = this.authService.getLoadingSignIn().subscribe(status => {
       this.isLoading_logIn = status;
     });
   }

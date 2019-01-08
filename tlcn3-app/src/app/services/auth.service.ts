@@ -4,6 +4,7 @@ import {Resume, AuthUser, AuthLogin, User} from "../models";
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
 import {UserService} from "./user.service";
+import { DataService } from "./data.service";
 
 @Injectable({
   providedIn: "root"
@@ -23,6 +24,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
+    private dataService: DataService,
     private userService: UserService
   ) {
   }
@@ -69,6 +71,7 @@ export class AuthService {
           const token = response.token;
           this.token = token;
           this.userService.getUserByID(response.id).subscribe(responseUser => {
+            this.dataService.sendDataUser(responseUser);
             this.user$.next(<User>responseUser);
             if (token) {
               if (email == "admin@admin.com") {

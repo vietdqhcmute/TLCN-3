@@ -3,6 +3,7 @@ import { Location } from "@angular/common";
 import { AuthService } from "../services/auth.service";
 import { Subscription } from "rxjs";
 import { User } from "../models";
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: "app-page-sidebar",
@@ -17,7 +18,10 @@ export class TopbarComponent implements OnInit, OnDestroy {
   private authListenerSubs: Subscription;
   private authGetUser: Subscription;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit() {
     this.authListenerSubs = this.authService
@@ -25,11 +29,9 @@ export class TopbarComponent implements OnInit, OnDestroy {
       .subscribe(isAuthenticated => {
         this.userIsAuthenticated = isAuthenticated;
       });
-    this.authGetUser = this.authService
-      .getUserAfterLogin()
-      .subscribe(responseUser => {
-        this.user$ = responseUser;
-      });
+    this.authGetUser = this.dataService.currentUser.subscribe(result => {
+      this.user$ = result;
+    });
   }
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
