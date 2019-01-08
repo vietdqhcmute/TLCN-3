@@ -1,9 +1,10 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Resume, AuthUser, AuthLogin, User } from "../models";
-import { Subject } from "rxjs";
-import { Router } from "@angular/router";
-import { UserService } from "./user.service";
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {Resume, AuthUser, AuthLogin, User} from "../models";
+import {Subject} from "rxjs";
+import {Router} from "@angular/router";
+import {UserService} from "./user.service";
+
 @Injectable({
   providedIn: "root"
 })
@@ -23,23 +24,29 @@ export class AuthService {
     private http: HttpClient,
     private router: Router,
     private userService: UserService
-  ) {}
+  ) {
+  }
 
   getToken() {
     return this.token;
   }
+
   getIsAdmin() {
     return this.isAdmin;
   }
+
   getIsAuth() {
     return this.isAuthenticated;
   }
+
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
   }
+
   getLoadingSignIn() {
     return this.isLoadingSignIn.asObservable();
   }
+
   getLoadingSignUp() {
     return this.isLoadingSignUp.asObservable();
   }
@@ -47,6 +54,7 @@ export class AuthService {
   getUserAfterLogin() {
     return this.user$.asObservable();
   }
+
   //----------------------------------------------------------------------------------
 
   login(email: string, password: string) {
@@ -74,6 +82,9 @@ export class AuthService {
                 //user login
                 this.isAuthenticated = true;
                 this.authStatusListener.next(true);
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                this.saveAuthData(token, tomorrow, response.id);
                 this.router.navigate(["profile"]);
                 this.isLoadingSignIn.next(true);
               }
@@ -86,12 +97,26 @@ export class AuthService {
       );
   }
 
-  createUser(
-    userName: string,
-    phoneNumber: string,
-    email: string,
-    password: string
-  ) {
+  autoAuth() {
+    if (localStorage) {
+      const authInformation = this.getAuthData();
+
+      const now = new Date();
+      const isInFuture = authInformation.expirationDate > now;
+      if (isInFuture) {
+        this.token = authInformation.token;
+        this.userService
+          .getUserByID(authInformation.userID)
+          .subscribe(responseUser => {
+            this.user$.next(<User>responseUser);
+            this.isAuthenticated = true;
+            this.authStatusListener.next(true);
+          });
+      }
+    }
+  }
+
+  createUser(  userName: string,  phoneNumber: string,  email: string,  password: string ) {
     const newResume: Resume = {
       title: "",
       summary: "",
@@ -130,5 +155,33 @@ export class AuthService {
     this.authStatusListener.next(false);
     this.isLoadingSignIn.next(false);
     this.isLoadingSignUp.next(false);
+    this.user$.next(null);
+    this.clearAuthData();
+  }
+
+  private saveAuthData(token: string, expirationDate: Date, userID: string) {
+    localStorage.setItem("token", token);
+    localStorage.setItem("expiration", expirationDate.toISOString());
+    localStorage.setItem("userID", userID);
+  }
+
+  private clearAuthData() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiration");
+    localStorage.removeItem("userID");
+  }
+
+  private getAuthData() {
+    const token = localStorage.getItem("token");
+    const expirationDate = localStorage.getItem("expiration");
+    const userID = localStorage.getItem("userID");
+    if (!token || !expirationDate || !userID) {
+      return;
+    }
+    return {
+      token: token,
+      expirationDate: new Date(expirationDate),
+      userID: userID
+    };
   }
 }
