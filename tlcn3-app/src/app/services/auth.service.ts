@@ -1,9 +1,9 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Resume, AuthUser, AuthLogin, User} from "../models";
-import {Subject} from "rxjs";
-import {Router} from "@angular/router";
-import {UserService} from "./user.service";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Resume, AuthUser, AuthLogin, User } from "../models";
+import { Subject } from "rxjs";
+import { Router } from "@angular/router";
+import { UserService } from "./user.service";
 import { DataService } from "./data.service";
 
 @Injectable({
@@ -12,22 +12,19 @@ import { DataService } from "./data.service";
 export class AuthService {
   domainName = "http://localhost:3000/";
 
-
   private token: string;
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
   private isAdmin = false;
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
-  private user$ = new Subject<User>();
 
   constructor(
     private http: HttpClient,
     private router: Router,
     private dataService: DataService,
     private userService: UserService
-  ) {
-  }
+  ) {}
 
   getToken() {
     return this.token;
@@ -52,10 +49,6 @@ export class AuthService {
   getLoadingSignUp() {
     return this.isLoadingSignUp.asObservable();
   }
-
-  // getUserAfterLogin() {
-  //   return this.user$.asObservable();
-  // }
 
   //----------------------------------------------------------------------------------
 
@@ -103,26 +96,31 @@ export class AuthService {
   }
 
   autoAuth() {
-    if (localStorage) {
-      const authInformation = this.getAuthData();
-
-      const now = new Date();
-      const isInFuture = authInformation.expirationDate > now;
-      if (isInFuture) {
-        this.token = authInformation.token;
-        this.userService
-          .getUserByID(authInformation.userID)
-          .subscribe(responseUser => {
-            this.dataService.sendDataUser(responseUser);
-            this.isAuthenticated = true;
-            this.authStatusListener.next(true);
-            this.router.navigate(["profile"]);
-          });
-      }
+    const authInformation = this.getAuthData();
+    if (!authInformation){
+      return;
+    }
+    const now = new Date();
+    const isInFuture = authInformation.expirationDate > now;
+    if (isInFuture) {
+      this.token = authInformation.token;
+      this.userService
+        .getUserByID(authInformation.userID)
+        .subscribe(responseUser => {
+          this.dataService.sendDataUser(responseUser);
+          this.isAuthenticated = true;
+          this.authStatusListener.next(true);
+          this.router.navigate(["profile"]);
+        });
     }
   }
 
-  createUser(  userName: string,  phoneNumber: string,  email: string,  password: string ) {
+  createUser(
+    userName: string,
+    phoneNumber: string,
+    email: string,
+    password: string
+  ) {
     const newResume: Resume = {
       title: "",
       summary: "",
@@ -161,7 +159,6 @@ export class AuthService {
     this.authStatusListener.next(false);
     this.isLoadingSignIn.next(false);
     this.isLoadingSignUp.next(false);
-    this.user$.next(null);
     this.clearAuthData();
   }
 

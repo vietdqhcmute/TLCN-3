@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
   authSubcription: Subscription;
   user$: User;
   constructor(
-    public authService: AuthService,
-    private dataService: DataService
+    public authService: AuthService
   ) {}
 
   ngOnInit() {}
@@ -66,11 +65,6 @@ export class LoginComponent implements OnInit {
       this.isLoading_signUp = status;
       if (status) {
         this.authService.login(this.su_email, this.su_password);
-        //  = this.authService.getUserAfterLogin()
-        //   .subscribe(responseUser => {
-        //     this.user$ = responseUser;
-        //     this.dataService.sendDataUser(responseUser);
-        //   });
         this.isLoading_signUp = false;
       }
     });
