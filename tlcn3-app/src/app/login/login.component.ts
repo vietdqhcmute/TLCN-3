@@ -10,7 +10,7 @@ import { Subscription } from "rxjs";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   hide = true; //Use for hidden password
   // si_email: string = "admin@admin.com";
   // si_password: string = "1";
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     this.authService.login(this.si_email, this.si_password);
-    this.authSubcription = this.authService.getLoadingSignIn().subscribe(status => {
+    this.authService.getLoadingSignIn().subscribe(status => {
       this.isLoading_logIn = status;
     });
   }
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.su_password
     );
 
-    this.authSubcription = this.authService.getLoadingSignUp().subscribe(status => {
+    this.authService.getLoadingSignUp().subscribe(status => {
       //after sign up success, login
       this.isLoading_signUp = status;
       if (status) {
@@ -76,7 +76,4 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.authSubcription.unsubscribe();
-  }
 }

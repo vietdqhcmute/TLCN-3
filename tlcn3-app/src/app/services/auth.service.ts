@@ -85,9 +85,11 @@ export class AuthService {
                 //user login
                 this.isAuthenticated = true;
                 this.authStatusListener.next(true);
+
                 const tomorrow = new Date();
                 tomorrow.setDate(tomorrow.getDate() + 1);
                 this.saveAuthData(token, tomorrow, response.id);
+
                 this.router.navigate(["profile"]);
                 this.isLoadingSignIn.next(true);
               }
@@ -111,9 +113,10 @@ export class AuthService {
         this.userService
           .getUserByID(authInformation.userID)
           .subscribe(responseUser => {
-            this.user$.next(<User>responseUser);
+            this.dataService.sendDataUser(responseUser);
             this.isAuthenticated = true;
             this.authStatusListener.next(true);
+            this.router.navigate(["profile"]);
           });
       }
     }
