@@ -26,7 +26,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
         this.userIsAuthenticated = isAuthenticated;
       });
     this.authGetUser = this.authService
-      .getUserByID()
+      .getUserAfterLogin()
       .subscribe(responseUser => {
         this.user$ = responseUser;
       });

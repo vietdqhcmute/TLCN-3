@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     this.authService.login(this.si_email, this.si_password);
     this.authSubcription = this.authService
-      .getUserByID()
+      .getUserAfterLogin()
       .subscribe(responseUser => {
         this.user$ = responseUser;
         this.dataService.sendDataUser(responseUser);
@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.isLoading_signUp = status;
       if (status) {
         this.authService.login(this.su_email, this.su_password);
-        this.authSubcription = this.authService.getUserByID()
+        this.authSubcription = this.authService.getUserAfterLogin()
           .subscribe(responseUser => {
             this.user$ = responseUser;
             this.dataService.sendDataUser(responseUser);

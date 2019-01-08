@@ -44,7 +44,7 @@ export class AuthService {
     return this.isLoadingSignUp.asObservable();
   }
 
-  getUserByID() {
+  getUserAfterLogin() {
     return this.user$.asObservable();
   }
   //----------------------------------------------------------------------------------
