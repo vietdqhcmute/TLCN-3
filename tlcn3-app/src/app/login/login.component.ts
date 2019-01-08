@@ -61,16 +61,16 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.su_password
     );
 
-    this.authService.getLoadingSignUp().subscribe(status => {
+    this.authSubcription = this.authService.getLoadingSignUp().subscribe(status => {
       //after sign up success, login
       this.isLoading_signUp = status;
       if (status) {
         this.authService.login(this.su_email, this.su_password);
-        this.authSubcription = this.authService.getUserAfterLogin()
-          .subscribe(responseUser => {
-            this.user$ = responseUser;
-            this.dataService.sendDataUser(responseUser);
-          });
+        //  = this.authService.getUserAfterLogin()
+        //   .subscribe(responseUser => {
+        //     this.user$ = responseUser;
+        //     this.dataService.sendDataUser(responseUser);
+        //   });
         this.isLoading_signUp = false;
       }
     });

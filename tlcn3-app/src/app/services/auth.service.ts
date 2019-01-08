@@ -53,9 +53,9 @@ export class AuthService {
     return this.isLoadingSignUp.asObservable();
   }
 
-  getUserAfterLogin() {
-    return this.user$.asObservable();
-  }
+  // getUserAfterLogin() {
+  //   return this.user$.asObservable();
+  // }
 
   //----------------------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ export class AuthService {
           this.token = token;
           this.userService.getUserByID(response.id).subscribe(responseUser => {
             this.dataService.sendDataUser(responseUser);
-            this.user$.next(<User>responseUser);
+            // this.user$.next(<User>responseUser);
             if (token) {
               if (email == "admin@admin.com") {
                 //Admin login
