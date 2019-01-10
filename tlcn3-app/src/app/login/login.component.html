@@ -35,7 +35,6 @@
           <mat-form-field>
             <input id="su_userName" matInput name="su_userName" required placeholder="Name" [(ngModel)]="su_name"
               minlength="4" #su_userName="ngModel">
-
             <mat-error *ngIf="su_userName.invalid && (su_userName.dirty || su_userName.touched)">
               <div *ngIf="su_userName.errors.required">
                 Name is required.
@@ -44,21 +43,18 @@
                 Name must be at least 4 characters long.
               </div>
             </mat-error>
-
           </mat-form-field>
 
           <mat-form-field>
             <input id="su_userPhone" matInput name="su_userPhone" required placeholder="Phone number" required pattern="^[0-9]\d*(\.\d+)?$"
               [(ngModel)]="su_phone" maxlength="11" #su_userPhone="ngModel">
             <mat-error *ngIf="su_userPhone.invalid && (su_userPhone.dirty || su_userPhone.touched)">
-
               <div *ngIf="su_userPhone.errors.required">
                 Phone is required.
               </div>
               <div *ngIf="su_userPhone.errors.pattern">
                 Invalid
               </div>
-
             </mat-error>
           </mat-form-field>
 
@@ -66,27 +62,22 @@
             <input id="su_userEmail" matInput name="su_userEmail" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
               placeholder="Email" [(ngModel)]="su_email" #su_userEmail="ngModel">
             <mat-error *ngIf="su_userEmail.invalid && (su_userEmail.dirty || su_userEmail.touched)">
-
               <div *ngIf="su_userEmail.errors.required">
                 Email is required.
               </div>
               <div *ngIf="su_userEmail.errors.pattern">
                 Invalid! Email: xxx@xxx.xxx
               </div>
-
             </mat-error>
-
           </mat-form-field>
 
           <mat-form-field>
-            <input id="su_userPassword" matInput name="su_userPassword" placeholder="Password" required 
-   
-              required [(ngModel)]="su_password" [type]="hide ? 'password' : 'text'"  #su_userPassword="ngModel">
-              <!-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,15}$"  minlength="6"-->
+            <input id="su_userPassword" matInput name="su_userPassword" placeholder="Password" required required
+              [(ngModel)]="su_password" [type]="hide ? 'password' : 'text'" #su_userPassword="ngModel">
+            <!-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,15}$"  minlength="6"-->
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
             <mat-error *ngIf="su_userPassword.invalid && (su_userPassword.dirty || su_userPassword.touched)">
-
               <div *ngIf="su_userPassword.errors.required">
                 Password is required.
               </div>
@@ -98,14 +89,14 @@
               <div *ngIf="su_userPassword.errors.minlength">
                 Password must be at least 8 characters long.
               </div>
-
             </mat-error>
-
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput name="su_confirm" type="password" required placeholder="Enter your password again" [(ngModel)]="su_confirm">
+            <input matInput name="su_confirm" type="password" required placeholder="Enter your password again"
+              [(ngModel)]="su_confirm">
           </mat-form-field>
+
 
           <mat-dialog-actions>
             <button mat-button *ngIf="!isLoading_signUp" type="submit" class="mat-raised-button mat-primary"

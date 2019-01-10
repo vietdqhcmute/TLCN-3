@@ -39,6 +39,31 @@
 
   }
 
+  .item-ul-li {
+    ul {
+      list-style-type: none;
+      padding-left: 0px;
+
+      li {
+        // -moz-box-shadow: 0 0 3px #37474F;
+        // -webkit-box-shadow: 0 0 3px #37474F;
+        // box-shadow: 0 0 3px #37474F;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        background: #ECEFF1;
+        padding-left: 20px;
+
+        p {
+          margin-bottom: 0;
+        }
+        button{
+          border-radius: 0;
+        }
+      }
+    }
+  }
 
   #Contact {
     textarea {
@@ -46,101 +71,4 @@
     }
   }
 
-  #Experience {
-    .list-experience {
-      ul {
-        list-style-type: none;
-        padding-left: 0px;
-
-        li {
-          -moz-box-shadow: 0 0 3px #37474F;
-          -webkit-box-shadow: 0 0 3px #37474F;
-          box-shadow: 0 0 3px #37474F;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin-bottom: 10px;
-          background: #ECEFF1;
-          padding-left: 20px;
-
-          p {
-            margin-bottom: 0;
-          }
-
-        }
-      }
-    }
-  }
-
-  #Education {
-    .list-education {
-      ul {
-        list-style-type: none;
-        padding-left: 0px;
-
-        li {
-          -moz-box-shadow: 0 0 3px #37474F;
-          -webkit-box-shadow: 0 0 3px #37474F;
-          box-shadow: 0 0 3px #37474F;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin-bottom: 10px;
-          background: #ECEFF1;
-          padding-left: 20px;
-
-          p {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  #Project {
-    .list-project {
-      ul {
-        list-style-type: none;
-        padding-left: 0px;
-
-        li {
-          -moz-box-shadow: 0 0 3px #37474F;
-          -webkit-box-shadow: 0 0 3px #37474F;
-          box-shadow: 0 0 3px #37474F;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin-bottom: 10px;
-          background: #ECEFF1;
-          padding-left: 20px;
-
-          a {
-            margin-bottom: 10px;
-          }
-
-        }
-      }
-    }
-  }
-
-  #Skill {
-    .list-skills {
-      ul {
-        list-style-type: none;
-        padding-left: 0px;
-
-        li {
-          -moz-box-shadow: 0 0 3px #37474F;
-          -webkit-box-shadow: 0 0 3px #37474F;
-          box-shadow: 0 0 3px #37474F;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin-bottom: 10px;
-          background: #ECEFF1;
-          padding-left: 20px;
-        }
-      }
-    }
-  }
 }

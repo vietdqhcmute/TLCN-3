@@ -7,23 +7,14 @@
     background-image: url('../../assets/neon_abstract_3.jpg');
     background-attachment: fixed;
   }
-  #thumbnail-container {
+  #default-thumbnail {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     padding-left: 12vh;
     padding-right: 12vh;
-    display: flex;
-    flex-direction: column;
-
-    #default-thumbnail {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    #custom-thumbnail {
-      display: flex;
-      flex-wrap: wrap
-    }
   }
+
   .image-custom-default{
     margin-left: 60px;
     margin-right: 60px;
