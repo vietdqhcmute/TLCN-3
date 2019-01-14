@@ -14,12 +14,14 @@ import { AdminGuard } from "./services/admin.guard";
 import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
+import { SignUpComponent } from "./login/sign-up/sign-up.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "firstpage", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
+  { path:"signup", component: SignUpComponent},
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
