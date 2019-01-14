@@ -12,7 +12,6 @@
     background-color: rgb(255, 255, 255);
     width: 60vh;
     padding: 80px 50px;
-    -webkit-box-shadow: 0 0 1px rgb(73, 94, 104);
 
     mat-form-field {
       width: 100%;
@@ -26,6 +25,9 @@
           cursor: pointer;
         }
       }
+    }
+    button{
+      width: 100%;
     }
   }
 }
