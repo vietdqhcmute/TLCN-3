@@ -6,33 +6,45 @@
   background-position: right top;
   background-attachment: fixed;
 
-  .page {
-    padding: 20px;
-    background-color: #ECEFF1;
-    height: 89.5vh;
-    width: 80vh;
-    margin: 0 auto;
+  #login-form {
+    margin: 20px auto;
+    background-color: rgba(248, 245, 245, 0.986);
+    width: 75vh;
+    padding: 50px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 0 1px rgb(73, 94, 104);
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+      h3{
+        font-weight: bold;
+      }
+    }
+
+    #btn-login-google {
+      padding: 10px 0;
+      background-color: rgb(247, 245, 245);
+      -webkit-box-shadow: 0 0 1px rgb(73, 94, 104);
+
+      img {
+        width: 25px;
+      }
+    }
+
+    .form-group {
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        background-color: rgb(238, 238, 238);
+      }
+    }
   }
 
-  .sign-in {
-    display: flex;
-    flex-direction: row
-  }
-  .sign-up{
-    display: flex;
-    flex-direction: row
-
-  }
-  .mat-experience {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mat-experience-date {
-    display: flex;
-    flex-direction: row;
-  }
-  mat-tab{
-    height: 80vh;
+  button {
+    display: block;
+    width: 100%;
   }
 }
