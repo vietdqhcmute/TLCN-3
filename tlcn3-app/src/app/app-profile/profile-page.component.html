@@ -1,7 +1,6 @@
 <div *ngIf="isAuthenticated">
   <div id="topbar">
-      <nav class="top-bar fixed">    <app-page-sidebar [userIsAuthenticated]="true"></app-page-sidebar>
-      </nav>
+    <app-page-sidebar [userIsAuthenticated]="true"></app-page-sidebar>
   </div>
   <div class="flex-profile">
     <app-app-profile-info [user$]="user$"></app-app-profile-info>
