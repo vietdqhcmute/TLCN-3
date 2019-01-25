@@ -1,6 +1,6 @@
 <div *ngIf="isAuthenticated">
   <div id="topbar">
-    <app-page-sidebar></app-page-sidebar>
+    <app-page-sidebar [userIsAuthenticated]="true"></app-page-sidebar>
   </div>
 
   <app-editor-toolbar [user$]="user$"></app-editor-toolbar>
