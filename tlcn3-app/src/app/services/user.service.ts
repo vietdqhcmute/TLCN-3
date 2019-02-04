@@ -8,7 +8,9 @@ import { Subject } from 'rxjs';
 })
 export class UserService {
 
-  domainName="http://localhost:3000/";
+  // domainName="http://localhost:3000/";
+  domainName = "";
+
   private avatarURL= new Subject<string>();
   constructor(private http: HttpClient) { }
 

@@ -10,7 +10,8 @@ import { DataService } from "./data.service";
   providedIn: "root"
 })
 export class AuthService {
-  domainName = "http://localhost:3000/";
+  // domainName = "http://localhost:3000/";
+  domainName = "";
 
   private token: string;
   private authStatusListener = new Subject<boolean>();
