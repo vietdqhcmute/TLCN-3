@@ -10,7 +10,8 @@ import jsPDF from "jspdf";
 })
 export class TemplateService {
   private template = new Subject<string>();
-  private domainName = "http://localhost:3000/";
+  // private domainName = "http://localhost:3000/";
+  domainName = "";
 
   constructor(private http: HttpClient) {}
 

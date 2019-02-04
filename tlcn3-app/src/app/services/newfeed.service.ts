@@ -7,7 +7,8 @@ import { NewFeed } from "../models";
   providedIn: "root"
 })
 export class NewfeedService {
-  domainName = "http://localhost:3000/";
+  // domainName = "http://localhost:3000/";
+  domainName = "";
 
   constructor(private http: HttpClient) {}
   
