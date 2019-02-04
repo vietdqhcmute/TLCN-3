@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input } from "@angular/core";
 import { Location } from "@angular/common";
 import { AuthService } from "../services/auth.service";
 import { Subscription } from "rxjs";
@@ -11,7 +11,7 @@ import { DataService } from "../services/data.service";
   styleUrls: ["./topbar.component.scss"]
 })
 export class TopbarComponent implements OnInit, OnDestroy {
-  private userIsAuthenticated = false;
+  @Input() userIsAuthenticated:Boolean = false;
   private userID: string;
   private user$: User;
 

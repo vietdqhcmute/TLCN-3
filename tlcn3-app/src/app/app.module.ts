@@ -63,6 +63,7 @@ import { AdminNotificationComponent } from "./page-admin/admin-notification/admi
 import { ErrorInterceptor } from "./error-interceptor";
 import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-newfeed/profile-info-newfeed.component';
 import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
     AdminDashboardComponent,
     AdminNotificationComponent,
     ProfileInfoNewfeedComponent,
-    ProfileInfoDreamjobComponent
+    ProfileInfoDreamjobComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

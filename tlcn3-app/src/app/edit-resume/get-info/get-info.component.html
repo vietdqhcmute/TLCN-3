@@ -52,7 +52,7 @@
 
 <section id="Experience">
   <h3>Experience</h3>
-  <div class="list-experience">
+  <div class="item-ul-li">
     <ul>
       <li *ngFor="let item of resume$.experience">
         <div>
@@ -74,7 +74,7 @@
 
 <section id="Project">
   <h3>Project</h3>
-  <div class="list-project">
+  <div class="item-ul-li">
     <ul>
       <li *ngFor="let item of resume$.project">
         <a [routerLink]="xxx" (click)="openDetail(item,'Project')">{{item.name}}</a>
@@ -92,7 +92,7 @@
 
 <section id="Education">
   <h3>Education</h3>
-  <div class="list-education">
+  <div class="item-ul-li">
     <ul>
       <li *ngFor="let item of resume$.education">
 
@@ -117,7 +117,7 @@
 
 <section id="Skill">
   <h3>Skill</h3>
-  <div class="list-skills">
+  <div class="item-ul-li">
     <ul>
       <li *ngFor="let item of resume$.skill; let i=index" [attr.data-index]="i" class="list-item">
         <mat-form-field>
