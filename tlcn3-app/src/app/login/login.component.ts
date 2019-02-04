@@ -14,9 +14,11 @@ export class LoginComponent implements OnInit {
   // si_email: string = "admin@admin.com";
   // si_password: string = "1";
 
-  si_email: string = "vietdqhcmute@gmail.com";
-  si_password: string = "123";
+  // si_email: string = "vietdqhcmute@gmail.com";
+  // si_password: string = "123";
 
+  si_email: string = "";
+  si_password: string = "";
   isLoading_logIn = false;
 
   authSubcription: Subscription;
