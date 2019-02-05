@@ -4,14 +4,14 @@ import { HttpClient } from "@angular/common/http";
 import { Statistic } from "../models";
 import * as html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root"
 })
 export class TemplateService {
   private template = new Subject<string>();
-  // private domainName = "http://localhost:3000/";
-  domainName = "https://stormy-ocean-42606.herokuapp.com/";
+  domainName = environment.APIEndPoint;
 
   constructor(private http: HttpClient) {}
 

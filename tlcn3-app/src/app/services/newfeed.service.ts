@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient} from "@angular/common/http";
+import { environment } from '../../environments/environment';
 
 import { NewFeed } from "../models";
 
@@ -7,9 +8,7 @@ import { NewFeed } from "../models";
   providedIn: "root"
 })
 export class NewfeedService {
-  // domainName = "http://localhost:3000/";
-  domainName = "https://stormy-ocean-42606.herokuapp.com/";
-
+  domainName = environment.APIEndPoint;
   constructor(private http: HttpClient) {}
   
   createNewFeed(userID: string, message: string) {
