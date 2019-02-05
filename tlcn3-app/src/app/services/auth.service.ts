@@ -11,7 +11,7 @@ import { DataService } from "./data.service";
 })
 export class AuthService {
   // domainName = "http://localhost:3000/";
-  domainName = "";
+  domainName = "https://stormy-ocean-42606.herokuapp.com/";
 
   private token: string;
   private authStatusListener = new Subject<boolean>();

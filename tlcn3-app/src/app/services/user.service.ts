@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 export class UserService {
 
   // domainName="http://localhost:3000/";
-  domainName = "";
+  domainName = "https://stormy-ocean-42606.herokuapp.com/";
 
   private avatarURL= new Subject<string>();
   constructor(private http: HttpClient) { }

@@ -8,7 +8,7 @@ import { NewFeed } from "../models";
 })
 export class NewfeedService {
   // domainName = "http://localhost:3000/";
-  domainName = "";
+  domainName = "https://stormy-ocean-42606.herokuapp.com/";
 
   constructor(private http: HttpClient) {}
   
