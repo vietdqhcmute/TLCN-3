@@ -3,12 +3,14 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 import { User } from '../models';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  domainName="http://localhost:3000/";
+  domainName = environment.APIEndPoint;
+
   private avatarURL= new Subject<string>();
   constructor(private http: HttpClient) { }
 

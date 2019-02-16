@@ -5,13 +5,13 @@ import { Subject } from "rxjs";
 import { Router } from "@angular/router";
 import { UserService } from "./user.service";
 import { DataService } from "./data.service";
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
-  domainName = "http://localhost:3000/";
-
+  domainName = environment.APIEndPoint;
   private token: string;
   private authStatusListener = new Subject<boolean>();
   private isAuthenticated = false;
