@@ -37,7 +37,6 @@ export class UserService {
     const postImage = new FormData();
     postImage.append("image", image);
     return this.http.post<{imageUrl: string}>(this.domainName +'image-upload', postImage).subscribe(response=>{
-      console.log(response);
       this.avatarURL.next(response.imageUrl);
     });
   }
