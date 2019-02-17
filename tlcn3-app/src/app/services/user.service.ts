@@ -36,8 +36,9 @@ export class UserService {
   updateAvatar(image: File){
     const postImage = new FormData();
     postImage.append("image", image);
-    return this.http.post<{avatarUrl: string}>(this.domainName +'add/picture', postImage).subscribe(response=>{
-      this.avatarURL.next(response.avatarUrl);
+    return this.http.post<{imageUrl: string}>(this.domainName +'image-upload', postImage).subscribe(response=>{
+      console.log(response);
+      this.avatarURL.next(response.imageUrl);
     });
   }
 }

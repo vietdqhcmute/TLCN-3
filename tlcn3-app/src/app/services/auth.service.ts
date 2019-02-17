@@ -137,7 +137,7 @@ export class AuthService {
       resume: newResume,
       googleId: "",
       googleName: "",
-      avatarURL: "http://localhost:3000/images/tho-7-mau.jpg",
+      avatarURL: "https://nodejs-server-image.s3.amazonaws.com/1550410758086",
       fullName: userName,
       userName: userName,
       email: email,
