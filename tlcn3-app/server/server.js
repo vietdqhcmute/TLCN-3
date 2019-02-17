@@ -27,6 +27,8 @@ const indexRoutes = require('./api-routes');
 const authRoutes = require('./auth');
 const adminRoutes = require('./admin-routes');
 const statisticRoutes = require('./statistic-routes');
+const awsRoutes = require('./aws-routes');
+
 // settings
 app.set('port', process.env.PORT || 3000);
 
@@ -113,7 +115,7 @@ app.use('/', indexRoutes);
 app.use('/',authRoutes);
 app.use('/',adminRoutes);
 app.use('/',statisticRoutes);
-
+app.use('/',awsRoutes);
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);
 });
