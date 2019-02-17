@@ -1,4 +1,4 @@
 module.exports = {
-    googleClientID: '903270816517-ootvsrrh3tqv8biv1ca52volh34k3ti8.apps.googleusercontent.com',
-    googleClientSecret: 'Mb4-iX6sMIRl3QNvAw5X8kSl'
+    AWS_SECRET_KEY: 'ZSfVgX5r7hOn8F3XFO0ypiAkJu60ht/VIdQuf+cp',
+    AWS_ACCESS_KEY: 'AKIAIAM5U5LF5DGKJ42Q'
   };
