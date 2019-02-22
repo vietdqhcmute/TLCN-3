@@ -8,7 +8,6 @@ aws.config.update({
   region: "us-east-1" // region of your bucket
 });
 const s3 = new aws.S3();
-
 const upload = multer({
   storage: multerS3({
     s3: s3,
