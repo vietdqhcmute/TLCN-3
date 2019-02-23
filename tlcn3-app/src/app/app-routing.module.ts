@@ -15,6 +15,7 @@ import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { SignUpComponent } from "./login/sign-up/sign-up.component";
+import { AllJobComponent } from './all-job/all-job.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "firstpage", pathMatch: "full" },
@@ -30,8 +31,8 @@ const routes: Routes = [
     {path:'usermanager', component:AdminUserManagerComponent},
     {path:'dashboard',component:AdminDashboardComponent},
     {path:'notification', component:AdminNotificationComponent}
-  ]}
-
+  ]},
+  {path: "all-job", component:AllJobComponent}
 ];
 
 @NgModule({
