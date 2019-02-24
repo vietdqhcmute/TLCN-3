@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('./models/Resume');
-const passport = require('passport');
+const Candidate = require('./models/Candidate');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -11,10 +10,10 @@ router.post('/signup', async (req, res) => {
   //Hash the password of user first when get a request, after hashing, save it on database
   hash = bcrypt.hashSync(req.body.password, 10);
   req.body.password = hash;
-  resume = new Resume(req.body);
+  candidate = new Candidate(req.body);
   //save it on database
   try {
-    await resume.save();
+    await candidate.save();
     res.status(201).json({
       message: "User created"
     });
@@ -29,7 +28,7 @@ router.post('/signup', async (req, res) => {
 //API login
 router.post("/login", (req, res, next) => {
   let fetchedUser; //to store user after findOne and use all then() block beneath
-  Resume.findOne({
+  Candidate.findOne({
     email: req.body.email
   }).then(user => {
     if (!user) {
@@ -68,15 +67,4 @@ router.post("/login", (req, res, next) => {
 
 });
 
-//
-//
-//Google path
-router.get('/auth/google',
-  passport.authenticate('google', {
-    scope: ['profile', 'email']
-  }));
-
-router.get('/auth/google/callback', passport.authenticate('google'), function (req, res) {
-  res.send("It's OK!");
-});
 module.exports = router;

@@ -6,8 +6,8 @@ let recruiterSchema = new mongoose.Schema({
     index: { unique: true }
   },
   image_url: String,
-  email: String,
-  phone: String,
+  email: [],
+  phone: [],
   address: String,
   website: String,
   employees: Number,

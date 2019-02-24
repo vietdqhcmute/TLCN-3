@@ -1,7 +1,3 @@
-let Experience = require("./Experience");
-let Education = require("./Education");
-let Project = require("./Project");
-
 Resume ={
   title: String,
   summary: String,
@@ -11,7 +7,7 @@ Resume ={
   experience: [],
   education: [],
   project: [],
-  skill: [String],
+  skill: [],
   created: {
     type: Date,
     default: Date.now
