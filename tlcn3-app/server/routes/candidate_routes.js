@@ -4,12 +4,11 @@ const Candidate = require("../models/Candidate");
 
 router.post("/add/candidate", (req, res) => {
   const candidate = new Candidate(req.body);
-  candidate.save(err => {
+  candidate.save((err,candidate) => {
     if (err) {
       return console.log(err);
     }
-    console.log("Candidate create successfully!");
-    res.status(200);
+    res.status(200).redirect("/candidate/"+candidate._id);
   });
 });
 
