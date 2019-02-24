@@ -8,9 +8,9 @@ Resume ={
   githubURL: String,
   linkedinURL: String,
   website: String,
-  experience: [{ experience: Experience }],
-  education: [{ education: Education }],
-  project: [{ project: Project }],
+  experience: [],
+  education: [],
+  project: [],
   skill: [String],
   created: {
     type: Date,
