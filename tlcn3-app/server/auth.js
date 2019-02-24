@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('./models/resumeModel');
+const Resume = require('./models/Resume');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
