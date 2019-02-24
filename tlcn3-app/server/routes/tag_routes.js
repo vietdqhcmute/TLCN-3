@@ -4,14 +4,20 @@ const Tag = require("../models/Tag");
 
 //Adding tag
 router.post("/add/tag", (req, res) => {
-  const tag = new Tag(req.body);
-  tag.save((err,data) => {
-    if (err) {
-      res.status(500);
-      return console.log(err);      
+  //Check if tag has already exist
+  Tag.findOne({tag_name: req.body.tag_name},(err,data)=>{
+    if (!data){
+      const tag = new Tag(req.body);
+      tag.save((err,data) => {
+        if (err) {
+          res.status(500);
+          return console.log(err);      
+        }
+        res.status(200).send(data);
+      });
     }
-    res.status(200);
-  });
+    return res.status(500);
+  })
 });
 //Getting by tag by name
 router.get("/tag/:tag_name", async (req, res) => {
