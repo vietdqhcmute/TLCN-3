@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const checkAuth = require('./check-auth');
+const checkAuth = require('../check-auth');
 
-const NewFeed = require('./models/NewFeed');
+const NewFeed = require('../models/NewFeed');
 
 //API post newFeed
 router.post('/add/newfeed/:id', checkAuth, async (req, res) => {

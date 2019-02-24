@@ -39,11 +39,11 @@ app.use(function (req, res, next) {
   next();
 });
 // importing routes
-const indexRoutes = require('./api-routes');
+const indexRoutes = require('./routes/api-routes');
 const authRoutes = require('./auth');
-const adminRoutes = require('./admin-routes');
-const statisticRoutes = require('./statistic-routes');
-const awsRoutes = require('./aws-routes');
+const adminRoutes = require('./routes/admin-routes');
+const statisticRoutes = require('./routes/statistic-routes');
+const awsRoutes = require('./routes/aws-routes');
 const candidate_routes = require('./routes/candidate_routes');
 // routes
 app.use('/', indexRoutes);
@@ -51,7 +51,6 @@ app.use('/',authRoutes);
 app.use('/',adminRoutes);
 app.use('/',statisticRoutes);
 app.use('/',awsRoutes);
-
 app.use('/',candidate_routes);
 
 app.listen(app.get('port'), () => {
