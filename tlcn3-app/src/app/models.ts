@@ -38,7 +38,6 @@ export class Resume {
     skill: Array<String>;
 }
 
-
 export class Experience {
     title: string;
     description?: string;
