@@ -1,0 +1,35 @@
+:host() {
+  .image-cover {
+    background-color: #fff;
+    height: 30vh;
+    width: 100%;
+    margin: 5px 0px;
+    -moz-box-shadow: 0 0 3px #37474F;
+    -webkit-box-shadow: 0 0 3px #37474f;
+    box-shadow: 0 0 3px #37474F;
+
+    .avatar-container{
+      img {
+        height: 25vh;
+        width: 25vh;
+      }
+      .company_name{
+        margin-top: 16vh;
+      }
+      button {
+        width: max-content;
+        height: max-content;
+        margin-top: 16vh;
+
+      }
+    }
+    .tab_recruiter{
+      background-color: rgb(216, 216, 216);
+      height: 5vh;
+      width: 100%;
+    }
+  }
+  .recruit-news{
+    
+  }
+}

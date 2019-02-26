@@ -1,3 +1,25 @@
-<p>
-  recruiter works!
-</p>
+<div id="topbar">
+  <app-page-sidebar></app-page-sidebar>
+</div>
+<div class="container">
+  <div class="image-cover">
+    <div class="avatar-container row">
+      <div class="col-md-2"><img [src]="image_url" alt="imageurl" /></div>
+      <div class="col-lg-8">
+        <h3 class="company_name">{{ company_name }}</h3>
+      </div>
+      <button class="btn btn-info">Change profile</button>
+    </div>
+    <div class="tab_recruiter">
+      <h3>This is tab-bar</h3>
+    </div>
+  </div>
+  <div class="content row">
+    <div class="col-9">
+      <h1>News</h1>
+    </div>
+    <div class="col-3">
+      <h1>Notification</h1>
+    </div>
+  </div>
+</div>
