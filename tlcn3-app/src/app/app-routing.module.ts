@@ -15,9 +15,10 @@ import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { SignUpComponent } from "./login/sign-up/sign-up.component";
+import { RecruiterComponent } from "./recruiter/recruiter.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "firstpage", pathMatch: "full" },
+  { path: "", redirectTo: "recruiter", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
@@ -30,7 +31,10 @@ const routes: Routes = [
     {path:'usermanager', component:AdminUserManagerComponent},
     {path:'dashboard',component:AdminDashboardComponent},
     {path:'notification', component:AdminNotificationComponent}
-  ]}
+  ]},
+  {
+    path:"recruiter", component: RecruiterComponent
+  }
 
 ];
 

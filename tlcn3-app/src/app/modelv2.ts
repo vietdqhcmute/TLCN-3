@@ -1,4 +1,5 @@
 export class Password{
+  _id: string;
   email: string;
   password: string;
   role: Number;
