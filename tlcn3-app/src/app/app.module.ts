@@ -64,6 +64,8 @@ import { ErrorInterceptor } from "./error-interceptor";
 import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-newfeed/profile-info-newfeed.component';
 import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { RecruiterComponent } from './recruiter/recruiter.component';
+import { RecruiterSideBarComponent } from './recruiter/recruiter-side-bar/recruiter-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,9 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
     AdminNotificationComponent,
     ProfileInfoNewfeedComponent,
     ProfileInfoDreamjobComponent,
-    SignUpComponent
+    SignUpComponent,
+    RecruiterComponent,
+    RecruiterSideBarComponent
   ],
   imports: [
     BrowserModule,

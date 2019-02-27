@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const checkAuth = require('./check-auth');
+const checkAuth = require('../check-auth');
 
-const Statistic = require('./models/statisticModel');
+const Statistic = require('../models/Statistic');
 
 //API post template count
 router.post('/add/template/:id', async(req,res)=>{

@@ -1,0 +1,22 @@
+:host() {
+  font-size: 22px;
+  font-style: inherit;
+  font-weight: 500;
+  .image {
+    text-align: center;
+
+    img {
+      width: 15vh;
+      height: 15vh;
+    }
+  }
+  .name{
+    font-weight: bolder;
+    text-align: center;
+  }
+  .navigation {
+    ul {
+      list-style: none;
+    }
+  }
+}
