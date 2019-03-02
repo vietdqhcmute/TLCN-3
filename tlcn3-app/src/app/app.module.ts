@@ -65,6 +65,7 @@ import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-new
 import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { AllJobComponent } from './all-job/all-job.component';
+import { CompanyFrameComponent } from './company-frame/company-frame.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { AllJobComponent } from './all-job/all-job.component';
     ProfileInfoNewfeedComponent,
     ProfileInfoDreamjobComponent,
     SignUpComponent,
-    AllJobComponent
+    AllJobComponent,
+    CompanyFrameComponent
   ],
   imports: [
     BrowserModule,
