@@ -19,7 +19,7 @@ import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { SignUpRecruiterComponent } from "./login/sign-up-recruiter/sign-up-recruiter.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "signup-recruiter", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
