@@ -16,6 +16,7 @@ import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dash
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { SignUpComponent } from "./login/sign-up/sign-up.component";
 import { RecruiterComponent } from "./recruiter/recruiter.component";
+import { AllJobComponent } from './all-job/all-job.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "recruiter", pathMatch: "full" },
@@ -34,8 +35,8 @@ const routes: Routes = [
   ]},
   {
     path:"recruiter", component: RecruiterComponent
-  }
-
+  },
+  {path: "all-job", component:AllJobComponent}
 ];
 
 @NgModule({

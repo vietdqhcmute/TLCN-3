@@ -103,7 +103,7 @@ import { CompanyFrameComponent } from './company-frame/company-frame.component';
     ProfileInfoDreamjobComponent,
     SignUpComponent,
     RecruiterComponent,
-    RecruiterSideBarComponent
+    RecruiterSideBarComponent,
     AllJobComponent,
     CompanyFrameComponent
   ],
