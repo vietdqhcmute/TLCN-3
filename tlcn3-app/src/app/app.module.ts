@@ -66,6 +66,7 @@ import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dr
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { RecruiterSideBarComponent } from './recruiter/recruiter-side-bar/recruiter-side-bar.component';
+import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { RecruiterSideBarComponent } from './recruiter/recruiter-side-bar/recrui
     ProfileInfoDreamjobComponent,
     SignUpComponent,
     RecruiterComponent,
-    RecruiterSideBarComponent
+    RecruiterSideBarComponent,
+    SignUpRecruiterComponent
   ],
   imports: [
     BrowserModule,
