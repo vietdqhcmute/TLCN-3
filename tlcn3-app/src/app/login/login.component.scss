@@ -27,7 +27,10 @@
       padding: 10px 0;
       background-color: rgb(247, 245, 245);
       -webkit-box-shadow: 0 0 1px rgb(73, 94, 104);
-
+      a{
+        display: block;
+        width: 100%;
+      }
       img {
         width: 25px;
       }
