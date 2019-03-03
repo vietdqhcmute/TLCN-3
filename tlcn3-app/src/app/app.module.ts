@@ -68,6 +68,7 @@ import { RecruiterComponent } from './recruiter/recruiter.component';
 import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
 import { AllJobComponent } from './all-job/all-job.component';
 import { CompanyFrameComponent } from './company-frame/company-frame.component';
+import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/recruiter-create-post.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { CompanyFrameComponent } from './company-frame/company-frame.component';
     RecruiterComponent,
     SignUpRecruiterComponent,
     AllJobComponent,
-    CompanyFrameComponent
+    CompanyFrameComponent,
+    RecruiterCreatePostComponent
   ],
   imports: [
     BrowserModule,
