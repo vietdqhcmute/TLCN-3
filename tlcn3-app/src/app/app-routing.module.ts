@@ -18,6 +18,7 @@ import { SignUpComponent } from "./login/sign-up/sign-up.component";
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { AllJobComponent } from './all-job/all-job.component';
 import { SignUpRecruiterComponent } from "./login/sign-up-recruiter/sign-up-recruiter.component";
+import { JobDescriptionComponent } from './job-description/job-description.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -38,7 +39,8 @@ const routes: Routes = [
   {
     path:"recruiter", component: RecruiterComponent
   },
-  {path: "all-job", component:AllJobComponent}
+  {path: "all-job", component:AllJobComponent},
+  {path: "job-description", component:JobDescriptionComponent}
 ];
 
 @NgModule({

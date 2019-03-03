@@ -69,6 +69,7 @@ import { RecruiterSideBarComponent } from './recruiter/recruiter-side-bar/recrui
 import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
 import { AllJobComponent } from './all-job/all-job.component';
 import { CompanyFrameComponent } from './company-frame/company-frame.component';
+import { JobDescriptionComponent } from './job-description/job-description.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import { CompanyFrameComponent } from './company-frame/company-frame.component';
     SignUpRecruiterComponent,
     RecruiterSideBarComponent,
     AllJobComponent,
-    CompanyFrameComponent
+    CompanyFrameComponent,
+    JobDescriptionComponent
   ],
   imports: [
     BrowserModule,
