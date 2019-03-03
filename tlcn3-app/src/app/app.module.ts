@@ -65,7 +65,6 @@ import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-new
 import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
-import { RecruiterSideBarComponent } from './recruiter/recruiter-side-bar/recruiter-side-bar.component';
 import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
 import { AllJobComponent } from './all-job/all-job.component';
 import { CompanyFrameComponent } from './company-frame/company-frame.component';
@@ -104,9 +103,7 @@ import { CompanyFrameComponent } from './company-frame/company-frame.component';
     ProfileInfoDreamjobComponent,
     SignUpComponent,
     RecruiterComponent,
-    RecruiterSideBarComponent,
     SignUpRecruiterComponent,
-    RecruiterSideBarComponent,
     AllJobComponent,
     CompanyFrameComponent
   ],
