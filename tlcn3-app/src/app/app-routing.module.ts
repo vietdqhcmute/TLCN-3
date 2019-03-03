@@ -18,6 +18,7 @@ import { SignUpComponent } from "./login/sign-up/sign-up.component";
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { AllJobComponent } from './all-job/all-job.component';
 import { SignUpRecruiterComponent } from "./login/sign-up-recruiter/sign-up-recruiter.component";
+import { RecruiterCreatePostComponent } from "./recruiter/recruiter-create-post/recruiter-create-post.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -35,9 +36,11 @@ const routes: Routes = [
     {path:'dashboard',component:AdminDashboardComponent},
     {path:'notification', component:AdminNotificationComponent}
   ]},
-  {
-    path:"recruiter", component: RecruiterComponent
-  },
+  { path:"recruiter", component: RecruiterComponent, children:[
+    {path:"", redirectTo:"create-post", pathMatch:"full"},
+    {path:"create-post", component:RecruiterCreatePostComponent}
+  ] },
+  { path:"create-post", component: RecruiterCreatePostComponent},
   {path: "all-job", component:AllJobComponent}
 ];
 

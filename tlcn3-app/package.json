@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "angular-froala-wysiwyg": "^2.9.3",
     "bcrypt": "^3.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
