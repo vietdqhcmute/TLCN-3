@@ -17,13 +17,15 @@ import { AdminNotificationComponent } from "./page-admin/admin-notification/admi
 import { SignUpComponent } from "./login/sign-up/sign-up.component";
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { AllJobComponent } from './all-job/all-job.component';
+import { SignUpRecruiterComponent } from "./login/sign-up-recruiter/sign-up-recruiter.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "recruiter", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
   { path:"signup", component: SignUpComponent},
+  { path:"signup-recruiter", component: SignUpRecruiterComponent},
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
   { path: "about", component: AppAboutComponent },
