@@ -70,6 +70,8 @@ import { AllJobComponent } from './all-job/all-job.component';
 import { CompanyFrameComponent } from './company-frame/company-frame.component';
 import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/recruiter-create-post.component';
 
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -132,7 +134,9 @@ import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/
     MatSnackBarModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   providers: [
     { provide: Window, useValue: window },
