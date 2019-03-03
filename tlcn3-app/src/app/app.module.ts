@@ -71,6 +71,7 @@ import { CompanyFrameComponent } from './company-frame/company-frame.component';
 import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/recruiter-create-post.component';
 
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { RecruiterReviewComponent } from './recruiter/recruiter-review/recruiter-review.component';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     SignUpRecruiterComponent,
     AllJobComponent,
     CompanyFrameComponent,
-    RecruiterCreatePostComponent
+    RecruiterCreatePostComponent,
+    RecruiterReviewComponent
   ],
   imports: [
     BrowserModule,
