@@ -72,6 +72,7 @@ import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/
 
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { RecruiterReviewComponent } from './recruiter/recruiter-review/recruiter-review.component';
+import { RecruiterReviewPostComponent } from './recruiter/recruiter-review/recruiter-review-post/recruiter-review-post.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { RecruiterReviewComponent } from './recruiter/recruiter-review/recruiter
     AllJobComponent,
     CompanyFrameComponent,
     RecruiterCreatePostComponent,
-    RecruiterReviewComponent
+    RecruiterReviewComponent,
+    RecruiterReviewPostComponent
   ],
   imports: [
     BrowserModule,
