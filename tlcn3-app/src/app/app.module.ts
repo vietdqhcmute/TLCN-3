@@ -105,7 +105,7 @@ import { CompanyFrameComponent } from './company-frame/company-frame.component';
     SignUpComponent,
     RecruiterComponent,
     RecruiterSideBarComponent,
-    SignUpRecruiterComponent
+    SignUpRecruiterComponent,
     RecruiterSideBarComponent,
     AllJobComponent,
     CompanyFrameComponent
