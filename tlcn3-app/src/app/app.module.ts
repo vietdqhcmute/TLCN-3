@@ -67,7 +67,7 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
 import { AllJobComponent } from './all-job/all-job.component';
-import { CompanyFrameComponent } from './company-frame/company-frame.component';
+import { CompanyFrameComponent } from './all-job/company-frame/company-frame.component';
 import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/recruiter-create-post.component';
 
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
