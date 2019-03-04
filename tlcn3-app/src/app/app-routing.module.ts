@@ -22,14 +22,15 @@ import { RecruiterCreatePostComponent } from "./recruiter/recruiter-create-post/
 import { RecruiterReviewComponent } from "./recruiter/recruiter-review/recruiter-review.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "", redirectTo: "all-job", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
   { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
   { path: "firstpage", component: FirstPageComponent},
   { path:"signup", component: SignUpComponent},
   { path:"signup-recruiter", component: SignUpRecruiterComponent},
   { path: "login", component: LoginComponent },
-  { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
+  // { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
+  { path: "profile", component: ProfilePageComponent},
   { path: "about", component: AppAboutComponent },
   { path: "admin", component: AdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
     {path:'',redirectTo:"usermanager", pathMatch:"full"},
