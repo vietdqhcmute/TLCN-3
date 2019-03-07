@@ -8,7 +8,6 @@ import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 
 import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
-import { FirstPageComponent } from "./first-page/first-page.component";
 import { AdminComponent } from "./page-admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
 import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
@@ -32,7 +31,6 @@ const routes: Routes = [
     resolve: { profile: ResolverService },
     canActivate: [AuthGuard]
   },
-  { path: "firstpage", component: FirstPageComponent },
   { path: "signup", component: SignUpComponent },
   { path: "signup-recruiter", component: SignUpRecruiterComponent },
   { path: "login", component: LoginComponent },
@@ -58,7 +56,7 @@ const routes: Routes = [
       { path: "create-post", component: RecruiterCreatePostComponent },
       { path: "review", component: RecruiterReviewComponent },
       { path: "dashboard", component: RecruiterDashboardComponent },
-      { path: "subcriber", component: RecruiterSubcriberComponent}
+      { path: "subcriber", component: RecruiterSubcriberComponent }
     ]
   },
   { path: "all-job", component: AllJobComponent }
