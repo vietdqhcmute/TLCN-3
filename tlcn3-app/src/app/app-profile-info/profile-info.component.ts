@@ -12,6 +12,7 @@ export class ProfileInfoComponent implements OnInit {
   @Input() user$: User;
   imagePreview: string;
   newfeedsAdmin= Array<NewFeed>();
+  editFlag: Boolean = false;
 
   constructor(private userService: UserService, private newfeedService: NewfeedService) { }
 
@@ -20,7 +21,9 @@ export class ProfileInfoComponent implements OnInit {
       this.newfeedsAdmin=responseArray;
     });
   }
-
+  onEditButton(){
+    this.editFlag = !this.editFlag
+  }
   onImagePicked(event: Event){
     const file = (event.target as HTMLInputElement).files[0];
     const reader = new FileReader();

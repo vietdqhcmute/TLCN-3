@@ -62,7 +62,6 @@ import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dash
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-newfeed/profile-info-newfeed.component';
-import { ProfileInfoDreamjobComponent } from './app-profile-info/profile-info-dreamjob/profile-info-dreamjob.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
@@ -105,7 +104,6 @@ import { RecruiterReviewPostComponent } from './recruiter/recruiter-review/recru
     AdminDashboardComponent,
     AdminNotificationComponent,
     ProfileInfoNewfeedComponent,
-    ProfileInfoDreamjobComponent,
     SignUpComponent,
     RecruiterComponent,
     SignUpRecruiterComponent,
