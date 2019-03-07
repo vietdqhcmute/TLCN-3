@@ -72,6 +72,8 @@ import { RecruiterCreatePostComponent } from './recruiter/recruiter-create-post/
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { RecruiterReviewComponent } from './recruiter/recruiter-review/recruiter-review.component';
 import { RecruiterReviewPostComponent } from './recruiter/recruiter-review/recruiter-review-post/recruiter-review-post.component';
+import { RecruiterDashboardComponent } from './recruiter/recruiter-dashboard/recruiter-dashboard.component';
+import { RecruiterSubcriberComponent } from './recruiter/recruiter-subcriber/recruiter-subcriber.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +113,9 @@ import { RecruiterReviewPostComponent } from './recruiter/recruiter-review/recru
     CompanyFrameComponent,
     RecruiterCreatePostComponent,
     RecruiterReviewComponent,
-    RecruiterReviewPostComponent
+    RecruiterReviewPostComponent,
+    RecruiterDashboardComponent,
+    RecruiterSubcriberComponent
   ],
   imports: [
     BrowserModule,

@@ -16,35 +16,52 @@ import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dash
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { SignUpComponent } from "./login/sign-up/sign-up.component";
 import { RecruiterComponent } from "./recruiter/recruiter.component";
-import { AllJobComponent } from './all-job/all-job.component';
+import { AllJobComponent } from "./all-job/all-job.component";
 import { SignUpRecruiterComponent } from "./login/sign-up-recruiter/sign-up-recruiter.component";
 import { RecruiterCreatePostComponent } from "./recruiter/recruiter-create-post/recruiter-create-post.component";
 import { RecruiterReviewComponent } from "./recruiter/recruiter-review/recruiter-review.component";
+import { RecruiterDashboardComponent } from "./recruiter/recruiter-dashboard/recruiter-dashboard.component";
+import { RecruiterSubcriberComponent } from "./recruiter/recruiter-subcriber/recruiter-subcriber.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "all-job", pathMatch: "full" },
-  { path: "main", component: EditResumeComponent, canActivate:[AuthGuard] },
-  { path: "main/:id/edit", component: EditResumeComponent, resolve: {profile: ResolverService}, canActivate:[AuthGuard] },
-  { path: "firstpage", component: FirstPageComponent},
-  { path:"signup", component: SignUpComponent},
-  { path:"signup-recruiter", component: SignUpRecruiterComponent},
+  { path: "main", component: EditResumeComponent, canActivate: [AuthGuard] },
+  {
+    path: "main/:id/edit",
+    component: EditResumeComponent,
+    resolve: { profile: ResolverService },
+    canActivate: [AuthGuard]
+  },
+  { path: "firstpage", component: FirstPageComponent },
+  { path: "signup", component: SignUpComponent },
+  { path: "signup-recruiter", component: SignUpRecruiterComponent },
   { path: "login", component: LoginComponent },
   // { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
-  { path: "profile", component: ProfilePageComponent},
+  { path: "profile", component: ProfilePageComponent },
   { path: "about", component: AppAboutComponent },
-  { path: "admin", component: AdminComponent, canActivate:[AuthGuard, AdminGuard], children:[
-    {path:'',redirectTo:"usermanager", pathMatch:"full"},
-    {path:'usermanager', component:AdminUserManagerComponent},
-    {path:'dashboard',component:AdminDashboardComponent},
-    {path:'notification', component:AdminNotificationComponent}
-  ]},
-  { path:"recruiter", component: RecruiterComponent, children:[
-    {path:"", redirectTo:"create-post", pathMatch:"full"},
-    {path:"create-post", component:RecruiterCreatePostComponent},
-    {path:"review", component:RecruiterReviewComponent}
-
-  ] },
-  {path: "all-job", component:AllJobComponent}
+  {
+    path: "admin",
+    component: AdminComponent,
+    canActivate: [AuthGuard, AdminGuard],
+    children: [
+      { path: "", redirectTo: "usermanager", pathMatch: "full" },
+      { path: "usermanager", component: AdminUserManagerComponent },
+      { path: "dashboard", component: AdminDashboardComponent },
+      { path: "notification", component: AdminNotificationComponent }
+    ]
+  },
+  {
+    path: "recruiter",
+    component: RecruiterComponent,
+    children: [
+      { path: "", redirectTo: "dashboard", pathMatch: "full" },
+      { path: "create-post", component: RecruiterCreatePostComponent },
+      { path: "review", component: RecruiterReviewComponent },
+      { path: "dashboard", component: RecruiterDashboardComponent },
+      { path: "subcriber", component: RecruiterSubcriberComponent}
+    ]
+  },
+  { path: "all-job", component: AllJobComponent }
 ];
 
 @NgModule({
