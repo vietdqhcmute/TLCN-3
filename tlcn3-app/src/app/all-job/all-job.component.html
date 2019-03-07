@@ -1,12 +1,9 @@
 <div class="all-job">
-  <div class="topbar">
-    <app-page-sidebar></app-page-sidebar>
+  <div id="topbar">
+    <app-page-sidebar [userIsAuthenticated]="true"></app-page-sidebar>
   </div>
   <div>
-    <div
-      class="search-form-all-job form-row container"
-      id=""
-    >
+    <div class="search-form-all-job form-row container" id="">
       <div class="search-text form-row">
         <form
           class="form-group"
@@ -32,7 +29,7 @@
           id="search-form"
           style="flex-grow: 2"
         >
-          <select class="form-control" id="exampleFormControlSelect1" >
+          <select class="form-control" id="exampleFormControlSelect1">
             <option>Hồ Chí Minh</option>
             <option>Đà Nẵng</option>
             <option>Hà Nội</option>
@@ -170,15 +167,18 @@
       </a>
     </div>
   </div>
-  
+
   <div class="companies-alljob container" style="margin-top: 10px">
-    <h1 style="text-align: center;font-size: 21px;text-transform: uppercase">Các công ty hàng đầu</h1>
-    <div style="display: flex; flex-direction: row; justify-content: space-around;flex-wrap: wrap">
+    <h1 style="text-align: center;font-size: 21px;text-transform: uppercase">
+      Các công ty hàng đầu
+    </h1>
+    <div
+      style="display: flex; flex-direction: row; justify-content: space-around;flex-wrap: wrap"
+    >
       <app-company-frame></app-company-frame>
       <app-company-frame></app-company-frame>
       <app-company-frame></app-company-frame>
       <app-company-frame></app-company-frame>
     </div>
-    
   </div>
 </div>

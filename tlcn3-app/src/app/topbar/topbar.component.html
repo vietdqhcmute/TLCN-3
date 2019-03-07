@@ -11,12 +11,16 @@
       <a routerLink="/login" class="float-right" (click)="onLogOut()">Log out</a>
     </li>
 
-    <li routerLinkActive="active">
+    <li routerLinkActive="active" *ngIf="userIsAuthenticated">
       <a routerLink="/about" class="float-right">About us</a>
     </li>
 
     <li routerLinkActive="active" *ngIf="userIsAuthenticated">
       <a style="margin:13.5px 20px 5px 20px " routerLink="/profile" class="float-right"><img style="margin-right: 5px;" [src]="user$.avatarURL" alt="">{{user$.fullName}}</a>
+    </li>
+    
+    <li routerLinkActive="active">
+      <a routerLink="/all-job" class="float-right">All jobs</a>
     </li>
   </ul>
 </nav>
