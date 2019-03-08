@@ -6,10 +6,31 @@ const Recruiter = require("./models/Recruiter");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-//API sign up for candidate
-router.post("/sign-up", async (req, res) => {
-  //Hash the password of user first when get a request, after hashing, save it on database
-  //Check email is unique
+//API sign up for administrator
+router.post("/sign-up-admin", (req, res) => {
+  hash = bcrypt.hashSync(req.body.password, 10);
+  req.body.password = hash;
+  let authenticationParams = {
+    email: req.body.email,
+    password: hash,
+    role: 0
+  };
+  let authentication = new Authentication(authenticationParams);
+  authentication.save(function(err) {
+    if (err) {
+      res.status(500).json({
+        message: "Email is being used try another one"
+      });
+      return;
+    }
+    res.status(201).json({
+      message: "New admin has been born!"
+    });
+  });
+});
+
+// API sign up for candidate
+router.post("/sign-up", (req, res) => {
   hash = bcrypt.hashSync(req.body.password, 10);
   req.body.password = hash;
   let authenticationParams = {
@@ -47,9 +68,8 @@ router.post("/sign-up", async (req, res) => {
   });
 });
 
-//API sign up for recruiter
-router.post("/recruiter/sign-up", async (req, res) => {
-  //Check email is unique
+// API sign up for recruiter
+router.post("/recruiter/sign-up", (req, res) => {
   hash = bcrypt.hashSync(req.body.password, 10);
   req.body.password = hash;
   let authenticationParams = {
@@ -92,10 +112,10 @@ router.post("/recruiter/sign-up", async (req, res) => {
   });
 });
 
-//API login
+//New API login candidate
 router.post("/login", (req, res, next) => {
-  let fetchedUser; //to store user after findOne and use all then() block beneath
-  Candidate.findOne({
+  let fetchedUser;
+  Authentication.findOne({
     email: req.body.email
   })
     .then(user => {
@@ -105,17 +125,14 @@ router.post("/login", (req, res, next) => {
         });
       }
       fetchedUser = user;
-      //this promise will return the result (TRUE or FALSE) of comparing request.password and user.password on DB
-      return bcrypt.compare(req.body.password, user.password); //Have to return here because I have code have to run afer this (Promise)
+      return bcrypt.compare(req.body.password, user.password);
     })
     .then(result => {
-      //result would be TRUE or FALSE of comparing hashed request.password  and user.password already hashing
       if (!result) {
         return res.status(401).json({
           message: "Check your password"
         });
       }
-      //If right password, create Jason Web Token
       const token = jwt.sign(
         {
           email: fetchedUser.email,
@@ -128,13 +145,7 @@ router.post("/login", (req, res, next) => {
       );
       res.status(200).json({
         token: token,
-        id: fetchedUser._id
-      });
-    })
-    .catch(err => {
-      return res.status(401).json({
-        message: "Failed",
-        body: err
+        fetcheddata: fetchedUser
       });
     });
 });
