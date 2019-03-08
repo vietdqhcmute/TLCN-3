@@ -7,23 +7,44 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 //API sign up for candidate
-router.post("/signup", async (req, res) => {
+router.post("/sign-up", async (req, res) => {
   //Hash the password of user first when get a request, after hashing, save it on database
+  //Check email is unique
   hash = bcrypt.hashSync(req.body.password, 10);
   req.body.password = hash;
-  candidate = new Candidate(req.body);
-  //save it on database
-  try {
-    await candidate.save();
-    res.status(201).json({
-      message: "User created"
+  let authenticationParams = {
+    email: req.body.email,
+    password: hash,
+    role: 1
+  };
+  let authentication = new Authentication(authenticationParams);
+  authentication.save(function(err) {
+    if (err) {
+      res.status(500).json({
+        message: "Email is being used try another one"
+      });
+      return;
+    }
+    let candidateParams = {
+      full_name: req.body.name,
+      display_name: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email,
+      image_url: ""
+    };
+    candidate = new Candidate(candidateParams);
+    candidate.save(function(error) {
+      if (error) {
+        res.status(500).json({
+          message: "Some error has occured!"
+        });
+        return;
+      }
+      res.status(201).json({
+        message: "Candidate has been created!"
+      });
     });
-  } catch (err) {
-    //catch error of dupplicating email
-    res.status(500).json({
-      message: "Email is being used try another one"
-    });
-  }
+  });
 });
 
 //API sign up for recruiter
