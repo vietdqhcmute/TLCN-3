@@ -99,3 +99,10 @@ export class Review{
   company_name: string;
   review_post: Array<Review>;
 }
+
+export class CandidateParams{
+  name: StringConstructor;
+  phone: StringConstructor;
+  email: StringConstructor;
+  password: StringConstructor;
+}

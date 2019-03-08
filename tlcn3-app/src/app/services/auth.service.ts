@@ -5,7 +5,7 @@ import { Subject } from "rxjs";
 import { Router } from "@angular/router";
 import { UserService } from "./user.service";
 import { DataService } from "./data.service";
-import { environment } from '../../environments/environment';
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: "root"
@@ -97,7 +97,7 @@ export class AuthService {
 
   autoAuth() {
     const authInformation = this.getAuthData();
-    if (!authInformation){
+    if (!authInformation) {
       return;
     }
     const now = new Date();
@@ -113,6 +113,21 @@ export class AuthService {
           this.router.navigate(["profile"]);
         });
     }
+  }
+
+  createCandidate(
+    candidateParams = {
+      name: String,
+      phone: String,
+      email: String,
+      password: String
+    }
+  ) {
+    this.http.post(this.domainName + "sign-up", candidateParams).subscribe(response=>{
+      console.log(response);
+    }, error=>{
+      console.log(error);
+    })
   }
 
   createUser(
@@ -187,4 +202,5 @@ export class AuthService {
       userID: userID
     };
   }
+  //==================================================New code=================================
 }
