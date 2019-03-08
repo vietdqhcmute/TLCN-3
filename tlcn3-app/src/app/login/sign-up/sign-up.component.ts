@@ -10,8 +10,8 @@ import { CandidateParams } from "src/app/modelv2";
 })
 export class SignUpComponent implements OnInit {
   hide = true; //Use for hidden password
-  candidateParams = new CandidateParams();
   isLoading_signUp = false; // use for spinner
+  candidateParams = new CandidateParams();
 
   constructor(public authService: AuthService) {}
 

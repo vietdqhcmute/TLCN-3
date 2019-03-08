@@ -115,59 +115,7 @@ export class AuthService {
     }
   }
 
-  createCandidate(
-    candidateParams = {
-      name: String,
-      phone: String,
-      email: String,
-      password: String
-    }
-  ) {
-    this.http.post(this.domainName + "sign-up", candidateParams).subscribe(response=>{
-      console.log(response);
-    }, error=>{
-      console.log(error);
-    })
-  }
-
-  createUser(
-    userName: string,
-    phoneNumber: string,
-    email: string,
-    password: string
-  ) {
-    const newResume: Resume = {
-      title: "",
-      summary: "",
-      pictureUrl: "",
-      githubURL: "",
-      linkedinURL: "",
-      webpageURL: "",
-      experience: [],
-      education: [],
-      project: [],
-      skill: []
-    };
-    const newUser: AuthUser = {
-      resume: newResume,
-      googleId: "",
-      googleName: "",
-      avatarURL: "https://nodejs-server-image.s3.amazonaws.com/1550410758086",
-      fullName: userName,
-      userName: userName,
-      email: email,
-      password: password,
-      phone: phoneNumber
-    };
-    this.http.post(this.domainName + "signup", newUser).subscribe(
-      response => {
-        this.isLoadingSignUp.next(true);
-      },
-      error => {
-        this.isLoadingSignUp.next(false);
-      }
-    );
-  }
+  
 
   logOut() {
     this.token = null;
@@ -203,4 +151,24 @@ export class AuthService {
     };
   }
   //==================================================New code=================================
+  createCandidate(candidateParams) {
+    this.http.post(this.domainName + "sign-up", candidateParams).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  createRecruiter(recruiterParams) {
+    this.http.post(this.domainName + "recruiter/sign-up", recruiterParams).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }
