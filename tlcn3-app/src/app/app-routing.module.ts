@@ -21,6 +21,7 @@ import { RecruiterCreatePostComponent } from "./recruiter/recruiter-create-post/
 import { RecruiterReviewComponent } from "./recruiter/recruiter-review/recruiter-review.component";
 import { RecruiterDashboardComponent } from "./recruiter/recruiter-dashboard/recruiter-dashboard.component";
 import { RecruiterSubcriberComponent } from "./recruiter/recruiter-subcriber/recruiter-subcriber.component";
+import { JobDescriptionComponent } from './job-description/job-description.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "all-job", pathMatch: "full" },
@@ -59,7 +60,8 @@ const routes: Routes = [
       { path: "subcriber", component: RecruiterSubcriberComponent }
     ]
   },
-  { path: "all-job", component: AllJobComponent }
+  {path: "all-job", component:AllJobComponent},
+  {path: "job-description", component:JobDescriptionComponent}
 ];
 
 @NgModule({

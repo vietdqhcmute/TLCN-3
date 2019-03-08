@@ -66,6 +66,7 @@ import {
   MatProgressSpinnerModule
 } from "@angular/material";
 import { JobFrameComponent } from './recruiter/recruiter-dashboard/job-frame/job-frame.component';
+import { JobDescriptionComponent } from './job-description/job-description.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,7 +107,8 @@ import { JobFrameComponent } from './recruiter/recruiter-dashboard/job-frame/job
     RecruiterReviewPostComponent,
     RecruiterDashboardComponent,
     RecruiterSubcriberComponent,
-    JobFrameComponent
+    JobFrameComponent,
+    JobDescriptionComponent
   ],
   imports: [
     BrowserModule,
