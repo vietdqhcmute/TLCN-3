@@ -1,16 +1,16 @@
 <div class="job-description">
   <div id="topbar">
-    <app-page-sidebar></app-page-sidebar>
+    <app-page-sidebar [userIsAuthenticated]="true"></app-page-sidebar>
   </div>
 
   <div class="container" style="margin-top: 10px">
     <div class="row">
       <div class="side_bar col-md-3" style="text-align: center;height: 500px;">
         <div class="logo">
-          <a href=""
+          <a routerLink=""
             ><img
-              alt="Codebox Solutions Vietnam Big Logo"
-              src="https://cdn.itviec.com/employers/codebox-solutions/logo/w170/iyjuPfdRuWT3EQFTo6PCkKms/codebox-solutions-logo.png"
+              alt="Logo"
+              [src]="imageURL"
             />
           </a>
         </div>
@@ -18,7 +18,7 @@
           <div class="name">
             <div class="company-name">
               <a href="">
-                <p>Codebox Solutions</p>
+                <p>{{company_name}}</p>
               </a>
             </div>
           </div>
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-9 job-detail" >
+      <div class="col-md-9 job-detail">
         <div class="header">
           <div class="job-info">
             <h1 class="job-title">
