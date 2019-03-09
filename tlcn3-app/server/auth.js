@@ -114,7 +114,7 @@ router.post("/recruiter/sign-up", (req, res) => {
 
 //New API login candidate
 router.post("/login", (req, res, next) => {
-  let fetchedUser;
+  let fetchedUser={email:String, role:Number};
   Authentication.findOne({
     email: req.body.email
   })
@@ -124,7 +124,8 @@ router.post("/login", (req, res, next) => {
           message: "Email fault!"
         });
       }
-      fetchedUser = user;
+      fetchedUser.email = user.email;
+      fetchedUser.role = user.role;
       return bcrypt.compare(req.body.password, user.password);
     })
     .then(result => {

@@ -4,22 +4,55 @@
     <header>
       <h3>Login with Account</h3>
     </header>
-    <a id="btn-login-google" style="width:100%" routerLink="../signup-recruiter" class="btn btn-default"><span><img src="../../assets/google-icon.png" alt="Google-icon"></span>
-      Create Employer account</a>
-    <br><br>
+    <a
+      id="btn-login-google"
+      style="width:100%"
+      routerLink="../signup-recruiter"
+      class="btn btn-default"
+      ><span><img src="../../assets/google-icon.png" alt="Google-icon"/></span>
+      Create Employer account</a
+    >
+    <br /><br />
     <mat-form-field>
-      <input matInput id="email" name="email" required placeholder="Email" [(ngModel)]="si_email">
+      <input
+        matInput
+        id="email"
+        name="email"
+        required
+        placeholder="Email"
+        [(ngModel)]="loginParams.email"
+      />
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput name="password" placeholder="Password" required [type]="hide ? 'password' : 'text'" [(ngModel)]="si_password">
-      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <input
+        matInput
+        name="password"
+        placeholder="Password"
+        required
+        [type]="hide ? 'password' : 'text'"
+        [(ngModel)]="loginParams.password"
+      />
+      <mat-icon matSuffix (click)="hide = !hide">{{
+        hide ? "visibility_off" : "visibility"
+      }}</mat-icon>
     </mat-form-field>
     <mat-dialog-actions>
-      <button *ngIf="!isLoading_logIn" mat-button type="submit" class="mat-raised-button mat-primary" cdkFocusInitial>Login</button>
-      <mat-spinner mode="indeterminate" [diameter]="30" *ngIf="isLoading_logIn"></mat-spinner>
+      <button
+        *ngIf="!isLoading_logIn"
+        mat-button
+        type="submit"
+        class="mat-raised-button mat-primary"
+        cdkFocusInitial
+      >
+        Login
+      </button>
+      <mat-spinner
+        mode="indeterminate"
+        [diameter]="30"
+        *ngIf="isLoading_logIn"
+      ></mat-spinner>
     </mat-dialog-actions>
   </form>
   <a routerLink="../signup">Create new account</a>
-
 </div>

@@ -1,9 +1,4 @@
-// export class Password{
-//   _id: string;
-//   email: string;
-//   password: string;
-//   role: Number;
-// }
+
 
 // export class Statistic{
 //   user_id: string;
@@ -113,4 +108,13 @@ export class RecruiterParams{
   phone: StringConstructor;
   email: StringConstructor;
   password: StringConstructor;
+}
+export class LoginData{
+  email: StringConstructor;
+  password: StringConstructor;
+}
+export class AuthenticatModel{
+  id: string;
+  email: string;
+  role: Number;
 }

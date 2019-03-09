@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { UserService } from "./user.service";
 import { DataService } from "./data.service";
 import { environment } from "../../environments/environment";
+import { AuthenticatModel } from "../modelv2";
 
 @Injectable({
   providedIn: "root"
@@ -115,8 +116,6 @@ export class AuthService {
     }
   }
 
-  
-
   logOut() {
     this.token = null;
     this.authStatusListener.next(false);
@@ -162,13 +161,50 @@ export class AuthService {
     );
   }
   createRecruiter(recruiterParams) {
-    this.http.post(this.domainName + "recruiter/sign-up", recruiterParams).subscribe(
+    this.http
+      .post(this.domainName + "recruiter/sign-up", recruiterParams)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+  loginNewEdition(loginParams) {
+    this.http.post<{token: string,fetcheddata: AuthenticatModel}>(this.domainName + "login", loginParams).subscribe(
       response => {
-        console.log(response);
+        const token = response.token;
+        const role = response.fetcheddata.role;
+        const email = response.fetcheddata.email;
+        if (token){
+          if (role === 1){
+            this.loginAsCandidate(email)
+          }
+          else if (role === 2 ){
+            this.loginAsRecruiter(email)
+          }
+          else{
+            this.loginAsAdministrator(email)
+          }
+        }
       },
       error => {
         console.log(error);
       }
     );
+  }
+  private loginAsCandidate(email){
+    console.log(email);
+    console.log("Login as candidate");
+  }
+  private loginAsRecruiter(email){
+    console.log(email);
+    console.log("Login as recruiter");
+  }
+  private loginAsAdministrator(email){
+    console.log(email);
+    console.log("Login as admin");
   }
 }
