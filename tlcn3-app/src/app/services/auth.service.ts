@@ -173,38 +173,38 @@ export class AuthService {
       );
   }
   login(loginParams) {
-    this.http.post<{token: string,fetcheddata: AuthenticatModel}>(this.domainName + "login", loginParams).subscribe(
-      response => {
-        const token = response.token;
-        const role = response.fetcheddata.role;
-        const email = response.fetcheddata.email;
-        if (token){
-          if (role === 1){
-            this.loginAsCandidate(email)
+    this.http
+      .post<{ token: string; fetcheddata: AuthenticatModel }>(
+        this.domainName + "login",
+        loginParams
+      )
+      .subscribe(
+        response => {
+          const token = response.token;
+          const role = response.fetcheddata.role;
+          const email = response.fetcheddata.email;
+          if (token) {
+            if (role === 1) {
+              this.loginAsCandidate(email);
+            } else if (role === 2) {
+              this.loginAsRecruiter(email);
+            } else {
+              this.loginAsAdministrator(email);
+            }
           }
-          else if (role === 2 ){
-            this.loginAsRecruiter(email)
-          }
-          else{
-            this.loginAsAdministrator(email)
-          }
+        },
+        error => {
+          console.log(error);
         }
-      },
-      error => {
-        console.log(error);
-      }
-    );
+      );
   }
-  private loginAsCandidate(email){
-    console.log(email);
-    console.log("Login as candidate");
+  private loginAsCandidate(email) {
+    this.router.navigate(["profile"]);
   }
-  private loginAsRecruiter(email){
-    console.log(email);
-    console.log("Login as recruiter");
+  private loginAsRecruiter(email) {
+    this.router.navigate(["recruiter"]);
   }
-  private loginAsAdministrator(email){
-    console.log(email);
-    console.log("Login as admin");
+  private loginAsAdministrator(email) {
+    this.router.navigate(["admin"]);
   }
 }
