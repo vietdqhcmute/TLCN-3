@@ -22,7 +22,7 @@ import { RecruiterReviewComponent } from "./recruiter/recruiter-review/recruiter
 import { RecruiterDashboardComponent } from "./recruiter/recruiter-dashboard/recruiter-dashboard.component";
 import { RecruiterSubcriberComponent } from "./recruiter/recruiter-subcriber/recruiter-subcriber.component";
 import { JobDescriptionComponent } from './job-description/job-description.component';
-
+import { CompanyDescriptionComponent } from './company-description/company-description.component';
 const routes: Routes = [
   { path: "", redirectTo: "all-job", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate: [AuthGuard] },
@@ -61,7 +61,8 @@ const routes: Routes = [
     ]
   },
   {path: "all-job", component:AllJobComponent},
-  {path: "job-description", component:JobDescriptionComponent}
+  {path: "job-description", component:JobDescriptionComponent},
+  {path: "company-description", component:CompanyDescriptionComponent}
 ];
 
 @NgModule({
