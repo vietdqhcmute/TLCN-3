@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     if (form.invalid){
       return;
     }
-    this.authService.loginNewEdition(this.loginParams);
+    this.authService.login(this.loginParams);
   }
 
   // onSignIn(form: NgForm) {

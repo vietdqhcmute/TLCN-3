@@ -53,7 +53,7 @@ export class AuthService {
 
   //----------------------------------------------------------------------------------
 
-  login(email: string, password: string) {
+  loginOldVersion(email: string, password: string) {
     const loginData: AuthLogin = {
       email: email,
       password: password
@@ -172,7 +172,7 @@ export class AuthService {
         }
       );
   }
-  loginNewEdition(loginParams) {
+  login(loginParams) {
     this.http.post<{token: string,fetcheddata: AuthenticatModel}>(this.domainName + "login", loginParams).subscribe(
       response => {
         const token = response.token;
