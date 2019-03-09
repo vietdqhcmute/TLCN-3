@@ -199,7 +199,7 @@ export class AuthService {
       );
   }
   private loginAsCandidate(email) {
-    this.router.navigate(["profile"]);
+    this.router.navigate(["profile/", email]);
   }
   private loginAsRecruiter(email) {
     this.router.navigate(["recruiter"]);
