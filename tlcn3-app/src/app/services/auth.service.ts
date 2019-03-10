@@ -7,6 +7,7 @@ import { UserService } from "./user.service";
 import { DataService } from "./data.service";
 import { environment } from "../../environments/environment";
 import { AuthenticatModel } from "../modelv2";
+import { CandidateService } from "./candidate.service";
 
 @Injectable({
   providedIn: "root"
@@ -20,12 +21,18 @@ export class AuthService {
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
 
+  private candidateData;
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private dataService: DataService,
-    private userService: UserService
+    private userService: UserService,
+    private candidateService: CandidateService
   ) {}
+  getCandidateData() {
+    return this.candidateData;
+  }
 
   getToken() {
     return this.token;
@@ -202,7 +209,7 @@ export class AuthService {
     this.router.navigate(["profile/", email]);
   }
   private loginAsRecruiter(email) {
-    this.router.navigate(["recruiter"]);
+    this.router.navigate(["recruiter/", email]);
   }
   private loginAsAdministrator(email) {
     this.router.navigate(["admin"]);

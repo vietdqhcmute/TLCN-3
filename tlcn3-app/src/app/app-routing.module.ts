@@ -23,7 +23,7 @@ import { RecruiterSubcriberComponent } from "./recruiter/recruiter-subcriber/rec
 import { JobDescriptionComponent } from './job-description/job-description.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "all-job", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate: [AuthGuard] },
   {
     path: "main/:id/edit",
@@ -48,7 +48,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "recruiter",
+    path: "recruiter/:email",
     component: RecruiterComponent,
     children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },

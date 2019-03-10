@@ -24,9 +24,9 @@ router.get("/candidate/:id", async (req, res) => {
 });
 
 //Get candidate by email
-router.post("/candidate/find-email", async (req, res) => {
+router.get("/candidate/email/:email", async (req, res) => {
   try {
-    const candidate = await Candidate.findOne({ email: req.body.email });
+    const candidate = await Candidate.findOne({ email: req.params.email });
     res.status(200).json(candidate);
   } catch (err) {
     res.status(404).send(err);
