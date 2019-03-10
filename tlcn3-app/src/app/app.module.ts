@@ -65,6 +65,7 @@ import {
 } from "@angular/material";
 import { JobFrameComponent } from './recruiter/recruiter-dashboard/job-frame/job-frame.component';
 import { JobDescriptionComponent } from './job-description/job-description.component';
+import { CompanyDescriptionComponent } from './company-description/company-description.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,7 +105,8 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
     RecruiterDashboardComponent,
     RecruiterSubcriberComponent,
     JobFrameComponent,
-    JobDescriptionComponent
+    JobDescriptionComponent,
+    CompanyDescriptionComponent
   ],
   imports: [
     BrowserModule,
