@@ -6,6 +6,8 @@ import { Router } from "@angular/router";
 import { UserService } from "./user.service";
 import { DataService } from "./data.service";
 import { environment } from "../../environments/environment";
+import { AuthenticatModel } from "../modelv2";
+import { CandidateService } from "./candidate.service";
 
 @Injectable({
   providedIn: "root"
@@ -19,12 +21,18 @@ export class AuthService {
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
 
+  private candidateData;
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private dataService: DataService,
-    private userService: UserService
+    private userService: UserService,
+    private candidateService: CandidateService
   ) {}
+  getCandidateData() {
+    return this.candidateData;
+  }
 
   getToken() {
     return this.token;
@@ -52,7 +60,7 @@ export class AuthService {
 
   //----------------------------------------------------------------------------------
 
-  login(email: string, password: string) {
+  loginOldVersion(email: string, password: string) {
     const loginData: AuthLogin = {
       email: email,
       password: password
@@ -115,8 +123,6 @@ export class AuthService {
     }
   }
 
-  
-
   logOut() {
     this.token = null;
     this.authStatusListener.next(false);
@@ -162,13 +168,50 @@ export class AuthService {
     );
   }
   createRecruiter(recruiterParams) {
-    this.http.post(this.domainName + "recruiter/sign-up", recruiterParams).subscribe(
-      response => {
-        console.log(response);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.http
+      .post(this.domainName + "recruiter/sign-up", recruiterParams)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+  login(loginParams) {
+    this.http
+      .post<{ token: string; fetcheddata: AuthenticatModel }>(
+        this.domainName + "login",
+        loginParams
+      )
+      .subscribe(
+        response => {
+          const token = response.token;
+          const role = response.fetcheddata.role;
+          const email = response.fetcheddata.email;
+          if (token) {
+            if (role === 1) {
+              this.loginAsCandidate(email);
+            } else if (role === 2) {
+              this.loginAsRecruiter(email);
+            } else {
+              this.loginAsAdministrator(email);
+            }
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+  private loginAsCandidate(email) {
+    this.router.navigate(["profile/", email]);
+  }
+  private loginAsRecruiter(email) {
+    this.router.navigate(["recruiter/", email]);
+  }
+  private loginAsAdministrator(email) {
+    this.router.navigate(["admin"]);
   }
 }

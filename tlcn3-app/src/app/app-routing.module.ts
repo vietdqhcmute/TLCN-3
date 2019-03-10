@@ -6,7 +6,6 @@ import { ProfilePageComponent } from "./app-profile/profile-page.component";
 import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 
-import { ResolverService } from "./services/resolver.service";
 import { AuthGuard } from "./services/auth.guard";
 import { AdminComponent } from "./page-admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
@@ -24,19 +23,18 @@ import { RecruiterSubcriberComponent } from "./recruiter/recruiter-subcriber/rec
 import { JobDescriptionComponent } from './job-description/job-description.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "all-job", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "main", component: EditResumeComponent, canActivate: [AuthGuard] },
   {
     path: "main/:id/edit",
     component: EditResumeComponent,
-    resolve: { profile: ResolverService },
     canActivate: [AuthGuard]
   },
   { path: "signup", component: SignUpComponent },
   { path: "signup-recruiter", component: SignUpRecruiterComponent },
   { path: "login", component: LoginComponent },
   // { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
-  { path: "profile", component: ProfilePageComponent },
+  { path: "profile/:email", component: ProfilePageComponent },
   { path: "about", component: AppAboutComponent },
   {
     path: "admin",
@@ -50,7 +48,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "recruiter",
+    path: "recruiter/:email",
     component: RecruiterComponent,
     children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },

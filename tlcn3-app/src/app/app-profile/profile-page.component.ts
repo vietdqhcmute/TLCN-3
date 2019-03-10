@@ -1,39 +1,43 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, Params } from "@angular/router";
 import { DataService } from "../services/data.service";
 import { Resume, User } from "../models";
 import { AuthService } from "../services/auth.service";
+import { Candidate } from "../modelv2";
+import { CandidateService } from "../services/candidate.service";
+import { from } from "rxjs";
+import { first } from "rxjs/operators";
+
 @Component({
   selector: "app-app-profile",
   templateUrl: "./profile-page.component.html",
   styleUrls: ["./profile-page.component.scss"]
 })
 export class ProfilePageComponent implements OnInit {
-  user$: User;
-  resume$: Resume;
-  userByResume$: User;
   isAuthenticated = false;
+  email: string;
+  candidate: Candidate=null;
+  testEmail = "vietdqhcmute@gmail.com";
+  allowEdit = false;
   constructor(
+    private candidateService: CandidateService,
     private route: ActivatedRoute,
-    private dataService: DataService,
-    private authService: AuthService,
-    private router: Router
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
-    this.isAuthenticated = this.authService.getIsAuth();
-    if (this.isAuthenticated) {
-      // this.authService.getUserAfterLogin().subscribe(responseUser => {
-      //   console.log("responseUser: " + responseUser);
-      //   this.user$ = responseUser;
-      //   this.resume$ = this.user$.resume;
-      // });
-      this.dataService.currentUser.subscribe(result => {
-        this.user$ = result;
-        this.resume$ = this.user$.resume;
+    this.loadCandidateData(this.testEmail);
+  }
+  private onEditButton(){
+    this.allowEdit = !this.allowEdit;
+  }
+  private loadCandidateData(email) {
+    this.candidateService
+      .getCandidateByEmail(email)
+      .pipe(first())
+      .subscribe(candidate => {
+        this.candidate = <Candidate>candidate;
+        console.log(this.candidate);
       });
-    } else {
-      this.router.navigate(["login"]);
-    }
   }
 }

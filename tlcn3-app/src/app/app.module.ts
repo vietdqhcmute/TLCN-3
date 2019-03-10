@@ -22,7 +22,6 @@ import { DiaConfirmComponent } from "./dialog/dia-confirm/dia-confirm.component"
 import { ConvertToMonthPipe } from "./share/convert-to-month.pipe";
 import { EmailFiterPipe } from "./share/filter-by-email.pipe";
 import { AuthInterceptor } from "./auth-interceptor";
-import { ProfileInfoComponent } from "./app-profile-info/profile-info.component";
 import { PageA4DefaultComponent } from "./template-custom/page-a4-default/page-a4-default.component";
 import { PageA4DesignComponent } from "./template-custom/page-a4-design/page-a4-design.component";
 import { PageA4DesignBlueComponent } from "./template-custom/page-a4-design-blue/page-a4-design-blue.component";
@@ -34,7 +33,6 @@ import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin
 import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
 import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
-import { ProfileInfoNewfeedComponent } from './app-profile-info/profile-info-newfeed/profile-info-newfeed.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { SignUpRecruiterComponent } from './login/sign-up-recruiter/sign-up-recruiter.component';
@@ -84,7 +82,6 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
     DiaProjectComponent,
     ConvertToMonthPipe,
     EmailFiterPipe,
-    ProfileInfoComponent,
     DiaConfirmComponent,
     PageA4DefaultComponent,
     PageA4DesignComponent,
@@ -96,7 +93,6 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
     AdminUserManagerComponent,
     AdminDashboardComponent,
     AdminNotificationComponent,
-    ProfileInfoNewfeedComponent,
     SignUpComponent,
     RecruiterComponent,
     SignUpRecruiterComponent,
