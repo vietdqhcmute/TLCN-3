@@ -7,11 +7,11 @@ import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 
 import { AuthGuard } from "./services/auth.guard";
-import { AdminComponent } from "./page-admin/admin.component";
+import { AdminComponent } from "./admin/admin.component";
 import { AdminGuard } from "./services/admin.guard";
-import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
-import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
-import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
+import { AdminUserManagerComponent } from "./admin/admin-user-manager/admin-user-manager.component";
+import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard.component";
+import { AdminNotificationComponent } from "./admin/admin-notification/admin-notification.component";
 import { SignUpComponent } from "./login/sign-up/sign-up.component";
 import { RecruiterComponent } from "./recruiter/recruiter.component";
 import { AllJobComponent } from "./all-job/all-job.component";

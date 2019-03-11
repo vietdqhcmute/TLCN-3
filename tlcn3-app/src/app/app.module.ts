@@ -27,11 +27,11 @@ import { PageA4DesignComponent } from "./template-custom/page-a4-design/page-a4-
 import { PageA4DesignBlueComponent } from "./template-custom/page-a4-design-blue/page-a4-design-blue.component";
 import { PageA4DesignBlue01Component } from "./template-custom/page-a4-design-blue01/page-a4-design-blue01.component";
 import { PageA4DesignRed01Component } from "./template-custom/page-a4-design-red01/page-a4-design-red01.component";
-import { AdminComponent } from "./page-admin/admin.component";
-import { AdminSidebarComponent } from "./page-admin/admin-sidebar/admin-sidebar.component";
-import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
-import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
-import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
+import { AdminComponent } from "./admin/admin.component";
+import { AdminSidebarComponent } from "./admin/admin-sidebar/admin-sidebar.component";
+import { AdminUserManagerComponent } from "./admin/admin-user-manager/admin-user-manager.component";
+import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard.component";
+import { AdminNotificationComponent } from "./admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
