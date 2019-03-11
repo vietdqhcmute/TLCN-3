@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { ProfilePageComponent } from "./app-profile/profile-page.component";
+import { CandidateComponent } from "./candidate/candidate.component";
 import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 import { TopbarComponent } from "./topbar/topbar.component";
@@ -70,7 +70,7 @@ import { CompanyDescriptionComponent } from './company-description/company-descr
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfilePageComponent,
+    CandidateComponent,
     AppAboutComponent,
     EditResumeComponent,
     TopbarComponent,

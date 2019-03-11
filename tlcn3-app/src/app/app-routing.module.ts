@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { LoginComponent } from "./login/login.component";
-import { ProfilePageComponent } from "./app-profile/profile-page.component";
+import { CandidateComponent } from "./candidate/candidate.component";
 import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 
@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: "signup-recruiter", component: SignUpRecruiterComponent },
   { path: "login", component: LoginComponent },
   // { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
-  { path: "profile/:email", component: ProfilePageComponent },
+  { path: "profile/:email", component: CandidateComponent },
   { path: "about", component: AppAboutComponent },
   {
     path: "admin",

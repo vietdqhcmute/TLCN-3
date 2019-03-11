@@ -9,16 +9,17 @@ import { from } from "rxjs";
 import { first } from "rxjs/operators";
 
 @Component({
-  selector: "app-app-profile",
-  templateUrl: "./profile-page.component.html",
-  styleUrls: ["./profile-page.component.scss"]
+  selector: "app-candidate",
+  templateUrl: "./candidate.component.html",
+  styleUrls: ["./candidate.component.scss"]
 })
-export class ProfilePageComponent implements OnInit {
+export class CandidateComponent implements OnInit {
   isAuthenticated = false;
   email: string;
   candidate: Candidate=null;
   testEmail = "vietdqhcmute@gmail.com";
   allowEdit = false;
+  defaultImageURL = ""
   constructor(
     private candidateService: CandidateService,
     private route: ActivatedRoute,
