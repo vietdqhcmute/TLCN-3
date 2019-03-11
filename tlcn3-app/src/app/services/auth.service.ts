@@ -21,18 +21,12 @@ export class AuthService {
   private isLoadingSignIn = new Subject<boolean>();
   private isLoadingSignUp = new Subject<boolean>();
 
-  private candidateData;
-
   constructor(
     private http: HttpClient,
     private router: Router,
     private dataService: DataService,
-    private userService: UserService,
-    private candidateService: CandidateService
+    private userService: UserService
   ) {}
-  getCandidateData() {
-    return this.candidateData;
-  }
 
   getToken() {
     return this.token;
