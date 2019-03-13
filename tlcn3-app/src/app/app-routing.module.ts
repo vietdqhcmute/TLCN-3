@@ -24,17 +24,11 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
 import { CompanyDescriptionComponent } from './company-description/company-description.component';
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "main", component: EditResumeComponent, canActivate: [AuthGuard] },
-  {
-    path: "main/:id/edit",
-    component: EditResumeComponent,
-    canActivate: [AuthGuard]
-  },
   { path: "signup", component: SignUpComponent },
   { path: "signup-recruiter", component: SignUpRecruiterComponent },
   { path: "login", component: LoginComponent },
-  // { path: "profile", component: ProfilePageComponent, canActivate:[AuthGuard] },
-  { path: "profile/:email", component: CandidateComponent },
+  { path: "profile/:email", component: CandidateComponent},
+  { path: "profile/:email/cv-creator", component: EditResumeComponent},
   { path: "about", component: AppAboutComponent },
   {
     path: "admin",

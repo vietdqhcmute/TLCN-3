@@ -5,7 +5,7 @@
   <div class="flex-profile">
     <div id="info-area">
       <div class="header-profile"></div>
-
+      <!-- Background cover -->
       <div class="cover">
         <div class="cover-image">
           <img
@@ -14,21 +14,27 @@
             alt="cover"
           />
         </div>
-
+        <!-- Avatar -->
         <div class="cover-info">
           <div class="avatar">
             <div class="image-container">
-              <img [src]="candidate.image_url" alt="avatar" (click)="filePicker.click()" />
+              <!-- This one is to pick image, and I will do that later -->
+              <!-- <img
+                [src]="candidate.image_url"
+                alt="avatar"
+                (click)="filePicker.click()"
+              /> -->
               <img
-                [src]="imagePreview"
-                *ngIf="imagePreview !== '' && imagePreview"
+                [src]="defaultImageURL"
+                *ngIf="defaultImageURL !== '' && defaultImageURL"
                 alt="avatar"
                 (click)="filePicker.click()"
               />
               <input type="file" #filePicker (change)="onImagePicked($event)" />
             </div>
+            <!-- Diplay_name -->
             <div class="display-name">
-              <div class="edit-activate">
+              <div class="edit-activate" *ngIf="!allowEdit">
                 <h6>
                   <strong>{{ candidate.display_name }}</strong>
                 </h6>
@@ -43,9 +49,13 @@
                 />
               </div>
             </div>
+            <!-- Resume.title -->
             <div class="display-title">
-              <div class="edit-activate" *ngIf="!allowEdit && candidate.resume.title">
-                <p>{{candidate.resume.title}}</p>
+              <div
+                class="edit-activate"
+                *ngIf="!allowEdit && candidate.resume.title"
+              >
+                <p>{{ candidate.resume.title }}</p>
               </div>
               <div class="edit-activate" *ngIf="allowEdit">
                 <label for="title">Title:</label>
@@ -58,16 +68,28 @@
               </div>
             </div>
           </div>
+          <!-- Email -->
           <div class="cover-user-info">
             <div class="one-line-info" *ngIf="candidate.email">
               <i class="material-icons md-24">email</i>
-              <p>{{candidate.email}}</p>
+              <p>{{ candidate.email }}</p>
             </div>
-            <div class="one-line-info" *ngIf="candidate.email">
+            <!-- Phone -->
+            <div class="one-line-info" *ngIf="!allowEdit && candidate.phone">
               <i class="material-icons md-24">local_phone</i>
-              <p>{{candidate.phone}}</p>
+              <p>{{ candidate.phone }}</p>
             </div>
-            <div *ngIf="candidate.resume.github" class="one-line-info">
+            <div class="edit-activate" *ngIf="allowEdit">
+              <label for="phone">Phone:</label>
+              <input
+                class="form-control"
+                id="phone"
+                type="text"
+                [(ngModel)]="candidate.phone"
+              />
+            </div>
+            <!-- Resume.github -->
+            <div class="one-line-info" *ngIf="candidate.resume.github">
               <span
                 ><img
                   src="../../assets/github-icon.png"
@@ -76,6 +98,7 @@
               /></span>
               <p></p>
             </div>
+            <!-- Resume.linked -->
             <div *ngIf="candidate.resume.linkedin" class="one-line-info">
               <span
                 ><img
@@ -87,6 +110,7 @@
             </div>
           </div>
         </div>
+
         <button
           id="btn-update-info"
           class="btn btn-info"
@@ -106,7 +130,7 @@
 
       <section id="info">
         <p style="margin-bottom: 3px">
-          You have joined us since: {{candidate.created | date: "mediumDate"}}
+          You have joined us since: {{ candidate.created | date: "mediumDate" }}
         </p>
       </section>
     </div>

@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router, Params } from "@angular/router";
-import { DataService } from "../services/data.service";
-import { Resume, User } from "../models";
 import { AuthService } from "../services/auth.service";
 import { Candidate } from "../modelv2";
 import { CandidateService } from "../services/candidate.service";
@@ -19,7 +17,7 @@ export class CandidateComponent implements OnInit {
   candidate: Candidate=null;
   testEmail = "vietdqhcmute@gmail.com";
   allowEdit = false;
-  defaultImageURL = ""
+  defaultImageURL = "../../assets/tho-bay-mau-28.png"
   constructor(
     private candidateService: CandidateService,
     private route: ActivatedRoute,
@@ -30,6 +28,13 @@ export class CandidateComponent implements OnInit {
     this.loadCandidateData(this.testEmail);
   }
   private onEditButton(){
+    if (this.allowEdit){
+      this.candidateService.updateCandidateByID(this.candidate._id,this.candidate).subscribe(response=>{
+        console.log("Done!");
+      },error=>{
+        console.log("Error!");
+      });
+    }
     this.allowEdit = !this.allowEdit;
   }
   private loadCandidateData(email) {
@@ -38,7 +43,6 @@ export class CandidateComponent implements OnInit {
       .pipe(first())
       .subscribe(candidate => {
         this.candidate = <Candidate>candidate;
-        console.log(this.candidate);
       });
   }
 }
