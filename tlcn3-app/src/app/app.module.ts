@@ -66,6 +66,7 @@ import {
 import { JobFrameComponent } from './recruiter/recruiter-dashboard/job-frame/job-frame.component';
 import { JobDescriptionComponent } from './job-description/job-description.component';
 import { CompanyDescriptionComponent } from './company-description/company-description.component';
+import { DiaEditProfileComponent } from './dialog/dia-edit-profile/dia-edit-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,7 +107,8 @@ import { CompanyDescriptionComponent } from './company-description/company-descr
     RecruiterSubcriberComponent,
     JobFrameComponent,
     JobDescriptionComponent,
-    CompanyDescriptionComponent
+    CompanyDescriptionComponent,
+    DiaEditProfileComponent
   ],
   imports: [
     BrowserModule,

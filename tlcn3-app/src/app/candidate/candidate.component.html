@@ -34,37 +34,19 @@
             </div>
             <!-- Diplay_name -->
             <div class="display-name">
-              <div class="edit-activate" *ngIf="!allowEdit">
+              <div class="edit-activate">
                 <h6>
                   <strong>{{ candidate.display_name }}</strong>
                 </h6>
-              </div>
-              <div class="edit-activate" *ngIf="allowEdit">
-                <label for="name">Name:</label>
-                <input
-                  class="form-control"
-                  id="name"
-                  type="text"
-                  [(ngModel)]="candidate.display_name"
-                />
               </div>
             </div>
             <!-- Resume.title -->
             <div class="display-title">
               <div
                 class="edit-activate"
-                *ngIf="!allowEdit && candidate.resume.title"
+                *ngIf="candidate.resume.title"
               >
                 <p>{{ candidate.resume.title }}</p>
-              </div>
-              <div class="edit-activate" *ngIf="allowEdit">
-                <label for="title">Title:</label>
-                <input
-                  class="form-control"
-                  id="title"
-                  type="text"
-                  [(ngModel)]="candidate.resume.title"
-                />
               </div>
             </div>
           </div>
@@ -75,18 +57,9 @@
               <p>{{ candidate.email }}</p>
             </div>
             <!-- Phone -->
-            <div class="one-line-info" *ngIf="!allowEdit && candidate.phone">
+            <div class="one-line-info" *ngIf="candidate.phone">
               <i class="material-icons md-24">local_phone</i>
               <p>{{ candidate.phone }}</p>
-            </div>
-            <div class="edit-activate" *ngIf="allowEdit">
-              <label for="phone">Phone:</label>
-              <input
-                class="form-control"
-                id="phone"
-                type="text"
-                [(ngModel)]="candidate.phone"
-              />
             </div>
             <!-- Resume.github -->
             <div class="one-line-info" *ngIf="candidate.resume.github">
