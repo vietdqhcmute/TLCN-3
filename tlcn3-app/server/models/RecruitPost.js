@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 let recruitPostSchema = new mongoose.Schema({
   company_name: String,
-  title: string,
+  title: String,
   description: String,
   Tag: [],
   salary: String,

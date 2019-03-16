@@ -43,22 +43,33 @@ router.put("/update/recruiter/:id", async (req, res) => {
     });
   }
 });
-
+//create recruit post
 router.post("/add/recruit-post", (req, res) => {
   const recruitpost = new RecruitPost(req.body);
   recruitpost.save((err, data) => {
     if (err) {
       return console.log(err);
     }
-    res.status(200);
+    res.status(200).redirect("../"+data._id + "/recruit-post");
   });
 });
-router.get("/all/recruit-post",(req,res)=>{
-  const post = RecruitPost.find(error, data=>{
-    if (error){
-      return console.log(error);
-    }
-    res.status(200).json(data);
-  })
+//find recruit post by ID
+// router.get("/recruit-post/:id", async (req, res) => {
+//   try {
+//     console.log(req.params.id);
+//     post = RecruitPost.findById(req.params.id);
+//     res.status(200).json(post);
+//   } catch (error) {
+//     return console.log(error);
+//   }
+// });
+//find all recruit post
+router.get("/all/recruit-post", async (req, res) => {
+  try {
+    const recruitPosts = await RecruitPost.find();
+    res.send(recruitPosts);
+  } catch (err) {
+    console.log(err);
+  }
 });
 module.exports = router;
