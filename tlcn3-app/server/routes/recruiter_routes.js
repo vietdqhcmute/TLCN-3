@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Recruiter = require("../models/Recruiter");
+const RecruitPost = require("../models/RecruitPost");
+
 //Adding
 router.post("/add/recruiter", (req, res) => {
   const recruiter = new Recruiter(req.body);
@@ -40,5 +42,23 @@ router.put("/update/recruiter/:id", async (req, res) => {
       message: "Update failed!"
     });
   }
+});
+
+router.post("/add/recruit-post", (req, res) => {
+  const recruitpost = new RecruitPost(req.body);
+  recruitpost.save((err, data) => {
+    if (err) {
+      return console.log(err);
+    }
+    res.status(200);
+  });
+});
+router.get("/all/recruit-post",(req,res)=>{
+  const post = RecruitPost.find(error, data=>{
+    if (error){
+      return console.log(error);
+    }
+    res.status(200).json(data);
+  })
 });
 module.exports = router;

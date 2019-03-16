@@ -199,6 +199,7 @@ export class AuthService {
         }
       );
   }
+  
   private loginAsCandidate(email) {
     this.router.navigate(["profile/", email]);
   }
