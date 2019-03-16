@@ -24,9 +24,9 @@
       margin-left: 70px;
 
       .cover {
-        -moz-box-shadow: 0 0 3px #37474f;
-        -webkit-box-shadow: 0 0 3px #37474f;
-        box-shadow: 0 0 3px #37474f;
+        -moz-box-shadow: 0 0 5px #37474f;
+        -webkit-box-shadow: 0 0 5px #37474f;
+        box-shadow: 0 0 5px #37474f;
         margin-left: 50;
         margin-top: 50;
         width: 132.5vh;
@@ -48,7 +48,10 @@
         .cover-info {
           display: flex;
           flex-flow: row;
-
+          input{
+            width: 75%;
+            margin-bottom: 5px; 
+          }
           .avatar {
             flex: 5;
             margin-left: 50px;

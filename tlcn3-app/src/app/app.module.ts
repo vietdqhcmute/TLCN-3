@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { ProfilePageComponent } from "./app-profile/profile-page.component";
+import { CandidateComponent } from "./candidate/candidate.component";
 import { AppAboutComponent } from "./about/about.component";
 import { EditResumeComponent } from "./edit-resume/edit-resume.component";
 import { TopbarComponent } from "./topbar/topbar.component";
@@ -27,11 +27,11 @@ import { PageA4DesignComponent } from "./template-custom/page-a4-design/page-a4-
 import { PageA4DesignBlueComponent } from "./template-custom/page-a4-design-blue/page-a4-design-blue.component";
 import { PageA4DesignBlue01Component } from "./template-custom/page-a4-design-blue01/page-a4-design-blue01.component";
 import { PageA4DesignRed01Component } from "./template-custom/page-a4-design-red01/page-a4-design-red01.component";
-import { AdminComponent } from "./page-admin/admin.component";
-import { AdminSidebarComponent } from "./page-admin/admin-sidebar/admin-sidebar.component";
-import { AdminUserManagerComponent } from "./page-admin/admin-user-manager/admin-user-manager.component";
-import { AdminDashboardComponent } from "./page-admin/admin-dashboard/admin-dashboard.component";
-import { AdminNotificationComponent } from "./page-admin/admin-notification/admin-notification.component";
+import { AdminComponent } from "./admin/admin.component";
+import { AdminSidebarComponent } from "./admin/admin-sidebar/admin-sidebar.component";
+import { AdminUserManagerComponent } from "./admin/admin-user-manager/admin-user-manager.component";
+import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard.component";
+import { AdminNotificationComponent } from "./admin/admin-notification/admin-notification.component";
 import { ErrorInterceptor } from "./error-interceptor";
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
@@ -66,11 +66,12 @@ import {
 import { JobFrameComponent } from './recruiter/recruiter-dashboard/job-frame/job-frame.component';
 import { JobDescriptionComponent } from './job-description/job-description.component';
 import { CompanyDescriptionComponent } from './company-description/company-description.component';
+import { DiaEditProfileComponent } from './dialog/dia-edit-profile/dia-edit-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfilePageComponent,
+    CandidateComponent,
     AppAboutComponent,
     EditResumeComponent,
     TopbarComponent,
@@ -106,7 +107,8 @@ import { CompanyDescriptionComponent } from './company-description/company-descr
     RecruiterSubcriberComponent,
     JobFrameComponent,
     JobDescriptionComponent,
-    CompanyDescriptionComponent
+    CompanyDescriptionComponent,
+    DiaEditProfileComponent
   ],
   imports: [
     BrowserModule,
